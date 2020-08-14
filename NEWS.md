@@ -1,3 +1,4 @@
-# inspect 0.1.0
 
-* Added a `NEWS.md` file to track changes to the package.
+# inspect 1.0.0
+
+* This is the first CRAN release of `inspect`.
