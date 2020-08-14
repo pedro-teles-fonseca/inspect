@@ -20,10 +20,10 @@
 #'   * `p` is a numeric vector of valid probability values with some `NA` or `NaN` values and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
-#' * \code{\link[pcal]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[pcal]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-#' * \code{\link[pcal]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
-#' * \code{\link[pcal]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
+#' * \code{\link[inspect]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspect]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspect]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+#' * \code{\link[inspect]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -101,10 +101,10 @@ check_prob <- function(p, allow_nas = TRUE){
 #' * An informative error message is thrown if `p` is not a numeric vector of valid Bayes factor values. This will \code{\link[base]{stop}} the execution.
 #'
 #' @seealso
-#' * \code{\link[pcal]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-#' * \code{\link[pcal]{check_prob}} to check if an object is a numeric vector of valid probability values.
-#' * \code{\link[pcal]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
-#' * \code{\link[pcal]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
+#' * \code{\link[inspect]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspect]{check_prob}} to check if an object is a numeric vector of valid probability values.
+#' * \code{\link[inspect]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+#' * \code{\link[inspect]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -173,10 +173,10 @@ check_bf <- function(bf){
 #' * An informative error message is thrown if `bf` is not a numeric vector of valid logarithmic Bayes factor values.
 #'
 #' @seealso
-#' * \code{\link[pcal]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[pcal]{check_prob}} to check if an object is a numeric vector of valid probability values.
-#' * \code{\link[pcal]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
-#' * \code{\link[pcal]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
+#' * \code{\link[inspect]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspect]{check_prob}} to check if an object is a numeric vector of valid probability values.
+#' * \code{\link[inspect]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+#' * \code{\link[inspect]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -241,10 +241,10 @@ check_log_bf <- function(bf){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[pcal]{check_prob}} to check if an object is a numeric vector of valid probability values.
-#' * \code{\link[pcal]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[pcal]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-#' * \code{\link[pcal]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
+#' * \code{\link[inspect]{check_prob}} to check if an object is a numeric vector of valid probability values.
+#' * \code{\link[inspect]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspect]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspect]{check_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -304,10 +304,10 @@ check_log_base <- function(base){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[pcal]{check_prob}} to check if an object is a numeric vector of valid probability values.
-#' * \code{\link[pcal]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[pcal]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-#' * \code{\link[pcal]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+#' * \code{\link[inspect]{check_prob}} to check if an object is a numeric vector of valid probability values.
+#' * \code{\link[inspect]{check_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspect]{check_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspect]{check_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
 #'
 #' @examples
 #' # Calls that pass silently:
