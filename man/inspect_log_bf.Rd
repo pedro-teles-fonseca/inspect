@@ -24,7 +24,7 @@ inspect_log_bf(x)
 \code{inspect_log_bf} conducts a series of tests to check if \code{x} is a numeric vector of valid logarithmic Bayes factor values. Namely, \code{inspect_log_bf} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is a numeric (atomic) vector.
+\item \code{x} is a numeric, atomic vector.
 \item \code{x} has \code{NA} or \code{NaN} values.
 }
 }

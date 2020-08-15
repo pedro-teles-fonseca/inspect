@@ -23,7 +23,7 @@ inspect_scale(scale)
 \code{inspect_scale} conducts a series of tests to check if \code{scale} is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package. Namely, \code{inspect_scale} checks if:
 \itemize{
 \item \code{scale} is \code{NULL} or empty.
-\item \code{scale} is a character (atomic) vector of \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
+\item \code{scale} is a character, atomic vector of \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
 \item \code{scale} is \code{NA} or \code{NaN}.
 }
 }

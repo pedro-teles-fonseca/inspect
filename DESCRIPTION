@@ -1,11 +1,26 @@
 Package: inspect
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Validation of Arguments and Objects in User-Defined Functions
+Version: 1.0.0
+Authors@R: c(
+  person("Pedro", "Fonseca", email = "pedro.teles.fonseca@outlook.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5708-081X")),
+  person(given = "FCT", role = "fnd"))
+Description: Set of utility functions tailored to perform common checks on the arguments, 
+	 intermediate objects and outputs of user-defined functions
+License: GPL-3 | file LICENSE
+URL: https://pedro-teles-fonseca.github.io/inspect/,
+     https://github.com/pedro-teles-fonseca/inspect
+BugReports: https://github.com/pedro-teles-fonseca/inspect/issues
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 2.10)
+Imports: Rdpack (>= 0.7)
+Suggests: 
+    covr (>= 3.5.0),
+    knitr (>= 1.28),
+    rmarkdown (>= 2.1),
+    testthat (>= 2.3.2)
+RdMacros: Rdpack
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0

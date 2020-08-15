@@ -4,7 +4,7 @@
 \alias{inspect_log_base}
 \title{Check if an object is a valid logarithmic base}
 \usage{
-inspect_log_base(base)
+inspect_log_base(x)
 }
 \arguments{
 \item{x}{An arbitrary object.}
@@ -35,17 +35,19 @@ inspect_log_base(exp(1))
 inspect_log_base(0.5)
 
 # Calls that throw informative error messages:
-\dontrun{inspect_log_base(NULL)}
-\dontrun{inspect_log_base(numeric(0))}
-\dontrun{inspect_log_base(-1)}
-\dontrun{inspect_log_base(0)}
-\dontrun{inspect_log_base(TRUE)}
-\dontrun{inspect_log_base("10")}
-\dontrun{inspect_log_base(factor(10))}
-\dontrun{inspect_log_base(matrix(10))}
-\dontrun{inspect_log_base(list(10))}
-\dontrun{inspect_log_base(NA)}
-\dontrun{inspect_log_base(NaN)}
+mylist <- list(NULL, numeric(0), -1, 0, TRUE, 10,
+               factor(10), list(10), matrix(10), NaN, NA)
+\dontrun{inspect_log_base(mylist[[1]])}
+\dontrun{inspect_log_base(mylist[[2]])}
+\dontrun{inspect_log_base(mylist[[3]])}
+\dontrun{inspect_log_base(mylist[[4]])}
+\dontrun{inspect_log_base(mylist[[5]])}
+\dontrun{inspect_log_base(mylist[[6]])}
+\dontrun{inspect_log_base(mylist[[7]])}
+\dontrun{inspect_log_base(mylist[[8]])}
+\dontrun{inspect_log_base(mylist[[9]])}
+\dontrun{inspect_log_base(mylist[[10]])}
+\dontrun{inspect_log_base(mylist[[11]])}
 
 }
 \seealso{
