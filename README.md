@@ -7,10 +7,10 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/inspect)](https://CRAN.R-project.org/package=inspect)
-[![R build
-status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
 [![Travis build
 status](https://travis-ci.com/pedro-teles-fonseca/inpsect.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inpsect)
+[![R build
+status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/pedro-teles-fonseca/inpsect/branch/master/graph/badge.svg)](https://codecov.io/gh/pedro-teles-fonseca/inpsect?branch=master)
 <!-- badges: end -->
@@ -31,4 +31,4 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("pedro-teles-fonseca/inpsect")
 ```
 
-## Example
+## Examples
