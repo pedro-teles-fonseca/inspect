@@ -277,21 +277,21 @@ inspect_log_bf <- function(x){
 #'
 #' @export
 
-inspect_log_base <- function(base){
+inspect_log_base <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(base)), "'")
+  output_name <- paste0("'", deparse(substitute(x)), "'")
 
   if(any(
-    is.null(base),
-    isFALSE(is.vector(base)),
-    isFALSE(is.atomic(base)),
-    isFALSE(is.numeric(base)),
-    isFALSE(length(base) == 1),
-    is.na(base))
+    is.null(x),
+    isFALSE(is.vector(x)),
+    isFALSE(is.atomic(x)),
+    isFALSE(is.numeric(x)),
+    isFALSE(length(x) == 1),
+    is.na(x))
     ){
     stop(paste("Invalid argument:", output_name, "must be a numeric vector of length 1."))
   }
-  if(isTRUE(base <= 0)){
+  if(isTRUE(x <= 0)){
     stop(paste("Invalid argument:", output_name, "must be positive."))
   }
 }
