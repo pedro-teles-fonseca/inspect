@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# inspect: Validation of Arguments, Intermediate Calculations and Outputs in User-Defined Functions
+# inspect: Validation of Arguments and Objects in User-Defined Functions
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/inspect)](https://CRAN.R-project.org/package=inspect)

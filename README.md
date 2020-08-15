@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# inspect: Validation of Arguments, Intermediate Calculations and Outputs in User-Defined Functions
+# inspect: Validation of Arguments and Objects in User-Defined Functions
 
 <!-- badges: start -->
 
