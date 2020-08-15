@@ -8,7 +8,7 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/inspect)](https://CRAN.R-project.org/package=inspect)
 [![Travis build
-status](https://travis-ci.com/pedro-teles-fonseca/inpsect.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inpsect)
+status](https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inpsect)
 [![R build
 status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
 [![Codecov test
