@@ -49,5 +49,85 @@ test_that("miscellaneous 2", {expect_error(inspect_bf(numeric(0)))})
 test_that("miscellaneous 3", {expect_error(inspect_log_bf(numeric(0)))})
 test_that("miscellaneous 4", {expect_error(inspect_log_base(-1))})
 
+context("inspect_log_bf")
+context("inspect_log_base")
+context("inspect_scale")
+
+context("inspect_true_or_false")
+
+test_that("inspect_true_or_false 1", {
+  expect_error(
+    inspect_true_or_false(NULL),
+    "Invalid argument: 'NULL' is NULL.")
+}
+)
+
+test_that("inspect_true_or_false 2", {
+  x <- NULL
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: 'x' is NULL.")
+}
+)
+
+test_that("inspect_true_or_false 3", {
+  x <- factor(1)
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_true_or_false 4", {
+  x <- list(1)
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_true_or_false 5", {
+  x <- logical(0)
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_true_or_false 6", {
+  x <- c(TRUE,FALSE)
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_true_or_false 7", {
+  x <- NA
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: 'x' is NA or NaN.")
+}
+)
+
+test_that("inspect_true_or_false 8", {
+  x <- NaN
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: 'x' is NA or NaN.")
+}
+)
+
+test_that("inspect_true_or_false 9", {
+  x <- "TRUE"
+  expect_error(
+    inspect_true_or_false(x),
+    "Invalid argument: the type of 'x' must be logical.")
+}
+)
+
+
+
+
 
 
