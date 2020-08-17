@@ -96,7 +96,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
     }
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
   if(any(x_filtered < 0, x_filtered > 1)){
     stop(paste("Invalid argument: all elements of",  output_name, "must be in the [0, 1] interval."))
@@ -187,7 +187,7 @@ inspect_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
     stop(paste("Invalid argument: all elements of ", output_name, "are NA or NaN."))
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
   if(any(x[!is.na(x)] < 0)){
     stop(paste("Invalid argument: all elements of", output_name, "must be non-negative."))
@@ -282,7 +282,7 @@ inspect_log_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
     stop(paste("Invalid argument: all elements of ", output_name, "are NA or NaN."))
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
   if(any(is.na(x))){
     if(isFALSE(allow_nas)) {
@@ -357,7 +357,7 @@ inspect_log_base <- function(x){
     stop(paste("Invalid argument:", output_name, "is NA or NaN."))
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
   if(isTRUE(x <= 0)){
     stop(paste("Invalid argument:", output_name, "must be positive."))
