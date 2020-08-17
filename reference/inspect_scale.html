@@ -130,7 +130,7 @@
     <p><code>inspect_scale</code> checks if an object is a string of characters representing one of the Bayes factor interpretation scales available in the <code>pcal</code> package. This can be useful to validate inputs in user-defined functions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>inspect_scale</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>inspect_scale</span>(<span class='kw'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -176,17 +176,18 @@
 <span class='fu'>inspect_scale</span>(<span class='st'>"Kass-Raftery"</span>)
 
 <span class='co'># Calls that throw informative error messages:</span>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='no'>mylist</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fl'>NA</span>, <span class='fl'>NaN</span>, <span class='fl'>10</span>, <span class='st'>"Bayes"</span>, <span class='st'>"Jeff"</span>,
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fl'>NA</span>, <span class='fl'>NaN</span>, <span class='fl'>10</span>, <span class='st'>"Bayes"</span>, <span class='st'>"Jeff"</span>,
           <span class='st'>"kassraftery"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"jeffreys"</span>, <span class='st'>"kass-raftery"</span>))
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span>)
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>1</span>]])
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>2</span>]])
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>3</span>]])
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>4</span>]])
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>5</span>]])
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>6</span>]])
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>7</span>]])
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='no'>mylist</span><span class='kw'>[[</span><span class='fl'>8</span>]])</div></pre>
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>7</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_scale</span>(<span class='kw'>mylist</span>[[<span class='fl'>8</span>]])
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -202,7 +203,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
