@@ -4,17 +4,29 @@
 \alias{inspect_log_bf}
 \title{Check if an object is a numeric vector of valid logarithmic Bayes factor values}
 \usage{
-inspect_log_bf(x)
+inspect_log_bf(x, allow_nas = TRUE, warning_nas = TRUE)
 }
 \arguments{
 \item{x}{An arbitrary object.}
+
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
+
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} pass silently otherwise (if \code{allow_nas} is \code{TRUE}).}
 }
 \value{
 \code{inspect_log_bf} does not return any output. There are three possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is a numeric vector of valid logarithmic Bayes factor values and there are no \code{NA} or \code{NaN} values.
-\item An informative warning message is given if \code{x} is a numeric vector of valid logarithmic Bayes factor values and there are \code{NA} or \code{NaN} values.
-\item An informative error message is thrown if \code{x} is not a numeric vector of valid logarithmic Bayes factor values.
+\item The call is silent if:
+\itemize{
+\item \code{x} is a numeric vector of valid logarithmic Bayes factor values without \code{NA} or \code{NaN} values
+\item \code{x} is a numeric vector of valid logarithmic Bayes factor values with some \code{NA} or \code{NaN} values, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+}
+\item An informative warning message is given if \code{x} is a numeric vector of valid logarithmic Bayes factor values, there are \code{NA} or \code{NaN} values in \code{x} and both  \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative error message is thrown and the execution is stopped if:
+\itemize{
+\item \code{x} is not a numeric vector of valid logarithmic Bayes factor values.
+\item \code{x} is a numeric vector of valid logarithmic Bayes factor values with some \code{NA} or \code{NaN} values and \code{allow_nas} is set to \code{FALSE}.
+}
 }
 }
 \description{
@@ -30,18 +42,21 @@ inspect_log_bf(x)
 }
 \examples{
 # Calls that pass silently:
-x <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
-y <- seq(10, 100, 10)
-inspect_log_bf(x)
-inspect_log_bf(y)
+x1 <- c(0, 0.5, 1, 10, 50, 100)
+x2 <- c(NA, 0.5, 1, 10, 50, 100)
+inspect_log_bf(x1)
+inspect_log_bf(x2, warning_nas = FALSE)
+inspect_log_bf(x2, allow_nas = TRUE, warning_nas = FALSE)
 
 # Call that throws an informative warning message:
-\dontrun{z <- c(0.1, 2, NA, 40, 0.5)}
-\dontrun{inspect_log_bf(z)}
+\dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
+\dontrun{inspect_log_bf(y)}
+\dontrun{inspect_log_bf(y, warning_nas = TRUE)}
+\dontrun{inspect_log_bf(y, allow_nas = TRUE, warning_nas = TRUE)}
 
 # Calls that throw informative error messages:
 \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN)}
+         "0.5", list(0.5), numeric(0), NA, NaN)}
 \dontrun{inspect_log_bf(mylist)}
 \dontrun{inspect_log_bf(mylist[[1]])}
 \dontrun{inspect_log_bf(mylist[[2]])}
@@ -51,6 +66,7 @@ inspect_log_bf(y)
 \dontrun{inspect_log_bf(mylist[[6]])}
 \dontrun{inspect_log_bf(mylist[[7]])}
 \dontrun{inspect_log_bf(mylist[[8]])}
+\dontrun{inspect_log_bf(mylist[[9]])}
 
 }
 \seealso{
@@ -58,6 +74,7 @@ inspect_log_bf(y)
 \item \code{\link[inspect]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
 \item \code{\link[inspect]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 \item \code{\link[inspect]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+\item \code{\link[inspect]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
 \item \code{\link[inspect]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }

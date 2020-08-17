@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_true_or_false}
 \alias{inspect_true_or_false}
-\title{Check if an object is TRUE or FALSE}
+\title{Check if an object is a non-missing logical value}
 \usage{
 inspect_true_or_false(x)
 }
@@ -10,21 +10,21 @@ inspect_true_or_false(x)
 \item{x}{An arbitrary object.}
 }
 \value{
-\code{inspect_scale} does not return any output. There are two possible scenarios:
+\code{inspect_true_or_false} does not return any output. There are two possible scenarios:
 \itemize{
-\item The call is silent if \code{scale} is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
+\item The call is silent if \code{x} is  a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_true_or_false} checks if an object is a logical vector of \code{\link[base]{length}} with the value \code{TRUE} \code{FALSE}. This can be useful to validate inputs in user-defined functions.
+\code{inspect_true_or_false} checks if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_scale} conducts a series of tests to check if \code{scale} is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package. Namely, \code{inspect_scale} checks if:
+\code{inspect_true_or_false} conducts a series of tests to check if \code{x} is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}. Namely, \code{inspect_true_or_false} checks if:
 \itemize{
-\item \code{scale} is \code{NULL} or empty.
-\item \code{scale} is an atomic vector of type character and \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
-\item \code{scale} is \code{NA} or \code{NaN}.
+\item \code{x} is \code{NULL} or empty.
+\item \code{x} is an atomic vector of type logical and \code{\link[base]{length}} 1.
+\item \code{x} is \code{NA} or \code{NaN}.
 }
 }
 \examples{
@@ -51,5 +51,6 @@ inspect_true_or_false(x)
 \item \code{\link[inspect]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
 \item \code{\link[inspect]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 \item \code{\link[inspect]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+\item \code{\link[inspect]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }

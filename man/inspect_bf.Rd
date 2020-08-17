@@ -4,17 +4,29 @@
 \alias{inspect_bf}
 \title{Check if an object is a numeric vector of valid Bayes factor values}
 \usage{
-inspect_bf(x)
+inspect_bf(x, allow_nas = TRUE, warning_nas = TRUE)
 }
 \arguments{
 \item{x}{An arbitrary object.}
+
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
+
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} pass silently otherwise (if \code{allow_nas} is \code{TRUE}).}
 }
 \value{
 \code{inspect_bf} does not return any output. There are three possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is a numeric vector of valid Bayes factor values and there are no \code{NA} or \code{NaN} values.
-\item An informative warning message is given if \code{p} is a numeric vector of valid Bayes factor values and there are \code{NA} or \code{NaN} values.
-\item An informative error message is thrown if \code{p} is not a numeric vector of valid Bayes factor values. This will \code{\link[base]{stop}} the execution.
+\item The call is silent if:
+\itemize{
+\item \code{x} is a numeric vector of valid Bayes factor values without \code{NA} or \code{NaN} values
+\item \code{x} is a numeric vector of valid Bayes factor values with some \code{NA} or \code{NaN} values, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+}
+\item An informative warning message is given if \code{x} is a numeric vector of valid Bayes factor values, there are \code{NA} or \code{NaN} values in \code{x} and both  \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative error message is thrown and the execution is stopped if:
+\itemize{
+\item \code{x} is not a numeric vector of valid Bayes factor values.
+\item \code{x} is a numeric vector of valid Bayes factor values with some \code{NA} or \code{NaN} values and \code{allow_nas} is set to \code{FALSE}.
+}
 }
 }
 \description{
@@ -31,13 +43,17 @@ inspect_bf(x)
 }
 \examples{
 # Calls that pass silently:
-x <- c(0, 0.5, 1, 10, 50, 100)
-inspect_bf(x)
-inspect_bf(seq(10, 100, 10))
+x1 <- c(0, 0.5, 1, 10, 50, 100)
+x2 <- c(NA, 0.5, 1, 10, 50, 100)
+inspect_bf(x1)
+inspect_bf(x2, warning_nas = FALSE)
+inspect_bf(x2, allow_nas = TRUE, warning_nas = FALSE)
 
 # Call that throws an informative warning message:
 \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
 \dontrun{inspect_bf(y)}
+\dontrun{inspect_bf(y, warning_nas = TRUE)}
+\dontrun{inspect_bf(y, allow_nas = TRUE, warning_nas = TRUE)}
 
 # Calls that throw informative error messages:
 \dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
@@ -63,6 +79,7 @@ inspect_bf(seq(10, 100, 10))
 \item \code{\link[inspect]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 \item \code{\link[inspect]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 \item \code{\link[inspect]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+\item \code{\link[inspect]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
 \item \code{\link[inspect]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }

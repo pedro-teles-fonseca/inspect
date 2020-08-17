@@ -4,18 +4,24 @@
 \alias{inspect_prob}
 \title{Check if an object is a vector of valid probability values}
 \usage{
-inspect_prob(x, allow_nas = TRUE)
+inspect_prob(x, allow_nas = TRUE, warning_nas = TRUE)
 }
 \arguments{
 \item{x}{An arbitrary object.}
 
-\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed (and generate a warning message). If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
+
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} pass silently otherwise (if \code{allow_nas} is \code{TRUE}).}
 }
 \value{
 \code{inspect_prob} does not return any output. There are three possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is a numeric vector of valid probability values without \code{NA} or \code{NaN} values.
-\item An informative warning message is thrown if \code{x} is a numeric vector of valid probability values with some \code{NA} or \code{NaN} values and \code{allow_nas} is set to \code{TRUE}.
+\item The call is silent if:
+\itemize{
+\item \code{x} is a numeric vector of valid probability values without \code{NA} or \code{NaN} values
+\item \code{x} is a numeric vector of valid probability values with some \code{NA} or \code{NaN} values, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+}
+\item An informative warning message is thrown if \code{x} is a numeric vector of valid probability values, there are \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
 \item An informative error message is thrown and the execution is stopped if:
 \itemize{
 \item \code{x} is not a numeric vector of valid probability values.
@@ -37,14 +43,17 @@ inspect_prob(x, allow_nas = TRUE)
 }
 \examples{
 # Calls that pass silently:
-x <- c(0.1, 0.2, 0.3, 0.4, 0.5)
-inspect_prob(x)
-inspect_prob(seq(0, 1, 0.1))
+x1 <- c(0.1, 0.2, 0.3, 0.4, 0.5)
+x2 <- c(0.1, 0.2, 0.3, 0.4, 0.5, NA)
+inspect_prob(x1)
+inspect_prob(x2, warning_nas = FALSE)
+inspect_prob(x2, allow_nas = TRUE, warning_nas = FALSE)
 
 # Calls that throw an informative warning message:
 \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
 \dontrun{inspect_prob(y)}
 \dontrun{inspect_prob(y, allow_nas = TRUE)}
+\dontrun{inspect_prob(y, allow_nas = TRUE, warning_nas = TRUE)}
 
 # Calls that throw an informative error message:
 \dontrun{z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
@@ -72,6 +81,7 @@ inspect_prob(seq(0, 1, 0.1))
 \item \code{\link[inspect]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
 \item \code{\link[inspect]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 \item \code{\link[inspect]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+\item \code{\link[inspect]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
 \item \code{\link[inspect]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }
