@@ -39,10 +39,10 @@
 #' # Calls that throw an informative error message:
 #' \dontrun{z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 #' \dontrun{inspect_prob(z1)}
-#' \dontrun{z2 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
+#' \dontrun{z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 #' \dontrun{inspect_prob(z2, allow_nas = FALSE)}
 #' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), NA, NaN, 1.1, -0.5)}
+#'          "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)}
 #' \dontrun{inspect_prob(mylist)}
 #' \dontrun{inspect_prob(mylist[[1]])}
 #' \dontrun{inspect_prob(mylist[[2]])}
@@ -54,6 +54,7 @@
 #' \dontrun{inspect_prob(mylist[[8]])}
 #' \dontrun{inspect_prob(mylist[[9]])}
 #' \dontrun{inspect_prob(mylist[[10]])}
+#' \dontrun{inspect_prob(mylist[[11]])}
 #'
 #' @export
 
@@ -66,8 +67,8 @@ inspect_prob <- function(x, allow_nas = TRUE){
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(!is.numeric(x), !is.vector(x))){
-    stop(paste("Invalid argument:", output_name, "must be a numeric vector."))
+  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(length(x) == 0){
     stop(paste("Invalid argument:", output_name, "is empty."))
@@ -81,6 +82,9 @@ inspect_prob <- function(x, allow_nas = TRUE){
     } else {
       stop(paste("Invalid argument: There are NA or NaN values in ", paste0(output_name, ".")))
     }
+  }
+  if(isFALSE(is.numeric(x))){
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
   }
   if(any(x_filtered < 0, x_filtered > 1)){
     stop(paste("Invalid argument: all elements of",  output_name, "must be in the [0, 1] interval."))
@@ -124,7 +128,7 @@ inspect_prob <- function(x, allow_nas = TRUE){
 #' \dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 #' \dontrun{inspect_bf(z)}
 #' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), NA, NaN, -0.5, -5)}
+#'          "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)}
 #' \dontrun{inspect_bf(mylist)}
 #' \dontrun{inspect_bf(mylist[[1]])}
 #' \dontrun{inspect_bf(mylist[[2]])}
@@ -136,6 +140,7 @@ inspect_prob <- function(x, allow_nas = TRUE){
 #' \dontrun{inspect_bf(mylist[[8]])}
 #' \dontrun{inspect_bf(mylist[[9]])}
 #' \dontrun{inspect_bf(mylist[[10]])}
+#' \dontrun{inspect_bf(mylist[[11]])}
 #'
 #' @export
 
@@ -146,14 +151,17 @@ inspect_bf <- function(x){
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(!is.numeric(x), !is.vector(x))){
-    stop(paste("Invalid argument:", output_name, "must be a numeric vector."))
+  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(length(x) == 0){
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if(all(is.na(x))){
-    stop(paste("Invalid argument: all elements of", output_name, "are NA or NaN."))
+    stop(paste("Invalid argument: all elements of ", output_name, "are NA or NaN."))
+  }
+  if(isFALSE(is.numeric(x))){
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
   }
   if(any(x[!is.na(x)] < 0)){
     stop(paste("Invalid argument: all elements of", output_name, "must be non-negative."))
@@ -197,10 +205,8 @@ inspect_bf <- function(x){
 #' \dontrun{inspect_log_bf(z)}
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' \dontrun{inspect_bf(z)}
 #' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), NA, NaN)}
+#'          "0.5", list(0.5), numeric(0), NA, NaN)}
 #' \dontrun{inspect_log_bf(mylist)}
 #' \dontrun{inspect_log_bf(mylist[[1]])}
 #' \dontrun{inspect_log_bf(mylist[[2]])}
@@ -210,6 +216,7 @@ inspect_bf <- function(x){
 #' \dontrun{inspect_log_bf(mylist[[6]])}
 #' \dontrun{inspect_log_bf(mylist[[7]])}
 #' \dontrun{inspect_log_bf(mylist[[8]])}
+#' \dontrun{inspect_log_bf(mylist[[9]])}
 #'
 #' @export
 
@@ -220,14 +227,17 @@ inspect_log_bf <- function(x){
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(!is.numeric(x), !is.vector(x))){
-    stop(paste("Invalid argument:", output_name, "must be a numeric vector."))
+  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(length(x) == 0){
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if(all(is.na(x))){
     stop(paste("Invalid argument: all elements of ", output_name, "are NA or NaN."))
+  }
+  if(isFALSE(is.numeric(x))){
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
   }
   if(any(is.na(x))){
     warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
@@ -283,15 +293,19 @@ inspect_log_base <- function(x){
 
   output_name <- paste0("'", deparse(substitute(x)), "'")
 
-  if(any(
-    is.null(x),
-    isFALSE(is.vector(x)),
-    isFALSE(is.atomic(x)),
-    isFALSE(is.numeric(x)),
-    isFALSE(length(x) == 1),
-    is.na(x))
+  if(is.null(x)){
+    stop(paste("Invalid argument:", output_name, "is NULL."))
+  }
+
+  if(any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))
     ){
-    stop(paste("Invalid argument:", output_name, "must be a numeric vector of length 1."))
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector of length 1."))
+  }
+  if(is.na(x)){
+    stop(paste("Invalid argument:", output_name, "is NA or NaN."))
+  }
+  if(isFALSE(is.numeric(x))){
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric"))
   }
   if(isTRUE(x <= 0)){
     stop(paste("Invalid argument:", output_name, "must be positive."))
@@ -327,7 +341,7 @@ inspect_log_base <- function(x){
 #' inspect_scale("Kass-Raftery")
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{mylist <- list(NULL, NA, 10, "Bayes", "Jeff",
+#' \dontrun{mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
 #'           "kassraftery", c("jeffreys", "kass-raftery"))}
 #' \dontrun{inspect_scale(mylist)}
 #' \dontrun{inspect_scale(mylist[[1]])}
@@ -337,6 +351,7 @@ inspect_log_base <- function(x){
 #' \dontrun{inspect_scale(mylist[[5]])}
 #' \dontrun{inspect_scale(mylist[[6]])}
 #' \dontrun{inspect_scale(mylist[[7]])}
+#' \dontrun{inspect_scale(mylist[[8]])}
 #'
 #' @export
 
@@ -347,7 +362,7 @@ inspect_scale <- function(x){
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(!is.vector(x), !is.atomic(x), isFALSE(length(x) == 1))){
+  if(any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))){
     stop(paste("Invalid argument:", output_name, "must be an atomic vector of length 1."))
   }
   if(is.na(x)){
@@ -361,6 +376,46 @@ inspect_scale <- function(x){
   }
 }
 
+#' @title Check if an object is TRUE or FALSE
+#'
+#' @description `inspect_true_or_false` checks if an object is a logical vector of \code{\link[base]{length}} with the value `TRUE` `FALSE`. This can be useful to validate inputs in user-defined functions.
+#'
+#' @param x An arbitrary object.
+#'
+#' @details `inspect_scale` conducts a series of tests to check if `scale` is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package. Namely, `inspect_scale` checks if:
+#' * `scale` is `NULL` or empty.
+#' * `scale` is an atomic vector of type character and \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
+#' * `scale` is `NA` or `NaN`.
+#'
+#' @return `inspect_scale` does not return any output. There are two possible scenarios:
+#' * The call is silent if `scale` is a string of characters representing one of the Bayes factor interpretation scales available in the `pcal` package.
+#' * An informative error message is thrown otherwise.
+#'
+#' @seealso
+#' * \code{\link[inspect]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
+#' * \code{\link[inspect]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspect]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspect]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
+#'
+#' @examples
+#' # Calls that pass silently:
+#' inspect_true_or_false(TRUE)
+#' inspect_true_or_false(FALSE)
+#' x <- TRUE
+#' inspect_true_or_false(x)
+#'
+#' # Calls that throw informative error messages:
+#' \dontrun{mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")}
+#' \dontrun{inspect_true_or_false(mylist)}
+#' \dontrun{inspect_true_or_false(mylist[[1]])}
+#' \dontrun{inspect_true_or_false(mylist[[2]])}
+#' \dontrun{inspect_true_or_false(mylist[[3]])}
+#' \dontrun{inspect_true_or_false(mylist[[4]])}
+#' \dontrun{inspect_true_or_false(mylist[[5]])}
+#' \dontrun{inspect_true_or_false(mylist[[6]])}
+#'
+#' @export
+
 inspect_true_or_false <- function(x){
 
   output_name <- paste0("'", deparse(substitute(x)), "'")
@@ -368,14 +423,15 @@ inspect_true_or_false <- function(x){
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-
-  if(any(!is.vector(x), !is.atomic(x), !is.logical(x), isTRUE(length(x) == 1))){
-    stop(paste("Invalid argument:", output_name, "must be an logical vector of length 1."))
+  if(any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))){
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector of length 1."))
   }
   if(is.na(x)){
     stop(paste("Invalid argument:", output_name, "is NA or NaN."))
   }
-
+  if(isFALSE(is.logical(x))){
+    stop(paste("Invalid argument: the type of", output_name, "must be logical."))
+  }
 }
 
 
