@@ -12,7 +12,7 @@ Status](https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master)](ht
 [![R build
 status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
 [![Codecov](https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg)](https://codecov.io/gh/pedro-teles-fonseca/inpsect?branch=master)
-\[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 <!-- badges: end -->
 
 ## Installation
