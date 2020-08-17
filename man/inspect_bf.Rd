@@ -43,7 +43,7 @@ inspect_bf(seq(10, 100, 10))
 \dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 \dontrun{inspect_bf(z)}
 \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, -0.5, -5)}
+         "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)}
 \dontrun{inspect_bf(mylist)}
 \dontrun{inspect_bf(mylist[[1]])}
 \dontrun{inspect_bf(mylist[[2]])}
@@ -55,6 +55,7 @@ inspect_bf(seq(10, 100, 10))
 \dontrun{inspect_bf(mylist[[8]])}
 \dontrun{inspect_bf(mylist[[9]])}
 \dontrun{inspect_bf(mylist[[10]])}
+\dontrun{inspect_bf(mylist[[11]])}
 
 }
 \seealso{

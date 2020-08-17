@@ -49,10 +49,10 @@ inspect_prob(seq(0, 1, 0.1))
 # Calls that throw an informative error message:
 \dontrun{z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 \dontrun{inspect_prob(z1)}
-\dontrun{z2 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
+\dontrun{z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 \dontrun{inspect_prob(z2, allow_nas = FALSE)}
 \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, 1.1, -0.5)}
+         "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)}
 \dontrun{inspect_prob(mylist)}
 \dontrun{inspect_prob(mylist[[1]])}
 \dontrun{inspect_prob(mylist[[2]])}
@@ -64,6 +64,7 @@ inspect_prob(seq(0, 1, 0.1))
 \dontrun{inspect_prob(mylist[[8]])}
 \dontrun{inspect_prob(mylist[[9]])}
 \dontrun{inspect_prob(mylist[[10]])}
+\dontrun{inspect_prob(mylist[[11]])}
 
 }
 \seealso{

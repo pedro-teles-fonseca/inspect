@@ -40,8 +40,6 @@ inspect_log_bf(y)
 \dontrun{inspect_log_bf(z)}
 
 # Calls that throw informative error messages:
-\dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-\dontrun{inspect_bf(z)}
 \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
          "0.5", list(0.5), NA, NaN)}
 \dontrun{inspect_log_bf(mylist)}
