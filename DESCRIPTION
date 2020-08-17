@@ -6,7 +6,7 @@ Authors@R: c(
   person("Pedro", "Fonseca", email = "pedro.teles.fonseca@outlook.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5708-081X")),
   person(given = "FCT", role = "fnd"))
 Description: Set of utility functions that implement common checks on input values, intermediate objects and output values of user-defined functions. 
-License: MIT + file LICENSE
+License: GPL-3 | file LICENSE
 URL: https://pedro-teles-fonseca.github.io/inspect/,
      https://github.com/pedro-teles-fonseca/inspect
 BugReports: https://github.com/pedro-teles-fonseca/inspect/issues
