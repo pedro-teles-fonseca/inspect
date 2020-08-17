@@ -9,7 +9,7 @@ inspect_prob(x, allow_nas = TRUE)
 \arguments{
 \item{x}{An arbitrary object.}
 
-\item{allow_nas}{Logical value indicating either \code{TRUE} or \code{FALSE}. If \code{FALSE} then the execution is stopped (via \code{\link[base]{stop}}) in case there are \code{NA} or \code{NaN} values in \code{x}.}
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed (and generate a warning message). If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
 }
 \value{
 \code{inspect_prob} does not return any output. There are three possible outcomes:
@@ -42,17 +42,17 @@ inspect_prob(x)
 inspect_prob(seq(0, 1, 0.1))
 
 # Calls that throw an informative warning message:
-y <- c(0.1, 0.2, NA, 0.4, 0.5)
+\dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
 \dontrun{inspect_prob(y)}
 \dontrun{inspect_prob(y, allow_nas = TRUE)}
 
 # Calls that throw an informative error message:
-z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+\dontrun{z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 \dontrun{inspect_prob(z1)}
-z2 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+\dontrun{z2 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 \dontrun{inspect_prob(z2, allow_nas = FALSE)}
-mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, 1.1, .5)
+\dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+         "0.5", list(0.5), NA, NaN, 1.1, -0.5)}
 \dontrun{inspect_prob(mylist)}
 \dontrun{inspect_prob(mylist[[1]])}
 \dontrun{inspect_prob(mylist[[2]])}

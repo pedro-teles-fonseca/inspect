@@ -35,8 +35,9 @@ inspect_log_base(exp(1))
 inspect_log_base(0.5)
 
 # Calls that throw informative error messages:
-mylist <- list(NULL, numeric(0), -1, 0, TRUE, 10,
-               factor(10), list(10), matrix(10), NaN, NA)
+\dontrun{mylist <- list(NULL, numeric(0), TRUE, factor(10),
+        list(10), matrix(10), NaN, NA, -1, 0)}
+\dontrun{inspect_log_base(mylist)}
 \dontrun{inspect_log_base(mylist[[1]])}
 \dontrun{inspect_log_base(mylist[[2]])}
 \dontrun{inspect_log_base(mylist[[3]])}
@@ -47,7 +48,6 @@ mylist <- list(NULL, numeric(0), -1, 0, TRUE, 10,
 \dontrun{inspect_log_base(mylist[[8]])}
 \dontrun{inspect_log_base(mylist[[9]])}
 \dontrun{inspect_log_base(mylist[[10]])}
-\dontrun{inspect_log_base(mylist[[11]])}
 
 }
 \seealso{

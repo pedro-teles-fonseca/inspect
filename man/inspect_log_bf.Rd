@@ -36,14 +36,15 @@ inspect_log_bf(x)
 inspect_log_bf(y)
 
 # Call that throws an informative warning message:
-z <- c(0.1, 2, NA, 40, 0.5)
+\dontrun{z <- c(0.1, 2, NA, 40, 0.5)}
 \dontrun{inspect_log_bf(z)}
 
 # Calls that throw informative error messages:
-z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+\dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 \dontrun{inspect_bf(z)}
-mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN)
+\dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+         "0.5", list(0.5), NA, NaN)}
+\dontrun{inspect_log_bf(mylist)}
 \dontrun{inspect_log_bf(mylist[[1]])}
 \dontrun{inspect_log_bf(mylist[[2]])}
 \dontrun{inspect_log_bf(mylist[[3]])}

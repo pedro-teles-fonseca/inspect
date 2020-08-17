@@ -36,14 +36,15 @@ inspect_bf(x)
 inspect_bf(seq(10, 100, 10))
 
 # Call that throws an informative warning message:
-y <- c(0.1, 0.2, NA, 0.4, 0.5)
+\dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
 \dontrun{inspect_bf(y)}
 
 # Calls that throw informative error messages:
-z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+\dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
 \dontrun{inspect_bf(z)}
-mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, -0.5, -5)
+\dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+         "0.5", list(0.5), NA, NaN, -0.5, -5)}
+\dontrun{inspect_bf(mylist)}
 \dontrun{inspect_bf(mylist[[1]])}
 \dontrun{inspect_bf(mylist[[2]])}
 \dontrun{inspect_bf(mylist[[3]])}

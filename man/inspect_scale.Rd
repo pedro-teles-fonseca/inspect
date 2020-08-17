@@ -4,10 +4,10 @@
 \alias{inspect_scale}
 \title{Check if an object is a string of characters representing an eligible Bayes factor interpretation scale}
 \usage{
-inspect_scale(scale)
+inspect_scale(x)
 }
 \arguments{
-\item{scale}{An arbitrary object.}
+\item{x}{An arbitrary object.}
 }
 \value{
 \code{inspect_scale} does not return any output. There are two possible scenarios:
@@ -23,7 +23,7 @@ inspect_scale(scale)
 \code{inspect_scale} conducts a series of tests to check if \code{scale} is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package. Namely, \code{inspect_scale} checks if:
 \itemize{
 \item \code{scale} is \code{NULL} or empty.
-\item \code{scale} is a character, atomic vector of \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
+\item \code{scale} is an atomic vector of type character and \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
 \item \code{scale} is \code{NA} or \code{NaN}.
 }
 }
@@ -35,12 +35,17 @@ inspect_scale("kass-raftery")
 inspect_scale("Kass-Raftery")
 
 # Calls that throw informative error messages:
-\dontrun{inspect_scale(NULL)}
-\dontrun{inspect_scale(10)}
-\dontrun{inspect_scale("Bayes")}
-\dontrun{inspect_scale("jeff")}
-\dontrun{inspect_scale("kassraftery")}
-\dontrun{inspect_scale(c("jeffreys", "kass-raftery"))}
+\dontrun{mylist <- list(NULL, NA, 10, "Bayes", "Jeff",
+          "kassraftery", c("jeffreys", "kass-raftery"))}
+\dontrun{inspect_scale(mylist)}
+\dontrun{inspect_scale(mylist[[1]])}
+\dontrun{inspect_scale(mylist[[2]])}
+\dontrun{inspect_scale(mylist[[3]])}
+\dontrun{inspect_scale(mylist[[4]])}
+\dontrun{inspect_scale(mylist[[5]])}
+\dontrun{inspect_scale(mylist[[6]])}
+\dontrun{inspect_scale(mylist[[7]])}
+\dontrun{inspect_scale(mylist[[8]])}
 
 }
 \seealso{
