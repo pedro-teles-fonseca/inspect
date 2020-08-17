@@ -1,53 +1,316 @@
 
 context("inspect_prob")
 
-test_that("check silent 1", {expect_silent(inspect_prob(0))})
-test_that("check silent 2", {expect_silent(inspect_prob(1))})
-test_that("check silent 3", {expect_silent(inspect_prob(c(0.1, 0.2, 0.3, 0.4, 0.5)))})
-
-test_that("check warning", {expect_warning(inspect_prob(c(0.1, 0.2, NA, 0.4, 0.5)))})
-
-test_that("check error message 1", {expect_error(inspect_prob(NULL))})
-test_that("check error message 2", {expect_error(inspect_prob(TRUE))})
-test_that("check error message 3", {expect_error(inspect_prob("0.5"))})
-test_that("check error message 4", {expect_error(inspect_prob(factor(0.5)))})
-test_that("check error message 5", {expect_error(inspect_prob(matrix(0.5)))})
-test_that("check error message 6", {expect_error(inspect_prob(list(0.5)))})
-test_that("check error message 7", {expect_error(inspect_prob(NA))})
-test_that("check error message 8", {expect_error(inspect_prob(NaN))})
-test_that("check error message 9", {expect_error(inspect_prob(1.1))})
-test_that("check error message 10", {expect_error(inspect_prob(-0.5))})
-test_that("check error message 11", {expect_error(inspect_prob(c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)))})
-test_that("check error message 12", {expect_error(inspect_prob())})
-
-context("inspect_bf")
-
 test_that("check silent 1", {expect_silent(inspect_bf(0))})
 test_that("check silent 2", {expect_silent(inspect_bf(0.5))})
-test_that("check silent 2", {expect_silent(inspect_bf(1))})
 test_that("check silent 2", {expect_silent(inspect_bf(100))})
 test_that("check silent 3", {expect_silent(inspect_bf(c(0, 0.5, 1, 10, 50, 100)))})
-test_that("check silent 4", {expect_error(inspect_bf(-0.5))})
+
+test_that("inspect_prob 1", {
+  expect_error(
+    inspect_prob(NULL),
+    "Invalid argument: 'NULL' is NULL.")
+}
+)
+
+test_that("inspect_prob 2", {
+  x <- NULL
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: 'x' is NULL.")
+}
+)
+
+test_that("inspect_prob 3", {
+  x <- factor(1)
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: 'x' must be an atomic vector.")
+}
+)
+
+test_that("inspect_prob 4", {
+  x <- list(1)
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: 'x' must be an atomic vector.")
+}
+)
+
+test_that("inspect_prob 5", {
+  x <- numeric(0)
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: 'x' is empty.")
+}
+)
+
+test_that("inspect_prob 6", {
+  x <- NA
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: all elements of 'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_prob 7", {
+  x <- NaN
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: all elements of 'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_prob 8", {
+  x <- c(NA_real_, NA_real_, NA_real_)
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: all elements of 'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_prob 9", {
+  x <- "1"
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: the type of 'x' must be numeric")
+}
+)
+
+test_that("inspect_prob 9", {
+  x <- -1
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: all elements of 'x' must be in the \\[0, 1\\] interval.")
+}
+)
+
+test_that("inspect_prob 9", {
+  x <- 1.1
+  expect_error(
+    inspect_prob(x),
+    "Invalid argument: all elements of 'x' must be in the \\[0, 1\\] interval.")
+}
+)
+
+test_that("check error message 11", {
+  expect_error(inspect_prob(c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5),
+                            "Invalid argument: all elements of 'x' must be in the \\[0, 1\\] interval.")
+
+  )})
+
+test_that("inspect_bf 1", {
+  expect_error(
+    inspect_bf(NULL),
+    "Invalid argument: 'NULL' is NULL.")
+}
+)
+
+test_that("inspect_bf 2", {
+  x <- NULL
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: 'x' is NULL.")
+}
+)
+
+test_that("inspect_bf 3", {
+  x <- factor(1)
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: 'x' must be an atomic vector.")
+}
+)
+
+test_that("inspect_bf 4", {
+  x <- list(1)
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: 'x' must be an atomic vector.")
+}
+)
+
+test_that("inspect_bf 5", {
+  x <- numeric(0)
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: 'x' is empty.")
+}
+)
+
+test_that("inspect_bf 6", {
+  x <- NA
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: all elements of  'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_bf 7", {
+  x <- NaN
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: all elements of  'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_bf 8", {
+  x <- c(NA_real_, NA_real_, NA_real_)
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: all elements of  'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_bf 9", {
+  x <- "1"
+  expect_error(
+    inspect_bf(x),
+    "Invalid argument: the type of 'x' must be numeric")
+}
+)
+
+test_that("inspect_bf 10", {
+  expect_equal(
+    inspect_bf(10),
+    inspect_bf(2))
+}
+)
+
+test_that("inspect_bf 11", {
+  expect_equal(
+    inspect_bf(exp(1)),
+    inspect_bf(2))
+}
+)
+
+test_that("inspect_bf 12", {
+  expect_error(
+    inspect_bf(-2))
+}
+)
+
+test_that("inspect_bf 13", {
+  expect_equal(
+    inspect_bf(2),
+    NULL)
+}
+)
+
+test_that("inspect_bf 14", {
+  expect_silent(
+    inspect_bf(2))
+}
+)
+
 test_that("check silent 5", {expect_error(inspect_bf(c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)))})
 
-test_that("check warning", {expect_warning(inspect_bf(c(0.1, 2, NA, 40, 0.5)))})
+context("inspect_log_bf")
 
-test_that("check error message 1", {expect_error(inspect_bf(NULL))})
-test_that("check error message 2", {expect_error(inspect_bf(TRUE))})
-test_that("check error message 3", {expect_error(inspect_bf("0.5"))})
-test_that("check error message 4", {expect_error(inspect_bf(factor(0.5)))})
-test_that("check error message 5", {expect_error(inspect_bf(matrix(0.5)))})
-test_that("check error message 6", {expect_error(inspect_bf(list(0.5)))})
-test_that("check error message 7", {expect_error(inspect_bf(NA))})
-test_that("check error message 8", {expect_error(inspect_bf(NaN))})
-test_that("check error message 12", {expect_error(inspect_bf())})
+test_that("inspect_log_bf 1", {
+  expect_error(
+    inspect_log_bf(NULL),
+    "Invalid argument: 'NULL' is NULL.")
+}
+)
 
-context("miscellaneous")
+test_that("inspect_log_bf 2", {
+  x <- NULL
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: 'x' is NULL.")
+}
+)
 
-test_that("miscellaneous 1", {expect_error(inspect_prob(numeric(0)))})
-test_that("miscellaneous 2", {expect_error(inspect_bf(numeric(0)))})
-test_that("miscellaneous 3", {expect_error(inspect_log_bf(numeric(0)))})
-test_that("miscellaneous 4", {expect_error(inspect_log_base(-1))})
+test_that("inspect_log_bf 3", {
+  x <- factor(1)
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: 'x' must be an atomic vector.")
+}
+)
+
+test_that("inspect_log_bf 4", {
+  x <- list(1)
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: 'x' must be an atomic vector.")
+}
+)
+
+test_that("inspect_log_bf 5", {
+  x <- numeric(0)
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: 'x' is empty.")
+}
+)
+
+test_that("inspect_log_bf 6", {
+  x <- NA
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: all elements of  'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_log_bf 7", {
+  x <- NaN
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: all elements of  'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_log_bf 8", {
+  x <- c(NA_real_, NA_real_, NA_real_)
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: all elements of  'x' are NA or NaN.")
+}
+)
+
+test_that("inspect_log_bf 9", {
+  x <- "1"
+  expect_error(
+    inspect_log_bf(x),
+    "Invalid argument: the type of 'x' must be numeric")
+}
+)
+
+test_that("inspect_log_bf 10", {
+  expect_equal(
+    inspect_log_bf(10),
+    inspect_log_bf(2))
+}
+)
+
+test_that("inspect_log_bf 11", {
+  expect_equal(
+    inspect_log_bf(exp(1)),
+    inspect_log_bf(2))
+}
+)
+
+test_that("inspect_log_bf 12", {
+  expect_equal(
+    inspect_log_bf(10),
+    inspect_log_bf(-10))
+}
+)
+
+test_that("inspect_log_bf 13", {
+  expect_equal(
+    inspect_log_bf(2),
+    NULL)
+}
+)
+
+test_that("inspect_log_bf 14", {
+  expect_silent(
+    inspect_log_bf(2))
+}
+)
 
 context("inspect_log_base")
 
@@ -140,6 +403,12 @@ test_that("inspect_log_base 10", {
   expect_equal(
     inspect_log_base(2),
     NULL)
+}
+)
+
+test_that("inspect_log_base 10", {
+  expect_silent(
+    inspect_log_base(2))
 }
 )
 
@@ -237,6 +506,13 @@ test_that("inspect_scale 10", {
 }
 )
 
+test_that("inspect_scale 10", {
+  expect_silent(
+    inspect_scale("Jeffreys")
+    )
+}
+)
+
 context("inspect_true_or_false")
 
 test_that("inspect_true_or_false 1", {
@@ -326,7 +602,16 @@ test_that("inspect_true_or_false 1110", {
 }
 )
 
+test_that("inspect_true_or_false 11", {
+  x <- "TRUE"
+  expect_silent(
+    inspect_true_or_false(TRUE)
+    )
+}
+)
 
+context("warnings")
 
+test_that("check warning", {expect_warning(inspect_bf(c(0.1, 2, NA, 40, 0.5)))})
 
 
