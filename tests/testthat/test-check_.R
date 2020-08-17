@@ -49,9 +49,193 @@ test_that("miscellaneous 2", {expect_error(inspect_bf(numeric(0)))})
 test_that("miscellaneous 3", {expect_error(inspect_log_bf(numeric(0)))})
 test_that("miscellaneous 4", {expect_error(inspect_log_base(-1))})
 
-context("inspect_log_bf")
 context("inspect_log_base")
+
+test_that("inspect_log_base 1", {
+  expect_error(
+    inspect_log_base(NULL),
+    "Invalid argument: 'NULL' is NULL.")
+}
+)
+
+test_that("inspect_log_base 2", {
+  x <- NULL
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: 'x' is NULL.")
+}
+)
+
+test_that("inspect_log_base 3", {
+  x <- factor(1)
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_log_base 4", {
+  x <- list(1)
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_log_base 5", {
+  x <- numeric(0)
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_log_base 6", {
+  x <- c(10,2)
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_log_base 7", {
+  x <- NA
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: 'x' is NA or NaN.")
+}
+)
+
+test_that("inspect_log_base 8", {
+  x <- NaN
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: 'x' is NA or NaN.")
+}
+)
+
+test_that("inspect_log_base 9", {
+  x <- "1"
+  expect_error(
+    inspect_log_base(x),
+    "Invalid argument: the type of 'x' must be numeric")
+}
+)
+
+test_that("inspect_log_base 10", {
+  expect_equal(
+    inspect_log_base(10),
+    inspect_log_base(2))
+}
+)
+
+test_that("inspect_log_base 10", {
+  expect_equal(
+    inspect_log_base(exp(1)),
+    inspect_log_base(2))
+}
+)
+
+test_that("inspect_log_base 10", {
+  expect_equal(
+    inspect_log_base(2),
+    NULL)
+}
+)
+
 context("inspect_scale")
+
+test_that("inspect_scale 1", {
+  expect_error(
+    inspect_scale(NULL),
+    "Invalid argument: 'NULL' is NULL.")
+}
+)
+
+test_that("inspect_scale 2", {
+  x <- NULL
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' is NULL.")
+}
+)
+
+test_that("inspect_scale 3", {
+  x <- factor(1)
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_scale 4", {
+  x <- list(1)
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_scale 5", {
+  x <- character(0)
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_scale 6", {
+  x <- c(TRUE,FALSE)
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' must be an atomic vector of length 1.")
+}
+)
+
+test_that("inspect_scale 7", {
+  x <- NA
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' is NA or NaN.")
+}
+)
+
+test_that("inspect_scale 8", {
+  x <- NaN
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' is NA or NaN.")
+}
+)
+
+test_that("inspect_scale 9", {
+  x <- "TRUE"
+  expect_error(
+    inspect_scale(x),
+    "Invalid argument: 'x' must be either 'jeffreys' or 'kass-raftery'")
+}
+)
+
+test_that("inspect_scale 10", {
+  expect_equal(
+    inspect_scale("Jeffreys"),
+    inspect_scale("Kass-Raftery"))
+}
+)
+
+test_that("inspect_scale 10", {
+  expect_equal(
+    inspect_scale("Jeffreys"),
+    inspect_scale("jeffreys"))
+}
+)
+
+test_that("inspect_scale 10", {
+  expect_equal(
+    inspect_scale("Jeffreys"),
+    NULL)
+}
+)
 
 context("inspect_true_or_false")
 
@@ -126,6 +310,21 @@ test_that("inspect_true_or_false 9", {
 }
 )
 
+test_that("inspect_true_or_false 10", {
+  x <- "TRUE"
+  expect_equal(
+    inspect_true_or_false(TRUE),
+    inspect_true_or_false(FALSE))
+}
+)
+
+test_that("inspect_true_or_false 1110", {
+  x <- "TRUE"
+  expect_equal(
+    inspect_true_or_false(TRUE),
+    NULL)
+}
+)
 
 
 
