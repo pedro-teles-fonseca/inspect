@@ -14,7 +14,8 @@ status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/bad
 ![pkgdown](https://github.com/pedro-teles-fonseca/inspect/workflows/pkgdown/badge.svg)
 [![Codecov](https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg)](https://codecov.io/gh/pedro-teles-fonseca/inspect?branch=master)
 [![License:
-GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)<!-- badges: end -->
+GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+<!-- badges: end -->
 
 ## Installation
 
