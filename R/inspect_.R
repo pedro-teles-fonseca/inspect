@@ -84,7 +84,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if(all(is.na(x))){
-    stop(paste("Invalid argument: all elements of", output_name, "are NA are NaN."))
+    stop(paste("Invalid argument: all elements of", output_name, "are NA or NaN."))
   }
   if(any(is.na(x))){
     if(isFALSE(allow_nas)) {
