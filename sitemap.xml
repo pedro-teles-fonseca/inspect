@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspect//index.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//index.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspect//reference/inspect_bf.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_bf.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspect//reference/inspect_log_base.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_log_base.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspect//reference/inspect_log_bf.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_log_bf.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspect//reference/inspect_prob.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_prob.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspect//reference/inspect_scale.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_scale.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspect//reference/inspect_true_or_false.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_true_or_false.html</loc>
   </url>
 </urlset>
