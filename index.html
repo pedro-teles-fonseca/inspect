@@ -91,17 +91,15 @@
 <li><p><code>inspect_log_bf</code> checks if an object is a numeric vector of valid logarithmic Bayes factor values.</p></li>
 <li><p><code>inspect_log_base</code> checks if an object is a numeric vector of length 1 that is eligible to be used as a logarithmic base.</p></li>
 <li><p><code>inspect_true_or_false</code> checks if an object is a logical vector of length 1 with value equal to <code>TRUE</code> or <code>FALSE</code>.</p></li>
-<li><p><code>inspect_scale</code> checks if an object is a string of characters representing one of the Bayes factor interpretation scales available in the <a href="https://pedro-teles-fonseca.github.io/pcal/"><code>pcal</code></a> package.</p></li>
+<li><p><code>inspect_scale</code> checks if an object is a string of characters representing one of the Bayes factor interpretation scales available in the <code>pcal</code> package.</p></li>
 </ul>
 <p>These functions are particularly useful to validate inputs, intermediate objects and output values in user-defined functions, resulting in tidier and less verbose functions.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The released version of <code>inspect</code> can be installed from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<pre class="inspect"><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("pcal")</a></code></pre>
-<p>The development version can be installed from <a href="https://github.com/">GitHub</a> using the <code>devtools</code> package:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
+<p>The development version of <code>inspect</code>can be installed from <a href="https://github.com/">GitHub</a> using the <code>devtools</code> package:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="co"># install.packages("devtools")</span>
 <span class="kw">devtools</span>::<span class="fu">install_github</span>(<span class="st">"pedro-teles-fonseca/inspect"</span>)
 </pre></div>
@@ -113,7 +111,7 @@
 <div id="getting-help" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-help" class="anchor"></a>Getting Help</h2>
-<p>If you find a bug, please file an issue with a minimal reproducible example on <a href="https://github.com/pedro-teles-fonseca/pcal/inspect">GitHub</a>. Feature requests are also welcome. You can contact me at <a href="mailto:pedro.teles.fonseca@outlook.com" class="email">pedro.teles.fonseca@outlook.com</a>.</p>
+<p>If you find a bug, please file an issue with a minimal reproducible example on <a href="https://github.com/pedro-teles-fonseca/inspect">GitHub</a>. Feature requests are also welcome. You can contact me at <a href="mailto:pedro.teles.fonseca@outlook.com" class="email">pedro.teles.fonseca@outlook.com</a>.</p>
 </div>
 </div>
   </div>
@@ -153,7 +151,6 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=inspect"><img src="https://www.r-pkg.org/badges/version/inspect" alt="CRAN status"></a></li>
 <li><a href="https://travis-ci.com/pedro-teles-fonseca/inspect"><img src="https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://github.com/pedro-teles-fonseca/inpsect/actions"><img src="https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/gh/pedro-teles-fonseca/inspect"><img src="https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg" alt="codecov"></a></li>
