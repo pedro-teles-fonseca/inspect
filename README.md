@@ -19,34 +19,32 @@ GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org
 
 ## Overview
 
-Set of utility functions that implement common checks on input values,
-intermediate objects and output values of user-defined functions:
+The `inspect` package provides a set of utility functions that implement
+common sets of validation tasks, namely:
 
   - `inspect_prob()` checks if an object is a numeric vector of valid
-    probability values. This can be useful to validate inputs,
-    intermediate calculations or outputs in user-defined functions.
+    probability values.
 
   - `inspect_bf` checks if an object is a numeric vector of valid Bayes
-    factor values. This can be useful to validate inputs, intermediate
-    calculations or outputs in user-defined functions.
+    factor values.
 
   - `inspect_log_bf` checks if an object is a numeric vector of valid
-    logarithmic Bayes factor values. This can be useful to validate
-    inputs, intermediate calculations or outputs in user-defined
-    functions.
+    logarithmic Bayes factor values.
 
-  - `inspect_log_base` checks if an object is a numeric vector of  1
-    that is eligible to be used as a logarithmic base. This can be
-    useful to validate inputs in user-defined functions.
+  - `inspect_log_base` checks if an object is a numeric vector of length
+    1 that is eligible to be used as a logarithmic base.
 
-  - `inspect_true_or_false` checks if an object is a logical vector of 
-    1 with value equal to `TRUE` or `FALSE`. This can be useful to
-    validate inputs in user-defined functions.
+  - `inspect_true_or_false` checks if an object is a logical vector of
+    length 1 with value equal to `TRUE` or `FALSE`.
 
   - `inspect_scale` checks if an object is a string of characters
     representing one of the Bayes factor interpretation scales available
-    in the `pcal` package. This can be useful to validate inputs in
-    user-defined functions.
+    in the [`pcal`](https://pedro-teles-fonseca.github.io/pcal/)
+    package.
+
+These functions are particularly useful to validate inputs, intermediate
+objects and output values in user-defined functions, resulting in tidier
+and less verbose functions.
 
 ## Installation
 
