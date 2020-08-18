@@ -1,24 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# inspect: Validation of Arguments and Objects in User-Defined Functions
+# inspector: Validation of Arguments and Objects in User-Defined Functions
 
 <!-- badges: start -->
 
 [![Build
-Status](https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inspect)
+Status](https://travis-ci.com/pedro-teles-fonseca/inspector.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inspector)
 [![R build
 status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
-![pkgdown](https://github.com/pedro-teles-fonseca/inspect/workflows/pkgdown/badge.svg)
-[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg?)](https://codecov.io/gh/pedro-teles-fonseca/inspect)
+![pkgdown](https://github.com/pedro-teles-fonseca/inspector/workflows/pkgdown/badge.svg)
+[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspector/branch/master/graph/badge.svg?)](https://codecov.io/gh/pedro-teles-fonseca/inspector)
 [![MIT
 license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://lbesson.mit-license.org/)
 <!-- badges: end -->
 
 ## Overview
 
-The `inspect` package provides a set of utility functions that implement
-common sets of validation tasks, namely:
+The `inspector` package provides a set of utility functions that
+implement common sets of validation tasks, namely:
 
   - `inspect_prob()` checks if an object is a numeric vector of valid
     probability values.
@@ -45,12 +45,12 @@ and less verbose functions.
 
 ## Installation
 
-The development version of `inspect` can be installed from
+The development version of `inspector` can be installed from
 [GitHub](https://github.com/) using the `devtools` package:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("pedro-teles-fonseca/inspect")
+devtools::install_github("pedro-teles-fonseca/inspector")
 ```
 
 ## Usage
@@ -58,6 +58,6 @@ devtools::install_github("pedro-teles-fonseca/inspect")
 ## Getting Help
 
 If you find a bug, please file an issue with a minimal reproducible
-example on [GitHub](https://github.com/pedro-teles-fonseca/inspect).
+example on [GitHub](https://github.com/pedro-teles-fonseca/inspector).
 Feature requests are also welcome. You can contact me at
 <pedro.teles.fonseca@outlook.com>.
