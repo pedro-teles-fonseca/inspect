@@ -1,14 +1,14 @@
 
-citHeader("To cite inspect in publications use:")
+citHeader("To cite inspector in publications use:")
 
 citEntry(entry = "Manual",
-         title = "inspect: Validation of Arguments and Objects in User-Defined Functions",
+         title = "inspector: Validation of Arguments and Objects in User-Defined Functions",
          author = as.person("Pedro Fonseca"),
          year = "2020",
          note = "R package version 1.0.0",
-         url = "https://pedro-teles-fonseca.github.io/inspect/",
+         url = "https://pedro-teles-fonseca.github.io/inspector/",
          textVersion =
            paste("Pedro Fonseca (2020).",
-                 "inspect: Validation of Arguments and Objects in User-Defined Functions.",
+                 "inspector: Validation of Arguments and Objects in User-Defined Functions.",
                  "R package version 1.0.0")
          )

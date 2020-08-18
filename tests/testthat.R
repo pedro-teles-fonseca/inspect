@@ -1,4 +1,4 @@
 library(testthat)
-library(inspect)
+library(inspector)
 
-test_check("inspect")
+test_check("inspector")

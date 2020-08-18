@@ -1,5 +1,4 @@
 
-
 context("inspect_prob")
 
 test_that("inspect_prob 1", {

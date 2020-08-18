@@ -1,7 +1,7 @@
 
 ## Release summary
 
-* This is the first submission of `inspect`.
+* This is the first submission of `inspector`.
 
 ## Test environments
 
