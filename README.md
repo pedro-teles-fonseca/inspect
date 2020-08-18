@@ -11,8 +11,8 @@ Status](https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master)](ht
 status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
 ![pkgdown](https://github.com/pedro-teles-fonseca/inspect/workflows/pkgdown/badge.svg)
 [![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg?)](https://codecov.io/gh/pedro-teles-fonseca/inspect)
-[![License:
-GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![MIT
+license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://lbesson.mit-license.org/)
 <!-- badges: end -->
 
 ## Overview
