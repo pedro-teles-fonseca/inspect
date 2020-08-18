@@ -93,9 +93,18 @@ test_that("inspect_prob 16", {
       c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5),
       "Invalid argument: all elements of 'x' must be in the \\[0, 1\\] interval."
     )
-
   )
 })
+
+test_that("inspect_prob 17", {
+  expect_warning(inspect_prob(c(0.1, 0.2, NA, .4, 0.5), warning_nas = TRUE))
+})
+
+test_that("inspect_prob 18", {
+  expect_error(inspect_prob(c(0.1, 0.2, NA, 0.4, 0.5), allow_nas = FALSE))
+})
+
+context("inspect_bf")
 
 test_that("inspect_bf 1", {
   expect_error(inspect_bf(NULL),
@@ -177,6 +186,18 @@ test_that("inspect_bf 15", {
   expect_error(inspect_bf(c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)))
 })
 
+test_that("inspect_bf 16", {
+  expect_warning(inspect_bf(c(0.1, 2, NA, 40, 0.5)))
+})
+
+test_that("inspect_bf 17", {
+  expect_error(inspect_bf(c(0.1, 2, NA, 4, 0.5), allow_nas = FALSE))
+})
+
+test_that("inspect_bf 18", {
+  expect_warning(inspect_bf(c(0.1, 2, NA, 4, 0.5), warning_nas = TRUE))
+})
+
 context("inspect_log_bf")
 
 test_that("inspect_log_bf 1", {
@@ -254,6 +275,14 @@ test_that("inspect_log_bf 13", {
 
 test_that("inspect_log_bf 14", {
   expect_silent(inspect_log_bf(2))
+})
+
+test_that("inspect_log_bf 15", {
+  expect_warning(inspect_log_bf(c(0.1, 2, NA, 4, 0.5), warning_nas = TRUE))
+})
+
+test_that("inspect_log_bf 16", {
+  expect_error(inspect_log_bf(c(0.1, 2, NA, 4, 0.5), allow_nas = FALSE))
 })
 
 context("inspect_log_base")
@@ -487,34 +516,3 @@ test_that("inspect_true_or_false 12", {
   x <- "TRUE"
   expect_silent(inspect_true_or_false(TRUE))
 })
-
-context("warnings")
-
-test_that("check warning 1", {
-  expect_warning(inspect_bf(c(0.1, 2, NA, 40, 0.5)))
-})
-
-test_that("check warning 2", {
-  expect_error(inspect_bf(c(0.1, 2, NA, 4, 0.5), allow_nas = FALSE))
-})
-
-test_that("check warning 3", {
-  expect_warning(inspect_prob(c(0.1, 0.2, NA, .4, 0.5), warning_nas = TRUE))
-})
-
-test_that("check warning 4", {
-  expect_warning(inspect_bf(c(0.1, 2, NA, 4, 0.5), warning_nas = TRUE))
-})
-
-test_that("check warning 5", {
-  expect_error(inspect_prob(c(0.1, 0.2, NA, 0.4, 0.5), allow_nas = FALSE))
-})
-
-test_that("check warning 6", {
-  expect_warning(inspect_log_bf(c(0.1, 2, NA, 4, 0.5), warning_nas = TRUE))
-})
-
-test_that("check warning 7", {
-  expect_error(inspect_log_bf(c(0.1, 2, NA, 4, 0.5), allow_nas = FALSE))
-})
-
