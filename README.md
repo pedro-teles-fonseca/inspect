@@ -8,7 +8,7 @@
 [![Build
 Status](https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inspect)
 [![R build
-status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
+status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg?)](https://github.com/pedro-teles-fonseca/inpsect/actions)
 ![pkgdown](https://github.com/pedro-teles-fonseca/inspect/workflows/pkgdown/badge.svg)
 [![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg)](https://codecov.io/gh/pedro-teles-fonseca/inspect)
 [![License:
