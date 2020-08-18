@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/inspect)](https://CRAN.R-project.org/package=inspect)
 [![Build
 Status](https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inspect)
 [![R build
@@ -39,8 +37,7 @@ common sets of validation tasks, namely:
 
   - `inspect_scale` checks if an object is a string of characters
     representing one of the Bayes factor interpretation scales available
-    in the [`pcal`](https://pedro-teles-fonseca.github.io/pcal/)
-    package.
+    in the `pcal` package.
 
 These functions are particularly useful to validate inputs, intermediate
 objects and output values in user-defined functions, resulting in tidier
@@ -48,14 +45,7 @@ and less verbose functions.
 
 ## Installation
 
-The released version of `inspect` can be installed from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` inspect
-install.packages("pcal")
-```
-
-The development version can be installed from
+The development version of `inspect`can be installed from
 [GitHub](https://github.com/) using the `devtools` package:
 
 ``` r
@@ -68,7 +58,6 @@ devtools::install_github("pedro-teles-fonseca/inspect")
 ## Getting Help
 
 If you find a bug, please file an issue with a minimal reproducible
-example on
-[GitHub](https://github.com/pedro-teles-fonseca/pcal/inspect). Feature
-requests are also welcome. You can contact me at
+example on [GitHub](https://github.com/pedro-teles-fonseca/inspect).
+Feature requests are also welcome. You can contact me at
 <pedro.teles.fonseca@outlook.com>.
