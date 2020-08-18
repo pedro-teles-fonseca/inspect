@@ -10,8 +10,9 @@ Status](https://travis-ci.com/pedro-teles-fonseca/inspect.svg?branch=master)](ht
 [![R build
 status](https://github.com/pedro-teles-fonseca/inpsect/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inpsect/actions)
 ![pkgdown](https://github.com/pedro-teles-fonseca/inspect/workflows/pkgdown/badge.svg)
-[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg)](https://codecov.io/gh/pedro-teles-fonseca/inspect)
-[![License:
+<a href="https://codecov.io/gh/pedro-teles-fonseca/inspect">
+<img src="https://codecov.io/gh/pedro-teles-fonseca/inspect/branch/master/graph/badge.svg" />
+</a> [![License:
 GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 <!-- badges: end -->
 
@@ -45,7 +46,7 @@ and less verbose functions.
 
 ## Installation
 
-The development version of `inspect`can be installed from
+The development version of `inspect` can be installed from
 [GitHub](https://github.com/) using the `devtools` package:
 
 ``` r
