@@ -108,6 +108,18 @@ test_that("inspect_data_binomial error 11", {
                "nvalid argument: there are more than two levels'")
 })
 
+test_that("inspect_data_binomial error 12", {
+  x <- complex(1)
+  expect_error(inspect_data_binomial(x, 1),
+               "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'.")
+})
+
+test_that("inspect_data_binomial error 13", {
+  x <- complex(1)
+  expect_error(inspect_data_binomial(c(1,0), x),
+               "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'.")
+})
+
 context("inspect_data_multinomial")
 
 test_that("inspect_data_multinomial silent 1", {
