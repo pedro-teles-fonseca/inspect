@@ -18,7 +18,7 @@ inspect_prob(x, allow_nas = TRUE, warning_nas = TRUE)
 \itemize{
 \item The call is silent if:
 \itemize{
-\item \code{x} is a numeric vector of valid probability values without \code{NA} or \code{NaN} values
+\item \code{x} is a numeric vector of valid probability values without \code{NA} or \code{NaN} values.
 \item \code{x} is a numeric vector of valid probability values with some \code{NA} or \code{NaN} values, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
 }
 \item An informative warning message is thrown if \code{x} is a numeric vector of valid probability values, there are \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
