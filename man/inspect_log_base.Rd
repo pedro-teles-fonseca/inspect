@@ -52,10 +52,10 @@ inspect_log_base(0.5)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspect]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
-\item \code{\link[inspect]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-\item \code{\link[inspect]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-\item \code{\link[inspect]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
-\item \code{\link[inspect]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
+\item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
+\item \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+\item \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
+\item \code{\link[inspector]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }

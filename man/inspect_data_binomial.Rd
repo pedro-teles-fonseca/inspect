@@ -74,6 +74,5 @@ inspect_data_binomial(x5, success = 1, warning_nas = FALSE)
 \dontrun{inspect_data_binomial(c(1,0), NA)}
 \dontrun{inspect_data_binomial(c(1,0), NaN)}
 \dontrun{inspect_data_binomial(c(1,0), 2)}
-\dontrun{inspect_data_binomial(c(1,0), NaN)}
 
 }
