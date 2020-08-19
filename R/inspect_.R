@@ -15,7 +15,7 @@
 #'
 #' @return `inspect_prob` does not return any output. There are three possible outcomes:
 #' * The call is silent if:
-#'   * `x` is a numeric vector of valid probability values without `NA` or `NaN` values
+#'   * `x` is a numeric vector of valid probability values without `NA` or `NaN` values.
 #'   * `x` is a numeric vector of valid probability values with some `NA` or `NaN` values, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
 #' * An informative warning message is thrown if `x` is a numeric vector of valid probability values, there are `NA` or `NaN` values in `x` and both `allow_nas` and `warning_nas` are set to `TRUE`.
 #' * An informative error message is thrown and the execution is stopped if:
@@ -119,7 +119,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @return `inspect_bf` does not return any output. There are three possible outcomes:
 #' * The call is silent if:
-#'   * `x` is a numeric vector of valid Bayes factor values without `NA` or `NaN` values
+#'   * `x` is a numeric vector of valid Bayes factor values without `NA` or `NaN` values.
 #'   * `x` is a numeric vector of valid Bayes factor values with some `NA` or `NaN` values, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
 #' * An informative warning message is given if `x` is a numeric vector of valid Bayes factor values, there are `NA` or `NaN` values in `x` and both  `allow_nas` and `warning_nas` are set to `TRUE`.
 #' * An informative error message is thrown and the execution is stopped if:
@@ -218,7 +218,7 @@ inspect_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @return `inspect_log_bf` does not return any output. There are three possible outcomes:
 #' * The call is silent if:
-#'   * `x` is a numeric vector of valid logarithmic Bayes factor values without `NA` or `NaN` values
+#'   * `x` is a numeric vector of valid logarithmic Bayes factor values without `NA` or `NaN` values.
 #'   * `x` is a numeric vector of valid logarithmic Bayes factor values with some `NA` or `NaN` values, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
 #' * An informative warning message is given if `x` is a numeric vector of valid logarithmic Bayes factor values, there are `NA` or `NaN` values in `x` and both  `allow_nas` and `warning_nas` are set to `TRUE`.
 #' * An informative error message is thrown and the execution is stopped if:
