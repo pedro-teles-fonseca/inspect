@@ -2,6 +2,7 @@
 
 export(inspect_bf)
 export(inspect_data_binomial)
+export(inspect_data_multinomial)
 export(inspect_log_base)
 export(inspect_log_bf)
 export(inspect_prob)
