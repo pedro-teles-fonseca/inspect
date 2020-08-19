@@ -6,47 +6,47 @@ test_that("inspect_data_binomial silent 1", {
 })
 
 test_that("inspect_data_binomial silent 2", {
-  x1 <- c(1, 0, 0, 1, 0)
-  expect_silent(inspect_data_binomial(x1, success = 1))
+  x <- c(1, 0, 0, 1, 0)
+  expect_silent(inspect_data_binomial(x, success = 1))
 })
 
 test_that("inspect_data_binomial silent 3", {
-  x2 <- c(FALSE, FALSE, TRUE)
-  expect_silent(inspect_data_binomial(x2, success = TRUE))
+  x <- c(FALSE, FALSE, TRUE)
+  expect_silent(inspect_data_binomial(x, success = TRUE))
 })
 
 test_that("inspect_data_binomial silent 4", {
-  x3 <- c("yes", "no", "yes")
-  expect_silent(inspect_data_binomial(x3, success = "yes"))
+  x <- c("yes", "no", "yes")
+  expect_silent(inspect_data_binomial(x, success = "yes"))
 })
 
 test_that("inspect_data_binomial silent 5", {
-  x4 <- factor(c("yes", "no", "yes"))
-  expect_silent(inspect_data_binomial(x4, success = "yes"))
+  x <- factor(c("yes", "no", "yes"))
+  expect_silent(inspect_data_binomial(x, success = "yes"))
 })
 
 test_that("inspect_data_binomial silent 6", {
-  x5 <- c(1, 0, 0, 1, 0, NA)
-  expect_silent(inspect_data_binomial(x5, success = 1))
+  x <- c(1, 0, 0, 1, 0, NA)
+  expect_silent(inspect_data_binomial(x, success = 1))
 })
 
 test_that("inspect_data_binomial silent 7", {
-  x5 <- c(1, 0, 0, 1, 0, NA)
-  expect_silent(inspect_data_binomial(x5, success = 1, warning_nas = FALSE))
+  x <- c(1, 0, 0, 1, 0, NA)
+  expect_silent(inspect_data_binomial(x, success = 1, warning_nas = FALSE))
 })
 
 test_that("inspect_data_binomial warning 1", {
-  y1 <- c(1, 1, NA, 0, 0)
+  x <- c(1, 1, NA, 0, 0)
   expect_warning(
-    inspect_data_binomial(y1, success = 1, warning_nas = TRUE),
-    "There are NA or NaN values in 'y1'."
+    inspect_data_binomial(x, success = 1, warning_nas = TRUE),
+    "There are NA or NaN values in 'x'."
   )
 })
 
 test_that("inspect_data_binomial warning 2", {
-  y2 <- c(0, 0)
-  expect_warning(inspect_data_binomial(y2, success = 1),
-                 "'1' not observed in 'y2'")
+  x <- c(0, 0)
+  expect_warning(inspect_data_binomial(x, success = 1),
+                 "'1' not observed in 'x'")
 })
 
 test_that("inspect_data_binomial error 1", {
@@ -109,3 +109,81 @@ test_that("inspect_data_binomial error 11", {
 })
 
 context("inspect_data_multinomial")
+
+test_that("inspect_data_multinomial silent 1", {
+  expect_silent(inspect_data_multinomial(c(1:3, 1:3)))
+})
+
+test_that("inspect_data_multinomial silent 2", {
+  x <- c(1:3, 1:3)
+  expect_silent(inspect_data_multinomial(x))
+})
+
+test_that("inspect_data_multinomial silent 3", {
+  x <- c(FALSE, FALSE, TRUE)
+  expect_silent(inspect_data_multinomial(x))
+})
+
+test_that("inspect_data_multinomial silent 4", {
+  x <- c("yes", "no", "yes", "kind-of")
+  expect_silent(inspect_data_multinomial(x))
+})
+
+test_that("inspect_data_multinomial silent 5", {
+  x <- factor(c("yes", "no", "yes", "maybe"))
+  expect_silent(inspect_data_multinomial(x))
+})
+
+test_that("inspect_data_multinomial silent 6", {
+  x <- c(1, 0, 0, 1, 0, NA, 2)
+  expect_silent(inspect_data_multinomial(x))
+})
+
+test_that("inspect_data_multinomial silent 7", {
+  x <- c(1, 0, 0, 1, 0, NA, 2)
+  expect_silent(inspect_data_multinomial(x, warning_nas = FALSE))
+})
+
+test_that("inspect_data_multinomial warning 1", {
+  x <- c(1, 1, NA, 0, 0, 2)
+  expect_warning(
+    inspect_data_multinomial(x, warning_nas = TRUE),
+    "There are NA or NaN values in 'x'."
+  )
+})
+
+test_that("inspect_data_multinomial error 1", {
+  expect_error(inspect_data_multinomial(NULL),
+               "'NULL' is NULL.")
+})
+
+test_that("inspect_data_multinomial error 2", {
+  x <- list(1,0)
+  expect_error(inspect_data_multinomial(x),
+               "Invalid argument: 'x' must be atomic.")
+})
+
+test_that("inspect_data_multinomial error 3", {
+  x <- numeric(0)
+  expect_error(inspect_data_multinomial(x),
+               "Invalid argument: 'x' is empty.")
+})
+
+test_that("inspect_data_multinomial error 4", {
+  expect_error(inspect_data_multinomial(NaN),
+               "Invalid argument: all elements of 'NaN' are NA or NaN.")
+})
+
+test_that("inspect_data_multinomial error 5", {
+  expect_error(inspect_data_multinomial(NA),
+               "Invalid argument: all elements of 'NA' are NA or NaN.")
+})
+
+test_that("inspect_data_multinomial error 6", {
+  x <- complex(1)
+  expect_error(inspect_data_multinomial(x),
+               "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'.")
+})
+
+
+
