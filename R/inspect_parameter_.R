@@ -1,4 +1,5 @@
 
+#' @keywords internal
 #' @export
 
 inspect_par_multinomial <- function(x){
@@ -28,6 +29,7 @@ inspect_par_multinomial <- function(x){
   }
 }
 
+#' @keywords internal
 #' @export
 
 inspect_par_beta <- function(x){
@@ -54,6 +56,7 @@ inspect_par_beta <- function(x){
   }
 }
 
+#' @keywords internal
 #' @export
 
 inspect_par_dirichlet <- function(x){
@@ -80,6 +83,7 @@ inspect_par_dirichlet <- function(x){
   }
 }
 
+#' @keywords internal
 #' @export
 
 inspect_par_haldane <- function(x){
