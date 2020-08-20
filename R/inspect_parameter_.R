@@ -138,6 +138,6 @@ inspect_par_haldane <- function(x){
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
   }
   if(any(x != 0)){
-    stop(paste("Invalid argument: elements of",  output_name, "must be 0."))
+    stop(paste("Invalid argument: all elements of",  output_name, "must be 0."))
   }
 }
