@@ -67,7 +67,7 @@ inspect_par_multinomial <- function(x){
   if(any(x >= 1, x <= 0)) {
     stop(paste("Invalid argument: all elements of", output_name, "values must be in the (0, 1) interval."))
   }
-  if(isTRUE(dplyr::near(sum(x), 1))) {
+  if(isFALSE(dplyr::near(sum(x), 1))) {
     stop(paste("Invalid argument:", output_name, "must sum to 1."))
   }
 }
