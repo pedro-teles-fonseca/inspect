@@ -488,6 +488,39 @@ inspect_true_or_false <- function(x){
   }
 }
 
+#' @title lorem ipsum
+#'
+#' @description lorem ipsum
+#'
+#' @param x  lorem ipsumlorem ipsum
+#'
+#' @details lorem ipsum
+#'
+#' @return lorem ipsum
+#' @export
 
+inspect_categories <- function(x){
+
+  output_name <- paste0("'", deparse(substitute(x)), "'")
+
+  if(is.null(x)){
+    stop(paste("Invalid argument:", output_name, "is NULL."))
+  }
+  if(isFALSE(is.atomic(x))){
+    stop(paste("Invalid argument:", output_name, "must atomic."))
+  }
+  if(isTRUE(length(x) == 0)){
+    stop(paste("Invalid argument:", output_name, " is empty."))
+  }
+  if(isFALSE(typeof(x) %in% c("logical", "integer", "double", "character"))){
+    stop(paste("Invalid argument: the type of", output_name, "must be 'logical', 'integer', 'double' or 'character'."))
+  }
+  if(any(is.na(x))){
+    stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
+  }
+  if(isFALSE(length(table(x)) == length(x))){
+    stop(paste("Invalid argument: each element of", output_name, " must be unique."))
+  }
+}
 
 
