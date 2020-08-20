@@ -10,6 +10,41 @@
 #' @return lorem ipsum
 #' @export
 
+inspect_par_bernoulli <- function(x){
+
+  output_name <- paste0("'", deparse(substitute(x)), "'")
+
+  if(is.null(x)){
+    stop(paste("Invalid argument:", output_name, "is NULL."))
+  }
+  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+    stop(paste("Invalid argument:", output_name, "must an atomic vector."))
+  }
+  if(isFALSE(length(x) == 1)){
+    stop(paste("Invalid argument:", output_name, "must be of length 1"))
+  }
+  if(isFALSE(is.numeric(x))){
+    stop(paste("Invalid argument:", output_name, "must be numeric"))
+  }
+  if(is.na(x)){
+    stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
+  }
+  if(any(x >= 1, x <= 0)) {
+    stop(paste("Invalid argument:", output_name, "must be in the (0, 1) interval."))
+  }
+}
+
+#' @title lorem ipsum
+#'
+#' @description lorem ipsum
+#'
+#' @param x  lorem ipsumlorem ipsum
+#'
+#' @details lorem ipsum
+#'
+#' @return lorem ipsum
+#' @export
+
 inspect_par_multinomial <- function(x){
 
   output_name <- paste0("'", deparse(substitute(x)), "'")
@@ -32,7 +67,7 @@ inspect_par_multinomial <- function(x){
   if(any(x >= 1, x <= 0)) {
     stop(paste("Invalid argument: all elements of", output_name, "values must be in the (0, 1) interval."))
   }
-  if(isFALSE(all.equal(sum(x), 1))) {
+  if(isFALSE(identical(sum(x), 1))) {
     stop(paste("Invalid argument:", output_name, "must sum to 1."))
   }
 }
