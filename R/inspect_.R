@@ -523,4 +523,37 @@ inspect_categories <- function(x){
   }
 }
 
+#' @title lorem ipsum
+#'
+#' @description lorem ipsum
+#'
+#' @param x  lorem ipsumlorem ipsum
+#'
+#' @details lorem ipsum
+#'
+#' @return lorem ipsum
+#' @export
+
+inspect_character <- function(x, allowed){
+
+  x_output_name <- paste0("'", deparse(substitute(x)), "'")
+
+  if(is.null(x)){
+    stop(paste("Invalid argument:", x_output_name, "is NULL."))
+  }
+  if(any(!is.atomic(x), !is.vector(x), isFALSE(is.character(x)), isFALSE(length(x) == 1))){
+    stop(paste("Invalid argument:", x_output_name, "must be an atomic vector of type character and length 1."))
+  }
+  if(any(is.na(x))){
+    stop(paste("Invalid argument:", x_output_name, "is NA or NaN"))
+  }
+  if(isFALSE(tolower(x) %in% allowed)){
+    stop(paste("Invalid argument: invalid", deparse(substitute(x)), "=", x, "is not allowed."))
+  }
+}
+
+
+
+
+
 
