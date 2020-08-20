@@ -518,7 +518,7 @@ inspect_categories <- function(x){
   if(any(is.na(x))){
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
   }
-  if(isFALSE(length(table(x)) == length(x))){
+  if(isFALSE(length(unique(x)) == length(x))){
     stop(paste("Invalid argument: all element of", output_name, " must be unique."))
   }
 }
