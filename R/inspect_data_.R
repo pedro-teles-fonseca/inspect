@@ -183,6 +183,60 @@ inspect_data_multinomial <- function(data, warning_nas = FALSE){
   }
 }
 
+#' @title lorem ipsum
+#'
+#' @description lorem ipsum
+#'
+#' @param x  lorem ipsumlorem ipsum
+#'
+#' @details lorem ipsum
+#'
+#' @return lorem ipsum
+#' @export
+
+inspect_data_categorical_as_bernoullli <- function(data, success, warning_nas = FALSE){
+
+  inspect_true_or_false(warning_nas)
+
+  data_output_name <- paste0("'", deparse(substitute(data)), "'")
+  s_output_name <- paste0("'", deparse(substitute(success)), "'")
+
+  if(is.null(data)){
+    stop(paste("Invalid argument:", data_output_name, "is NULL."))
+  }
+  if(is.null(success)){
+    stop(paste("Invalid argument:", s_output_name, "is NULL."))
+  }
+  if(isFALSE(is.atomic(data))){
+    stop(paste("Invalid argument:", data_output_name, "must be atomic."))
+  }
+  if(length(data) == 0){
+    stop(paste("Invalid argument:", data_output_name, "is empty."))
+  }
+  if(any(isFALSE(is.atomic(success)), isFALSE(length(success) == 1))){
+    stop(paste("Invalid argument:", s_output_name, "must be atomic and have length 1."))
+  }
+  if(isFALSE(typeof(data) %in% c("logical", "integer", "double", "character"))){
+    stop(paste("Invalid argument: the type of", data_output_name, "must be 'logical', 'integer', 'double' or 'character'."))
+  }
+  if(isFALSE(typeof(success) %in% c("logical","integer", "double", "character"))){
+    stop(paste("Invalid argument: the type of", s_output_name, "must be 'logical', 'integer', 'double' or 'character'."))
+  }
+  if(all(is.na(data))){
+    stop(paste("Invalid argument: all elements of",  data_output_name, "are NA or NaN."))
+  }
+  if(is.na(success)){
+    stop(paste("Invalid argument:", s_output_name, "is NA or NaN"))
+  }
+  if(isTRUE(warning_nas)){
+    if(any(is.na(data))){
+      warning(paste("There are NA or NaN values in", paste0(data_output_name, ".")))
+    }
+  }
+  if(isFALSE(success %in% unique(data))){
+    warning(paste(s_output_name, "not observed in", paste0(data_output_name, ".")))
+  }
+}
 
 
 
