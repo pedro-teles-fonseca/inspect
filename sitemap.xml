@@ -13,10 +13,13 @@
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_character.html</loc>
   </url>
   <url>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_character_match.html</loc>
+  </url>
+  <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_binomial.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_categorical_as_bernoulli.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_multinom_as_bern.html</loc>
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_multinomial.html</loc>

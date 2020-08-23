@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>lorem ipsum — inspect_categories • inspector</title>
+<title>Check if an object is eligible to be used as the levels of a factor — inspect_categories • inspector</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="lorem ipsum — inspect_categories" />
-<meta property="og:description" content="lorem ipsum" />
+<meta property="og:title" content="Check if an object is eligible to be used as the levels of a factor — inspect_categories" />
+<meta property="og:description" content="inspect_categories checks if an object is eligible to be used as the levels of a factor. This can be useful to validate inputs in user-defined functions." />
 
 
 
@@ -121,13 +121,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>lorem ipsum</h1>
+    <h1>Check if an object is eligible to be used as the levels of a factor</h1>
     <small class="dont-index">Source: <a href='https://github.com/pedro-teles-fonseca/inspector/blob/master/R/inspect_.R'><code>R/inspect_.R</code></a></small>
     <div class="hidden name"><code>inspect_categories.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>lorem ipsum</p>
+    <p><code>inspect_categories</code> checks if an object is eligible to be used as the levels of a factor. This can be useful to validate inputs in user-defined functions.</p>
     </div>
 
     <pre class="usage"><span class='fu'>inspect_categories</span>(<span class='kw'>x</span>)</pre>
@@ -137,17 +137,65 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>lorem ipsumlorem ipsum</p></td>
+      <td><p>An arbitrary object.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>lorem ipsum</p>
+    <p><code>inspect_categories</code> does not return any output. There are two possible outcomes:</p><ul>
+<li><p>The call is silent if <code>x</code> is eligible to be used as the levels of a factor.</p></li>
+<li><p>An informative error message is thrown otherwise.</p></li>
+</ul>
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>lorem ipsum</p>
+    <p><code>inspect_categories</code> conducts a series of tests to check if <code>x</code> is eligible to be used as the levels of a factor. Namely, <code>inspect_categories</code> checks if:</p><ul>
+<li><p><code>x</code> is <code>NULL</code> or empty.</p></li>
+<li><p><code>x</code> is atomic.</p></li>
+<li><p>The <code><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></code> <code>x</code> is logical, integer, double or character.</p></li>
+<li><p>There are <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></li>
+<li><p>There are repeated values in <code>x</code>.</p></li>
+</ul>
 
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'>
+<ul>
+<li><p><code><a href='inspect_data_binomial.html'>inspect_data_binomial</a></code> to validate dichotomous data.</p></li>
+<li><p><code><a href='inspect_data_multinomial.html'>inspect_data_multinomial</a></code> and <code><a href='inspect_data_multinom_as_bern.html'>inspect_data_multinom_as_bern</a></code> to validate categorical data.</p></li>
+</ul>
+</div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Calls that pass silently:</span>
+<span class='kw'>x1</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>
+<span class='kw'>x2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>)
+<span class='kw'>x3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>)
+<span class='kw'>x4</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"smoker"</span>, <span class='st'>"non-smoker"</span>))
+<span class='kw'>x5</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>))
+<span class='fu'>inspect_categories</span>(<span class='kw'>x1</span>)
+<span class='fu'>inspect_categories</span>(<span class='kw'>x2</span>)
+<span class='fu'>inspect_categories</span>(<span class='kw'>x3</span>)
+<span class='fu'>inspect_categories</span>(<span class='kw'>x4</span>)
+<span class='fu'>inspect_categories</span>(<span class='fu'><a href='https://rdrr.io/r/base/levels.html'>levels</a></span>(<span class='kw'>x5</span>))
+
+<span class='co'># Calls that throw informative error messages:</span>
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>y1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>y2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>y3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>))
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>y1</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>y2</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>y3</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>),
+ <span class='fu'><a href='https://rdrr.io/r/base/complex.html'>complex</a></span>(<span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>10</span>), <span class='fl'>NaN</span>, <span class='fl'>NA</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]])
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
