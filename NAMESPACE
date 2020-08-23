@@ -3,6 +3,7 @@
 export(inspect_bf)
 export(inspect_categories)
 export(inspect_character)
+export(inspect_character_match)
 export(inspect_data_binomial)
 export(inspect_data_multinom_as_bern)
 export(inspect_data_multinomial)
