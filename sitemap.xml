@@ -4,7 +4,7 @@
     <loc>https://pedro-teles-fonseca.github.io/inspector//index.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_bf.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_bfactor.html</loc>
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_categories.html</loc>
@@ -16,19 +16,19 @@
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_character_match.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_binomial.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_categorical.html</loc>
+  </url>
+  <url>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_dichotomous.html</loc>
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_multinom_as_bern.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_data_multinomial.html</loc>
-  </url>
-  <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_log_base.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_log_bf.html</loc>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_log_bfactor.html</loc>
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_par_bernoulli.html</loc>
