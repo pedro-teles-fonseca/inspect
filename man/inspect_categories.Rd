@@ -2,19 +2,66 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_categories}
 \alias{inspect_categories}
-\title{lorem ipsum}
+\title{Check if an object is eligible to be used as the levels of a factor}
 \usage{
 inspect_categories(x)
 }
 \arguments{
-\item{x}{lorem ipsumlorem ipsum}
+\item{x}{An arbitrary object.}
 }
 \value{
-lorem ipsum
+\code{inspect_categories} does not return any output. There are two possible outcomes:
+\itemize{
+\item The call is silent if \code{x} is eligible to be used as the levels of a factor.
+\item An informative error message is thrown otherwise.
+}
 }
 \description{
-lorem ipsum
+\code{inspect_categories} checks if an object is eligible to be used as the levels of a factor. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-lorem ipsum
+\code{inspect_categories} conducts a series of tests to check if \code{x} is eligible to be used as the levels of a factor. Namely, \code{inspect_categories} checks if:
+\itemize{
+\item \code{x} is \code{NULL} or empty.
+\item \code{x} is atomic.
+\item The \code{\link[base]{typeof}} \code{x} is logical, integer, double or character.
+\item There are \code{NA} or \code{NaN} values in \code{x}.
+\item There are repeated values in \code{x}.
+}
+}
+\examples{
+# Calls that pass silently:
+x1 <- 1:5
+x2 <- c("yes", "no")
+x3 <- c(TRUE, FALSE)
+x4 <- factor(c("smoker", "non-smoker"))
+x5 <- factor(c("yes", "no", "yes"))
+inspect_categories(x1)
+inspect_categories(x2)
+inspect_categories(x3)
+inspect_categories(x4)
+inspect_categories(levels(x5))
+
+# Calls that throw informative error messages:
+\dontrun{y1 <- c(1, 1:5)}
+\dontrun{y2 <- c("yes", "no", "yes")}
+\dontrun{y3 <- factor(c("yes", "no", "yes"))}
+\dontrun{inspect_categories(y1)}
+\dontrun{inspect_categories(y2)}
+\dontrun{inspect_categories(y3)}
+\dontrun{mylist <- list(NULL, numeric(0),
+ complex(1), list(10), NaN, NA)}
+\dontrun{inspect_categories(mylist[[1]])}
+\dontrun{inspect_categories(mylist[[2]])}
+\dontrun{inspect_categories(mylist[[3]])}
+\dontrun{inspect_categories(mylist[[4]])}
+\dontrun{inspect_categories(mylist[[5]])}
+\dontrun{inspect_categories(mylist[[6]])}
+
+}
+\seealso{
+\itemize{
+\item \code{\link[inspector]{inspect_data_binomial}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_multinomial}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+}
 }

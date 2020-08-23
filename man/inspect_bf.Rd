@@ -60,7 +60,6 @@ inspect_bf(x2, allow_nas = TRUE, warning_nas = FALSE)
 \dontrun{inspect_bf(z)}
 \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
          "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)}
-\dontrun{inspect_bf(mylist)}
 \dontrun{inspect_bf(mylist[[1]])}
 \dontrun{inspect_bf(mylist[[2]])}
 \dontrun{inspect_bf(mylist[[3]])}
@@ -78,8 +77,5 @@ inspect_bf(x2, allow_nas = TRUE, warning_nas = FALSE)
 \itemize{
 \item \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 \item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
-\item \code{\link[inspector]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
-\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
-\item \code{\link[inspector]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }

@@ -23,20 +23,19 @@ inspect_true_or_false(x)
 \code{inspect_true_or_false} conducts a series of tests to check if \code{x} is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}. Namely, \code{inspect_true_or_false} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is an atomic vector of type logical and \code{\link[base]{length}} 1.
+\item \code{x} is an atomic logical vector of \code{\link[base]{length}} 1.
 \item \code{x} is \code{NA} or \code{NaN}.
 }
 }
 \examples{
 # Calls that pass silently:
-inspect_true_or_false(TRUE)
-inspect_true_or_false(FALSE)
 x <- TRUE
+y <- FALSE
 inspect_true_or_false(x)
+inspect_true_or_false(y)
 
 # Calls that throw informative error messages:
 \dontrun{mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")}
-\dontrun{inspect_true_or_false(mylist)}
 \dontrun{inspect_true_or_false(mylist[[1]])}
 \dontrun{inspect_true_or_false(mylist[[2]])}
 \dontrun{inspect_true_or_false(mylist[[3]])}
@@ -49,8 +48,5 @@ inspect_true_or_false(x)
 \itemize{
 \item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 \item \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-\item \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-\item \code{\link[inspector]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
-\item \code{\link[inspector]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }

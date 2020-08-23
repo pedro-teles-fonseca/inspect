@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_scale}
 \alias{inspect_scale}
-\title{Check if an object is a string of characters representing an eligible Bayes factor interpretation scale}
+\title{Check if an object is a valid Bayes factor interpretation scale}
 \usage{
 inspect_scale(x)
 }
@@ -12,32 +12,35 @@ inspect_scale(x)
 \value{
 \code{inspect_scale} does not return any output. There are two possible scenarios:
 \itemize{
-\item The call is silent if \code{x} is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
+\item The call is silent if \code{x} is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the \code{pcal} package.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_scale} checks if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package. This can be useful to validate inputs in user-defined functions.
+\code{inspect_scale} checks if an object is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the \code{pcal} package. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_scale} conducts a series of tests to check if \code{x} is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package. Namely, \code{inspect_scale} checks if:
+\code{inspect_scale} conducts a series of tests to check if \code{x} is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the \code{pcal} package. Namely, \code{inspect_scale} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is an atomic vector of type character and \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
 \item \code{x} is \code{NA} or \code{NaN}.
+\item \code{x} is an atomic character vector of \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
 }
 }
 \examples{
 # Calls that pass silently:
-inspect_scale("Jeffreys")
-inspect_scale("jeffreys")
-inspect_scale("kass-raftery")
-inspect_scale("Kass-Raftery")
+x1 <- "Jeffreys"
+x2 <- "jeffreys"
+x3 <- "kass-raftery"
+x4 <- "Kass-Raftery"
+inspect_scale(x1)
+inspect_scale(x2)
+inspect_scale(x3)
+inspect_scale(x4)
 
 # Calls that throw informative error messages:
 \dontrun{mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
           "kassraftery", c("jeffreys", "kass-raftery"))}
-\dontrun{inspect_scale(mylist)}
 \dontrun{inspect_scale(mylist[[1]])}
 \dontrun{inspect_scale(mylist[[2]])}
 \dontrun{inspect_scale(mylist[[3]])}
@@ -50,10 +53,10 @@ inspect_scale("Kass-Raftery")
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
+\item \code{\link[pcal]{bfactor_interpret}} for the interpretation of Bayes factors.
+\item \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
 \item \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
 \item \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 \item \code{\link[inspector]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
-\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
 }
 }

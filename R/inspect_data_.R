@@ -194,7 +194,7 @@ inspect_data_multinomial <- function(data, warning_nas = FALSE){
 #' @return lorem ipsum
 #' @export
 
-inspect_data_categorical_as_bernoulli <- function(data, success, warning_nas = FALSE){
+inspect_data_multinom_as_bern <- function(data, success, warning_nas = FALSE){
 
   inspect_true_or_false(warning_nas)
 

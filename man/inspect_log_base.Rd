@@ -25,19 +25,21 @@ inspect_log_base(x)
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is a numeric, atomic vector of \code{\link[base]{length}} 1.
 \item \code{x} is \code{NA} or \code{NaN}.
+\item \code{x} is positive.
 }
 }
 \examples{
 # Calls that pass silently:
-inspect_log_base(10)
-inspect_log_base(2)
-inspect_log_base(exp(1))
-inspect_log_base(0.5)
+x1 <- 10
+x2 <- exp(1)
+x3 <- 0.5
+inspect_log_base(x1)
+inspect_log_base(x2)
+inspect_log_base(x3)
 
 # Calls that throw informative error messages:
 \dontrun{mylist <- list(NULL, numeric(0), TRUE, factor(10),
         list(10), matrix(10), NaN, NA, -1, 0)}
-\dontrun{inspect_log_base(mylist)}
 \dontrun{inspect_log_base(mylist[[1]])}
 \dontrun{inspect_log_base(mylist[[2]])}
 \dontrun{inspect_log_base(mylist[[3]])}
@@ -55,7 +57,5 @@ inspect_log_base(0.5)
 \item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 \item \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
 \item \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
-\item \code{\link[inspector]{inspect_scale}} to check if an object is a string of characters representing one of the Bayes factor interpretation scales available in the \code{pcal} package.
 }
 }
