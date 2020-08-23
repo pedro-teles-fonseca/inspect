@@ -5,7 +5,7 @@
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
-#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is `TRUE`).
+#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is set to`TRUE`).
 #'
 #' @details `inspect_prob` conducts a series of tests to check if `x` is a numeric vector of valid probability values. Namely, `inspect_prob` checks if:
 #' * `x` is `NULL` or empty.
@@ -23,8 +23,8 @@
 #'   * `x` is a numeric vector of valid probability values with some `NA` or `NaN` values and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -101,19 +101,19 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
 #' @title Check if an object is a numeric vector of valid Bayes factor values
 #'
-#' @description `inspect_bf` checks if an object is a numeric vector of valid Bayes factor values. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_bfactor` checks if an object is a numeric vector of valid Bayes factor values. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
 #' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is `TRUE`).
 #'
-#' @details `inspect_bf` conducts a series of tests to check if `x` is a numeric vector of valid Bayes factor values. Namely, `inspect_bf` checks if:
+#' @details `inspect_bfactor` conducts a series of tests to check if `x` is a numeric vector of valid Bayes factor values. Namely, `inspect_bfactor` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is a numeric, atomic vector.
 #' * `x` has `NA` or `NaN` values.
 #' *  The values of `x` are non-negative.
 #'
-#' @return `inspect_bf` does not return any output. There are three possible outcomes:
+#' @return `inspect_bfactor` does not return any output. There are three possible outcomes:
 #' * The call is silent if:
 #'   * `x` is a numeric vector of valid Bayes factor values without `NA` or `NaN` values.
 #'   * `x` is a numeric vector of valid Bayes factor values with some `NA` or `NaN` values, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
@@ -123,43 +123,43 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'   * `x` is a numeric vector of valid Bayes factor values with some `NA` or `NaN` values and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
 #' x1 <- c(0, 0.5, 1, 10, 50, 100)
 #' x2 <- c(NA, 0.5, 1, 10, 50, 100)
-#' inspect_bf(x1)
-#' inspect_bf(x2, warning_nas = FALSE)
-#' inspect_bf(x2, allow_nas = TRUE, warning_nas = FALSE)
+#' inspect_bfactor(x1)
+#' inspect_bfactor(x2, warning_nas = FALSE)
+#' inspect_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Call that throws an informative warning message:
 #' \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' \dontrun{inspect_bf(y)}
-#' \dontrun{inspect_bf(y, warning_nas = TRUE)}
-#' \dontrun{inspect_bf(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' \dontrun{inspect_bfactor(y)}
+#' \dontrun{inspect_bfactor(y, warning_nas = TRUE)}
+#' \dontrun{inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE)}
 #'
 #' # Calls that throw informative error messages:
 #' \dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' \dontrun{inspect_bf(z)}
+#' \dontrun{inspect_bfactor(z)}
 #' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
 #'          "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)}
-#' \dontrun{inspect_bf(mylist[[1]])}
-#' \dontrun{inspect_bf(mylist[[2]])}
-#' \dontrun{inspect_bf(mylist[[3]])}
-#' \dontrun{inspect_bf(mylist[[4]])}
-#' \dontrun{inspect_bf(mylist[[5]])}
-#' \dontrun{inspect_bf(mylist[[6]])}
-#' \dontrun{inspect_bf(mylist[[7]])}
-#' \dontrun{inspect_bf(mylist[[8]])}
-#' \dontrun{inspect_bf(mylist[[9]])}
-#' \dontrun{inspect_bf(mylist[[10]])}
-#' \dontrun{inspect_bf(mylist[[11]])}
+#' \dontrun{inspect_bfactor(mylist[[1]])}
+#' \dontrun{inspect_bfactor(mylist[[2]])}
+#' \dontrun{inspect_bfactor(mylist[[3]])}
+#' \dontrun{inspect_bfactor(mylist[[4]])}
+#' \dontrun{inspect_bfactor(mylist[[5]])}
+#' \dontrun{inspect_bfactor(mylist[[6]])}
+#' \dontrun{inspect_bfactor(mylist[[7]])}
+#' \dontrun{inspect_bfactor(mylist[[8]])}
+#' \dontrun{inspect_bfactor(mylist[[9]])}
+#' \dontrun{inspect_bfactor(mylist[[10]])}
+#' \dontrun{inspect_bfactor(mylist[[11]])}
 #'
 #' @export
 
-inspect_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
+inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
@@ -197,18 +197,18 @@ inspect_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
 #' @title Check if an object is a numeric vector of valid logarithmic Bayes factor values
 #'
-#' @description `inspect_log_bf` checks if an object is a numeric vector of valid logarithmic Bayes factor values.  This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_log_bfactor` checks if an object is a numeric vector of valid logarithmic Bayes factor values.  This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
 #' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is `TRUE`).
 #'
-#' @details `inspect_log_bf` conducts a series of tests to check if `x` is a numeric vector of valid logarithmic Bayes factor values. Namely, `inspect_log_bf` checks if:
+#' @details `inspect_log_bfactor` conducts a series of tests to check if `x` is a numeric vector of valid logarithmic Bayes factor values. Namely, `inspect_log_bfactor` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is a numeric, atomic vector.
 #' * `x` has `NA` or `NaN` values.
 #'
-#' @return `inspect_log_bf` does not return any output. There are three possible outcomes:
+#' @return `inspect_log_bfactor` does not return any output. There are three possible outcomes:
 #' * The call is silent if:
 #'   * `x` is a numeric vector of valid logarithmic Bayes factor values without `NA` or `NaN` values.
 #'   * `x` is a numeric vector of valid logarithmic Bayes factor values with some `NA` or `NaN` values, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
@@ -218,39 +218,39 @@ inspect_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'   * `x` is a numeric vector of valid logarithmic Bayes factor values with some `NA` or `NaN` values and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
 #' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
 #' x1 <- c(0, 0.5, 1, 10, 50, 100)
 #' x2 <- c(NA, 0.5, 1, 10, 50, 100)
-#' inspect_log_bf(x1)
-#' inspect_log_bf(x2, warning_nas = FALSE)
-#' inspect_log_bf(x2, allow_nas = TRUE, warning_nas = FALSE)
+#' inspect_log_bfactor(x1)
+#' inspect_log_bfactor(x2, warning_nas = FALSE)
+#' inspect_log_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Call that throws an informative warning message:
 #' \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' \dontrun{inspect_log_bf(y)}
-#' \dontrun{inspect_log_bf(y, warning_nas = TRUE)}
-#' \dontrun{inspect_log_bf(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' \dontrun{inspect_log_bfactor(y)}
+#' \dontrun{inspect_log_bfactor(y, warning_nas = TRUE)}
+#' \dontrun{inspect_log_bfactor(y, allow_nas = TRUE, warning_nas = TRUE)}
 #'
 #' # Calls that throw informative error messages:
 #' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
 #'          "0.5", list(0.5), numeric(0), NA, NaN)}
-#' \dontrun{inspect_log_bf(mylist[[1]])}
-#' \dontrun{inspect_log_bf(mylist[[2]])}
-#' \dontrun{inspect_log_bf(mylist[[3]])}
-#' \dontrun{inspect_log_bf(mylist[[4]])}
-#' \dontrun{inspect_log_bf(mylist[[5]])}
-#' \dontrun{inspect_log_bf(mylist[[6]])}
-#' \dontrun{inspect_log_bf(mylist[[7]])}
-#' \dontrun{inspect_log_bf(mylist[[8]])}
-#' \dontrun{inspect_log_bf(mylist[[9]])}
+#' \dontrun{inspect_log_bfactor(mylist[[1]])}
+#' \dontrun{inspect_log_bfactor(mylist[[2]])}
+#' \dontrun{inspect_log_bfactor(mylist[[3]])}
+#' \dontrun{inspect_log_bfactor(mylist[[4]])}
+#' \dontrun{inspect_log_bfactor(mylist[[5]])}
+#' \dontrun{inspect_log_bfactor(mylist[[6]])}
+#' \dontrun{inspect_log_bfactor(mylist[[7]])}
+#' \dontrun{inspect_log_bfactor(mylist[[8]])}
+#' \dontrun{inspect_log_bfactor(mylist[[9]])}
 #'
 #' @export
 
-inspect_log_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
+inspect_log_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
@@ -301,8 +301,8 @@ inspect_log_bf <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
-#' * \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -370,8 +370,8 @@ inspect_log_base <- function(x){
 #' @seealso
 #' * \code{\link[pcal]{bfactor_interpret}} for the interpretation of Bayes factors.
 #' * \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
-#' * \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_log_bf}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #' * \code{\link[inspector]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
 #'
 #' @examples
@@ -437,7 +437,7 @@ inspect_scale <- function(x){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
-#' * \code{\link[inspector]{inspect_bf}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -625,47 +625,55 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
       stop(paste("Invalid argument:", deparse(substitute(x)), "=", x, "is not allowed."))
     }
   }
-
 }
 
-#' @title Check if an object is a character value
+#' @title Check if an object is a character vector
 #'
-#' @description `inspect_character` checks if an object is a character value. This can be useful to validate inputs in user-defined functions.
+#' @description `inspect_character` checks if an object is a character vector. This can be useful to validate inputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
-#' @param allowed A character vector.
-#' @param case_sensitive A non-missing logical value.
+#' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
+#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is set to `TRUE`).
 #'
-#' @details `inspect_character` conducts a series of tests to check if `x` is a character value that belongs to a set of allowed values. Namely, `inspect_character` checks if:
+#' @details `inspect_character` conducts a series of tests to check if `x` is a character vector. Namely, `inspect_character` checks if:
 #' * `x` is `NULL` or empty.
-#' * `x` is an atomic character vector of \code{\link[base]{length}} 1.
-#' * `x` is `NA` or `NaN`.
-#' * `x` is one of the allowed values (as specified in the `allowed` argument).
+#' * `x` is an atomic vector.
+#' * The \code{\link[base]{typeof}} `x` is character.
+#' * There are `NA` or `NaN` values in `x`.
 #'
-#' By default, the comparison of `x` with `allowed` is not case sensitive. If you only want case sensitive matches of `x` to `allowed` set `case_sensitive` to `TRUE`.
-#'
-#' @return `inspect_character` does not return any output. There are two possible outcomes:
-#' * The call is silent if `x` is a character value that belongs to the set of allowed values.
-#' * An informative error message is thrown otherwise.
+#' @return `inspect_character` does not return any output. There are three possible outcomes:
+#' * The call is silent if:
+#'   * `x` is a character vector without `NA` or `NaN` values.
+#'   * `x` is a character vector with `NA` or `NaN` values, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
+#' * An informative warning message is thrown if `x` is a character vector with `NA` or `NaN` values and both `allow_nas` and `warning_nas` are set to `TRUE`.
+#' * An informative error message is thrown if:
+#'   * `x` is not a character vector.
+#'   * `x` is a character vector with `NA` or `NaN` values and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
+#' * \code{\link[inspector]{inspect_character_match}} to check if `x` is a character value that belongs to a set of allowed values.
 #' * \code{\link[inspector]{inspect_true_or_false}} to check if an object is a non-missing logical value.
 #' * \code{\link[inspector]{inspect_categories}} to check if an object is eligible to be used as the levels of a factor.
 #'
 #' @examples
 #' # Calls that pass silently:
 #' x1 <- "Kass"
-#' x2 <- "kass"
-#' inspect_character(x1, allowed = c("Kass", "Raftery"))
-#' inspect_character(x2, allowed = c("Kass", "Raftery"))
+#' x2 <- c("Kass", "Raftery")
+#' x3 <- c("Kass", "Raftery", NA)
+#' x4 <- letters
+#' inspect_character(x1)
+#' inspect_character(x2)
+#' inspect_character(x3)
+#' inspect_character(x4)
 #'
-#' # Calls that throw informative error messages:
-#' \dontrun{y1 <- "kasss"}
-#' \dontrun{y2 <- "kass"}
-#' \dontrun{inspect_character(y1, allowed = c("Kass", "Raftery"))}
-#' \dontrun{inspect_character(y2, allowed = c("Kass", "Raftery"), case_sensitive = TRUE)}
-#' \dontrun{mylist <- list(NULL, character(0), c("Kass", "Raftery"),
-#'  1, "1", list(1), NaN, NA)}
+#' # Call that throws an informative warning message
+#' \dontrun{y <- c("Kass", "Raftery", NA)}
+#' \dontrun{inspect_character(y, warning_nas = TRUE)}
+#'
+#' # Calls that throw informative error messages
+#' \dontrun{inspect_character(y, allow_nas = FALSE)}
+#' \dontrun{mylist <- list(NULL, character(0), 1,
+#'  c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)}
 #' \dontrun{inspect_character(mylist[[1]])}
 #' \dontrun{inspect_character(mylist[[2]])}
 #' \dontrun{inspect_character(mylist[[3]])}
@@ -673,28 +681,44 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
 #' \dontrun{inspect_character(mylist[[5]])}
 #' \dontrun{inspect_character(mylist[[6]])}
 #' \dontrun{inspect_character(mylist[[7]])}
+#' \dontrun{inspect_character(mylist[[8]])}
 #'
 #' @export
 
-inspect_character <- function(x, warning_nas = FALSE){
+inspect_character <- function(x, allow_nas = TRUE, warning_nas = FALSE){
+
+  inspect_true_or_false(allow_nas)
+  inspect_true_or_false(warning_nas)
 
   output_name <- paste0("'", deparse(substitute(x)), "'")
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)), isFALSE(is.character(x)))){
-    stop(paste("Invalid argument:", output_name, "must be a character vector."))
+  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
+  }
+  if(length(x) == 0){
+    stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if(all(is.na(x))){
     stop(paste("Invalid argument: all elements of", output_name, "are NA or NaN."))
   }
-  if(isTRUE(warning_nas)){
-    if(any(is.na(x))){
-      warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
+  if(any(is.na(x))){
+    if(isFALSE(allow_nas)) {
+      stop(paste("Invalid argument: There are NA or NaN values in ", paste0(output_name, ".")))
+    } else {
+      if(isTRUE(warning_nas)){
+        warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
+      }
     }
   }
+  if(isFALSE(is.character(x))){
+    stop(paste("Invalid argument: the type of", output_name, "must be character."))
+  }
 }
+
+
 
 
 

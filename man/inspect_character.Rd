@@ -2,52 +2,64 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_character}
 \alias{inspect_character}
-\title{Check if an object is a character value that belongs to a set of allowed values}
+\title{Check if an object is a character vector}
 \usage{
-inspect_character(x, warning_nas = FALSE)
+inspect_character(x, allow_nas = TRUE, warning_nas = FALSE)
 }
 \arguments{
 \item{x}{An arbitrary object.}
 
-\item{allowed}{A character vector.}
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
 
-\item{case_sensitive}{A non-missing logical value.}
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} pass silently otherwise (if \code{allow_nas} is set to \code{TRUE}).}
 }
 \value{
-\code{inspect_character} does not return any output. There are two possible outcomes:
+\code{inspect_character} does not return any output. There are three possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is a character value that belongs to the set of allowed values.
-\item An informative error message is thrown otherwise.
+\item The call is silent if:
+\itemize{
+\item \code{x} is a character vector without \code{NA} or \code{NaN} values.
+\item \code{x} is a character vector with \code{NA} or \code{NaN} values, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+}
+\item An informative warning message is thrown if \code{x} is a character vector with \code{NA} or \code{NaN} values and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative error message is thrown if:
+\itemize{
+\item \code{x} is not a character vector.
+\item \code{x} is a character vector with \code{NA} or \code{NaN} values and \code{allow_nas} is set to \code{FALSE}.
+}
 }
 }
 \description{
-\code{inspect_character} checks if an object is a character value that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
+\code{inspect_character} checks if an object is a character vector. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_character} conducts a series of tests to check if \code{x} is a character value that belongs to a set of allowed values. Namely, \code{inspect_character} checks if:
+\code{inspect_character} conducts a series of tests to check if \code{x} is a character vector. Namely, \code{inspect_character} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is an atomic character vector of \code{\link[base]{length}} 1.
-\item \code{x} is \code{NA} or \code{NaN}.
-\item \code{x} is one of the allowed values (as specified in the \code{allowed} argument).
+\item \code{x} is an atomic vector.
+\item The \code{\link[base]{typeof}} \code{x} is character.
+\item There are \code{NA} or \code{NaN} values in \code{x}.
 }
-
-By default, the comparison of \code{x} with \code{allowed} is not case sensitive. If you only want case sensitive matches of \code{x} to \code{allowed} set \code{case_sensitive} to \code{TRUE}.
 }
 \examples{
 # Calls that pass silently:
 x1 <- "Kass"
-x2 <- "kass"
-inspect_character(x1, allowed = c("Kass", "Raftery"))
-inspect_character(x2, allowed = c("Kass", "Raftery"))
+x2 <- c("Kass", "Raftery")
+x3 <- c("Kass", "Raftery", NA)
+x4 <- letters
+inspect_character(x1)
+inspect_character(x2)
+inspect_character(x3)
+inspect_character(x4)
 
-# Calls that throw informative error messages:
-\dontrun{y1 <- "kasss"}
-\dontrun{y2 <- "kass"}
-\dontrun{inspect_character(y1, allowed = c("Kass", "Raftery"))}
-\dontrun{inspect_character(y2, allowed = c("Kass", "Raftery"), case_sensitive = TRUE)}
-\dontrun{mylist <- list(NULL, character(0), c("Kass", "Raftery"),
- 1, "1", list(1), NaN, NA)}
+# Call that throws an informative warning message
+\dontrun{y <- c("Kass", "Raftery", NA)}
+\dontrun{inspect_character(y, warning_nas = TRUE)}
+
+# Calls that throw informative error messages
+\dontrun{inspect_character(y, allow_nas = FALSE)}
+\dontrun{mylist <- list(NULL, character(0), 1,
+ c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)}
 \dontrun{inspect_character(mylist[[1]])}
 \dontrun{inspect_character(mylist[[2]])}
 \dontrun{inspect_character(mylist[[3]])}
@@ -55,10 +67,12 @@ inspect_character(x2, allowed = c("Kass", "Raftery"))
 \dontrun{inspect_character(mylist[[5]])}
 \dontrun{inspect_character(mylist[[6]])}
 \dontrun{inspect_character(mylist[[7]])}
+\dontrun{inspect_character(mylist[[8]])}
 
 }
 \seealso{
 \itemize{
+\item \code{\link[inspector]{inspect_character_match}} to check if \code{x} is a character value that belongs to a set of allowed values.
 \item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a non-missing logical value.
 \item \code{\link[inspector]{inspect_categories}} to check if an object is eligible to be used as the levels of a factor.
 }

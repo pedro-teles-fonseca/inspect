@@ -2,19 +2,87 @@
 % Please edit documentation in R/inspect_data_.R
 \name{inspect_data_multinom_as_bern}
 \alias{inspect_data_multinom_as_bern}
-\title{lorem ipsum}
+\title{Validate categorical data as dichotomous}
 \usage{
-inspect_data_multinom_as_bern(data, success, warning_nas = FALSE)
+inspect_data_multinom_as_bern(
+  data,
+  success,
+  allow_nas = TRUE,
+  warning_nas = FALSE
+)
 }
 \arguments{
-\item{x}{lorem ipsumlorem ipsum}
+\item{data, success}{Arbitrary objects. \code{success} is meant to indicate the value of \code{data} that corresponds to a success.}
+
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{data} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{data}.}
+
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{data} generates a warning message. \code{NA} and \code{NaN} pass silently otherwise (if \code{allow_nas} is set to\code{TRUE}).}
 }
 \value{
-lorem ipsum
+\code{inspect_data_multinom_as_bern} does not return any output. There are three possible outcomes:
+\itemize{
+\item The call is silent if:
+\itemize{
+\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data and there are no \code{NA} or \code{NaN} values in \code{data}.
+\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data, there are some \code{NA} or \code{NaN} values in \code{data}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+}
+\item An informative warning message is thrown if:
+\itemize{
+\item \code{x} contains valid categorical data that is eligible to be used as dichotomous data and \code{success} is not observed in \code{data}.
+\item \code{x} contains valid categorical data that is eligible to be used as dichotomous data, there are \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+}
+\item An informative error message is thrown and the execution is stopped if:
+\itemize{
+\item \code{data} does not contain valid categorical data that is eligible to be used as dichotomous data.
+\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data, there are some \code{NA} or \code{NaN} values in \code{data} and \code{allow_nas} is set to \code{FALSE}.
+}
+}
 }
 \description{
-lorem ipsum
+\code{inspect_data_multinom_as_bern} checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-lorem ipsum
+\code{inspect_data_multinom_as_bern} conducts a series of tests to check if \code{data} contains valid categorical data that is eligible to be used as dichotomous data. Namely, \code{inspect_data_multinom_as_bern} checks if:
+\itemize{
+\item \code{data} and \code{success} are \code{NULL} or empty.
+\item \code{data} and \code{success} are atomic and have an eligible data type (logical, integer, double, character).
+\item \code{data} and \code{success} have \code{NA} or \code{NaN} values.
+\item \code{success} has \code{\link[base]{length}} 1.
+\item \code{success} is observed in \code{data}.
+}
+}
+\examples{
+# Calls that pass silently:
+x1 <- c(1, 0, 0, 1, 0)
+x2 <- c(FALSE, FALSE, TRUE)
+x3 <- c("yes", "no", "yes")
+x4 <- factor(c("yes", "no", "yes"))
+x5 <- c(1, 0, 0, 1, 0, NA)
+inspect_data_multinom_as_bern(x1, success = 1)
+inspect_data_multinom_as_bern(x2, success = TRUE)
+inspect_data_multinom_as_bern(x3, success = "yes")
+inspect_data_multinom_as_bern(x4, success = "yes")
+inspect_data_multinom_as_bern(x5, success = 1)
+
+# Calls that throw an informative warning message:
+\dontrun{y1 <- c(1, 1, NA, 0, 0)}
+\dontrun{y2 <- c(0, 0)}
+\dontrun{success <- 1}
+\dontrun{inspect_data_multinom_as_bern(y1, success = 1, warning_nas = TRUE)}
+\dontrun{inspect_data_multinom_as_bern(y2, success = success)}
+
+# Calls that throw an informative error message:
+\dontrun{inspect_data_multinom_as_bern(y1, 1, allow_nas = FALSE)}
+\dontrun{inspect_data_multinom_as_bern(NULL, 1)}
+\dontrun{inspect_data_multinom_as_bern(c(1,0), NULL)}
+\dontrun{inspect_data_multinom_as_bern(list(1,0), 1)}
+\dontrun{inspect_data_multinom_as_bern(c(1,0), list(1))}
+\dontrun{inspect_data_multinom_as_bern(numeric(0), 0)}
+\dontrun{inspect_data_multinom_as_bern(1, numeric(0))}
+\dontrun{inspect_data_multinom_as_bern(NaN, 1)}
+\dontrun{inspect_data_multinom_as_bern(NA, 1)}
+\dontrun{inspect_data_multinom_as_bern(c(1,0), NA)}
+\dontrun{inspect_data_multinom_as_bern(c(1,0), NaN)}
+\dontrun{inspect_data_multinom_as_bern(c(1,0), 2)}
+
 }
