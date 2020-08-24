@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_par_.R
 \name{inspect_par_beta}
 \alias{inspect_par_beta}
-\title{Validate parameters for a Beta distribution}
+\title{Validate parameters for the Beta distribution}
 \usage{
 inspect_par_beta(x)
 }
@@ -55,5 +55,10 @@ inspect_par_beta(x2)
 
 }
 \seealso{
-
+\itemize{
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+}
 }

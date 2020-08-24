@@ -18,6 +18,10 @@
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -67,7 +71,7 @@ inspect_par_bernoulli <- function(x){
   }
 }
 
-#' @title Validate multinomial proportions
+#' @title Validate Multinomial proportions
 #'
 #' @description `inspect_par_multinomial` checks if an object is an eligible vector of Multinomial proportions. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 #'
@@ -86,6 +90,10 @@ inspect_par_bernoulli <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -140,7 +148,7 @@ inspect_par_multinomial <- function(x){
   }
 }
 
-#' @title Validate parameters for a Beta distribution
+#' @title Validate parameters for the Beta distribution
 #'
 #' @description `inspect_par_beta` checks if an object is an eligible vector of parameters for a Beta distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 #'
@@ -159,6 +167,10 @@ inspect_par_multinomial <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -209,7 +221,7 @@ inspect_par_beta <- function(x){
   }
 }
 
-#' @title Validate parameters for a Dirichlet distribution
+#' @title Validate parameters for the Dirichlet distribution
 #'
 #' @description `inspect_par_dirichlet` checks if an object is an eligible vector of parameters for a Dirichlet distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 #'
@@ -223,10 +235,14 @@ inspect_par_beta <- function(x){
 #' * All elements of `x` are positive.
 #'
 #' @return `inspect_par_dirichlet` does not return any output. There are two possible outcomes:
-#' * The call is silent if `x` is an eligible vector of parameters for a Beta distribution.
+#' * The call is silent if `x` is an eligible vector of parameters for a Dirichlet distribution.
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -276,6 +292,53 @@ inspect_par_dirichlet <- function(x){
   }
 }
 
+#' @title Validate parameters for the Haldane distribution
+#'
+#' @description `inspect_par_haldane` checks if an object is an eligible vector of parameters for a Haldane distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#'
+#' @param x An arbitrary object.
+#'
+#' @details `inspect_par_haldane` conducts a series of tests to check if `x` is an eligible vector of parameters for a Haldane distribution. Namely, `inspect_par_haldane` checks if:
+#' * `x` is `NULL` or empty.
+#' * `x` is an atomic vector
+#' * `x` is numeric
+#' * `x` has `NA` or `NaN` values.
+#' * All elements of `x` equal to 0.
+#'
+#' @return `inspect_par_haldane` does not return any output. There are two possible outcomes:
+#' * The call is silent if `x` is an eligible vector of parameters for a Haldane distribution.
+#' * An informative error message is thrown otherwise.
+#'
+#' @seealso
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#'
+#' @examples
+#' # Calls that pass silently:
+#' x1 <- c(0, 0, 0)
+#' x2 <- c(0, 0)
+#' inspect_par_haldane(x1)
+#' inspect_par_haldane(x2)
+#'
+#' # Calls that throw an informative error message:
+#' \dontrun{mylist <- list(NULL, factor(0, 0, 0),
+#'  matrix(c(0, 0, 0)), c("0", "0", "0"), list(0, 0, 0), c(0, NA),
+#'   c(0, NaN, 0), c(TRUE, FALSE), numeric(0), c(1, 0, 0))}
+#' \dontrun{inspect_par_haldane(mylist[[1]])}
+#' \dontrun{inspect_par_haldane(mylist[[2]])}
+#' \dontrun{inspect_par_haldane(mylist[[3]])}
+#' \dontrun{inspect_par_haldane(mylist[[4]])}
+#' \dontrun{inspect_par_haldane(mylist[[5]])}
+#' \dontrun{inspect_par_haldane(mylist[[6]])}
+#' \dontrun{inspect_par_haldane(mylist[[7]])}
+#' \dontrun{inspect_par_haldane(mylist[[8]])}
+#' \dontrun{inspect_par_haldane(mylist[[9]])}
+#' \dontrun{inspect_par_haldane(mylist[[10]])}
+#'
+#' @export
+#'
 inspect_par_haldane <- function(x){
 
   output_name <- paste0("'", deparse(substitute(x)), "'")

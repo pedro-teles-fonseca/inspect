@@ -54,5 +54,10 @@ inspect_par_bernoulli(0.1)
 
 }
 \seealso{
-
+\itemize{
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+}
 }

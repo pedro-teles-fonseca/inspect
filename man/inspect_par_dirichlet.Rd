@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_par_.R
 \name{inspect_par_dirichlet}
 \alias{inspect_par_dirichlet}
-\title{Validate parameters for a Dirichlet distribution}
+\title{Validate parameters for the Dirichlet distribution}
 \usage{
 inspect_par_dirichlet(x)
 }
@@ -12,7 +12,7 @@ inspect_par_dirichlet(x)
 \value{
 \code{inspect_par_dirichlet} does not return any output. There are two possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is an eligible vector of parameters for a Beta distribution.
+\item The call is silent if \code{x} is an eligible vector of parameters for a Dirichlet distribution.
 \item An informative error message is thrown otherwise.
 }
 }
@@ -53,5 +53,10 @@ inspect_par_dirichlet(x2)
 
 }
 \seealso{
-
+\itemize{
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+}
 }

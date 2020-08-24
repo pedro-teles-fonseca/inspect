@@ -61,7 +61,7 @@ inspect_categories(levels(x5))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_data_binomial}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_data_multinomial}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 }
 }

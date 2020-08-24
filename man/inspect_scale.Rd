@@ -56,7 +56,7 @@ inspect_scale(x4)
 \item \code{\link[pcal]{bfactor_interpret}} for the interpretation of Bayes factors.
 \item \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
 \item \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-\item \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+\item \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 \item \code{\link[inspector]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
 }
 }

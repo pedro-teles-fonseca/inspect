@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_par_.R
 \name{inspect_par_multinomial}
 \alias{inspect_par_multinomial}
-\title{Validate multinomial proportions}
+\title{Validate Multinomial proportions}
 \usage{
 inspect_par_multinomial(x)
 }
@@ -56,5 +56,10 @@ inspect_par_multinomial(x2)
 
 }
 \seealso{
-
+\itemize{
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+}
 }

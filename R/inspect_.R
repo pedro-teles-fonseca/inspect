@@ -24,7 +24,7 @@
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -123,7 +123,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'   * `x` is a numeric vector of valid Bayes factor values with some `NA` or `NaN` values and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples
@@ -197,18 +197,18 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
 #' @title Check if an object is a numeric vector of valid logarithmic Bayes factor values
 #'
-#' @description `inspect_log_bfactor` checks if an object is a numeric vector of valid logarithmic Bayes factor values.  This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_bfactor_log` checks if an object is a numeric vector of valid logarithmic Bayes factor values.  This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
 #' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is `TRUE`).
 #'
-#' @details `inspect_log_bfactor` conducts a series of tests to check if `x` is a numeric vector of valid logarithmic Bayes factor values. Namely, `inspect_log_bfactor` checks if:
+#' @details `inspect_bfactor_log` conducts a series of tests to check if `x` is a numeric vector of valid logarithmic Bayes factor values. Namely, `inspect_bfactor_log` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is a numeric, atomic vector.
 #' * `x` has `NA` or `NaN` values.
 #'
-#' @return `inspect_log_bfactor` does not return any output. There are three possible outcomes:
+#' @return `inspect_bfactor_log` does not return any output. There are three possible outcomes:
 #' * The call is silent if:
 #'   * `x` is a numeric vector of valid logarithmic Bayes factor values without `NA` or `NaN` values.
 #'   * `x` is a numeric vector of valid logarithmic Bayes factor values with some `NA` or `NaN` values, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
@@ -225,32 +225,32 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' # Calls that pass silently:
 #' x1 <- c(0, 0.5, 1, 10, 50, 100)
 #' x2 <- c(NA, 0.5, 1, 10, 50, 100)
-#' inspect_log_bfactor(x1)
-#' inspect_log_bfactor(x2, warning_nas = FALSE)
-#' inspect_log_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
+#' inspect_bfactor_log(x1)
+#' inspect_bfactor_log(x2, warning_nas = FALSE)
+#' inspect_bfactor_log(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Call that throws an informative warning message:
 #' \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' \dontrun{inspect_log_bfactor(y)}
-#' \dontrun{inspect_log_bfactor(y, warning_nas = TRUE)}
-#' \dontrun{inspect_log_bfactor(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' \dontrun{inspect_bfactor_log(y)}
+#' \dontrun{inspect_bfactor_log(y, warning_nas = TRUE)}
+#' \dontrun{inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
 #'
 #' # Calls that throw informative error messages:
 #' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
 #'          "0.5", list(0.5), numeric(0), NA, NaN)}
-#' \dontrun{inspect_log_bfactor(mylist[[1]])}
-#' \dontrun{inspect_log_bfactor(mylist[[2]])}
-#' \dontrun{inspect_log_bfactor(mylist[[3]])}
-#' \dontrun{inspect_log_bfactor(mylist[[4]])}
-#' \dontrun{inspect_log_bfactor(mylist[[5]])}
-#' \dontrun{inspect_log_bfactor(mylist[[6]])}
-#' \dontrun{inspect_log_bfactor(mylist[[7]])}
-#' \dontrun{inspect_log_bfactor(mylist[[8]])}
-#' \dontrun{inspect_log_bfactor(mylist[[9]])}
+#' \dontrun{inspect_bfactor_log(mylist[[1]])}
+#' \dontrun{inspect_bfactor_log(mylist[[2]])}
+#' \dontrun{inspect_bfactor_log(mylist[[3]])}
+#' \dontrun{inspect_bfactor_log(mylist[[4]])}
+#' \dontrun{inspect_bfactor_log(mylist[[5]])}
+#' \dontrun{inspect_bfactor_log(mylist[[6]])}
+#' \dontrun{inspect_bfactor_log(mylist[[7]])}
+#' \dontrun{inspect_bfactor_log(mylist[[8]])}
+#' \dontrun{inspect_bfactor_log(mylist[[9]])}
 #'
 #' @export
 
-inspect_log_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
+inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
@@ -302,7 +302,7 @@ inspect_log_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' @seealso
 #' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -371,7 +371,7 @@ inspect_log_base <- function(x){
 #' * \code{\link[pcal]{bfactor_interpret}} for the interpretation of Bayes factors.
 #' * \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
 #' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #' * \code{\link[inspector]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
 #'
 #' @examples
@@ -493,8 +493,8 @@ inspect_true_or_false <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_data_binomial}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_multinomial}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 #'
 #' @examples
 #' # Calls that pass silently:

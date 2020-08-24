@@ -56,6 +56,6 @@ inspect_log_base(x3)
 \itemize{
 \item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 \item \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-\item \code{\link[inspector]{inspect_log_bfactor}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+\item \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 }
 }
