@@ -162,8 +162,8 @@
 <li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data, there are some <code>NA</code> or <code>NaN</code> values in <code>data</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
 <li><p>An informative warning message is thrown if:</p><ul>
-<li><p><code>x</code> contains valid categorical data that is eligible to be used as dichotomous data and <code>success</code> is not observed in <code>data</code>.</p></li>
-<li><p><code>x</code> contains valid categorical data that is eligible to be used as dichotomous data, there are <code>NA</code> or <code>NaN</code> values in <code>x</code> and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
+<li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data and <code>success</code> is not observed in <code>data</code>.</p></li>
+<li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data, there are <code>NA</code> or <code>NaN</code> values in <code>data</code> and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
 </ul></li>
 <li><p>An informative error message is thrown and the execution is stopped if:</p><ul>
 <li><p><code>data</code> does not contain valid categorical data that is eligible to be used as dichotomous data.</p></li>
@@ -181,6 +181,16 @@
 <li><p><code>success</code> is observed in <code>data</code>.</p></li>
 </ul>
 
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'>
+<ul>
+<li><p><code>inspect_data_multinom</code> to validate categorical.</p></li>
+<li><p><code><a href='inspect_par_multinomial.html'>inspect_par_multinomial</a></code> to validate vectors of Multinomial proportions.</p></li>
+<li><p><code><a href='inspect_data_dichotomous.html'>inspect_data_dichotomous</a></code> to validate dichotomous data.</p></li>
+<li><p><code><a href='inspect_par_bernoulli.html'>inspect_par_bernoulli</a></code> to validate Bernoulli/Binomial proportions.</p></li>
+</ul>
+</div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Calls that pass silently:</span>
