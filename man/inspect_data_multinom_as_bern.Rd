@@ -88,7 +88,7 @@ inspect_data_multinom_as_bern(x5, success = 1)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_data_multinom}} to validate categorical.
+\item \code{\link[inspector]{inspect_data_categorical}} to validate categorical.
 \item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
 \item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
 \item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.

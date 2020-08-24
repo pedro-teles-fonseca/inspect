@@ -235,7 +235,7 @@ inspect_data_categorical <- function(data, allow_nas = TRUE, warning_nas = FALSE
 #'   * `data` contains valid categorical data that is eligible to be used as dichotomous data, there are some `NA` or `NaN` values in `data` and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_data_multinom}} to validate categorical.
+#' * \code{\link[inspector]{inspect_data_categorical}} to validate categorical.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
 #' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
 #' * \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
