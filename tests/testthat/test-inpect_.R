@@ -197,91 +197,91 @@ test_that("inspect_bfactor 18", {
   expect_warning(inspect_bfactor(c(0.1, 2, NA, 4, 0.5), warning_nas = TRUE))
 })
 
-context("inspect_log_bfactor")
+context("inspect_bfactor_log")
 
-test_that("inspect_log_bfactor 1", {
-  expect_error(inspect_log_bfactor(NULL),
+test_that("inspect_bfactor_log 1", {
+  expect_error(inspect_bfactor_log(NULL),
                "Invalid argument: 'NULL' is NULL.")
 })
 
-test_that("inspect_log_bfactor 2", {
+test_that("inspect_bfactor_log 2", {
   x <- NULL
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: 'x' is NULL.")
 })
 
-test_that("inspect_log_bfactor 3", {
+test_that("inspect_bfactor_log 3", {
   x <- factor(1)
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: 'x' must be an atomic vector.")
 })
 
-test_that("inspect_log_bfactor 4", {
+test_that("inspect_bfactor_log 4", {
   x <- list(1)
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: 'x' must be an atomic vector.")
 })
 
-test_that("inspect_log_bfactor 5", {
+test_that("inspect_bfactor_log 5", {
   x <- numeric(0)
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: 'x' is empty.")
 })
 
-test_that("inspect_log_bfactor 6", {
+test_that("inspect_bfactor_log 6", {
   x <- NA
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: all elements of  'x' are NA or NaN.")
 })
 
-test_that("inspect_log_bfactor 7", {
+test_that("inspect_bfactor_log 7", {
   x <- NaN
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: all elements of  'x' are NA or NaN.")
 })
 
-test_that("inspect_log_bfactor 8", {
+test_that("inspect_bfactor_log 8", {
   x <- c(NA_real_, NA_real_, NA_real_)
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: all elements of  'x' are NA or NaN.")
 })
 
-test_that("inspect_log_bfactor 9", {
+test_that("inspect_bfactor_log 9", {
   x <- "1"
-  expect_error(inspect_log_bfactor(x),
+  expect_error(inspect_bfactor_log(x),
                "Invalid argument: the type of 'x' must be numeric")
 })
 
-test_that("inspect_log_bfactor 10", {
-  expect_equal(inspect_log_bfactor(10),
-               inspect_log_bfactor(2))
+test_that("inspect_bfactor_log 10", {
+  expect_equal(inspect_bfactor_log(10),
+               inspect_bfactor_log(2))
 })
 
-test_that("inspect_log_bfactor 11", {
-  expect_equal(inspect_log_bfactor(exp(1)),
-               inspect_log_bfactor(2))
+test_that("inspect_bfactor_log 11", {
+  expect_equal(inspect_bfactor_log(exp(1)),
+               inspect_bfactor_log(2))
 })
 
-test_that("inspect_log_bfactor 12", {
-  expect_equal(inspect_log_bfactor(10),
-               inspect_log_bfactor(-10))
+test_that("inspect_bfactor_log 12", {
+  expect_equal(inspect_bfactor_log(10),
+               inspect_bfactor_log(-10))
 })
 
-test_that("inspect_log_bfactor 13", {
-  expect_equal(inspect_log_bfactor(2),
+test_that("inspect_bfactor_log 13", {
+  expect_equal(inspect_bfactor_log(2),
                NULL)
 })
 
-test_that("inspect_log_bfactor 14", {
-  expect_silent(inspect_log_bfactor(2))
+test_that("inspect_bfactor_log 14", {
+  expect_silent(inspect_bfactor_log(2))
 })
 
-test_that("inspect_log_bfactor 15", {
-  expect_warning(inspect_log_bfactor(c(0.1, 2, NA, 4, 0.5), warning_nas = TRUE))
+test_that("inspect_bfactor_log 15", {
+  expect_warning(inspect_bfactor_log(c(0.1, 2, NA, 4, 0.5), warning_nas = TRUE))
 })
 
-test_that("inspect_log_bfactor 16", {
-  expect_error(inspect_log_bfactor(c(0.1, 2, NA, 4, 0.5), allow_nas = FALSE))
+test_that("inspect_bfactor_log 16", {
+  expect_error(inspect_bfactor_log(c(0.1, 2, NA, 4, 0.5), allow_nas = FALSE))
 })
 
 context("inspect_log_base")
