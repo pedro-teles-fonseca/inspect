@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check if an object is a vector of valid probability values — inspect_prob • inspector</title>
+<title>Validate vectors of probabilities — inspect_prob • inspector</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Check if an object is a vector of valid probability values — inspect_prob" />
+<meta property="og:title" content="Validate vectors of probabilities — inspect_prob" />
 <meta property="og:description" content="inspect_prob checks if an object is a numeric vector of valid probability values. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions." />
 
 
@@ -121,7 +121,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check if an object is a vector of valid probability values</h1>
+    <h1>Validate vectors of probabilities</h1>
     <small class="dont-index">Source: <a href='https://github.com/pedro-teles-fonseca/inspector/blob/master/R/inspect_.R'><code>R/inspect_.R</code></a></small>
     <div class="hidden name"><code>inspect_prob.Rd</code></div>
     </div>
@@ -153,13 +153,13 @@
 
     <p><code>inspect_prob</code> does not return any output. There are three possible outcomes:</p><ul>
 <li><p>The call is silent if:</p><ul>
-<li><p><code>x</code> is a numeric vector of valid probability values without <code>NA</code> or <code>NaN</code> values.</p></li>
-<li><p><code>x</code> is a numeric vector of valid probability values with some <code>NA</code> or <code>NaN</code> values, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a numeric vector of valid probability values and there are no <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></li>
+<li><p><code>x</code> is a numeric vector of valid probability values, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
-<li><p>An informative warning message is thrown if <code>x</code> is a numeric vector of valid probability values, there are <code>NA</code> or <code>NaN</code> values in <code>x</code> and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
+<li><p>An informative warning message is thrown if <code>x</code> is a numeric vector of valid probability values, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
 <li><p>An informative error message is thrown and the execution is stopped if:</p><ul>
 <li><p><code>x</code> is not a numeric vector of valid probability values.</p></li>
-<li><p><code>x</code> is a numeric vector of valid probability values with some <code>NA</code> or <code>NaN</code> values and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a numeric vector of valid probability values, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
 </ul>
 
@@ -167,7 +167,8 @@
 
     <p><code>inspect_prob</code> conducts a series of tests to check if <code>x</code> is a numeric vector of valid probability values. Namely, <code>inspect_prob</code> checks if:</p><ul>
 <li><p><code>x</code> is <code>NULL</code> or empty.</p></li>
-<li><p><code>x</code> is a numeric, atomic vector.</p></li>
+<li><p><code>x</code> is an atomic vector.</p></li>
+<li><p><code>x</code> is numeric.</p></li>
 <li><p><code>x</code> has <code>NA</code> or <code>NaN</code> values.</p></li>
 <li><p>The values of <code>x</code> are in the [0, 1] interval.</p></li>
 </ul>
@@ -176,6 +177,8 @@
 
     <div class='dont-index'>
 <ul>
+<li><p><code><a href='inspect_par_bernoulli.html'>inspect_par_bernoulli</a></code> to check if an object is a valid Bernoulli/Binomial proportion.</p></li>
+<li><p><code><a href='inspect_par_multinomial.html'>inspect_par_multinomial</a></code> to check if an object is a numeric vector of valid Multinomial proportions.</p></li>
 <li><p><code><a href='inspect_bfactor.html'>inspect_bfactor</a></code> to check if an object is a numeric vector of valid Bayes factor values.</p></li>
 <li><p><code><a href='inspect_bfactor_log.html'>inspect_bfactor_log</a></code> to check if an object is a numeric vector of valid logarithmic Bayes factor values.</p></li>
 </ul>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check if an object is a character vector — inspect_character • inspector</title>
+<title>Validate character vectors — inspect_character • inspector</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Check if an object is a character vector — inspect_character" />
+<meta property="og:title" content="Validate character vectors — inspect_character" />
 <meta property="og:description" content="inspect_character checks if an object is a character vector. This can be useful to validate inputs in user-defined functions." />
 
 
@@ -121,7 +121,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check if an object is a character vector</h1>
+    <h1>Validate character vectors</h1>
     <small class="dont-index">Source: <a href='https://github.com/pedro-teles-fonseca/inspector/blob/master/R/inspect_.R'><code>R/inspect_.R</code></a></small>
     <div class="hidden name"><code>inspect_character.Rd</code></div>
     </div>
@@ -153,13 +153,13 @@
 
     <p><code>inspect_character</code> does not return any output. There are three possible outcomes:</p><ul>
 <li><p>The call is silent if:</p><ul>
-<li><p><code>x</code> is a character vector without <code>NA</code> or <code>NaN</code> values.</p></li>
-<li><p><code>x</code> is a character vector with <code>NA</code> or <code>NaN</code> values, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a character vector and there are no <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></li>
+<li><p><code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
-<li><p>An informative warning message is thrown if <code>x</code> is a character vector with <code>NA</code> or <code>NaN</code> values and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
+<li><p>An informative warning message is thrown if <code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
 <li><p>An informative error message is thrown if:</p><ul>
 <li><p><code>x</code> is not a character vector.</p></li>
-<li><p><code>x</code> is a character vector with <code>NA</code> or <code>NaN</code> values and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
 </ul>
 
@@ -176,9 +176,8 @@
 
     <div class='dont-index'>
 <ul>
-<li><p><code><a href='inspect_character_match.html'>inspect_character_match</a></code> to check if <code>x</code> is a character value that belongs to a set of allowed values.</p></li>
+<li><p><code><a href='inspect_character_match.html'>inspect_character_match</a></code> to validate character vectors with predefined allowed values.</p></li>
 <li><p><code><a href='inspect_true_or_false.html'>inspect_true_or_false</a></code> to check if an object is a non-missing logical value.</p></li>
-<li><p><code><a href='inspect_categories.html'>inspect_categories</a></code> to check if an object is eligible to be used as the levels of a factor.</p></li>
 </ul>
 </div>
 
