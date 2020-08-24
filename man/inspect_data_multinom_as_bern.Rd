@@ -28,8 +28,8 @@ inspect_data_multinom_as_bern(
 }
 \item An informative warning message is thrown if:
 \itemize{
-\item \code{x} contains valid categorical data that is eligible to be used as dichotomous data and \code{success} is not observed in \code{data}.
-\item \code{x} contains valid categorical data that is eligible to be used as dichotomous data, there are \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data and \code{success} is not observed in \code{data}.
+\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data, there are \code{NA} or \code{NaN} values in \code{data} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
 }
 \item An informative error message is thrown and the execution is stopped if:
 \itemize{
@@ -85,4 +85,12 @@ inspect_data_multinom_as_bern(x5, success = 1)
 \dontrun{inspect_data_multinom_as_bern(c(1,0), NaN)}
 \dontrun{inspect_data_multinom_as_bern(c(1,0), 2)}
 
+}
+\seealso{
+\itemize{
+\item \code{\link[inspector]{inspect_data_multinom}} to validate categorical.
+\item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
+}
 }
