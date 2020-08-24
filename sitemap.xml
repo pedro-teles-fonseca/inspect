@@ -7,6 +7,9 @@
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_bfactor.html</loc>
   </url>
   <url>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_bfactor_log.html</loc>
+  </url>
+  <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_categories.html</loc>
   </url>
   <url>
@@ -28,9 +31,6 @@
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_log_base.html</loc>
   </url>
   <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_log_bfactor.html</loc>
-  </url>
-  <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_par_bernoulli.html</loc>
   </url>
   <url>
@@ -38,6 +38,9 @@
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_par_dirichlet.html</loc>
+  </url>
+  <url>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_par_haldane.html</loc>
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_par_multinomial.html</loc>
