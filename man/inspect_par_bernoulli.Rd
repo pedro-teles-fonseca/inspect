@@ -2,19 +2,57 @@
 % Please edit documentation in R/inspect_par_.R
 \name{inspect_par_bernoulli}
 \alias{inspect_par_bernoulli}
-\title{lorem ipsum}
+\title{Validate Bernoulli/Binomial proportions}
 \usage{
 inspect_par_bernoulli(x)
 }
 \arguments{
-\item{x}{lorem ipsumlorem ipsum}
+\item{x}{An arbitrary object.}
 }
 \value{
-lorem ipsum
+\code{inspect_par_bernoulli} does not return any output. There are two possible outcomes:
+\itemize{
+\item The call is silent if \code{x} is an eligible Bernoulli/Binomial proportion.
+\item An informative error message is thrown otherwise.
+}
 }
 \description{
-lorem ipsum
+\code{inspect_par_bernoulli} checks if an object is an eligible Bernoulli/Binomial proportion. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 }
 \details{
-lorem ipsum
+\code{inspect_par_bernoulli} conducts a series of tests to check if \code{x} is an eligible Bernoulli/Binomial proportion. Namely, \code{inspect_par_bernoulli} checks if:
+\itemize{
+\item \code{x} is \code{NULL} or empty.
+\item \code{x} is an atomic vector
+\item \code{x} is numeric
+\item \code{x} has \code{\link[base]{length}} 1
+\item \code{x} is \code{NA} or \code{NaN}.
+\item \code{x} is in the (0, 1) interval.
+}
+}
+\examples{
+# Calls that pass silently:
+x <- 0.5
+inspect_par_bernoulli(x)
+inspect_par_bernoulli(0.1)
+
+# Calls that throw an informative error message:
+\dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5), "0.5",
+ list(0.5), NA, NaN, numeric(0), c(0.1, 0.5), -0.5, 1.1)}
+\dontrun{inspect_par_bernoulli(mylist[[1]])}
+\dontrun{inspect_par_bernoulli(mylist[[2]])}
+\dontrun{inspect_par_bernoulli(mylist[[3]])}
+\dontrun{inspect_par_bernoulli(mylist[[4]])}
+\dontrun{inspect_par_bernoulli(mylist[[5]])}
+\dontrun{inspect_par_bernoulli(mylist[[6]])}
+\dontrun{inspect_par_bernoulli(mylist[[7]])}
+\dontrun{inspect_par_bernoulli(mylist[[8]])}
+\dontrun{inspect_par_bernoulli(mylist[[9]])}
+\dontrun{inspect_par_bernoulli(mylist[[10]])}
+\dontrun{inspect_par_bernoulli(mylist[[11]])}
+\dontrun{inspect_par_bernoulli(mylist[[11]])}
+
+}
+\seealso{
+
 }

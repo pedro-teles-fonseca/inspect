@@ -2,19 +2,59 @@
 % Please edit documentation in R/inspect_par_.R
 \name{inspect_par_multinomial}
 \alias{inspect_par_multinomial}
-\title{lorem ipsum}
+\title{Validate multinomial proportions}
 \usage{
 inspect_par_multinomial(x)
 }
 \arguments{
-\item{x}{lorem ipsumlorem ipsum}
+\item{x}{An arbitrary object.}
 }
 \value{
-lorem ipsum
+\code{inspect_par_multinomial} does not return any output. There are two possible outcomes:
+\itemize{
+\item The call is silent if \code{x} is an eligible vector of Multinomial proportions.
+\item An informative error message is thrown otherwise.
+}
 }
 \description{
-lorem ipsum
+\code{inspect_par_multinomial} checks if an object is an eligible vector of Multinomial proportions. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 }
 \details{
-lorem ipsum
+\code{inspect_par_multinomial} conducts a series of tests to check if \code{x} is an eligible vector of Multinomial proportions. Namely, \code{inspect_par_multinomial} checks if:
+\itemize{
+\item \code{x} is \code{NULL} or empty.
+\item \code{x} is an atomic vector
+\item \code{x} is numeric
+\item \code{x} has \code{NA} or \code{NaN} values.
+\item All elements of \code{x} are in the (0, 1) interval.
+\item \code{x} sums to 1.
+}
+}
+\examples{
+# Calls that pass silently:
+x1 <- c(0.5, 0.5)
+x2 <- rep(1/5, 5)
+inspect_par_multinomial(x1)
+inspect_par_multinomial(x2)
+
+# Calls that throw an informative error message:
+\dontrun{mylist <- list(NULL, TRUE, factor(0.5, 0.5),
+ matrix(c(0.5, 0.5)), c("0.5", "0.5"), list(0.5, 0.5),
+ c(0.9, NA), c(0.9, NaN), numeric(0), NA, c(0.9, 0.6), c(-0.1, 0.9))}
+\dontrun{inspect_par_multinomial(mylist[[1]])}
+\dontrun{inspect_par_multinomial(mylist[[2]])}
+\dontrun{inspect_par_multinomial(mylist[[3]])}
+\dontrun{inspect_par_multinomial(mylist[[4]])}
+\dontrun{inspect_par_multinomial(mylist[[5]])}
+\dontrun{inspect_par_multinomial(mylist[[6]])}
+\dontrun{inspect_par_multinomial(mylist[[7]])}
+\dontrun{inspect_par_multinomial(mylist[[8]])}
+\dontrun{inspect_par_multinomial(mylist[[9]])}
+\dontrun{inspect_par_multinomial(mylist[[10]])}
+\dontrun{inspect_par_multinomial(mylist[[11]])}
+\dontrun{inspect_par_multinomial(mylist[[12]])}
+
+}
+\seealso{
+
 }

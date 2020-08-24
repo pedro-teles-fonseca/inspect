@@ -2,19 +2,58 @@
 % Please edit documentation in R/inspect_par_.R
 \name{inspect_par_beta}
 \alias{inspect_par_beta}
-\title{lorem ipsum}
+\title{Validate parameters for a Beta distribution}
 \usage{
 inspect_par_beta(x)
 }
 \arguments{
-\item{x}{lorem ipsumlorem ipsum}
+\item{x}{An arbitrary object.}
 }
 \value{
-lorem ipsum
+\code{inspect_par_beta} does not return any output. There are two possible outcomes:
+\itemize{
+\item The call is silent if \code{x} is an eligible vector of parameters for a Beta distribution.
+\item An informative error message is thrown otherwise.
+}
 }
 \description{
-lorem ipsum
+\code{inspect_par_beta} checks if an object is an eligible vector of parameters for a Beta distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 }
 \details{
-lorem ipsum
+\code{inspect_par_beta} conducts a series of tests to check if \code{x} is an eligible vector of parameters for a Beta distribution. Namely, \code{inspect_par_beta} checks if:
+\itemize{
+\item \code{x} is \code{NULL} or empty.
+\item \code{x} is an atomic vector
+\item \code{x} is numeric
+\item \code{x} is of \code{\link[base]{length}}  2
+\item \code{x} has \code{NA} or \code{NaN} values.
+\item All elements of \code{x} are positive.
+}
+}
+\examples{
+# Calls that pass silently:
+x1 <- c(1, 1)
+x2 <- c(2, 5)
+inspect_par_beta(x1)
+inspect_par_beta(x2)
+
+# Calls that throw an informative error message:
+\dontrun{mylist <- list(NULL, 1, factor(1, 1),
+ matrix(c(1, 1)), c("1", "1"), list(1, 1), c(1, NA),
+  c(1, NaN), c(TRUE, FALSE), numeric(0), c(-1, 1))}
+\dontrun{inspect_par_beta(mylist[[1]])}
+\dontrun{inspect_par_beta(mylist[[2]])}
+\dontrun{inspect_par_beta(mylist[[3]])}
+\dontrun{inspect_par_beta(mylist[[4]])}
+\dontrun{inspect_par_beta(mylist[[5]])}
+\dontrun{inspect_par_beta(mylist[[6]])}
+\dontrun{inspect_par_beta(mylist[[7]])}
+\dontrun{inspect_par_beta(mylist[[8]])}
+\dontrun{inspect_par_beta(mylist[[9]])}
+\dontrun{inspect_par_beta(mylist[[10]])}
+\dontrun{inspect_par_beta(mylist[[11]])}
+
+}
+\seealso{
+
 }
