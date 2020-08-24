@@ -19,9 +19,11 @@
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
+#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -90,10 +92,12 @@ inspect_par_bernoulli <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
 #' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
+#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -167,10 +171,10 @@ inspect_par_multinomial <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -239,10 +243,10 @@ inspect_par_beta <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -310,10 +314,10 @@ inspect_par_dirichlet <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
 #'
 #' @examples
 #' # Calls that pass silently:

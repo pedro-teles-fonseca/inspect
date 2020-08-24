@@ -56,8 +56,10 @@ inspect_par_bernoulli(0.1)
 \seealso{
 \itemize{
 \item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
-\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
+\item \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
+\item \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
+\item \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
+\item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 }
 }
