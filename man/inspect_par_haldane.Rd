@@ -54,9 +54,9 @@ inspect_par_haldane(x2)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
-\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+\item \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
+\item \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
+\item \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
 }
 }
