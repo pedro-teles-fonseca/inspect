@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_categories}
 \alias{inspect_categories}
-\title{Check if an object is eligible to be used as the levels of a factor}
+\title{Validate factor levels}
 \usage{
 inspect_categories(x)
 }
@@ -63,5 +63,7 @@ inspect_categories(levels(x5))
 \itemize{
 \item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
 \item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
+\item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
 }
 }

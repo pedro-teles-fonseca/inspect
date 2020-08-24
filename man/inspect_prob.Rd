@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_prob}
 \alias{inspect_prob}
-\title{Check if an object is a vector of valid probability values}
+\title{Validate vectors of probabilities}
 \usage{
 inspect_prob(x, allow_nas = TRUE, warning_nas = TRUE)
 }
@@ -18,14 +18,14 @@ inspect_prob(x, allow_nas = TRUE, warning_nas = TRUE)
 \itemize{
 \item The call is silent if:
 \itemize{
-\item \code{x} is a numeric vector of valid probability values without \code{NA} or \code{NaN} values.
-\item \code{x} is a numeric vector of valid probability values with some \code{NA} or \code{NaN} values, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+\item \code{x} is a numeric vector of valid probability values and there are no \code{NA} or \code{NaN} values in \code{x}.
+\item \code{x} is a numeric vector of valid probability values, there are some \code{NA} or \code{NaN} values in \code{x}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
 }
-\item An informative warning message is thrown if \code{x} is a numeric vector of valid probability values, there are \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative warning message is thrown if \code{x} is a numeric vector of valid probability values, there are some \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
 \item An informative error message is thrown and the execution is stopped if:
 \itemize{
 \item \code{x} is not a numeric vector of valid probability values.
-\item \code{x} is a numeric vector of valid probability values with some \code{NA} or \code{NaN} values and \code{allow_nas} is set to \code{FALSE}.
+\item \code{x} is a numeric vector of valid probability values, there are some \code{NA} or \code{NaN} values in \code{x} and \code{allow_nas} is set to \code{FALSE}.
 }
 }
 }
@@ -36,7 +36,8 @@ inspect_prob(x, allow_nas = TRUE, warning_nas = TRUE)
 \code{inspect_prob} conducts a series of tests to check if \code{x} is a numeric vector of valid probability values. Namely, \code{inspect_prob} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is a numeric, atomic vector.
+\item \code{x} is an atomic vector.
+\item \code{x} is numeric.
 \item \code{x} has \code{NA} or \code{NaN} values.
 \item The values of \code{x} are in the [0, 1] interval.
 }
@@ -77,6 +78,8 @@ inspect_prob(x2, allow_nas = TRUE, warning_nas = FALSE)
 }
 \seealso{
 \itemize{
+\item \code{\link[inspector]{inspect_par_bernoulli}} to check if an object is a valid Bernoulli/Binomial proportion.
+\item \code{\link[inspector]{inspect_par_multinomial}} to check if an object is a numeric vector of valid Multinomial proportions.
 \item \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
 \item \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 }

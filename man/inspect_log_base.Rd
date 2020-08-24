@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_log_base}
 \alias{inspect_log_base}
-\title{Check if an object is a valid logarithmic base}
+\title{Validate logarithmic bases}
 \usage{
 inspect_log_base(x)
 }
@@ -17,13 +17,14 @@ inspect_log_base(x)
 }
 }
 \description{
-\code{inspect_log_base} checks if an object is a numeric vector of \code{\link[base]{length}} 1 that is eligible to be used as a logarithmic base. This can be useful to validate inputs in user-defined functions.
+\code{inspect_log_base} checks if an object is a valid a logarithmic base. This can be useful to validate inputs in user-defined functions.
 }
 \details{
 \code{inspect_log_base} conducts a series of tests to check if \code{x} is a valid logarithmic base. Namely, \code{inspect_log_base} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is a numeric, atomic vector of \code{\link[base]{length}} 1.
+\item \code{x} is an atomic vector of \code{\link[base]{length}} 1.
+\item \code{x} is numeric.
 \item \code{x} is \code{NA} or \code{NaN}.
 \item \code{x} is positive.
 }

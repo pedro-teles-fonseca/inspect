@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_character_match}
 \alias{inspect_character_match}
-\title{Check if an object is a character value that belongs to a set of allowed values}
+\title{Validate character vectors with predefined allowed values}
 \usage{
 inspect_character_match(x, allowed, case_sensitive = FALSE)
 }
@@ -16,18 +16,19 @@ inspect_character_match(x, allowed, case_sensitive = FALSE)
 \value{
 \code{inspect_character_match} does not return any output. There are two possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is a character value that belongs to the set of allowed values.
+\item The call is silent if \code{x} is a character vector of \code{\link[base]{length}} 1 whose value belongs to the set of allowed values.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_character_match} checks if an object is a character value that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
+\code{inspect_character_match} checks if a character value belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_character_match} conducts a series of tests to check if \code{x} is a character value that belongs to a set of allowed values. Namely, \code{inspect_character_match} checks if:
+\code{inspect_character_match} conducts a series of tests to check if \code{x} is a character vector of \code{\link[base]{length}} 1 whose value belongs to the set of allowed values. Namely, \code{inspect_character_match} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is an atomic character vector of \code{\link[base]{length}} 1.
+\item \code{x} is an atomic vector of \code{\link[base]{length}} 1.
+\item The \code{\link[base]{typeof}} \code{x} is character.
 \item \code{x} is \code{NA} or \code{NaN}.
 \item \code{x} is one of the allowed values (as specified in the \code{allowed} argument).
 }
@@ -59,7 +60,7 @@ inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 }
 \seealso{
 \itemize{
+\item \code{\link[inspector]{inspect_character}} to validate character vectors with arbitrary allowed values.
 \item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a non-missing logical value.
-\item \code{\link[inspector]{inspect_categories}} to check if an object is eligible to be used as the levels of a factor.
 }
 }

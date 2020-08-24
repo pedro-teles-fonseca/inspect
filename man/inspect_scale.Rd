@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_scale}
 \alias{inspect_scale}
-\title{Check if an object is a valid Bayes factor interpretation scale}
+\title{Validate Bayes factor interpretation scales}
 \usage{
 inspect_scale(x)
 }
@@ -24,7 +24,9 @@ inspect_scale(x)
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is \code{NA} or \code{NaN}.
-\item \code{x} is an atomic character vector of \code{\link[base]{length}} 1 specifying either "Jeffreys" or "Kass-Raftery" (not case sensitive).
+\item \code{x} is an atomic vector of \code{\link[base]{length}} 1
+\item The \code{\link[base]{typeof}} \code{x} is character
+\item The value of \code{x} is either "Jeffreys" or "Kass-Raftery" (not case sensitive).
 }
 }
 \examples{
@@ -57,6 +59,5 @@ inspect_scale(x4)
 \item \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
 \item \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
 \item \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-\item \code{\link[inspector]{inspect_log_base}} to check if an object is a numeric vector of \code{\link[base]{length}} 1 representing a valid logarithmic base.
 }
 }

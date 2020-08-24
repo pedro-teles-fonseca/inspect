@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_character}
 \alias{inspect_character}
-\title{Check if an object is a character vector}
+\title{Validate character vectors}
 \usage{
 inspect_character(x, allow_nas = TRUE, warning_nas = FALSE)
 }
@@ -18,14 +18,14 @@ inspect_character(x, allow_nas = TRUE, warning_nas = FALSE)
 \itemize{
 \item The call is silent if:
 \itemize{
-\item \code{x} is a character vector without \code{NA} or \code{NaN} values.
-\item \code{x} is a character vector with \code{NA} or \code{NaN} values, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+\item \code{x} is a character vector and there are no \code{NA} or \code{NaN} values in \code{x}.
+\item \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
 }
-\item An informative warning message is thrown if \code{x} is a character vector with \code{NA} or \code{NaN} values and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative warning message is thrown if \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
 \item An informative error message is thrown if:
 \itemize{
 \item \code{x} is not a character vector.
-\item \code{x} is a character vector with \code{NA} or \code{NaN} values and \code{allow_nas} is set to \code{FALSE}.
+\item \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x} and \code{allow_nas} is set to \code{FALSE}.
 }
 }
 }
@@ -72,8 +72,7 @@ inspect_character(x4)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_character_match}} to check if \code{x} is a character value that belongs to a set of allowed values.
+\item \code{\link[inspector]{inspect_character_match}} to validate character vectors with predefined allowed values.
 \item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a non-missing logical value.
-\item \code{\link[inspector]{inspect_categories}} to check if an object is eligible to be used as the levels of a factor.
 }
 }

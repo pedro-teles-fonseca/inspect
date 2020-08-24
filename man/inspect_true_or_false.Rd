@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_true_or_false}
 \alias{inspect_true_or_false}
-\title{Check if an object is a non-missing logical value}
+\title{Validate non-missing logical values}
 \usage{
 inspect_true_or_false(x)
 }
@@ -12,18 +12,19 @@ inspect_true_or_false(x)
 \value{
 \code{inspect_true_or_false} does not return any output. There are two possible scenarios:
 \itemize{
-\item The call is silent if \code{x} is  a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}.
+\item The call is silent if \code{x} is a non-missing logical vector of \code{\link[base]{length}} 1.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_true_or_false} checks if an object is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}. This can be useful to validate inputs in user-defined functions.
+\code{inspect_true_or_false} checks if an object is a non-missing logical vector of \code{\link[base]{length}} 1. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_true_or_false} conducts a series of tests to check if \code{x} is a logical vector of \code{\link[base]{length}} 1 with value equal to \code{TRUE} or \code{FALSE}. Namely, \code{inspect_true_or_false} checks if:
+\code{inspect_true_or_false} conducts a series of tests to check if \code{x} is a non-missing logical vector of \code{\link[base]{length}} 1. Namely, \code{inspect_true_or_false} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
-\item \code{x} is an atomic logical vector of \code{\link[base]{length}} 1.
+\item \code{x} is an atomic vector of \code{\link[base]{length}} 1.
+\item The \code{\link[base]{typeof}} \code{x} is logical.
 \item \code{x} is \code{NA} or \code{NaN}.
 }
 }
@@ -46,7 +47,7 @@ inspect_true_or_false(y)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
-\item \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
+\item \code{\link[inspector]{inspect_character}} to validate character vectors.
+\item \code{\link[inspector]{inspect_character_match}} to validate character vectors with predefined allowed values.
 }
 }
