@@ -5,3 +5,34 @@ template:
     bootswatch: cosmo
     ganalytics: UA-169641497-1
 
+reference:
+  - title: Validation of Data
+    desc: ~
+    contents:
+      - '`inspect_data_dichotomous`'
+      - '`inspect_data_categorical`'
+      - '`inspect_data_multinom_as_bern`'
+  - title: Validation of Parameters of Distributions
+    desc: ~
+    contents:
+      - '`inspect_par_bernoulli`'
+      - '`inspect_par_multinomial`'
+      - '`inspect_par_beta`'
+      - '`inspect_par_dirichlet`'
+      - '`inspect_par_haldane`'
+  - title: Validation of Bayes Factors
+    desc: ~
+    contents:
+      - '`inspect_bfactor`'
+      - '`inspect_bfactor_log`'
+  - title: Miscellaneous
+    desc: ~
+    contents:
+      - '`inspect_prob`'
+      - '`inspect_log_base`'
+      - '`inspect_true_or_false`'
+      - '`inspect_categories`'
+      - '`inspect_character_match`'
+      - '`inspect_character`'
+      - '`inspect_scale`'
+
