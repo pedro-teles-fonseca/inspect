@@ -57,16 +57,16 @@ inspect_par_bernoulli <- function(x){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
   if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
-    stop(paste("Invalid argument:", output_name, "must an atomic vector."))
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(isFALSE(length(x) == 1)){
-    stop(paste("Invalid argument:", output_name, "must be of length 1"))
+    stop(paste("Invalid argument:", output_name, "must be of length 1."))
   }
   if(is.na(x)){
     stop(paste("Invalid argument:", output_name,  "is NA or NaN."))
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument:", output_name, "must be numeric"))
+    stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if(any(x >= 1, x <= 0)) {
     stop(paste("Invalid argument:", output_name, "must be in the (0, 1) interval."))
@@ -133,16 +133,16 @@ inspect_par_multinomial <- function(x){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
   if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
-    stop(paste("Invalid argument:", output_name, "must an atomic vector."))
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(isTRUE(length(x) == 0)){
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
-  if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument:", output_name, "must be numeric"))
-  }
   if(any(is.na(x))){
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
+  }
+  if(isFALSE(is.numeric(x))){
+    stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if(any(x >= 1, x <= 0)) {
     stop(paste("Invalid argument: all elements of", output_name, "values must be in the (0, 1) interval."))
@@ -209,13 +209,13 @@ inspect_par_beta <- function(x){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
   if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
-    stop(paste("Invalid argument:", output_name, "must an atomic vector."))
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(isFALSE(length(x) == 2)){
-    stop(paste("Invalid argument:", output_name, " must be of length 2."))
+    stop(paste("Invalid argument:", output_name, "must be of length 2."))
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument:", output_name, "must be numeric"))
+    stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if(any(is.na(x))){
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
@@ -280,13 +280,13 @@ inspect_par_dirichlet <- function(x){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
   if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
-    stop(paste("Invalid argument:", output_name, "must an atomic vector."))
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(isTRUE(length(x) == 0)){
-    stop(paste("Invalid argument:", output_name, " is empty."))
+    stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument:", output_name, "must be numeric"))
+    stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if(any(is.na(x))){
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
@@ -352,13 +352,13 @@ inspect_par_haldane <- function(x){
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
   if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
-    stop(paste("Invalid argument:", output_name, "must an atomic vector."))
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
   if(isTRUE(length(x) == 0)){
-    stop(paste("Invalid argument:", output_name, " is empty."))
+    stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if(isFALSE(is.numeric(x))){
-    stop(paste("Invalid argument:", output_name, "must be numeric"))
+    stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if(any(is.na(x))){
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))

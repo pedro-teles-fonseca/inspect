@@ -626,7 +626,7 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
     stop(paste("Invalid argument:", x_output_name, "must be an atomic vector of length 1."))
   }
   if(is.na(x)){
-    stop(paste("Invalid argument:", x_output_name, "is NA or NaN"))
+    stop(paste("Invalid argument:", x_output_name, "is NA or NaN."))
   }
   if(isFALSE(is.character(x))){
     stop(paste("Invalid argument: the type of", x_output_name, "must be character."))
