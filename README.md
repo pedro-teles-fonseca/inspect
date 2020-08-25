@@ -10,34 +10,59 @@ Status](https://travis-ci.com/pedro-teles-fonseca/inspector.svg?branch=master)](
 [![R build
 status](https://github.com/pedro-teles-fonseca/inspector/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inspector/actions)
 ![pkgdown](https://github.com/pedro-teles-fonseca/inspector/workflows/pkgdown/badge.svg)
-[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspector/branch/master/graph/badge.svg?)](https://codecov.io/gh/pedro-teles-fonseca/inspector)
+[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspector/branch/master/graph/badge.svg)](https://codecov.io/gh/pedro-teles-fonseca/inspector)
 [![MIT
 license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://lbesson.mit-license.org/)
 <!-- badges: end -->
 
 ## Overview
 
-The `inspector` package provides a set of utility functions that
-implement common sets of validation tasks, namely:
+The `inspector` package provides utility functions that implement and
+automate common sets of validation tasks, namely:
 
   - `inspect_prob()` checks if an object is a numeric vector of valid
     probability values.
 
-  - `inspect_bf` checks if an object is a numeric vector of valid Bayes
-    factor values.
+  - `inspect_bfactor()` checks if an object is a numeric vector of valid
+    Bayes factors values.
 
-  - `inspect_log_bf` checks if an object is a numeric vector of valid
-    logarithmic Bayes factor values.
+  - `inspect_bfactor_log()` checks if an object is a numeric vector of
+    valid logarithmic Bayes factors values.
 
-  - `inspect_log_base` checks if an object is a numeric vector of length
-    1 that is eligible to be used as a logarithmic base.
+  - `inspect_log_base()` checks if an object is a valid logarithmic
+    base.
 
-  - `inspect_true_or_false` checks if an object is a logical vector of
-    length 1 with value equal to `TRUE` or `FALSE`.
+  - `inspect_true_or_false()` checks if an object is a non-missing
+    logical value.
 
-  - `inspect_scale` checks if an object is a string of characters
-    representing one of the Bayes factor interpretation scales available
-    in the `pcal` package.
+  - `inspect_scale` check if an object is a valid Bayes factor
+    interpretation scale.
+
+  - `inspect_categories()` validates factor levels.
+
+  - `inspect_character()` validates character vectors.
+
+  - `inspect_character_match()` validates character values with
+    predefined allowed values.
+
+  - `inspect_data_dichotomous()` validates dichotomous data
+
+  - `inspect_data_categorical()` and `inspect_data_multinom_as_bern()`
+    validate categorical data.
+
+  - `inspect_par_bernoulli()` validates parameters for the Bernoulli and
+    Binomial distributions.
+
+  - `inspect_par_multinomial()` validates parameters for the Multinomial
+    distribution.
+
+  - `inspect_par_beta()` validates parameters for the Beta distribution.
+
+  - `inspect_par_dirichlet()` validates parameters for the Dirichlet
+    distribution.
+
+  - `inspect_par_haldane()` validates parameters for the Haldane
+    distribution.
 
 These functions are particularly useful to validate inputs, intermediate
 objects and output values in user-defined functions, resulting in tidier
