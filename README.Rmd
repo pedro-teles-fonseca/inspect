@@ -76,6 +76,15 @@ devtools::install_github("pedro-teles-fonseca/inspector")
 
 ```{r}
 
+flip_coin <- function(n, bias){
+  sample(
+    x = c("heads", "tails"), 
+    size = n, 
+    replace = TRUE)
+}
+
+table(flip_coin(5))
+
 ```
 
 ## Getting Help
