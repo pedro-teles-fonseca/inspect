@@ -78,7 +78,6 @@ devtools::install_github("pedro-teles-fonseca/inspector")
 
 ```
 
-
 ## Getting Help
 
 If you find a bug, please file an issue with a minimal reproducible
