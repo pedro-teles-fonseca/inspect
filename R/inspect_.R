@@ -720,7 +720,7 @@ inspect_character <- function(x, allow_nas = TRUE, warning_nas = FALSE){
   }
   if(any(is.na(x))){
     if(isFALSE(allow_nas)) {
-      stop(paste("Invalid argument: There are NA or NaN values in ", paste0(output_name, ".")))
+      stop(paste("Invalid argument: There are NA or NaN values in", paste0(output_name, ".")))
     } else {
       if(isTRUE(warning_nas)){
         warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
