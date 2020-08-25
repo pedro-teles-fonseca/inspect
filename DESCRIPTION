@@ -5,8 +5,9 @@ Version: 1.0.0
 Authors@R: c(
   person("Pedro", "Fonseca", email = "pedro.teles.fonseca@outlook.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5708-081X")),
   person(given = "FCT", role = "fnd"))
-Description: Set of utility functions that implement common sets of validation operations. These functions are particularly useful to validate
-    inputs, intermediate objects and output values in user-defined functions, resulting in tidier and less verbose functions.
+Description: Utility functions that implement and automate common sets of validation tasks. 
+    These functions are particularly useful to validate inputs, intermediate objects and output 
+    values in user-defined functions, resulting in tidier and less verbose functions.
 License: MIT + file LICENSE
 URL: https://pedro-teles-fonseca.github.io/inspector/,
      https://github.com/pedro-teles-fonseca/inspector
