@@ -46,16 +46,19 @@ inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 \dontrun{y1 <- "kasss"}
 \dontrun{y2 <- "kass"}
 \dontrun{inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
-\dontrun{inspect_character_match(y2, allowed = c("Kass", "Raftery"), case_sensitive = TRUE)}
-\dontrun{mylist <- list(NULL, character(0), c("Kass", "Raftery"),
- 1, "1", list(1), NaN, NA)}
-\dontrun{inspect_character_match(mylist[[1]])}
-\dontrun{inspect_character_match(mylist[[2]])}
-\dontrun{inspect_character_match(mylist[[3]])}
-\dontrun{inspect_character_match(mylist[[4]])}
-\dontrun{inspect_character_match(mylist[[5]])}
-\dontrun{inspect_character_match(mylist[[6]])}
-\dontrun{inspect_character_match(mylist[[7]])}
+\dontrun{inspect_character_match(y2, allowed = c("Kass", "Raftery"),
+ case_sensitive = TRUE)}
+\dontrun{mylist <- list(NULL, character(0), c("abc", "abcd"),
+ c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)}
+\dontrun{inspect_character_match(mylist[[1]], "abc")}
+\dontrun{inspect_character_match(mylist[[2]], "abc")}
+\dontrun{inspect_character_match(mylist[[3]], "abc")}
+\dontrun{inspect_character_match(mylist[[4]], "abc")}
+\dontrun{inspect_character_match(mylist[[5]], "abc")}
+\dontrun{inspect_character_match(mylist[[6]], "abc")}
+\dontrun{inspect_character_match(mylist[[7]], "abc")}
+\dontrun{inspect_character_match(mylist[[8]], "abc")}
+\dontrun{inspect_character_match(mylist[[9]], "abc")}
 
 }
 \seealso{

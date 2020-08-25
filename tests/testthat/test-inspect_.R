@@ -515,3 +515,256 @@ test_that("inspect_true_or_false 12", {
   x <- "TRUE"
   expect_silent(inspect_true_or_false(TRUE))
 })
+
+context("inspect_categories")
+
+test_that("inspect_categories 1", {
+  expect_silent(inspect_categories(1:5))
+})
+
+test_that("inspect_categories 2", {
+  expect_silent(inspect_categories(c("yes", "no")))
+})
+
+test_that("inspect_categories 3", {
+  expect_silent(inspect_categories(factor(c("smoker", "non-smoker"))))
+})
+
+test_that("inspect_categories 4", {
+  x <- factor(c("yes", "no", "yes"))
+  expect_silent(inspect_categories(levels(x)))
+})
+
+test_that("inspect_categories 5", {
+  x <- c(1, 1:5)
+  expect_error(inspect_categories(x),
+                 "Invalid argument: all element of 'x' must be unique.")
+})
+
+test_that("inspect_categories 6", {
+  x <- c("yes", "no", "yes")
+  expect_error(inspect_categories(x),
+               "Invalid argument: all element of 'x' must be unique.")
+})
+
+test_that("inspect_categories 7", {
+  x <- factor(c("yes", "no", "yes"))
+  expect_error(inspect_categories(x),
+               "Invalid argument: all element of 'x' must be unique.")
+})
+
+test_that("inspect_categories 8", {
+  x <- NULL
+  expect_error(inspect_categories(x),
+               "Invalid argument: 'x' is NULL.")
+})
+
+test_that("inspect_categories 9", {
+  x <- numeric(0)
+  expect_error(inspect_categories(x),
+               "Invalid argument: 'x' is empty")
+})
+
+test_that("inspect_categories 10", {
+  x <- complex(1)
+  expect_error(inspect_categories(x),
+               "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'.")
+})
+
+test_that("inspect_categories 11", {
+  x <- list(10)
+  expect_error(inspect_categories(x),
+               "Invalid argument: 'x' must be of an atomic type.")
+})
+
+test_that("inspect_categories 12", {
+  x <- NA
+  expect_error(inspect_categories(x),
+               "Invalid argument: there are NA or NaN values in 'x'.")
+})
+
+test_that("inspect_categories 13", {
+  x <- NaN
+  expect_error(inspect_categories(x),
+               "Invalid argument: there are NA or NaN values in 'x'.")
+})
+
+context("inspect_character_match")
+
+test_that("inspect_character_match 1", {
+  x <- "Kass"
+  expect_silent(inspect_character_match(x, allowed = c("Kass", "Raftery")))
+})
+
+test_that("inspect_character_match 2", {
+  x <- "kass"
+  expect_silent(inspect_character_match(x, allowed = c("Kass", "Raftery"))
+)
+})
+
+test_that("inspect_character_match 3", {
+  x <- "kasss"
+  expect_error(inspect_character_match(x, allowed = c("Kass", "Raftery")),
+               "Invalid argument: 'x' = 'kasss' is not allowed."
+               )
+})
+
+test_that("inspect_character_match 4", {
+  x <- "kass"
+  expect_error(inspect_character_match(x, allowed = c("Kass", "Raftery"), case_sensitive = TRUE),
+               "Invalid argument: 'x' = 'kass' is not allowed."
+  )
+})
+
+test_that("inspect_character_match 5", {
+  x <- NULL
+  expect_error(inspect_character_match(x, allowed = "abc"),
+               "Invalid argument: 'x' is NULL."
+  )
+})
+
+test_that("inspect_character_match 6", {
+  x <- character(0)
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: 'x' must be an atomic vector of length 1."
+  )
+})
+
+test_that("inspect_character_match 7", {
+  x <- c("abc", "abcd")
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: 'x' must be an atomic vector of length 1."
+  )
+})
+
+test_that("inspect_character_match 8", {
+  x <- c("abc", "abc")
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: 'x' must be an atomic vector of length 1."
+  )
+})
+
+test_that("inspect_character_match 9", {
+  x <- "ab"
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: 'x' = 'ab' is not allowed."
+  )
+})
+
+test_that("inspect_character_match 10", {
+  x <- list("abc")
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: 'x' must be an atomic vector of length 1."
+  )
+})
+
+test_that("inspect_character_match 11", {
+  x <- factor("abc")
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: 'x' must be an atomic vector of length 1."
+  )
+})
+
+test_that("inspect_character_match 11", {
+  x <- NA
+  expect_error(inspect_character_match(x, allowed =   "abc"),
+               "Invalid argument: 'x' is NA or NaN"
+  )
+})
+
+test_that("inspect_character_match 12", {
+  x <- NaN
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: 'x' is NA or NaN"
+  )
+})
+
+context("inspect_character")
+
+test_that("inspect_character 1", {
+  x <- "Kass"
+  expect_silent(inspect_character(x)
+  )
+})
+
+test_that("inspect_character 2", {
+  x <- c("Kass", "Raftery")
+  expect_silent(inspect_character(x)
+  )
+})
+
+test_that("inspect_character 3", {
+  x <- c("Kass", "Raftery", NA)
+  expect_silent(inspect_character(x)
+  )
+})
+
+test_that("inspect_character 4", {
+  x <- letters
+  expect_silent(inspect_character(x)
+  )
+})
+
+test_that("inspect_character 5", {
+  x <- c("Kass", "Raftery", NA)
+  expect_warning(inspect_character(x, warning_nas = TRUE)
+  )
+})
+
+test_that("inspect_character 6", {
+  x <- NULL
+  expect_error(inspect_character(x),
+                 "Invalid argument: 'x' is NULL."
+  )
+})
+
+test_that("inspect_character 7", {
+  x <- character(0)
+  expect_error(inspect_character(x),
+                 "Invalid argument: 'x' is empty."
+  )
+})
+
+test_that("inspect_character 8", {
+  x <- 1
+  expect_error(inspect_character(x),
+                 "Invalid argument: the type of 'x' must be character."
+  )
+})
+
+test_that("inspect_character 9", {
+  x <- c(1, 2)
+  expect_error(inspect_character(x),
+                 "Invalid argument: the type of 'x' must be character."
+  )
+})
+
+test_that("inspect_character 10", {
+  x <- factor(c(1,2))
+  expect_error(inspect_character(x),
+                 "Invalid argument: 'x' must be an atomic vector."
+  )
+})
+
+test_that("inspect_character 11", {
+  x <- list(c(1,2))
+  expect_error(inspect_character(x),
+                 "Invalid argument: 'x' must be an atomic vector."
+  )
+})
+
+test_that("inspect_character 12", {
+  x <- NaN
+  expect_error(inspect_character(x),
+                 "Invalid argument: all elements of 'x' are NA or NaN."
+  )
+})
+
+test_that("inspect_character 13", {
+  x <- NA
+  expect_error(inspect_character(x),
+                 "Invalid argument: all elements of 'x' are NA or NaN."
+  )
+})
+
+
