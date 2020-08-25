@@ -187,16 +187,19 @@
 <span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>y1</span> <span class='op'>&lt;-</span> <span class='st'>"kasss"</span>
 <span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>y2</span> <span class='op'>&lt;-</span> <span class='st'>"kass"</span>
 <span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>y1</span>, allowed = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Kass"</span>, <span class='st'>"Raftery"</span>))
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>y2</span>, allowed = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Kass"</span>, <span class='st'>"Raftery"</span>), case_sensitive = <span class='fl'>TRUE</span>)
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(<span class='fl'>0</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Kass"</span>, <span class='st'>"Raftery"</span>),
- <span class='fl'>1</span>, <span class='st'>"1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>1</span>), <span class='fl'>NaN</span>, <span class='fl'>NA</span>)
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]])
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]])
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]])
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]])
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]])
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]])
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>7</span>]])
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>y2</span>, allowed = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Kass"</span>, <span class='st'>"Raftery"</span>),
+ case_sensitive = <span class='fl'>TRUE</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(<span class='fl'>0</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"abc"</span>, <span class='st'>"abcd"</span>),
+ <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"abc"</span>, <span class='st'>"abc"</span>), <span class='st'>"ab"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='st'>"abc"</span>), <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"abc"</span>), <span class='fl'>NaN</span>, <span class='fl'>NA</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>7</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>8</span>]], <span class='st'>"abc"</span>)
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>inspect_character_match</span>(<span class='kw'>mylist</span>[[<span class='fl'>9</span>]], <span class='st'>"abc"</span>)
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
