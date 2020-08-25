@@ -679,6 +679,13 @@ test_that("inspect_character_match 12", {
   )
 })
 
+test_that("inspect_character_match 13", {
+  x <- complex(1)
+  expect_error(inspect_character_match(x, allowed =  "abc"),
+               "Invalid argument: the type of 'x' must be character."
+  )
+})
+
 context("inspect_character")
 
 test_that("inspect_character 1", {
@@ -767,4 +774,10 @@ test_that("inspect_character 13", {
   )
 })
 
+test_that("inspect_character 13", {
+  x <- c("abc", NA)
+  expect_error(inspect_character(x, allow_nas = FALSE),
+               "Invalid argument: There are NA or NaN values in 'x'."
+  )
+})
 
