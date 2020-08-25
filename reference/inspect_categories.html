@@ -153,7 +153,7 @@
     <p><code>inspect_categories</code> conducts a series of tests to check if <code>x</code> is eligible to be used as the levels of a factor. Namely, <code>inspect_categories</code> checks if:</p><ul>
 <li><p><code>x</code> is <code>NULL</code> or empty.</p></li>
 <li><p><code>x</code> is atomic.</p></li>
-<li><p>The <code><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></code> <code>x</code> is logical, integer, double or character.</p></li>
+<li><p><code>x</code> has an eligible data type (logical, integer, double, character).</p></li>
 <li><p>There are <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></li>
 <li><p>There are repeated values in <code>x</code>.</p></li>
 </ul>
