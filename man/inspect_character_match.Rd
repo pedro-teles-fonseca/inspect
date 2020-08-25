@@ -21,7 +21,7 @@ inspect_character_match(x, allowed, case_sensitive = FALSE)
 }
 }
 \description{
-\code{inspect_character_match} checks if a character value belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
+\code{inspect_character_match} checks if an object is a character vector of \code{\link[base]{length}} 1 that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
 }
 \details{
 \code{inspect_character_match} conducts a series of tests to check if \code{x} is a character vector of \code{\link[base]{length}} 1 whose value belongs to the set of allowed values. Namely, \code{inspect_character_match} checks if:

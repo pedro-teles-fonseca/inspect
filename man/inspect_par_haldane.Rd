@@ -12,15 +12,15 @@ inspect_par_haldane(x)
 \value{
 \code{inspect_par_haldane} does not return any output. There are two possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is an eligible vector of parameters for a Haldane distribution.
+\item The call is silent if \code{x} is an eligible vector of parameters for the Haldane distribution.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_par_haldane} checks if an object is an eligible vector of parameters for a Haldane distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+\code{inspect_par_haldane} checks if an object is an eligible vector of parameters for the Haldane distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 }
 \details{
-\code{inspect_par_haldane} conducts a series of tests to check if \code{x} is an eligible vector of parameters for a Haldane distribution. Namely, \code{inspect_par_haldane} checks if:
+\code{inspect_par_haldane} conducts a series of tests to check if \code{x} is an eligible vector of parameters for the Haldane distribution. Namely, \code{inspect_par_haldane} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector

@@ -5,7 +5,7 @@
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
-#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is set to`TRUE`).
+#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` values pass silently otherwise (if `allow_nas` is set to `TRUE`).
 #'
 #' @details `inspect_prob` conducts a series of tests to check if `x` is a numeric vector of valid probability values. Namely, `inspect_prob` checks if:
 #' * `x` is `NULL` or empty.
@@ -26,8 +26,6 @@
 #' @seealso
 #' * \code{\link[inspector]{inspect_par_bernoulli}} to check if an object is a valid Bernoulli/Binomial proportion.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to check if an object is a numeric vector of valid Multinomial proportions.
-#' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -108,7 +106,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
-#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is `TRUE`).
+#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` values pass silently otherwise (if `allow_nas` is `TRUE`).
 #'
 #' @details `inspect_bfactor` conducts a series of tests to check if `x` is a numeric vector of valid Bayes factor values. Namely, `inspect_bfactor` checks if:
 #' * `x` is `NULL` or empty.
@@ -129,7 +127,6 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' @seealso
 #' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #' * \code{\link[inspector]{inspect_scale}} to check if an object is a valid Bayes factor interpretation scale.
-#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -206,7 +203,7 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
-#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is `TRUE`).
+#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` values pass silently otherwise (if `allow_nas` is `TRUE`).
 #'
 #' @details `inspect_bfactor_log` conducts a series of tests to check if `x` is a numeric vector of valid logarithmic Bayes factor values. Namely, `inspect_bfactor_log` checks if:
 #' * `x` is `NULL` or empty.
@@ -227,7 +224,6 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
 #' * \code{\link[inspector]{inspect_scale}} to check if an object is a Bayes factor interpretation scale.
 #' * \code{\link[inspector]{inspect_log_base}} to check if an object is an eligible logarithmic base.
-#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -309,8 +305,7 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
-#' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
 #' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 #'
 #' @examples
@@ -495,7 +490,7 @@ inspect_true_or_false <- function(x){
 #' @details `inspect_categories` conducts a series of tests to check if `x` is eligible to be used as the levels of a factor. Namely, `inspect_categories` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is atomic.
-#' * The \code{\link[base]{typeof}} `x` is logical, integer, double or character.
+#' * `x` has an eligible data type (logical, integer, double, character).
 #' * There are `NA` or `NaN` values in `x`.
 #' * There are repeated values in `x`.
 #'
@@ -566,7 +561,7 @@ inspect_categories <- function(x){
 
 #' @title Validate character vectors with predefined allowed values
 #'
-#' @description `inspect_character_match` checks if a character value belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
+#' @description `inspect_character_match` checks if an object is a character vector of \code{\link[base]{length}} 1 that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #' @param allowed A character vector.
@@ -647,7 +642,7 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
 #'
 #' @param x An arbitrary object.
 #' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
-#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` pass silently otherwise (if `allow_nas` is set to `TRUE`).
+#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` values pass silently otherwise (if `allow_nas` is set to `TRUE`).
 #'
 #' @details `inspect_character` conducts a series of tests to check if `x` is a character vector. Namely, `inspect_character` checks if:
 #' * `x` is `NULL` or empty.

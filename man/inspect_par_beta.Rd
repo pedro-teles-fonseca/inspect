@@ -12,20 +12,20 @@ inspect_par_beta(x)
 \value{
 \code{inspect_par_beta} does not return any output. There are two possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is an eligible vector of parameters for a Beta distribution.
+\item The call is silent if \code{x} is an eligible vector of parameters for the Beta distribution.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_par_beta} checks if an object is an eligible vector of parameters for a Beta distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+\code{inspect_par_beta} checks if an object is an eligible vector of parameters for the Beta distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
 }
 \details{
-\code{inspect_par_beta} conducts a series of tests to check if \code{x} is an eligible vector of parameters for a Beta distribution. Namely, \code{inspect_par_beta} checks if:
+\code{inspect_par_beta} conducts a series of tests to check if \code{x} is an eligible vector of parameters for the Beta distribution. Namely, \code{inspect_par_beta} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector
 \item \code{x} is numeric
-\item \code{x} is of \code{\link[base]{length}}  2
+\item \code{x} has \code{\link[base]{length}}  2
 \item \code{x} has \code{NA} or \code{NaN} values.
 \item All elements of \code{x} are positive.
 }

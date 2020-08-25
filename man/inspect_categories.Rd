@@ -24,7 +24,7 @@ inspect_categories(x)
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is atomic.
-\item The \code{\link[base]{typeof}} \code{x} is logical, integer, double or character.
+\item \code{x} has an eligible data type (logical, integer, double, character).
 \item There are \code{NA} or \code{NaN} values in \code{x}.
 \item There are repeated values in \code{x}.
 }

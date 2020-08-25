@@ -11,7 +11,7 @@ inspect_bfactor(x, allow_nas = TRUE, warning_nas = TRUE)
 
 \item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
 
-\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} pass silently otherwise (if \code{allow_nas} is \code{TRUE}).}
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} values pass silently otherwise (if \code{allow_nas} is \code{TRUE}).}
 }
 \value{
 \code{inspect_bfactor} does not return any output. There are three possible outcomes:
@@ -78,6 +78,5 @@ inspect_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
 \itemize{
 \item \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
 \item \code{\link[inspector]{inspect_scale}} to check if an object is a valid Bayes factor interpretation scale.
-\item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 }
 }

@@ -16,7 +16,7 @@ inspect_data_multinom_as_bern(
 
 \item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{data} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{data}.}
 
-\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{data} generates a warning message. \code{NA} and \code{NaN} pass silently otherwise (if \code{allow_nas} is set to\code{TRUE}).}
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{data} generates a warning message. \code{NA} and \code{NaN} values pass silently otherwise (if \code{allow_nas} is set to\code{TRUE}).}
 }
 \value{
 \code{inspect_data_multinom_as_bern} does not return any output. There are three possible outcomes:

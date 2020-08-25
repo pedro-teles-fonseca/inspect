@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_par_.R
 \name{inspect_par_multinomial}
 \alias{inspect_par_multinomial}
-\title{Validate Multinomial proportions}
+\title{Validate parameters for the Multinomial distribution}
 \usage{
 inspect_par_multinomial(x)
 }
@@ -57,11 +57,11 @@ inspect_par_multinomial(x2)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 \item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
 \item \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
 \item \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
 \item \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 \item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 }
 }
