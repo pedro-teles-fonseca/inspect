@@ -162,11 +162,36 @@
 <span class="fu">flip_coin</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
 <span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
 </pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
+
+<span class="kw">flip_coin</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">n</span>, <span class="kw">bias</span>){
+  
+  <span class="fu"><a href="reference/inspect_par_bernoulli.html">inspect_par_bernoulli</a></span>(<span class="kw">bias</span>)
+  
+  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"heads"</span>, <span class="st">"tails"</span>), size = <span class="kw">n</span>, replace = <span class="fl">TRUE</span>)
+
+}
+
+<span class="fu">flip_coin</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
+<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
+</pre></div>
+<p>turns Bayes factors into posterior probabilities using a formula from Berger and Delampady (1987)</p>
 </div>
 <div id="getting-help" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-help" class="anchor"></a>Getting Help</h2>
 <p>If you find a bug, please file an issue with a minimal reproducible example on <a href="https://github.com/pedro-teles-fonseca/inspector">GitHub</a>. Feature requests are also welcome. You can contact me at <a href="mailto:pedro.teles.fonseca@phd.iseg.ulisboa.pt" class="email">pedro.teles.fonseca@phd.iseg.ulisboa.pt</a>.</p>
+</div>
+<div id="references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-bergerDelampady1987">
+<p>Berger, James O., and Mohan Delampady. 1987. “Testing Precise Hypotheses.” <em>Statistical Science</em> 2 (3): 317–35.</p>
+</div>
+</div>
 </div>
 </div>
   </div>
