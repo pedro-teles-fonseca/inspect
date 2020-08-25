@@ -120,6 +120,12 @@ test_that("inspect_data_dichotomous error 13", {
                "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'.")
 })
 
+test_that("inspect_data_dichotomous error 14", {
+  x <- c(1 ,0, NA)
+  expect_error(inspect_data_dichotomous(x, 1, allow_nas = FALSE),
+               "Invalid argument: there are NA or NaN values in  'x'.")
+})
+
 context("inspect_data_dichotomous 2")
 
 test_that("inspect_data_dichotomous a", {
@@ -291,6 +297,12 @@ test_that("inspect_data_categorical error 6", {
                "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'.")
 })
 
+test_that("inspect_data_dichotomous error 7", {
+  x <- c(1 ,0, NA)
+  expect_error(inspect_data_categorical(x, allow_nas = FALSE),
+               "Invalid argument: there are NA or NaN values in  'x'.")
+})
+
 context("inspect_data_multinom_as_bern")
 
 test_that("inspect_data_multinom_as_bern silent 1", {
@@ -340,7 +352,7 @@ test_that("inspect_data_multinom_as_bern warning 3", {
 test_that("inspect_data_multinom_as_bern error 1", {
   x <- c(1, 1, NA, 0, 0)
   expect_error(inspect_data_multinom_as_bern(x, 1, allow_nas = FALSE),
-                 "There are NA or NaN values in  'x'.")
+                 "Invalid argument: there are NA or NaN values in  'x'.")
 })
 
 test_that("inspect_data_multinom_as_bern error 2", {
@@ -395,6 +407,12 @@ test_that("inspect_data_multinom_as_bern error 10", {
 test_that("inspect_data_multinom_as_bern error 11", {
   expect_error(inspect_data_multinom_as_bern(c(1,0), NaN),
                "Invalid argument: 'NaN' is NA or NaN.")
+})
+
+test_that("inspect_data_multinom_as_bern error 11", {
+  x <- c(1 ,0, NA)
+  expect_error(inspect_data_multinom_as_bern(x, 1, allow_nas = FALSE),
+               "Invalid argument: there are NA or NaN values in  'x'.")
 })
 
 
