@@ -82,17 +82,48 @@ devtools::install_github("pedro-teles-fonseca/inspector")
 
 ``` r
 
+set.seed(123)
+
 flip_coin <- function(n, bias){
-  sample(
-    x = c("heads", "tails"), 
-    size = n, 
-    replace = TRUE)
+  
+  sample(c("heads", "tails"), size = n, replace = TRUE)
+
 }
 
-table(flip_coin(5))
-#> 
-#> heads tails 
-#>     1     4
+flip_coin(n = 5, bias = 0.5)
+#> [1] "heads" "heads" "heads" "tails" "heads"
+```
+
+``` r
+
+set.seed(123)
+
+flip_coin <- function(n, bias){
+  
+  if(is.null(bias)){
+    stop(paste("Invalid argument: bias is NULL."))
+  }
+  if(any(isFALSE(is.atomic(bias)), isFALSE(is.vector(bias)))){
+    stop(paste("Invalid argument: bias must be an atomic vector."))
+  }
+  if(isFALSE(length(bias) == 1)){
+    stop(paste("Invalid argument: bias must be of length 1."))
+  }
+  if(is.na(bias)){
+    stop(paste("Invalid argument: bias is NA or NaN."))
+  }
+  if(isFALSE(is.numeric(bias))){
+    stop(paste("Invalid argument: bias must be numeric."))
+  }
+  if(any(bias >= 1, bias <= 0)) {
+    stop(paste("Invalid argument: bias must be in the (0, 1) interval."))
+  }
+  
+  sample(c("heads", "tails"), size = n, replace = TRUE)
+}
+
+flip_coin(n = 5, bias = 0.5)
+#> [1] "heads" "heads" "heads" "tails" "heads"
 ```
 
 ## Getting Help
