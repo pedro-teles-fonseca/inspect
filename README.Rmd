@@ -1,5 +1,6 @@
 ---
 output: github_document
+bibliography: inst/REFERENCES.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -11,6 +12,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(inspector)
 ```
 
 # inspector: Validation of Arguments and Objects in User-Defined Functions
@@ -118,6 +121,22 @@ flip_coin <- function(n, bias){
 flip_coin(n = 5, bias = 0.5)
 ```
 
+```{r}
+
+set.seed(123)
+
+flip_coin <- function(n, bias){
+  
+  inspect_par_bernoulli(bias)
+  
+  sample(c("heads", "tails"), size = n, replace = TRUE)
+
+}
+
+flip_coin(n = 5, bias = 0.5)
+```
+
+turns Bayes factors into posterior probabilities using a formula from @bergerDelampady1987
 
 ## Getting Help
 
@@ -126,3 +145,4 @@ example on [GitHub](https://github.com/pedro-teles-fonseca/inspector).
 Feature requests are also welcome. You can contact me at
 <pedro.teles.fonseca@phd.iseg.ulisboa.pt>.
 
+## References

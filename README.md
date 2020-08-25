@@ -126,9 +126,41 @@ flip_coin(n = 5, bias = 0.5)
 #> [1] "heads" "heads" "heads" "tails" "heads"
 ```
 
+``` r
+
+set.seed(123)
+
+flip_coin <- function(n, bias){
+  
+  inspect_par_bernoulli(bias)
+  
+  sample(c("heads", "tails"), size = n, replace = TRUE)
+
+}
+
+flip_coin(n = 5, bias = 0.5)
+#> [1] "heads" "heads" "heads" "tails" "heads"
+```
+
+turns Bayes factors into posterior probabilities using a formula from
+Berger and Delampady (1987)
+
 ## Getting Help
 
 If you find a bug, please file an issue with a minimal reproducible
 example on [GitHub](https://github.com/pedro-teles-fonseca/inspector).
 Feature requests are also welcome. You can contact me at
 <pedro.teles.fonseca@phd.iseg.ulisboa.pt>.
+
+## References
+
+<div id="refs" class="references hanging-indent">
+
+<div id="ref-bergerDelampady1987">
+
+Berger, James O., and Mohan Delampady. 1987. “Testing Precise
+Hypotheses.” *Statistical Science* 2 (3): 317–35.
+
+</div>
+
+</div>
