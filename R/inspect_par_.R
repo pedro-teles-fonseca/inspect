@@ -45,7 +45,7 @@
 #' \dontrun{inspect_par_bernoulli(mylist[[9]])}
 #' \dontrun{inspect_par_bernoulli(mylist[[10]])}
 #' \dontrun{inspect_par_bernoulli(mylist[[11]])}
-#' \dontrun{inspect_par_bernoulli(mylist[[11]])}
+#' \dontrun{inspect_par_bernoulli(mylist[[12]])}
 #'
 #' @export
 

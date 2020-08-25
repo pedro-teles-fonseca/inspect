@@ -546,7 +546,7 @@ inspect_categories <- function(x){
     stop(paste("Invalid argument:", output_name, "must be of an atomic type."))
   }
   if(isTRUE(length(x) == 0)){
-    stop(paste("Invalid argument:", output_name, " is empty."))
+    stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if(isFALSE(typeof(x) %in% c("logical", "integer", "double", "character"))){
     stop(paste("Invalid argument: the type of", output_name, "must be 'logical', 'integer', 'double' or 'character'."))
@@ -555,7 +555,7 @@ inspect_categories <- function(x){
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
   }
   if(isFALSE(length(unique(x)) == length(x))){
-    stop(paste("Invalid argument: all element of", output_name, " must be unique."))
+    stop(paste("Invalid argument: all element of", output_name, "must be unique."))
   }
 }
 
@@ -595,16 +595,19 @@ inspect_categories <- function(x){
 #' \dontrun{y1 <- "kasss"}
 #' \dontrun{y2 <- "kass"}
 #' \dontrun{inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
-#' \dontrun{inspect_character_match(y2, allowed = c("Kass", "Raftery"), case_sensitive = TRUE)}
-#' \dontrun{mylist <- list(NULL, character(0), c("Kass", "Raftery"),
-#'  1, "1", list(1), NaN, NA)}
-#' \dontrun{inspect_character_match(mylist[[1]])}
-#' \dontrun{inspect_character_match(mylist[[2]])}
-#' \dontrun{inspect_character_match(mylist[[3]])}
-#' \dontrun{inspect_character_match(mylist[[4]])}
-#' \dontrun{inspect_character_match(mylist[[5]])}
-#' \dontrun{inspect_character_match(mylist[[6]])}
-#' \dontrun{inspect_character_match(mylist[[7]])}
+#' \dontrun{inspect_character_match(y2, allowed = c("Kass", "Raftery"),
+#'  case_sensitive = TRUE)}
+#' \dontrun{mylist <- list(NULL, character(0), c("abc", "abcd"),
+#'  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)}
+#' \dontrun{inspect_character_match(mylist[[1]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[2]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[3]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[4]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[5]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[6]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[7]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[8]], "abc")}
+#' \dontrun{inspect_character_match(mylist[[9]], "abc")}
 #'
 #' @export
 
@@ -619,19 +622,22 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
   if(is.null(x)){
     stop(paste("Invalid argument:", x_output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)), isFALSE(is.character(x)), isFALSE(length(x) == 1))){
-    stop(paste("Invalid argument:", x_output_name, "must be an atomic vector of type character and length 1."))
+  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)), isFALSE(length(x) == 1))){
+    stop(paste("Invalid argument:", x_output_name, "must be an atomic vector of length 1."))
   }
-  if(any(is.na(x))){
+  if(is.na(x)){
     stop(paste("Invalid argument:", x_output_name, "is NA or NaN"))
+  }
+  if(isFALSE(is.character(x))){
+    stop(paste("Invalid argument: the type of", x_output_name, "must be character."))
   }
   if(isFALSE(case_sensitive)){
     if(isFALSE(tolower(x) %in% tolower(allowed))){
-      stop(paste("Invalid argument:", deparse(substitute(x)), "=", x, "is not allowed."))
+      stop(paste("Invalid argument:", x_output_name, "=", paste0("'", x, "'"), "is not allowed."))
     }
   } else {
     if(isFALSE(x %in% allowed)){
-      stop(paste("Invalid argument:", deparse(substitute(x)), "=", x, "is not allowed."))
+      stop(paste("Invalid argument:", x_output_name, "=", paste0("'", x, "'"), "is not allowed."))
     }
   }
 }
