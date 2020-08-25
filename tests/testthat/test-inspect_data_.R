@@ -415,5 +415,15 @@ test_that("inspect_data_multinom_as_bern error 11", {
                "Invalid argument: there are NA or NaN values in  'x'.")
 })
 
+test_that("inspect_data_multinom_as_bern error 12", {
+  x <- complex(1)
+  expect_error(inspect_data_multinom_as_bern(x, 1),
+               "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'")
+})
 
+test_that("inspect_data_multinom_as_bern error 13", {
+  x <- complex(1)
+  expect_error(inspect_data_multinom_as_bern(c(1, 0), x),
+               "Invalid argument: the type of 'x' must be 'logical', 'integer', 'double' or 'character'")
+})
 
