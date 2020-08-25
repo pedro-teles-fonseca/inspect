@@ -10,7 +10,7 @@ Status](https://travis-ci.com/pedro-teles-fonseca/inspector.svg?branch=master)](
 [![R build
 status](https://github.com/pedro-teles-fonseca/inspector/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inspector/actions)
 ![pkgdown](https://github.com/pedro-teles-fonseca/inspector/workflows/pkgdown/badge.svg)
-[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspector/branch/master/graph/badge.svg?)](https://codecov.io/gh/pedro-teles-fonseca/inspector)
+[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspector/branch/master/graph/badge.svg)](https://codecov.io/gh/pedro-teles-fonseca/inspector)
 [![MIT
 license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://lbesson.mit-license.org/)
 <!-- badges: end -->
@@ -85,4 +85,4 @@ devtools::install_github("pedro-teles-fonseca/inspector")
 If you find a bug, please file an issue with a minimal reproducible
 example on [GitHub](https://github.com/pedro-teles-fonseca/inspector).
 Feature requests are also welcome. You can contact me at
-<pedro.teles.fonseca@outlook.com>.
+<pedro.teles.fonseca@phd.iseg.ulisboa.pt>.

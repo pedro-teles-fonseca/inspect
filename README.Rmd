@@ -83,5 +83,5 @@ devtools::install_github("pedro-teles-fonseca/inspector")
 If you find a bug, please file an issue with a minimal reproducible
 example on [GitHub](https://github.com/pedro-teles-fonseca/inspector).
 Feature requests are also welcome. You can contact me at
-<pedro.teles.fonseca@outlook.com>.
+<pedro.teles.fonseca@phd.iseg.ulisboa.pt>.
 
