@@ -118,6 +118,50 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
+
+<span class="kw">flip_coin</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">n</span>, <span class="kw">bias</span>){
+  
+  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"heads"</span>, <span class="st">"tails"</span>), size = <span class="kw">n</span>, replace = <span class="fl">TRUE</span>)
+
+}
+
+<span class="fu">flip_coin</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
+<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
+</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
+
+<span class="kw">flip_coin</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">n</span>, <span class="kw">bias</span>){
+  
+  <span class="co">if</span>(<span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span>(<span class="kw">bias</span>)){
+    <span class="fu"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Invalid argument: bias is NULL."</span>))
+  }
+  <span class="co">if</span>(<span class="fu"><a href="https://rdrr.io/r/base/any.html">any</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Logic.html">isFALSE</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/is.recursive.html">is.atomic</a></span>(<span class="kw">bias</span>)), <span class="fu"><a href="https://rdrr.io/r/base/Logic.html">isFALSE</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/vector.html">is.vector</a></span>(<span class="kw">bias</span>)))){
+    <span class="fu"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Invalid argument: bias must be an atomic vector."</span>))
+  }
+  <span class="co">if</span>(<span class="fu"><a href="https://rdrr.io/r/base/Logic.html">isFALSE</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="kw">bias</span>) <span class="op">==</span> <span class="fl">1</span>)){
+    <span class="fu"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Invalid argument: bias must be of length 1."</span>))
+  }
+  <span class="co">if</span>(<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="kw">bias</span>)){
+    <span class="fu"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Invalid argument: bias is NA or NaN."</span>))
+  }
+  <span class="co">if</span>(<span class="fu"><a href="https://rdrr.io/r/base/Logic.html">isFALSE</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span>(<span class="kw">bias</span>))){
+    <span class="fu"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Invalid argument: bias must be numeric."</span>))
+  }
+  <span class="co">if</span>(<span class="fu"><a href="https://rdrr.io/r/base/any.html">any</a></span>(<span class="kw">bias</span> <span class="op">&gt;=</span> <span class="fl">1</span>, <span class="kw">bias</span> <span class="op">&lt;=</span> <span class="fl">0</span>)) {
+    <span class="fu"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Invalid argument: bias must be in the (0, 1) interval."</span>))
+  }
+  
+  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"heads"</span>, <span class="st">"tails"</span>), size = <span class="kw">n</span>, replace = <span class="fl">TRUE</span>)
+}
+
+<span class="fu">flip_coin</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
+<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
+</pre></div>
 </div>
 <div id="getting-help" class="section level2">
 <h2 class="hasAnchor">
