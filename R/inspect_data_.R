@@ -96,9 +96,6 @@ inspect_data_dichotomous <- function(data, success, allow_nas = TRUE, warning_na
   if(isFALSE(typeof(success) %in% c("logical","integer", "double", "character"))){
     stop(paste("Invalid argument: the type of", s_output_name, "must be 'logical', 'integer', 'double' or 'character'."))
   }
-  if(all(is.na(data))){
-    stop(paste("Invalid argument: all elements of",  data_output_name, "are NA or NaN."))
-  }
   if(is.na(success)){
     stop(paste("Invalid argument:", s_output_name, "is NA or NaN"))
   }
@@ -108,9 +105,16 @@ inspect_data_dichotomous <- function(data, success, allow_nas = TRUE, warning_na
   if(isTRUE(nlevels(data_factor) > 2)){
     stop(paste("Invalid argument: there are more than two levels'."))
   }
-  if(isTRUE(warning_nas)){
-    if(any(is.na(data))){
-      warning(paste("There are NA or NaN values in", paste0(data_output_name, ".")))
+  if(all(is.na(data))){
+    stop(paste("Invalid argument: all elements of",  data_output_name, "are NA or NaN."))
+  }
+  if(any(is.na(data))){
+    if(isFALSE(allow_nas)) {
+      stop(paste("Invalid argument: there are NA or NaN values in ", paste0(data_output_name, ".")))
+    } else {
+      if(isTRUE(warning_nas)){
+        warning(paste("There are NA or NaN values in", paste0(data_output_name, ".")))
+      }
     }
   }
   if(isFALSE(success %in% unique(data))){
@@ -199,7 +203,7 @@ inspect_data_categorical <- function(data, allow_nas = TRUE, warning_nas = FALSE
   }
   if(any(is.na(data))){
     if(isFALSE(allow_nas)) {
-      stop(paste("Invalid argument: There are NA or NaN values in ", paste0(data_output_name, ".")))
+      stop(paste("Invalid argument: there are NA or NaN values in ", paste0(data_output_name, ".")))
     } else {
       if(isTRUE(warning_nas)){
         warning(paste("There are NA or NaN values in", paste0(data_output_name, ".")))
@@ -313,7 +317,7 @@ inspect_data_multinom_as_bern <- function(data, success, allow_nas = TRUE, warni
   }
   if(any(is.na(data))){
     if(isFALSE(allow_nas)) {
-      stop(paste("Invalid argument: There are NA or NaN values in ", paste0(data_output_name, ".")))
+      stop(paste("Invalid argument: there are NA or NaN values in ", paste0(data_output_name, ".")))
     } else {
       if(isTRUE(warning_nas)){
         warning(paste("There are NA or NaN values in", paste0(data_output_name, ".")))
