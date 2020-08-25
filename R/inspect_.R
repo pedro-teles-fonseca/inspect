@@ -559,7 +559,7 @@ inspect_categories <- function(x){
   }
 }
 
-#' @title Validate character vectors with predefined allowed values
+#' @title Validate character values
 #'
 #' @description `inspect_character_match` checks if an object is a character vector of \code{\link[base]{length}} 1 that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
 #'
