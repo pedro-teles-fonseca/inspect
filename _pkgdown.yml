@@ -12,7 +12,7 @@ reference:
       - '`inspect_data_dichotomous`'
       - '`inspect_data_categorical`'
       - '`inspect_data_multinom_as_bern`'
-  - title: Validation of Parameters of Distributions
+  - title: Validation of Parameters
     desc: ~
     contents:
       - '`inspect_par_bernoulli`'
