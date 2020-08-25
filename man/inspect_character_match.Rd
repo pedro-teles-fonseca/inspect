@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_.R
 \name{inspect_character_match}
 \alias{inspect_character_match}
-\title{Validate character vectors with predefined allowed values}
+\title{Validate character values}
 \usage{
 inspect_character_match(x, allowed, case_sensitive = FALSE)
 }

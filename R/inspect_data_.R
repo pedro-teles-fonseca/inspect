@@ -309,7 +309,7 @@ inspect_data_multinom_as_bern <- function(data, success, allow_nas = TRUE, warni
     stop(paste("Invalid argument: all elements of",  data_output_name, "are NA or NaN."))
   }
   if(is.na(success)){
-    stop(paste("Invalid argument:", s_output_name, "is NA or NaN"))
+    stop(paste("Invalid argument:", s_output_name, "is NA or NaN."))
   }
   if(any(is.na(data))){
     if(isFALSE(allow_nas)) {
