@@ -7,9 +7,12 @@
 #'
 #' @details The `inspector` package provides utility functions that implement and automate common sets of validation tasks. These functions are particularly useful to validate inputs, intermediate objects and output values in user-defined functions, resulting in tidier and less verbose functions.
 #'
-#' For a complete list of functions see `library(help = "inspector")`.
+#' For a complete list of functions see `library(help = "inspector")`. For examples see the [README](https://github.com/pedro-teles-fonseca/inspector/blob/master/README.md).
 #'
 #' @docType package
-#' @name inspector
+#' @keywords internal
 
 "_PACKAGE"
+
+
+
