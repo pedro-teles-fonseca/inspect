@@ -77,6 +77,6 @@ inspect_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
 \seealso{
 \itemize{
 \item \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-\item \code{\link[inspector]{inspect_scale}} to check if an object is a valid Bayes factor interpretation scale.
+\item \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a valid Bayes factor interpretation scale.
 }
 }
