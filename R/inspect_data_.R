@@ -72,8 +72,8 @@ inspect_data_dichotomous <- function(data, success, allow_nas = TRUE, warning_na
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
-  data_output_name <- paste0("'", deparse(substitute(data)), "'")
-  s_output_name <- paste0("'", deparse(substitute(success)), "'")
+  data_output_name <- deparse(substitute(data))
+  s_output_name <- deparse(substitute(success))
 
   if(is.null(data)){
     stop(paste("Invalid argument:", data_output_name, "is NULL."))
@@ -184,7 +184,7 @@ inspect_data_categorical <- function(data, allow_nas = TRUE, warning_nas = FALSE
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
-  data_output_name <- paste0("'", deparse(substitute(data)), "'")
+  data_output_name <- deparse(substitute(data))
 
   if(is.null(data)){
     stop(paste("Invalid argument:", data_output_name, "is NULL."))
@@ -285,8 +285,8 @@ inspect_data_multinom_as_bern <- function(data, success, allow_nas = TRUE, warni
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
-  data_output_name <- paste0("'", deparse(substitute(data)), "'")
-  s_output_name <- paste0("'", deparse(substitute(success)), "'")
+  data_output_name <- deparse(substitute(data))
+  s_output_name <- deparse(substitute(success))
 
   if(is.null(data)){
     stop(paste("Invalid argument:", data_output_name, "is NULL."))

@@ -51,7 +51,7 @@
 
 inspect_par_bernoulli <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -127,7 +127,7 @@ inspect_par_bernoulli <- function(x){
 
 inspect_par_multinomial <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -203,7 +203,7 @@ inspect_par_multinomial <- function(x){
 
 inspect_par_beta <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -274,7 +274,7 @@ inspect_par_beta <- function(x){
 
 inspect_par_dirichlet <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -346,7 +346,7 @@ inspect_par_dirichlet <- function(x){
 
 inspect_par_haldane <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))

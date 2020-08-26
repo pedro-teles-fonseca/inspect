@@ -67,7 +67,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   x_filtered <- x[!is.na(x)]
 
@@ -166,7 +166,7 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -259,7 +259,7 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -335,7 +335,7 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
 inspect_log_base <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -406,7 +406,7 @@ inspect_log_base <- function(x){
 
 inspect_bfactor_scale <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -465,7 +465,7 @@ inspect_bfactor_scale <- function(x){
 
 inspect_true_or_false <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -537,7 +537,7 @@ inspect_true_or_false <- function(x){
 
 inspect_categories <- function(x){
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
@@ -616,7 +616,7 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
   inspect_character(allowed)
   inspect_true_or_false(case_sensitive)
 
-  x_output_name <- paste0("'", deparse(substitute(x)), "'")
+  x_output_name <- deparse(substitute(x))
 
 
   if(is.null(x)){
@@ -704,7 +704,7 @@ inspect_character <- function(x, allow_nas = TRUE, warning_nas = FALSE){
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
-  output_name <- paste0("'", deparse(substitute(x)), "'")
+  output_name <- deparse(substitute(x))
 
   if(is.null(x)){
     stop(paste("Invalid argument:", output_name, "is NULL."))
