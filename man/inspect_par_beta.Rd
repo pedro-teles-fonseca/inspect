@@ -56,7 +56,7 @@ inspect_par_beta(x2)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
 \item \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
 \item \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
 \item \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.

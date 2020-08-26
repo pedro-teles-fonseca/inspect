@@ -92,7 +92,7 @@ inspect_par_bernoulli <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
 #' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
 #' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
 #' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
@@ -171,7 +171,7 @@ inspect_par_multinomial <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
 #' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
 #' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
@@ -243,7 +243,7 @@ inspect_par_beta <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
 #' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
 #' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
@@ -314,7 +314,7 @@ inspect_par_dirichlet <- function(x){
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernouli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
 #' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
 #' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
