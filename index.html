@@ -118,7 +118,7 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>Imagine we want to write a function that simulates <code>n</code> flips of the same coin. Assuming that <code>bias</code> is the probability “heads” outcome:</p>
+<p>Imagine we want to write a function that simulates <code>n</code> flips of the same coin. Assuming that <code>bias</code> is the probability of the “heads” outcome:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
@@ -132,7 +132,7 @@
 <span class="fu">flip_coins</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
 <span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
 </pre></div>
-<p>Since <code>bias</code> is a probability, we may want to ensure that <code>flip_coins()</code> only accepts input values of <code>bias</code> that are between 0 and 1. Additionally, we may want to check if <code>bias</code> is not <code>NULL</code> and is a non-missing and numeric vector of length 1. This results an a quite verbose function body:</p>
+<p>Since <code>bias</code> is a probability, it is natural that we require <code>flip_coins()</code> to only accept values of <code>bias</code> between 0 and 1. Furthermore, we may want to ensure that <code>bias</code> is not null, not missing, and is a numeric vector of length 1. This results an a quite verbose function body:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
@@ -158,13 +158,13 @@
     <span class="fu"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Invalid argument: bias must be in the (0, 1) interval."</span>))
   }
   
-  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"heads"</span>, <span class="st">"tails"</span>), size = <span class="kw">n</span>, replace = <span class="fl">TRUE</span>)
+  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(x = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"heads"</span>, <span class="st">"tails"</span>), size = <span class="kw">n</span>, replace = <span class="fl">TRUE</span>)
 }
 
 <span class="fu">flip_coins</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
 <span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
 </pre></div>
-<p>The <code>inspector</code> package was build to automate this kind of validation tasks. In the <code>flip_coins()</code> example we can use <code>inspect_par_bernoulli</code>, since <code>bias</code> actually is the parameter of a Bernoulli distribution:</p>
+<p>The <code>inspector</code> package was built to automate this kind of validation tasks. In the <code>flip_coins()</code> example we can use <code>inspect_par_bernoulli</code>, since <code>bias</code> actually is the parameter of a Bernoulli distribution:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
@@ -173,15 +173,15 @@
   
   <span class="fu"><a href="reference/inspect_par_bernoulli.html">inspect_par_bernoulli</a></span>(<span class="kw">bias</span>)
   
-  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"heads"</span>, <span class="st">"tails"</span>), size = <span class="kw">n</span>, replace = <span class="fl">TRUE</span>)
+  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(x = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"heads"</span>, <span class="st">"tails"</span>), size = <span class="kw">n</span>, replace = <span class="fl">TRUE</span>)
 
 }
 
 <span class="fu">flip_coins</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
 <span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
 </pre></div>
-<p>This results in a tidier function body since the validation tasks are abstracted away from the body of the function.</p>
-<p>As another example, imagine we want to implement equation 4 from Berger and Delampady (1987), a formula that updates prior probabilities to posterior probabilities using Bayes factors as input. In this case we need to validate a vector of Bayes factors, lets call it <code>bf</code>, and a vector of prior probabilities, lets call it <code>prior_prob</code>. Since <code>bf</code> is expected to contain valid Bayes factor values, we need to ensure that only non-null, non-empty numeric vectors containing only non-negative values are accepted. Since <code>prior_prob</code> is a vector of probabilities, we need to check if it is a non-null, non-empty numeric vector containing only values between 0 and 1. This results in a quite verbose funtion body:</p>
+<p>This results in a tidier function body since the validation of <code>bias</code> is abstracted away from the body of the function.</p>
+<p>Now imagine we want to implement equation 4 from Berger and Delampady (1987), a formula that calculates posterior probabilities using prior probabilities and Bayes factors as input. In this case we need to validate a vector of Bayes factors, lets call it <code>bf</code>, and a vector of prior probabilities, lets call it <code>prior_prob</code>. Since <code>bf</code> is expected to contain valid Bayes factor values, we need to ensure that only non-empty numeric vectors, containing only non-negative values, are accepted. Since <code>prior_prob</code> is a vector of probabilities, we need to check if it is a non-empty numeric vector containing only values between 0 and 1. Since we are now validating two inputs, the function body would be even more verbose than in the <code>flip_coins()</code> example:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="kw">bfactor_to_prob</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">bf</span>, <span class="kw">prior_prob</span> = <span class="fl">.5</span>) {
 
@@ -228,7 +228,7 @@
 <span class="fu">bfactor_to_prob</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2.1</span>, <span class="fl">0.5</span>, <span class="fl">11</span>))
 <span class="co">#&gt; [1] 0.6774194 0.3333333 0.9166667</span>
 </pre></div>
-<p>Now lets use <code>inspector</code> instead. We can use <code>inspect_bfactor</code> to validate <code>bf</code> and <code>inspect_prob</code> to validate <code>prior_prob</code>.</p>
+<p>Now lets use <code>inspector</code> instead. We can use <code><a href="reference/inspect_bfactor.html">inspect_bfactor()</a></code> to validate <code>bf</code> and <code><a href="reference/inspect_prob.html">inspect_prob()</a></code> to validate <code>prior_prob</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="kw">bfactor_to_prob</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">bf</span>, <span class="kw">prior_prob</span> = <span class="fl">.5</span>) {
 
