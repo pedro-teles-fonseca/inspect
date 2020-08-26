@@ -23,7 +23,7 @@ Suggests:
     covr (>= 3.5.0),
     knitr (>= 1.28),
     rmarkdown (>= 2.1),
-    testthat (>= 2.3.2)
+    testthat (>= 2.3.2),
     pcal (>= 1.0.0)
 RdMacros: Rdpack
 Roxygen: list(markdown = TRUE)
