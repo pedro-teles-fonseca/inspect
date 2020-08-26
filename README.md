@@ -138,8 +138,9 @@ flip_coins(n = 5, bias = 0.5)
 ```
 
 The `inspector` package was built to automate this kind of validation
-tasks. In the `flip_coins()` example we can use `inspect_par_bernoulli`,
-since `bias` actually is the parameter of a Bernoulli distribution:
+task. In the `flip_coins()` example, to perform an equivalent validation
+of inputs we can use `inspect_par_bernoulli`, since `bias` is the
+parameter of a Bernoulli distribution:
 
 ``` r
 
@@ -219,8 +220,9 @@ bfactor_to_prob(c(2.1, 0.5, 11))
 #> [1] 0.6774194 0.3333333 0.9166667
 ```
 
-Now lets use `inspector` instead. We can use `inspect_bfactor()` to
-validate `bf` and `inspect_prob()` to validate `prior_prob`.
+Now lets use `inspector` instead. To perform an equivalent validation of
+inputs we can use `inspect_bfactor()` to validate `bf` and
+`inspect_prob()` to validate `prior_prob`:
 
 ``` r
 bfactor_to_prob <- function(bf, prior_prob = .5) {
