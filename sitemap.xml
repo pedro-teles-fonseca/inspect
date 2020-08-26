@@ -10,6 +10,9 @@
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_bfactor_log.html</loc>
   </url>
   <url>
+    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_bfactor_scale.html</loc>
+  </url>
+  <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_categories.html</loc>
   </url>
   <url>
@@ -47,9 +50,6 @@
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_prob.html</loc>
-  </url>
-  <url>
-    <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_scale.html</loc>
   </url>
   <url>
     <loc>https://pedro-teles-fonseca.github.io/inspector//reference/inspect_true_or_false.html</loc>
