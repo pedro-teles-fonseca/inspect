@@ -1,6 +1,4 @@
 
-#' @importFrom Rdpack reprompt
-
 # nocov start
 
 release_questions <- function(){
