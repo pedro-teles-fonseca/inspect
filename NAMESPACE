@@ -2,6 +2,7 @@
 
 export(inspect_bfactor)
 export(inspect_bfactor_log)
+export(inspect_bfactor_scale)
 export(inspect_categories)
 export(inspect_character)
 export(inspect_character_match)
@@ -15,5 +16,4 @@ export(inspect_par_dirichlet)
 export(inspect_par_haldane)
 export(inspect_par_multinomial)
 export(inspect_prob)
-export(inspect_scale)
 export(inspect_true_or_false)
