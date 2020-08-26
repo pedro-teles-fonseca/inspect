@@ -7,35 +7,10 @@
 
 ### Local 
 
-* macOS Catalina 10.15.5, R 4.0.1
-* Ubuntu 20.04 LTS, R 4.0.1
-
-### GitHub actions
-
-* macOS Catalina 10.15, R-oldrel, R-release, R-devel  
-* Ubuntu 16.04, R-oldrel, R-release
-* Windows Server 2019, R-oldrel, R-release, R-devel  
-
-### R-Hub
-
-* Ubuntu 16.04 LTS, GCC, R-devel
-* Fedora, GCC, R-devel
-* Fedora, clang, gfortran, R-devel
-* Debian, GCC, R-devel
-* Windows Server 2008 R2 SP1, 32/64 bit, R-devel
-* Oracle Solaris 10, x86, 32 bit, R-release
-
-### Win-builder
-
-* R-oldrel
-
-## R CMD check
-
-0 errors | 0 warnings | 0 notes
-
-## R CMD check --as-cran
-
-0 errors | 0 warnings | 1 note
+| Platform    | R     | R CMD check | R CMD check --as-cran |
+| -----       | ----- | ----- | ----- |
+| macOS Catalina 10.15.5 | R 4.0.1 | 0 errors, 0 warnings, 0 notes | 0 errors, 0 warnings, 1 note |
+| Ubuntu 20.04 LTS |  R 4.0.1 | 0 errors, 0 warnings, 0 notes | 0 errors, 0 warnings, 1 note |
 
 Note:
 
@@ -43,3 +18,37 @@ Note:
 Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>'
 New submission
 ```
+
+### R-Hub
+
+| Platform    | R     | Status |
+| -----       | ----- | ----- |
+| Ubuntu 16.04 LTS, GCC |  R-devel | Ok |
+| Fedora, GCC |  R-devel | Ok
+| Fedora, clang, gfortran | R-devel | Ok |
+| Debian, GCC |  R-devel | Ok |
+| Windows Server 2008 R2 SP1, 32/64 bit |  R-devel | Ok |
+| Oracle Solaris 10, x86, 32 bit |  R-release | Ok |
+
+### GitHub actions
+
+| Platform    | R     | Status |
+| -----       | ----- | ----- |
+| macOS Catalina 10.15 |  R-oldrel, R-release, R-devel | Passing |
+| Ubuntu 16.04, | R-oldrel, R-release | Passing |
+| Windows Server 2019 | R-oldrel, R-release, R-devel | Passing |
+
+
+### Win-builder
+
+| R          | Status |
+| -----      | -----  |
+| R-oldrel   | 1 note |
+
+Note:
+
+```
+Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>'
+New submission
+```
+
