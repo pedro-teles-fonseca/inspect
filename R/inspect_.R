@@ -224,7 +224,6 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' @seealso
 #' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
 #' * \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
-#' * \code{\link[pcal]{bfactor_interpret}} for the interpretation of Bayes factors.
 #' * \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a Bayes factor interpretation scale.
 #' * \code{\link[inspector]{inspect_log_base}} to check if an object is an eligible logarithmic base.
 #'
@@ -506,6 +505,8 @@ inspect_true_or_false <- function(x){
 #' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 #' * \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
+#' * \code{\link[inspector]{inspect_character}} to validate character vectors.
+#' * \code{\link[inspector]{inspect_character_match}} to validate character vectors with predefined allowed values.
 #'
 #' @examples
 #' # Calls that pass silently:
