@@ -126,6 +126,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
+#' * \code{\link[pcal]{bfactor_interpret}} for the interpretation of Bayes factors.
 #' * \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a valid Bayes factor interpretation scale.
 #'
 #' @examples
@@ -222,6 +223,8 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
+#' * \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
+#' * \code{\link[pcal]{bfactor_interpret}} for the interpretation of Bayes factors.
 #' * \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a Bayes factor interpretation scale.
 #' * \code{\link[inspector]{inspect_log_base}} to check if an object is an eligible logarithmic base.
 #'

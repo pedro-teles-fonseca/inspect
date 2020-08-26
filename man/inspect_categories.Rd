@@ -65,5 +65,7 @@ inspect_categories(levels(x5))
 \item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
 \item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
 \item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
+\item \code{\link[inspector]{inspect_character}} to validate character vectors.
+\item \code{\link[inspector]{inspect_character_match}} to validate character vectors with predefined allowed values.
 }
 }
