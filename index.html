@@ -164,7 +164,7 @@
 <span class="fu">flip_coins</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
 <span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
 </pre></div>
-<p>The <code>inspector</code> package was built to automate this kind of validation tasks. In the <code>flip_coins()</code> example we can use <code>inspect_par_bernoulli</code>, since <code>bias</code> actually is the parameter of a Bernoulli distribution:</p>
+<p>The <code>inspector</code> package was built to automate this kind of validation task. In the <code>flip_coins()</code> example, to perform an equivalent validation of inputs we can use <code>inspect_par_bernoulli</code>, since <code>bias</code> is the parameter of a Bernoulli distribution:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
@@ -228,7 +228,7 @@
 <span class="fu">bfactor_to_prob</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2.1</span>, <span class="fl">0.5</span>, <span class="fl">11</span>))
 <span class="co">#&gt; [1] 0.6774194 0.3333333 0.9166667</span>
 </pre></div>
-<p>Now lets use <code>inspector</code> instead. We can use <code><a href="reference/inspect_bfactor.html">inspect_bfactor()</a></code> to validate <code>bf</code> and <code><a href="reference/inspect_prob.html">inspect_prob()</a></code> to validate <code>prior_prob</code>.</p>
+<p>Now lets use <code>inspector</code> instead. To perform an equivalent validation of inputs we can use <code><a href="reference/inspect_bfactor.html">inspect_bfactor()</a></code> to validate <code>bf</code> and <code><a href="reference/inspect_prob.html">inspect_prob()</a></code> to validate <code>prior_prob</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="kw">bfactor_to_prob</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">bf</span>, <span class="kw">prior_prob</span> = <span class="fl">.5</span>) {
 
