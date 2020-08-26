@@ -126,7 +126,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_bfactor_log}} to check if an object is a numeric vector of valid logarithmic Bayes factor values.
-#' * \code{\link[inspector]{inspect_scale}} to check if an object is a valid Bayes factor interpretation scale.
+#' * \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a valid Bayes factor interpretation scale.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -222,7 +222,7 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-#' * \code{\link[inspector]{inspect_scale}} to check if an object is a Bayes factor interpretation scale.
+#' * \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a Bayes factor interpretation scale.
 #' * \code{\link[inspector]{inspect_log_base}} to check if an object is an eligible logarithmic base.
 #'
 #' @examples
@@ -358,18 +358,18 @@ inspect_log_base <- function(x){
 
 #' @title Validate Bayes factor interpretation scales
 #'
-#' @description `inspect_scale` checks if an object is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the `pcal` package. This can be useful to validate inputs in user-defined functions.
+#' @description `inspect_bfactor_scale` checks if an object is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the `pcal` package. This can be useful to validate inputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #'
-#' @details `inspect_scale` conducts a series of tests to check if `x` is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the `pcal` package. Namely, `inspect_scale` checks if:
+#' @details `inspect_bfactor_scale` conducts a series of tests to check if `x` is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the `pcal` package. Namely, `inspect_bfactor_scale` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is `NA` or `NaN`.
 #' * `x` is an atomic vector of \code{\link[base]{length}} 1
 #' * The \code{\link[base]{typeof}} `x` is character
 #' * The value of `x` is either "Jeffreys" or "Kass-Raftery" (not case sensitive).
 #'
-#' @return `inspect_scale` does not return any output. There are two possible scenarios:
+#' @return `inspect_bfactor_scale` does not return any output. There are two possible scenarios:
 #' * The call is silent if `x` is a character vector of \code{\link[base]{length}} 1 that is eligible to represent one of the Bayes factor interpretation scales available in the `pcal` package.
 #' * An informative error message is thrown otherwise.
 #'
@@ -385,26 +385,26 @@ inspect_log_base <- function(x){
 #' x2 <- "jeffreys"
 #' x3 <- "kass-raftery"
 #' x4 <- "Kass-Raftery"
-#' inspect_scale(x1)
-#' inspect_scale(x2)
-#' inspect_scale(x3)
-#' inspect_scale(x4)
+#' inspect_bfactor_scale(x1)
+#' inspect_bfactor_scale(x2)
+#' inspect_bfactor_scale(x3)
+#' inspect_bfactor_scale(x4)
 #'
 #' # Calls that throw informative error messages:
 #' \dontrun{mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
 #'           "kassraftery", c("jeffreys", "kass-raftery"))}
-#' \dontrun{inspect_scale(mylist[[1]])}
-#' \dontrun{inspect_scale(mylist[[2]])}
-#' \dontrun{inspect_scale(mylist[[3]])}
-#' \dontrun{inspect_scale(mylist[[4]])}
-#' \dontrun{inspect_scale(mylist[[5]])}
-#' \dontrun{inspect_scale(mylist[[6]])}
-#' \dontrun{inspect_scale(mylist[[7]])}
-#' \dontrun{inspect_scale(mylist[[8]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[1]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[2]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[3]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[4]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[5]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[6]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[7]])}
+#' \dontrun{inspect_bfactor_scale(mylist[[8]])}
 #'
 #' @export
 
-inspect_scale <- function(x){
+inspect_bfactor_scale <- function(x){
 
   output_name <- paste0("'", deparse(substitute(x)), "'")
 
