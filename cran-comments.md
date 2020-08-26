@@ -27,8 +27,6 @@
 
 ### Win-builder
 
-* R-devel
-* R-release
 * R-oldrel
 
 ## R CMD check
