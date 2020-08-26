@@ -78,8 +78,6 @@ The development version of `inspector` can be installed from
 ``` r
 # install.packages("devtools")
 devtools::install_github("pedro-teles-fonseca/inspector")
-#> Skipping install of 'inspector' from a github remote, the SHA1 (e66a5ed7) has not changed since last install.
-#>   Use `force = TRUE` to force installation
 ```
 
 ## Usage
