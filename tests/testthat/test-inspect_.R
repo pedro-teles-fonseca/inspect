@@ -364,83 +364,83 @@ test_that("inspect_log_base 14", {
                "Invalid argument: 'x' must be positive.")
 })
 
-context("inspect_scale")
+context("inspect_bfactor_scale")
 
-test_that("inspect_scale 1", {
-  expect_error(inspect_scale(NULL),
+test_that("inspect_bfactor_scale 1", {
+  expect_error(inspect_bfactor_scale(NULL),
                "Invalid argument: 'NULL' is NULL.")
 })
 
-test_that("inspect_scale 2", {
+test_that("inspect_bfactor_scale 2", {
   x <- NULL
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' is NULL.")
 })
 
-test_that("inspect_scale 3", {
+test_that("inspect_bfactor_scale 3", {
   x <- factor(1)
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' must be an atomic vector of length 1.")
 })
 
-test_that("inspect_scale 4", {
+test_that("inspect_bfactor_scale 4", {
   x <- list(1)
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' must be an atomic vector of length 1.")
 })
 
-test_that("inspect_scale 5", {
+test_that("inspect_bfactor_scale 5", {
   x <- character(0)
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' must be an atomic vector of length 1.")
 })
 
-test_that("inspect_scale 6", {
+test_that("inspect_bfactor_scale 6", {
   x <- c(TRUE, FALSE)
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' must be an atomic vector of length 1.")
 })
 
-test_that("inspect_scale 7", {
+test_that("inspect_bfactor_scale 7", {
   x <- NA
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' is NA or NaN.")
 })
 
-test_that("inspect_scale 8", {
+test_that("inspect_bfactor_scale 8", {
   x <- NaN
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' is NA or NaN.")
 })
 
-test_that("inspect_scale 9", {
+test_that("inspect_bfactor_scale 9", {
   x <- "TRUE"
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: 'x' must be either 'jeffreys' or 'kass-raftery'")
 })
 
-test_that("inspect_scale 10", {
-  expect_equal(inspect_scale("Jeffreys"),
-               inspect_scale("Kass-Raftery"))
+test_that("inspect_bfactor_scale 10", {
+  expect_equal(inspect_bfactor_scale("Jeffreys"),
+               inspect_bfactor_scale("Kass-Raftery"))
 })
 
-test_that("inspect_scale 11", {
-  expect_equal(inspect_scale("Jeffreys"),
-               inspect_scale("jeffreys"))
+test_that("inspect_bfactor_scale 11", {
+  expect_equal(inspect_bfactor_scale("Jeffreys"),
+               inspect_bfactor_scale("jeffreys"))
 })
 
-test_that("inspect_scale 12", {
-  expect_equal(inspect_scale("Jeffreys"),
+test_that("inspect_bfactor_scale 12", {
+  expect_equal(inspect_bfactor_scale("Jeffreys"),
                NULL)
 })
 
-test_that("inspect_scale 13", {
-  expect_silent(inspect_scale("Jeffreys"))
+test_that("inspect_bfactor_scale 13", {
+  expect_silent(inspect_bfactor_scale("Jeffreys"))
 })
 
-test_that("inspect_scale 13", {
+test_that("inspect_bfactor_scale 13", {
   x <- 1
-  expect_error(inspect_scale(x),
+  expect_error(inspect_bfactor_scale(x),
                "Invalid argument: the type of 'x' must be character.")
 })
 
