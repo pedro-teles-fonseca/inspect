@@ -40,8 +40,6 @@ The `inspector` package provides utility functions that implement and automate c
 
   - `inspect_true_or_false()` checks if an object is a non-missing logical value. 
 
-  - `inspect_scale` check if an object is a valid Bayes factor interpretation scale.
-
   - `inspect_categories()` validates factor levels.
   
   - `inspect_character()` validates character vectors.
@@ -62,39 +60,44 @@ The `inspector` package provides utility functions that implement and automate c
 
   - `inspect_par_haldane()` validates parameters for the Haldane distribution.
   
+  - `inspect_bfactor_scale` validates Bayes factor interpretation scales (available in the [`pcal`](https://github.com/pedro-teles-fonseca/pcal) package).
   
 These functions are particularly useful to validate inputs, intermediate objects and output values in user-defined functions, resulting in tidier and less verbose functions.
   
 ## Installation
 
 The development version of `inspector` can be installed from
-[GitHub](https://github.com/) using the `devtools` package:
+[GitHub](https://github.com/) using the [`devtools`](https://github.com/r-lib/devtools) package:
 
-``` r
+```{r}
 # install.packages("devtools")
 devtools::install_github("pedro-teles-fonseca/inspector")
 ```
 
 ## Usage
 
+Imagine we want to write a function that simulates `n` flips of the same coin. Assuming that `bias` is the probability "heads" outcome:
+
 ```{r}
 
 set.seed(123)
 
-flip_coin <- function(n, bias){
+flip_coins <- function(n, bias){ 
   
-  sample(c("heads", "tails"), size = n, replace = TRUE)
+  sample(x = c("heads", "tails"), size = n, replace = TRUE)
 
 }
 
-flip_coin(n = 5, bias = 0.5)
+flip_coins(n = 5, bias = 0.5)
 ```
+
+Since `bias` is a probability, we may want to ensure that `flip_coins()` only accepts input values of `bias` that are between 0 and 1. Additionally, we may want to check if `bias` is not `NULL` and is a non-missing and numeric vector of length 1. This results an a quite verbose function body:
 
 ```{r}
 
 set.seed(123)
 
-flip_coin <- function(n, bias){
+flip_coins <- function(n, bias){
   
   if(is.null(bias)){
     stop(paste("Invalid argument: bias is NULL."))
@@ -118,14 +121,16 @@ flip_coin <- function(n, bias){
   sample(c("heads", "tails"), size = n, replace = TRUE)
 }
 
-flip_coin(n = 5, bias = 0.5)
+flip_coins(n = 5, bias = 0.5)
 ```
+
+The `inspector` package was build to automate this kind of validation tasks. In the `flip_coins()` example we can use `inspect_par_bernoulli`, since `bias` actually is the parameter of a Bernoulli distribution:
 
 ```{r}
 
 set.seed(123)
 
-flip_coin <- function(n, bias){
+flip_coins <- function(n, bias){
   
   inspect_par_bernoulli(bias)
   
@@ -133,10 +138,74 @@ flip_coin <- function(n, bias){
 
 }
 
-flip_coin(n = 5, bias = 0.5)
+flip_coins(n = 5, bias = 0.5)
 ```
 
-turns Bayes factors into posterior probabilities using a formula from @bergerDelampady1987
+This results in a tidier function body since the validation tasks are abstracted away from the body of the function.
+
+As another example, imagine we want to implement equation 4 from @bergerDelampady1987, a formula that updates prior probabilities to posterior probabilities using Bayes factors as input. In this case we need to validate a vector of Bayes factors, lets call it `bf`, and a vector of prior probabilities, lets call it `prior_prob`. Since `bf` is expected to contain valid Bayes factor values, we need to ensure that only non-null, non-empty numeric vectors containing only non-negative values are accepted. Since `prior_prob` is a vector of probabilities, we need to check if it is a non-null, non-empty numeric vector containing only values between 0 and 1. This results in a quite verbose funtion body:
+
+```{r}
+bfactor_to_prob <- function(bf, prior_prob = .5) {
+
+  if(is.null(bf)){
+    stop(paste("Invalid argument: bf is NULL."))
+  }
+  if(any(isFALSE(is.atomic(bf)), isFALSE(is.vector(bf)))){
+    stop(paste("Invalid argument: bf must be an atomic vector."))
+  }
+  if(length(bf) == 0){
+    stop(paste("Invalid argument: bf is empty."))
+  }
+  if(all(is.na(bf))){
+    stop(paste("Invalid argument: all elements of bf are NA or NaN."))
+  }
+  if(isFALSE(is.numeric(bf))){
+    stop(paste("Invalid argument: the type of bf must be numeric."))
+  }
+  if(any(bf[!is.na(bf)] < 0)){
+    stop(paste("Invalid argument: all elements of bf must be non-negative."))
+  }
+  if(is.null(prior_prob)){
+    stop(paste("Invalid argument:", output_name, "is NULL."))
+  }
+  if(any(isFALSE(is.atomic(prior_prob)), isFALSE(is.vector(prior_prob)))){
+    stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
+  }
+  if(length(prior_prob) == 0){
+    stop(paste("Invalid argument:", output_name, "is empty."))
+  }
+  if(all(is.na(prior_prob))){
+    stop(paste("Invalid argument: all elements of", output_name, "are NA or NaN."))
+  }
+  if(isFALSE(is.numeric(prior_prob))){
+    stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
+  }
+  if(any(prior_prob[!is.na(prior_prob)] < 0, prior_prob[!is.na(prior_prob)] > 1)){
+    stop(paste("Invalid argument: all elements of",  output_name, "must be in the [0, 1] interval."))
+  }
+
+  (1 + (1 - prior_prob) / prior_prob * (1 / bf)) ^(-1)
+}
+
+bfactor_to_prob(c(2.1, 0.5, 11))
+
+```
+
+Now lets use `inspector` instead. We can use `inspect_bfactor` to validate `bf` and `inspect_prob` to validate `prior_prob`.
+
+```{r}
+bfactor_to_prob <- function(bf, prior_prob = .5) {
+
+  inspect_bfactor(bf)
+  inspect_prob(prior_prob)
+
+  (1 + (1 - prior_prob) / prior_prob * (1 / bf)) ^(-1)
+}
+
+bfactor_to_prob(c(2.1, 0.5, 11))
+```
+
 
 ## Getting Help
 
