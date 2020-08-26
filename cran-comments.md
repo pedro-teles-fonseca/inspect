@@ -25,6 +25,12 @@
 * Windows Server 2008 R2 SP1, 32/64 bit, R-devel
 * Oracle Solaris 10, x86, 32 bit, R-release
 
+### Win-builder
+
+* R-devel
+* R-release
+* R-oldrel
+
 ## R CMD check
 
 0 errors | 0 warnings | 0 notes
