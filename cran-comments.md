@@ -36,6 +36,6 @@
 Note:
 
 ```
-Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@outlook.com>'
+Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>'
 New submission
 ```
