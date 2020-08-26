@@ -83,7 +83,7 @@ devtools::install_github("pedro-teles-fonseca/inspector")
 ## Usage
 
 Imagine we want to write a function that simulates `n` flips of the same
-coin. Assuming that `bias` is the probability “heads” outcome:
+coin. Assuming that `bias` is the probability of the “heads” outcome:
 
 ``` r
 
@@ -99,11 +99,11 @@ flip_coins(n = 5, bias = 0.5)
 #> [1] "heads" "heads" "heads" "tails" "heads"
 ```
 
-Since `bias` is a probability, we may want to ensure that `flip_coins()`
-only accepts input values of `bias` that are between 0 and 1.
-Additionally, we may want to check if `bias` is not `NULL` and is a
-non-missing and numeric vector of length 1. This results an a quite
-verbose function body:
+Since `bias` is a probability, it is natural that we require
+`flip_coins()` to only accept values of `bias` between 0 and 1.
+Furthermore, we may want to ensure that `bias` is not null, not missing,
+and is a numeric vector of length 1. This results an a quite verbose
+function body:
 
 ``` r
 
@@ -130,14 +130,14 @@ flip_coins <- function(n, bias){
     stop(paste("Invalid argument: bias must be in the (0, 1) interval."))
   }
   
-  sample(c("heads", "tails"), size = n, replace = TRUE)
+  sample(x = c("heads", "tails"), size = n, replace = TRUE)
 }
 
 flip_coins(n = 5, bias = 0.5)
 #> [1] "heads" "heads" "heads" "tails" "heads"
 ```
 
-The `inspector` package was build to automate this kind of validation
+The `inspector` package was built to automate this kind of validation
 tasks. In the `flip_coins()` example we can use `inspect_par_bernoulli`,
 since `bias` actually is the parameter of a Bernoulli distribution:
 
@@ -149,7 +149,7 @@ flip_coins <- function(n, bias){
   
   inspect_par_bernoulli(bias)
   
-  sample(c("heads", "tails"), size = n, replace = TRUE)
+  sample(x = c("heads", "tails"), size = n, replace = TRUE)
 
 }
 
@@ -157,20 +157,20 @@ flip_coins(n = 5, bias = 0.5)
 #> [1] "heads" "heads" "heads" "tails" "heads"
 ```
 
-This results in a tidier function body since the validation tasks are
+This results in a tidier function body since the validation of `bias` is
 abstracted away from the body of the function.
 
-As another example, imagine we want to implement equation 4 from Berger
-and Delampady (1987), a formula that updates prior probabilities to
-posterior probabilities using Bayes factors as input. In this case we
-need to validate a vector of Bayes factors, lets call it `bf`, and a
-vector of prior probabilities, lets call it `prior_prob`. Since `bf` is
-expected to contain valid Bayes factor values, we need to ensure that
-only non-null, non-empty numeric vectors containing only non-negative
-values are accepted. Since `prior_prob` is a vector of probabilities, we
-need to check if it is a non-null, non-empty numeric vector containing
-only values between 0 and 1. This results in a quite verbose funtion
-body:
+Now imagine we want to implement equation 4 from Berger and Delampady
+(1987), a formula that calculates posterior probabilities using prior
+probabilities and Bayes factors as input. In this case we need to
+validate a vector of Bayes factors, lets call it `bf`, and a vector of
+prior probabilities, lets call it `prior_prob`. Since `bf` is expected
+to contain valid Bayes factor values, we need to ensure that only
+non-empty numeric vectors, containing only non-negative values, are
+accepted. Since `prior_prob` is a vector of probabilities, we need to
+check if it is a non-empty numeric vector containing only values between
+0 and 1. Since we are now validating two inputs, the function body would
+be even more verbose than in the `flip_coins()` example:
 
 ``` r
 bfactor_to_prob <- function(bf, prior_prob = .5) {
@@ -219,8 +219,8 @@ bfactor_to_prob(c(2.1, 0.5, 11))
 #> [1] 0.6774194 0.3333333 0.9166667
 ```
 
-Now lets use `inspector` instead. We can use `inspect_bfactor` to
-validate `bf` and `inspect_prob` to validate `prior_prob`.
+Now lets use `inspector` instead. We can use `inspect_bfactor()` to
+validate `bf` and `inspect_prob()` to validate `prior_prob`.
 
 ``` r
 bfactor_to_prob <- function(bf, prior_prob = .5) {
