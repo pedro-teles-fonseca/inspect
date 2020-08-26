@@ -92,7 +92,6 @@ set.seed(123)
 flip_coins <- function(n, bias){ 
   
   sample(x = c("heads", "tails"), size = n, replace = TRUE)
-
 }
 
 flip_coins(n = 5, bias = 0.5)
@@ -151,7 +150,6 @@ flip_coins <- function(n, bias){
   inspect_par_bernoulli(bias)
   
   sample(x = c("heads", "tails"), size = n, replace = TRUE)
-
 }
 
 flip_coins(n = 5, bias = 0.5)
