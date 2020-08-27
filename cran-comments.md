@@ -7,17 +7,15 @@
 
 ### Local 
 
-| Platform    | R     | R CMD check | R CMD check --as-cran |
-| -----       | ----- | ----- | ----- |
-| macOS Catalina 10.15.5 | R 4.0.1 | 0 errors, 0 warnings, 0 notes | 0 errors, 0 warnings, 1 note |
-| Ubuntu 20.04 LTS |  R 4.0.1 | 0 errors, 0 warnings, 0 notes | 0 errors, 0 warnings, 1 note |
+| Platform               | R        | R CMD check | R CMD check --as-cran |
+| -----                  | -----    | -----       | -----                 |
+| macOS Catalina 10.15.5 | R 4.0.1  | Ok          | 2 NOTEs               |
+| Ubuntu 20.04 LTS       | R 4.0.1  | Ok          | 2 NOTEs               |
 
-Note:
+* Note 1:`Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>'
+New submission`. This is a standard note for first submissions and should be safe to ignore.
 
-```
-Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>'
-New submission
-```
+* Note 2: `unable to verify current time`. I'm currently having this note in all my R packages. After browsing through R CMD check's code I realized that it depends on an external web source to check current time (http://worldclockapi.com/). This website is currently offline and that should be the source of the problem.
 
 ### R-Hub
 
@@ -38,7 +36,6 @@ New submission
 | macOS Catalina 10.15 | R-oldrel, R-release, R-devel | Passing |
 | Ubuntu 16.04 | R-oldrel, R-release | Passing |
 | Windows Server 2019 | R-oldrel, R-release, R-devel | Passing |
-
 
 ### Win-builder
 
