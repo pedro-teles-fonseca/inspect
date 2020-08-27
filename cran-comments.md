@@ -45,10 +45,4 @@ New submission`. This is a standard note for first submissions and should be saf
 | R-release  | 1 note |
 | R-devel    | 1 note |
 
-Note:
-
-```
-Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>'
-New submission
-```
-
+* Note: same as note 1 above.
