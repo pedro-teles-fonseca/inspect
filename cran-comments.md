@@ -44,6 +44,7 @@ New submission
 
 | R          | Status |
 | -----      | -----  |
+| R-release   | 1 note |
 | R-oldrel   | 1 note |
 
 Note:
