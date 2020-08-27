@@ -21,9 +21,9 @@ New submission`. This is a standard note for first submissions and should be saf
 
 | R version  | Status |
 | -----      | -----  |
-| R-oldrel   | 1 note |
-| R-release  | 1 note |
-| R-devel    | 1 note |
+| R-oldrel   | 1 NOTE |
+| R-release  | 1 NOTE |
+| R-devel    | 1 NOTE |
 
 * Note: same as note 1 above.
 
