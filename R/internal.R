@@ -1,4 +1,8 @@
 
+inspect_equality <- function(x, y, tol = .Machine$double.eps^0.5) {
+  abs(x - y) < tol
+}
+
 # nocov start
 
 release_questions <- function(){
@@ -8,10 +12,6 @@ release_questions <- function(){
     "Have you run all the tests listed in cran-comments.md?",
     "Have you evaluated the impact in downstream dependencies?"
   )
-}
-
-inspect_equality <- function(x, y, tol = .Machine$double.eps^0.5) {
-  abs(x - y) < tol
 }
 
 # nocov end
