@@ -29,15 +29,15 @@ New submission`. This is a standard note for first submissions and should be saf
 
 ### R-Hub
 
-| Platform                                | R version | Status |
-| -----                                   | -----     | -----  |
-| macOS 10.13.6 High Sierra, CRAN's setup | R-release | Ok     |
-| Oracle Solaris 10, x86, 32 bit          | R-release | Ok     |
-| Ubuntu 16.04 LTS, GCC                   | R-devel   | Ok     |
-| Fedora, GCC                             | R-devel   | Ok     |
-| Fedora, clang, gfortran                 | R-devel   | Ok     |
-| Debian, GCC                             | R-devel   | Ok     |
-| Windows Server 2008 R2 SP1, 32/64 bit   | R-devel   | Ok     |
+| Platform                                      | R version | Status |
+| -----                                         | -----     | -----  |
+| macOS 10.13.6 High Sierra, CRAN's setup       | R-release | Ok     |
+| Oracle Solaris 10, x86, 32 bit                | R-release | Ok     |
+| Ubuntu Linux 16.04 LTS, GCC                   | R-devel   | Ok     |
+| Fedora Linux, GCC                             | R-devel   | Ok     |
+| Fedora Linux, clang, gfortran                 | R-devel   | Ok     |
+| Debian Linux, GCC                             | R-devel   | Ok     |
+| Windows Server 2008 R2 SP1, 32/64 bit         | R-devel   | Ok     |
 
 ### GitHub actions
 
