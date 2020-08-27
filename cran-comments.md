@@ -15,7 +15,7 @@
 * Note 1:`Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>'
 New submission`. This is a standard note for first submissions and should be safe to ignore.
 
-* Note 2: `unable to verify current time`. I'm currently having this note in all my R packages. After browsing through R CMD check's code I realized that it depends on an external web source to check current time (http://worldclockapi.com/). This website is currently offline and that should be the source of the problem.
+* Note 2: `unable to verify current time`. After browsing through R CMD check's code I realized that it depends on an external web source to check current time (http://worldclockapi.com/). This website is currently offline and that should be the source of the problem. If that's the case, there is nothing I can do about this note. 
 
 ### R-Hub
 
