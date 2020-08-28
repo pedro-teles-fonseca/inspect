@@ -23,6 +23,12 @@ automate common sets of validation tasks, namely:
   - `inspect_prob()` checks if an object is a numeric vector of valid
     probability values.
 
+  - `inspect_log_base()` checks if an object is a valid logarithmic
+    base.
+
+  - `inspect_true_or_false()` checks if an object is a non-missing
+    logical value.
+
   - `inspect_bfactor()` checks if an object is a numeric vector of valid
     Bayes factors values.
 
@@ -30,14 +36,8 @@ automate common sets of validation tasks, namely:
     valid logarithmic Bayes factors values.
 
   - `inspect_bfactor_scale` validates Bayes factor interpretation scales
-    (available in the
-    [`pcal`](https://github.com/pedro-teles-fonseca/pcal) package).
-
-  - `inspect_log_base()` checks if an object is a valid logarithmic
-    base.
-
-  - `inspect_true_or_false()` checks if an object is a non-missing
-    logical value.
+    (from in the [`pcal`](https://github.com/pedro-teles-fonseca/pcal)
+    package).
 
   - `inspect_categories()` validates factor levels.
 
