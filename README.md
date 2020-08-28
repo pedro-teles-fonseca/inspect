@@ -29,6 +29,10 @@ automate common sets of validation tasks, namely:
   - `inspect_bfactor_log()` checks if an object is a numeric vector of
     valid logarithmic Bayes factors values.
 
+  - `inspect_bfactor_scale` validates Bayes factor interpretation scales
+    (available in the
+    [`pcal`](https://github.com/pedro-teles-fonseca/pcal) package).
+
   - `inspect_log_base()` checks if an object is a valid logarithmic
     base.
 
@@ -60,10 +64,6 @@ automate common sets of validation tasks, namely:
 
   - `inspect_par_haldane()` validates parameters for the Haldane
     distribution.
-
-  - `inspect_bfactor_scale` validates Bayes factor interpretation scales
-    (available in the
-    [`pcal`](https://github.com/pedro-teles-fonseca/pcal) package).
 
 These functions are particularly useful to validate inputs, intermediate
 objects and output values in user-defined functions, resulting in tidier
