@@ -1,7 +1,7 @@
 
 #' @importFrom Rdpack reprompt
 #'
-#' @title inspector
+#' @title The \{inspector\} Package
 #'
 #' @description Validation of arguments and objects in user-defined functions
 #'

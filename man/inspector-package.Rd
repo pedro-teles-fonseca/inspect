@@ -4,7 +4,7 @@
 \name{inspector-package}
 \alias{inspector}
 \alias{inspector-package}
-\title{inspector}
+\title{The \{inspector\} Package}
 \description{
 Validation of arguments and objects in user-defined functions
 }
