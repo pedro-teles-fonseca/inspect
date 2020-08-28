@@ -4,13 +4,11 @@
 \name{inspector-package}
 \alias{inspector}
 \alias{inspector-package}
-\title{The \{inspector\} Package}
+\title{inspector: Validation of Arguments and Objects in User-Defined Functions}
 \description{
-Validation of arguments and objects in user-defined functions
+The \code{inspector} package provides utility functions that implement and automate common sets of validation tasks. These functions are particularly useful to validate inputs, intermediate objects and output values in user-defined functions, resulting in tidier and less verbose functions.
 }
 \details{
-The \code{inspector} package provides utility functions that implement and automate common sets of validation tasks. These functions are particularly useful to validate inputs, intermediate objects and output values in user-defined functions, resulting in tidier and less verbose functions.
-
 For a complete list of functions see \code{library(help = "inspector")}. For instructions and examples see the "Usage" section of the \href{https://github.com/pedro-teles-fonseca/inspector/blob/master/README.md}{README}.
 }
 \seealso{
