@@ -4,7 +4,7 @@
 \name{inspector-package}
 \alias{inspector}
 \alias{inspector-package}
-\title{inspector: Validation of Arguments and Objects in User-Defined Functions}
+\title{Package 'inspector'}
 \description{
 The \code{inspector} package provides utility functions that implement and automate common sets of validation tasks. These functions are particularly useful to validate inputs, intermediate objects and output values in user-defined functions, resulting in tidier and less verbose functions.
 }
