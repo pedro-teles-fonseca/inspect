@@ -70,7 +70,7 @@ inspect_data_categorical(x5)
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data as dichotomous.
+\item \code{\link[inspector]{inspect_data_cat_as_dichotomous}} to validate categorical data as dichotomous.
 \item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
 \item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
 \item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
