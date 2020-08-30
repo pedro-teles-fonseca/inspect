@@ -24,4 +24,4 @@ Suggests:
     pcal (>= 1.0.0)
 RdMacros: Rdpack
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
