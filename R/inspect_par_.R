@@ -96,7 +96,7 @@ inspect_par_bernoulli <- function(x){
 #' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
 #' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
 #' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotomous}} to validate categorical data.
 #' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
 #'
 #' @examples

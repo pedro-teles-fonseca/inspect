@@ -502,7 +502,7 @@ inspect_true_or_false <- function(x){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_multinom_as_bern}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotomous}} to validate categorical data.
 #' * \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
 #' * \code{\link[inspector]{inspect_character}} to validate character vectors.

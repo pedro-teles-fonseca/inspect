@@ -48,7 +48,7 @@ automate common sets of validation tasks, namely:
 
   - `inspect_data_dichotomous()` validates dichotomous data
 
-  - `inspect_data_categorical()` and `inspect_data_multinom_as_bern()`
+  - `inspect_data_categorical()` and `inspect_data_cat_as_dichotomous()`
     validate categorical data.
 
   - `inspect_par_bernoulli()` validates parameters for the Bernoulli and

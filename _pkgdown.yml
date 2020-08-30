@@ -11,7 +11,7 @@ reference:
     contents:
       - '`inspect_data_dichotomous`'
       - '`inspect_data_categorical`'
-      - '`inspect_data_multinom_as_bern`'
+      - '`inspect_data_cat_as_dichotomous`'
   - title: Validation of Parameters
     desc: ~
     contents:
