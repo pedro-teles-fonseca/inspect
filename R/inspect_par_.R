@@ -32,20 +32,20 @@
 #' inspect_par_bernoulli(0.1)
 #'
 #' # Calls that throw an informative error message:
-#' \donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5), "0.5",
+#' if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5), "0.5",
 #'  list(0.5), NA, NaN, numeric(0), c(0.1, 0.5), -0.5, 1.1)}
-#' \donttest{inspect_par_bernoulli(mylist[[1]])}
-#' \donttest{inspect_par_bernoulli(mylist[[2]])}
-#' \donttest{inspect_par_bernoulli(mylist[[3]])}
-#' \donttest{inspect_par_bernoulli(mylist[[4]])}
-#' \donttest{inspect_par_bernoulli(mylist[[5]])}
-#' \donttest{inspect_par_bernoulli(mylist[[6]])}
-#' \donttest{inspect_par_bernoulli(mylist[[7]])}
-#' \donttest{inspect_par_bernoulli(mylist[[8]])}
-#' \donttest{inspect_par_bernoulli(mylist[[9]])}
-#' \donttest{inspect_par_bernoulli(mylist[[10]])}
-#' \donttest{inspect_par_bernoulli(mylist[[11]])}
-#' \donttest{inspect_par_bernoulli(mylist[[12]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[1]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[2]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[3]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[4]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[5]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[6]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[7]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[8]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[9]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[10]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[11]])}
+#' if(interactive()){inspect_par_bernoulli(mylist[[12]])}
 #'
 #' @export
 
@@ -107,21 +107,21 @@ inspect_par_bernoulli <- function(x){
 #' inspect_par_multinomial(x2)
 #'
 #' # Calls that throw an informative error message:
-#' \donttest{mylist <- list(NULL, TRUE, factor(0.5, 0.5),
+#' if(interactive()){mylist <- list(NULL, TRUE, factor(0.5, 0.5),
 #'  matrix(c(0.5, 0.5)), c("0.5", "0.5"), list(0.5, 0.5),
 #'  c(0.9, NA), c(0.9, NaN), numeric(0), NA, c(0.9, 0.6), c(-0.1, 0.9))}
-#' \donttest{inspect_par_multinomial(mylist[[1]])}
-#' \donttest{inspect_par_multinomial(mylist[[2]])}
-#' \donttest{inspect_par_multinomial(mylist[[3]])}
-#' \donttest{inspect_par_multinomial(mylist[[4]])}
-#' \donttest{inspect_par_multinomial(mylist[[5]])}
-#' \donttest{inspect_par_multinomial(mylist[[6]])}
-#' \donttest{inspect_par_multinomial(mylist[[7]])}
-#' \donttest{inspect_par_multinomial(mylist[[8]])}
-#' \donttest{inspect_par_multinomial(mylist[[9]])}
-#' \donttest{inspect_par_multinomial(mylist[[10]])}
-#' \donttest{inspect_par_multinomial(mylist[[11]])}
-#' \donttest{inspect_par_multinomial(mylist[[12]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[1]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[2]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[3]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[4]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[5]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[6]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[7]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[8]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[9]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[10]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[11]])}
+#' if(interactive()){inspect_par_multinomial(mylist[[12]])}
 #'
 #' @export
 
@@ -184,20 +184,20 @@ inspect_par_multinomial <- function(x){
 #' inspect_par_beta(x2)
 #'
 #' # Calls that throw an informative error message:
-#' \donttest{mylist <- list(NULL, 1, factor(1, 1),
+#' if(interactive()){mylist <- list(NULL, 1, factor(1, 1),
 #'  matrix(c(1, 1)), c("1", "1"), list(1, 1), c(1, NA),
 #'   c(1, NaN), c(TRUE, FALSE), numeric(0), c(-1, 1))}
-#' \donttest{inspect_par_beta(mylist[[1]])}
-#' \donttest{inspect_par_beta(mylist[[2]])}
-#' \donttest{inspect_par_beta(mylist[[3]])}
-#' \donttest{inspect_par_beta(mylist[[4]])}
-#' \donttest{inspect_par_beta(mylist[[5]])}
-#' \donttest{inspect_par_beta(mylist[[6]])}
-#' \donttest{inspect_par_beta(mylist[[7]])}
-#' \donttest{inspect_par_beta(mylist[[8]])}
-#' \donttest{inspect_par_beta(mylist[[9]])}
-#' \donttest{inspect_par_beta(mylist[[10]])}
-#' \donttest{inspect_par_beta(mylist[[11]])}
+#' if(interactive()){inspect_par_beta(mylist[[1]])}
+#' if(interactive()){inspect_par_beta(mylist[[2]])}
+#' if(interactive()){inspect_par_beta(mylist[[3]])}
+#' if(interactive()){inspect_par_beta(mylist[[4]])}
+#' if(interactive()){inspect_par_beta(mylist[[5]])}
+#' if(interactive()){inspect_par_beta(mylist[[6]])}
+#' if(interactive()){inspect_par_beta(mylist[[7]])}
+#' if(interactive()){inspect_par_beta(mylist[[8]])}
+#' if(interactive()){inspect_par_beta(mylist[[9]])}
+#' if(interactive()){inspect_par_beta(mylist[[10]])}
+#' if(interactive()){inspect_par_beta(mylist[[11]])}
 #'
 #' @export
 
@@ -256,19 +256,19 @@ inspect_par_beta <- function(x){
 #' inspect_par_dirichlet(x2)
 #'
 #' # Calls that throw an informative error message:
-#' \donttest{mylist <- list(NULL, factor(1, 1, 1),
+#' if(interactive()){mylist <- list(NULL, factor(1, 1, 1),
 #'  matrix(c(1, 1, 1)), c("1", "1", "1"), list(1, 1, 1), c(1, NA),
 #'   c(1, NaN, 1), c(TRUE, FALSE), numeric(0), c(-1, 1, 1))}
-#' \donttest{inspect_par_dirichlet(mylist[[1]])}
-#' \donttest{inspect_par_dirichlet(mylist[[2]])}
-#' \donttest{inspect_par_dirichlet(mylist[[3]])}
-#' \donttest{inspect_par_dirichlet(mylist[[4]])}
-#' \donttest{inspect_par_dirichlet(mylist[[5]])}
-#' \donttest{inspect_par_dirichlet(mylist[[6]])}
-#' \donttest{inspect_par_dirichlet(mylist[[7]])}
-#' \donttest{inspect_par_dirichlet(mylist[[8]])}
-#' \donttest{inspect_par_dirichlet(mylist[[9]])}
-#' \donttest{inspect_par_dirichlet(mylist[[10]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[1]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[2]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[3]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[4]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[5]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[6]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[7]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[8]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[9]])}
+#' if(interactive()){inspect_par_dirichlet(mylist[[10]])}
 #'
 #' @export
 
@@ -327,19 +327,19 @@ inspect_par_dirichlet <- function(x){
 #' inspect_par_haldane(x2)
 #'
 #' # Calls that throw an informative error message:
-#' \donttest{mylist <- list(NULL, factor(0, 0, 0),
+#' if(interactive()){mylist <- list(NULL, factor(0, 0, 0),
 #'  matrix(c(0, 0, 0)), c("0", "0", "0"), list(0, 0, 0), c(0, NA),
 #'   c(0, NaN, 0), c(TRUE, FALSE), numeric(0), c(1, 0, 0))}
-#' \donttest{inspect_par_haldane(mylist[[1]])}
-#' \donttest{inspect_par_haldane(mylist[[2]])}
-#' \donttest{inspect_par_haldane(mylist[[3]])}
-#' \donttest{inspect_par_haldane(mylist[[4]])}
-#' \donttest{inspect_par_haldane(mylist[[5]])}
-#' \donttest{inspect_par_haldane(mylist[[6]])}
-#' \donttest{inspect_par_haldane(mylist[[7]])}
-#' \donttest{inspect_par_haldane(mylist[[8]])}
-#' \donttest{inspect_par_haldane(mylist[[9]])}
-#' \donttest{inspect_par_haldane(mylist[[10]])}
+#' if(interactive()){inspect_par_haldane(mylist[[1]])}
+#' if(interactive()){inspect_par_haldane(mylist[[2]])}
+#' if(interactive()){inspect_par_haldane(mylist[[3]])}
+#' if(interactive()){inspect_par_haldane(mylist[[4]])}
+#' if(interactive()){inspect_par_haldane(mylist[[5]])}
+#' if(interactive()){inspect_par_haldane(mylist[[6]])}
+#' if(interactive()){inspect_par_haldane(mylist[[7]])}
+#' if(interactive()){inspect_par_haldane(mylist[[8]])}
+#' if(interactive()){inspect_par_haldane(mylist[[9]])}
+#' if(interactive()){inspect_par_haldane(mylist[[10]])}
 #'
 #' @export
 #'

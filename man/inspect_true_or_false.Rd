@@ -36,13 +36,13 @@ inspect_true_or_false(x)
 inspect_true_or_false(y)
 
 # Calls that throw informative error messages:
-\donttest{mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")}
-\donttest{inspect_true_or_false(mylist[[1]])}
-\donttest{inspect_true_or_false(mylist[[2]])}
-\donttest{inspect_true_or_false(mylist[[3]])}
-\donttest{inspect_true_or_false(mylist[[4]])}
-\donttest{inspect_true_or_false(mylist[[5]])}
-\donttest{inspect_true_or_false(mylist[[6]])}
+if(interactive()){mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")}
+if(interactive()){inspect_true_or_false(mylist[[1]])}
+if(interactive()){inspect_true_or_false(mylist[[2]])}
+if(interactive()){inspect_true_or_false(mylist[[3]])}
+if(interactive()){inspect_true_or_false(mylist[[4]])}
+if(interactive()){inspect_true_or_false(mylist[[5]])}
+if(interactive()){inspect_true_or_false(mylist[[6]])}
 
 }
 \seealso{

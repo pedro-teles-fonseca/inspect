@@ -38,21 +38,21 @@ inspect_par_multinomial(x1)
 inspect_par_multinomial(x2)
 
 # Calls that throw an informative error message:
-\donttest{mylist <- list(NULL, TRUE, factor(0.5, 0.5),
+if(interactive()){mylist <- list(NULL, TRUE, factor(0.5, 0.5),
  matrix(c(0.5, 0.5)), c("0.5", "0.5"), list(0.5, 0.5),
  c(0.9, NA), c(0.9, NaN), numeric(0), NA, c(0.9, 0.6), c(-0.1, 0.9))}
-\donttest{inspect_par_multinomial(mylist[[1]])}
-\donttest{inspect_par_multinomial(mylist[[2]])}
-\donttest{inspect_par_multinomial(mylist[[3]])}
-\donttest{inspect_par_multinomial(mylist[[4]])}
-\donttest{inspect_par_multinomial(mylist[[5]])}
-\donttest{inspect_par_multinomial(mylist[[6]])}
-\donttest{inspect_par_multinomial(mylist[[7]])}
-\donttest{inspect_par_multinomial(mylist[[8]])}
-\donttest{inspect_par_multinomial(mylist[[9]])}
-\donttest{inspect_par_multinomial(mylist[[10]])}
-\donttest{inspect_par_multinomial(mylist[[11]])}
-\donttest{inspect_par_multinomial(mylist[[12]])}
+if(interactive()){inspect_par_multinomial(mylist[[1]])}
+if(interactive()){inspect_par_multinomial(mylist[[2]])}
+if(interactive()){inspect_par_multinomial(mylist[[3]])}
+if(interactive()){inspect_par_multinomial(mylist[[4]])}
+if(interactive()){inspect_par_multinomial(mylist[[5]])}
+if(interactive()){inspect_par_multinomial(mylist[[6]])}
+if(interactive()){inspect_par_multinomial(mylist[[7]])}
+if(interactive()){inspect_par_multinomial(mylist[[8]])}
+if(interactive()){inspect_par_multinomial(mylist[[9]])}
+if(interactive()){inspect_par_multinomial(mylist[[10]])}
+if(interactive()){inspect_par_multinomial(mylist[[11]])}
+if(interactive()){inspect_par_multinomial(mylist[[12]])}
 
 }
 \seealso{

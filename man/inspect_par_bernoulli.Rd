@@ -37,20 +37,20 @@ inspect_par_bernoulli(x)
 inspect_par_bernoulli(0.1)
 
 # Calls that throw an informative error message:
-\donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5), "0.5",
+if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5), "0.5",
  list(0.5), NA, NaN, numeric(0), c(0.1, 0.5), -0.5, 1.1)}
-\donttest{inspect_par_bernoulli(mylist[[1]])}
-\donttest{inspect_par_bernoulli(mylist[[2]])}
-\donttest{inspect_par_bernoulli(mylist[[3]])}
-\donttest{inspect_par_bernoulli(mylist[[4]])}
-\donttest{inspect_par_bernoulli(mylist[[5]])}
-\donttest{inspect_par_bernoulli(mylist[[6]])}
-\donttest{inspect_par_bernoulli(mylist[[7]])}
-\donttest{inspect_par_bernoulli(mylist[[8]])}
-\donttest{inspect_par_bernoulli(mylist[[9]])}
-\donttest{inspect_par_bernoulli(mylist[[10]])}
-\donttest{inspect_par_bernoulli(mylist[[11]])}
-\donttest{inspect_par_bernoulli(mylist[[12]])}
+if(interactive()){inspect_par_bernoulli(mylist[[1]])}
+if(interactive()){inspect_par_bernoulli(mylist[[2]])}
+if(interactive()){inspect_par_bernoulli(mylist[[3]])}
+if(interactive()){inspect_par_bernoulli(mylist[[4]])}
+if(interactive()){inspect_par_bernoulli(mylist[[5]])}
+if(interactive()){inspect_par_bernoulli(mylist[[6]])}
+if(interactive()){inspect_par_bernoulli(mylist[[7]])}
+if(interactive()){inspect_par_bernoulli(mylist[[8]])}
+if(interactive()){inspect_par_bernoulli(mylist[[9]])}
+if(interactive()){inspect_par_bernoulli(mylist[[10]])}
+if(interactive()){inspect_par_bernoulli(mylist[[11]])}
+if(interactive()){inspect_par_bernoulli(mylist[[12]])}
 
 }
 \seealso{

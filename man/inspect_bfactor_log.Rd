@@ -50,23 +50,23 @@ inspect_bfactor_log(x2, warning_nas = FALSE)
 inspect_bfactor_log(x2, allow_nas = TRUE, warning_nas = FALSE)
 
 # Call that throws an informative warning message:
-\donttest{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-\donttest{inspect_bfactor_log(y)}
-\donttest{inspect_bfactor_log(y, warning_nas = TRUE)}
-\donttest{inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
+if(interactive()){y <- c(0.1, 0.2, NA, 0.4, 0.5)}
+if(interactive()){inspect_bfactor_log(y)}
+if(interactive()){inspect_bfactor_log(y, warning_nas = TRUE)}
+if(interactive()){inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
 
 # Calls that throw informative error messages:
-\donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
          "0.5", list(0.5), numeric(0), NA, NaN)}
-\donttest{inspect_bfactor_log(mylist[[1]])}
-\donttest{inspect_bfactor_log(mylist[[2]])}
-\donttest{inspect_bfactor_log(mylist[[3]])}
-\donttest{inspect_bfactor_log(mylist[[4]])}
-\donttest{inspect_bfactor_log(mylist[[5]])}
-\donttest{inspect_bfactor_log(mylist[[6]])}
-\donttest{inspect_bfactor_log(mylist[[7]])}
-\donttest{inspect_bfactor_log(mylist[[8]])}
-\donttest{inspect_bfactor_log(mylist[[9]])}
+if(interactive()){inspect_bfactor_log(mylist[[1]])}
+if(interactive()){inspect_bfactor_log(mylist[[2]])}
+if(interactive()){inspect_bfactor_log(mylist[[3]])}
+if(interactive()){inspect_bfactor_log(mylist[[4]])}
+if(interactive()){inspect_bfactor_log(mylist[[5]])}
+if(interactive()){inspect_bfactor_log(mylist[[6]])}
+if(interactive()){inspect_bfactor_log(mylist[[7]])}
+if(interactive()){inspect_bfactor_log(mylist[[8]])}
+if(interactive()){inspect_bfactor_log(mylist[[9]])}
 
 }
 \seealso{

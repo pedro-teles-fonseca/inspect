@@ -43,22 +43,22 @@ inspect_character_match(x1, allowed = c("Kass", "Raftery"))
 inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 
 # Calls that throw informative error messages:
-\donttest{y1 <- "kasss"}
-\donttest{y2 <- "kass"}
-\donttest{inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
-\donttest{inspect_character_match(y2, allowed = c("Kass", "Raftery"),
+if(interactive()){y1 <- "kasss"}
+if(interactive()){y2 <- "kass"}
+if(interactive()){inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
+if(interactive()){inspect_character_match(y2, allowed = c("Kass", "Raftery"),
  case_sensitive = TRUE)}
-\donttest{mylist <- list(NULL, character(0), c("abc", "abcd"),
+if(interactive()){mylist <- list(NULL, character(0), c("abc", "abcd"),
  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)}
-\donttest{inspect_character_match(mylist[[1]], "abc")}
-\donttest{inspect_character_match(mylist[[2]], "abc")}
-\donttest{inspect_character_match(mylist[[3]], "abc")}
-\donttest{inspect_character_match(mylist[[4]], "abc")}
-\donttest{inspect_character_match(mylist[[5]], "abc")}
-\donttest{inspect_character_match(mylist[[6]], "abc")}
-\donttest{inspect_character_match(mylist[[7]], "abc")}
-\donttest{inspect_character_match(mylist[[8]], "abc")}
-\donttest{inspect_character_match(mylist[[9]], "abc")}
+if(interactive()){inspect_character_match(mylist[[1]], "abc")}
+if(interactive()){inspect_character_match(mylist[[2]], "abc")}
+if(interactive()){inspect_character_match(mylist[[3]], "abc")}
+if(interactive()){inspect_character_match(mylist[[4]], "abc")}
+if(interactive()){inspect_character_match(mylist[[5]], "abc")}
+if(interactive()){inspect_character_match(mylist[[6]], "abc")}
+if(interactive()){inspect_character_match(mylist[[7]], "abc")}
+if(interactive()){inspect_character_match(mylist[[8]], "abc")}
+if(interactive()){inspect_character_match(mylist[[9]], "abc")}
 
 }
 \seealso{

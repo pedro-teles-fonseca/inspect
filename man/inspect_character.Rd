@@ -53,21 +53,21 @@ inspect_character(x3)
 inspect_character(x4)
 
 # Call that throws an informative warning message
-\donttest{y <- c("Kass", "Raftery", NA)}
-\donttest{inspect_character(y, warning_nas = TRUE)}
+if(interactive()){y <- c("Kass", "Raftery", NA)}
+if(interactive()){inspect_character(y, warning_nas = TRUE)}
 
 # Calls that throw informative error messages
-\donttest{inspect_character(y, allow_nas = FALSE)}
-\donttest{mylist <- list(NULL, character(0), 1,
+if(interactive()){inspect_character(y, allow_nas = FALSE)}
+if(interactive()){mylist <- list(NULL, character(0), 1,
  c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)}
-\donttest{inspect_character(mylist[[1]])}
-\donttest{inspect_character(mylist[[2]])}
-\donttest{inspect_character(mylist[[3]])}
-\donttest{inspect_character(mylist[[4]])}
-\donttest{inspect_character(mylist[[5]])}
-\donttest{inspect_character(mylist[[6]])}
-\donttest{inspect_character(mylist[[7]])}
-\donttest{inspect_character(mylist[[8]])}
+if(interactive()){inspect_character(mylist[[1]])}
+if(interactive()){inspect_character(mylist[[2]])}
+if(interactive()){inspect_character(mylist[[3]])}
+if(interactive()){inspect_character(mylist[[4]])}
+if(interactive()){inspect_character(mylist[[5]])}
+if(interactive()){inspect_character(mylist[[6]])}
+if(interactive()){inspect_character(mylist[[7]])}
+if(interactive()){inspect_character(mylist[[8]])}
 
 }
 \seealso{

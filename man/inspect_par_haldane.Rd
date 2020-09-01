@@ -37,19 +37,19 @@ inspect_par_haldane(x1)
 inspect_par_haldane(x2)
 
 # Calls that throw an informative error message:
-\donttest{mylist <- list(NULL, factor(0, 0, 0),
+if(interactive()){mylist <- list(NULL, factor(0, 0, 0),
  matrix(c(0, 0, 0)), c("0", "0", "0"), list(0, 0, 0), c(0, NA),
   c(0, NaN, 0), c(TRUE, FALSE), numeric(0), c(1, 0, 0))}
-\donttest{inspect_par_haldane(mylist[[1]])}
-\donttest{inspect_par_haldane(mylist[[2]])}
-\donttest{inspect_par_haldane(mylist[[3]])}
-\donttest{inspect_par_haldane(mylist[[4]])}
-\donttest{inspect_par_haldane(mylist[[5]])}
-\donttest{inspect_par_haldane(mylist[[6]])}
-\donttest{inspect_par_haldane(mylist[[7]])}
-\donttest{inspect_par_haldane(mylist[[8]])}
-\donttest{inspect_par_haldane(mylist[[9]])}
-\donttest{inspect_par_haldane(mylist[[10]])}
+if(interactive()){inspect_par_haldane(mylist[[1]])}
+if(interactive()){inspect_par_haldane(mylist[[2]])}
+if(interactive()){inspect_par_haldane(mylist[[3]])}
+if(interactive()){inspect_par_haldane(mylist[[4]])}
+if(interactive()){inspect_par_haldane(mylist[[5]])}
+if(interactive()){inspect_par_haldane(mylist[[6]])}
+if(interactive()){inspect_par_haldane(mylist[[7]])}
+if(interactive()){inspect_par_haldane(mylist[[8]])}
+if(interactive()){inspect_par_haldane(mylist[[9]])}
+if(interactive()){inspect_par_haldane(mylist[[10]])}
 
 }
 \seealso{

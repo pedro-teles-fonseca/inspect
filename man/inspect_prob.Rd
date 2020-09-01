@@ -44,7 +44,6 @@ inspect_prob(x, allow_nas = TRUE, warning_nas = TRUE)
 }
 \examples{
 # Calls that pass silently:
-if(interactive()){"teste"}
 x1 <- c(0.1, 0.2, 0.3, 0.4, 0.5)
 x2 <- c(0.1, 0.2, 0.3, 0.4, 0.5, NA)
 inspect_prob(x1)
