@@ -43,20 +43,20 @@ inspect_categories(x4)
 inspect_categories(levels(x5))
 
 # Calls that throw informative error messages:
-\dontrun{y1 <- c(1, 1:5)}
-\dontrun{y2 <- c("yes", "no", "yes")}
-\dontrun{y3 <- factor(c("yes", "no", "yes"))}
-\dontrun{inspect_categories(y1)}
-\dontrun{inspect_categories(y2)}
-\dontrun{inspect_categories(y3)}
-\dontrun{mylist <- list(NULL, numeric(0),
+\donttest{y1 <- c(1, 1:5)}
+\donttest{y2 <- c("yes", "no", "yes")}
+\donttest{y3 <- factor(c("yes", "no", "yes"))}
+\donttest{inspect_categories(y1)}
+\donttest{inspect_categories(y2)}
+\donttest{inspect_categories(y3)}
+\donttest{mylist <- list(NULL, numeric(0),
  complex(1), list(10), NaN, NA)}
-\dontrun{inspect_categories(mylist[[1]])}
-\dontrun{inspect_categories(mylist[[2]])}
-\dontrun{inspect_categories(mylist[[3]])}
-\dontrun{inspect_categories(mylist[[4]])}
-\dontrun{inspect_categories(mylist[[5]])}
-\dontrun{inspect_categories(mylist[[6]])}
+\donttest{inspect_categories(mylist[[1]])}
+\donttest{inspect_categories(mylist[[2]])}
+\donttest{inspect_categories(mylist[[3]])}
+\donttest{inspect_categories(mylist[[4]])}
+\donttest{inspect_categories(mylist[[5]])}
+\donttest{inspect_categories(mylist[[6]])}
 
 }
 \seealso{

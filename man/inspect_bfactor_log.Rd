@@ -50,23 +50,23 @@ inspect_bfactor_log(x2, warning_nas = FALSE)
 inspect_bfactor_log(x2, allow_nas = TRUE, warning_nas = FALSE)
 
 # Call that throws an informative warning message:
-\dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-\dontrun{inspect_bfactor_log(y)}
-\dontrun{inspect_bfactor_log(y, warning_nas = TRUE)}
-\dontrun{inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
+\donttest{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
+\donttest{inspect_bfactor_log(y)}
+\donttest{inspect_bfactor_log(y, warning_nas = TRUE)}
+\donttest{inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
 
 # Calls that throw informative error messages:
-\dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+\donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
          "0.5", list(0.5), numeric(0), NA, NaN)}
-\dontrun{inspect_bfactor_log(mylist[[1]])}
-\dontrun{inspect_bfactor_log(mylist[[2]])}
-\dontrun{inspect_bfactor_log(mylist[[3]])}
-\dontrun{inspect_bfactor_log(mylist[[4]])}
-\dontrun{inspect_bfactor_log(mylist[[5]])}
-\dontrun{inspect_bfactor_log(mylist[[6]])}
-\dontrun{inspect_bfactor_log(mylist[[7]])}
-\dontrun{inspect_bfactor_log(mylist[[8]])}
-\dontrun{inspect_bfactor_log(mylist[[9]])}
+\donttest{inspect_bfactor_log(mylist[[1]])}
+\donttest{inspect_bfactor_log(mylist[[2]])}
+\donttest{inspect_bfactor_log(mylist[[3]])}
+\donttest{inspect_bfactor_log(mylist[[4]])}
+\donttest{inspect_bfactor_log(mylist[[5]])}
+\donttest{inspect_bfactor_log(mylist[[6]])}
+\donttest{inspect_bfactor_log(mylist[[7]])}
+\donttest{inspect_bfactor_log(mylist[[8]])}
+\donttest{inspect_bfactor_log(mylist[[9]])}
 
 }
 \seealso{

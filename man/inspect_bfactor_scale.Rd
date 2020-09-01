@@ -41,16 +41,16 @@ inspect_bfactor_scale(x3)
 inspect_bfactor_scale(x4)
 
 # Calls that throw informative error messages:
-\dontrun{mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
+\donttest{mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
           "kassraftery", c("jeffreys", "kass-raftery"))}
-\dontrun{inspect_bfactor_scale(mylist[[1]])}
-\dontrun{inspect_bfactor_scale(mylist[[2]])}
-\dontrun{inspect_bfactor_scale(mylist[[3]])}
-\dontrun{inspect_bfactor_scale(mylist[[4]])}
-\dontrun{inspect_bfactor_scale(mylist[[5]])}
-\dontrun{inspect_bfactor_scale(mylist[[6]])}
-\dontrun{inspect_bfactor_scale(mylist[[7]])}
-\dontrun{inspect_bfactor_scale(mylist[[8]])}
+\donttest{inspect_bfactor_scale(mylist[[1]])}
+\donttest{inspect_bfactor_scale(mylist[[2]])}
+\donttest{inspect_bfactor_scale(mylist[[3]])}
+\donttest{inspect_bfactor_scale(mylist[[4]])}
+\donttest{inspect_bfactor_scale(mylist[[5]])}
+\donttest{inspect_bfactor_scale(mylist[[6]])}
+\donttest{inspect_bfactor_scale(mylist[[7]])}
+\donttest{inspect_bfactor_scale(mylist[[8]])}
 
 }
 \seealso{

@@ -39,18 +39,18 @@ inspect_log_base(x2)
 inspect_log_base(x3)
 
 # Calls that throw informative error messages:
-\dontrun{mylist <- list(NULL, numeric(0), TRUE, factor(10),
+\donttest{mylist <- list(NULL, numeric(0), TRUE, factor(10),
         list(10), matrix(10), NaN, NA, -1, 0)}
-\dontrun{inspect_log_base(mylist[[1]])}
-\dontrun{inspect_log_base(mylist[[2]])}
-\dontrun{inspect_log_base(mylist[[3]])}
-\dontrun{inspect_log_base(mylist[[4]])}
-\dontrun{inspect_log_base(mylist[[5]])}
-\dontrun{inspect_log_base(mylist[[6]])}
-\dontrun{inspect_log_base(mylist[[7]])}
-\dontrun{inspect_log_base(mylist[[8]])}
-\dontrun{inspect_log_base(mylist[[9]])}
-\dontrun{inspect_log_base(mylist[[10]])}
+\donttest{inspect_log_base(mylist[[1]])}
+\donttest{inspect_log_base(mylist[[2]])}
+\donttest{inspect_log_base(mylist[[3]])}
+\donttest{inspect_log_base(mylist[[4]])}
+\donttest{inspect_log_base(mylist[[5]])}
+\donttest{inspect_log_base(mylist[[6]])}
+\donttest{inspect_log_base(mylist[[7]])}
+\donttest{inspect_log_base(mylist[[8]])}
+\donttest{inspect_log_base(mylist[[9]])}
+\donttest{inspect_log_base(mylist[[10]])}
 
 }
 \seealso{

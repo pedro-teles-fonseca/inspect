@@ -53,21 +53,21 @@ inspect_character(x3)
 inspect_character(x4)
 
 # Call that throws an informative warning message
-\dontrun{y <- c("Kass", "Raftery", NA)}
-\dontrun{inspect_character(y, warning_nas = TRUE)}
+\donttest{y <- c("Kass", "Raftery", NA)}
+\donttest{inspect_character(y, warning_nas = TRUE)}
 
 # Calls that throw informative error messages
-\dontrun{inspect_character(y, allow_nas = FALSE)}
-\dontrun{mylist <- list(NULL, character(0), 1,
+\donttest{inspect_character(y, allow_nas = FALSE)}
+\donttest{mylist <- list(NULL, character(0), 1,
  c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)}
-\dontrun{inspect_character(mylist[[1]])}
-\dontrun{inspect_character(mylist[[2]])}
-\dontrun{inspect_character(mylist[[3]])}
-\dontrun{inspect_character(mylist[[4]])}
-\dontrun{inspect_character(mylist[[5]])}
-\dontrun{inspect_character(mylist[[6]])}
-\dontrun{inspect_character(mylist[[7]])}
-\dontrun{inspect_character(mylist[[8]])}
+\donttest{inspect_character(mylist[[1]])}
+\donttest{inspect_character(mylist[[2]])}
+\donttest{inspect_character(mylist[[3]])}
+\donttest{inspect_character(mylist[[4]])}
+\donttest{inspect_character(mylist[[5]])}
+\donttest{inspect_character(mylist[[6]])}
+\donttest{inspect_character(mylist[[7]])}
+\donttest{inspect_character(mylist[[8]])}
 
 }
 \seealso{

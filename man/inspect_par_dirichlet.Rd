@@ -37,19 +37,19 @@ inspect_par_dirichlet(x1)
 inspect_par_dirichlet(x2)
 
 # Calls that throw an informative error message:
-\dontrun{mylist <- list(NULL, factor(1, 1, 1),
+\donttest{mylist <- list(NULL, factor(1, 1, 1),
  matrix(c(1, 1, 1)), c("1", "1", "1"), list(1, 1, 1), c(1, NA),
   c(1, NaN, 1), c(TRUE, FALSE), numeric(0), c(-1, 1, 1))}
-\dontrun{inspect_par_dirichlet(mylist[[1]])}
-\dontrun{inspect_par_dirichlet(mylist[[2]])}
-\dontrun{inspect_par_dirichlet(mylist[[3]])}
-\dontrun{inspect_par_dirichlet(mylist[[4]])}
-\dontrun{inspect_par_dirichlet(mylist[[5]])}
-\dontrun{inspect_par_dirichlet(mylist[[6]])}
-\dontrun{inspect_par_dirichlet(mylist[[7]])}
-\dontrun{inspect_par_dirichlet(mylist[[8]])}
-\dontrun{inspect_par_dirichlet(mylist[[9]])}
-\dontrun{inspect_par_dirichlet(mylist[[10]])}
+\donttest{inspect_par_dirichlet(mylist[[1]])}
+\donttest{inspect_par_dirichlet(mylist[[2]])}
+\donttest{inspect_par_dirichlet(mylist[[3]])}
+\donttest{inspect_par_dirichlet(mylist[[4]])}
+\donttest{inspect_par_dirichlet(mylist[[5]])}
+\donttest{inspect_par_dirichlet(mylist[[6]])}
+\donttest{inspect_par_dirichlet(mylist[[7]])}
+\donttest{inspect_par_dirichlet(mylist[[8]])}
+\donttest{inspect_par_dirichlet(mylist[[9]])}
+\donttest{inspect_par_dirichlet(mylist[[10]])}
 
 }
 \seealso{

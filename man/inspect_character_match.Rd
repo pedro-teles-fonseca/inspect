@@ -43,22 +43,22 @@ inspect_character_match(x1, allowed = c("Kass", "Raftery"))
 inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 
 # Calls that throw informative error messages:
-\dontrun{y1 <- "kasss"}
-\dontrun{y2 <- "kass"}
-\dontrun{inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
-\dontrun{inspect_character_match(y2, allowed = c("Kass", "Raftery"),
+\donttest{y1 <- "kasss"}
+\donttest{y2 <- "kass"}
+\donttest{inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
+\donttest{inspect_character_match(y2, allowed = c("Kass", "Raftery"),
  case_sensitive = TRUE)}
-\dontrun{mylist <- list(NULL, character(0), c("abc", "abcd"),
+\donttest{mylist <- list(NULL, character(0), c("abc", "abcd"),
  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)}
-\dontrun{inspect_character_match(mylist[[1]], "abc")}
-\dontrun{inspect_character_match(mylist[[2]], "abc")}
-\dontrun{inspect_character_match(mylist[[3]], "abc")}
-\dontrun{inspect_character_match(mylist[[4]], "abc")}
-\dontrun{inspect_character_match(mylist[[5]], "abc")}
-\dontrun{inspect_character_match(mylist[[6]], "abc")}
-\dontrun{inspect_character_match(mylist[[7]], "abc")}
-\dontrun{inspect_character_match(mylist[[8]], "abc")}
-\dontrun{inspect_character_match(mylist[[9]], "abc")}
+\donttest{inspect_character_match(mylist[[1]], "abc")}
+\donttest{inspect_character_match(mylist[[2]], "abc")}
+\donttest{inspect_character_match(mylist[[3]], "abc")}
+\donttest{inspect_character_match(mylist[[4]], "abc")}
+\donttest{inspect_character_match(mylist[[5]], "abc")}
+\donttest{inspect_character_match(mylist[[6]], "abc")}
+\donttest{inspect_character_match(mylist[[7]], "abc")}
+\donttest{inspect_character_match(mylist[[8]], "abc")}
+\donttest{inspect_character_match(mylist[[9]], "abc")}
 
 }
 \seealso{

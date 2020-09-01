@@ -38,20 +38,20 @@ inspect_par_beta(x1)
 inspect_par_beta(x2)
 
 # Calls that throw an informative error message:
-\dontrun{mylist <- list(NULL, 1, factor(1, 1),
+\donttest{mylist <- list(NULL, 1, factor(1, 1),
  matrix(c(1, 1)), c("1", "1"), list(1, 1), c(1, NA),
   c(1, NaN), c(TRUE, FALSE), numeric(0), c(-1, 1))}
-\dontrun{inspect_par_beta(mylist[[1]])}
-\dontrun{inspect_par_beta(mylist[[2]])}
-\dontrun{inspect_par_beta(mylist[[3]])}
-\dontrun{inspect_par_beta(mylist[[4]])}
-\dontrun{inspect_par_beta(mylist[[5]])}
-\dontrun{inspect_par_beta(mylist[[6]])}
-\dontrun{inspect_par_beta(mylist[[7]])}
-\dontrun{inspect_par_beta(mylist[[8]])}
-\dontrun{inspect_par_beta(mylist[[9]])}
-\dontrun{inspect_par_beta(mylist[[10]])}
-\dontrun{inspect_par_beta(mylist[[11]])}
+\donttest{inspect_par_beta(mylist[[1]])}
+\donttest{inspect_par_beta(mylist[[2]])}
+\donttest{inspect_par_beta(mylist[[3]])}
+\donttest{inspect_par_beta(mylist[[4]])}
+\donttest{inspect_par_beta(mylist[[5]])}
+\donttest{inspect_par_beta(mylist[[6]])}
+\donttest{inspect_par_beta(mylist[[7]])}
+\donttest{inspect_par_beta(mylist[[8]])}
+\donttest{inspect_par_beta(mylist[[9]])}
+\donttest{inspect_par_beta(mylist[[10]])}
+\donttest{inspect_par_beta(mylist[[11]])}
 
 }
 \seealso{

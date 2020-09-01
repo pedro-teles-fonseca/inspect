@@ -36,29 +36,29 @@
 #' inspect_prob(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Calls that throw an informative warning message:
-#' \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' \dontrun{inspect_prob(y)}
-#' \dontrun{inspect_prob(y, allow_nas = TRUE)}
-#' \dontrun{inspect_prob(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' \donttest{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
+#' \donttest{inspect_prob(y)}
+#' \donttest{inspect_prob(y, allow_nas = TRUE)}
+#' \donttest{inspect_prob(y, allow_nas = TRUE, warning_nas = TRUE)}
 #'
 #' # Calls that throw an informative error message:
-#' \dontrun{z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' \dontrun{inspect_prob(z1)}
-#' \dontrun{z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' \dontrun{inspect_prob(z2, allow_nas = FALSE)}
-#' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+#' \donttest{z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
+#' \donttest{inspect_prob(z1)}
+#' \donttest{z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
+#' \donttest{inspect_prob(z2, allow_nas = FALSE)}
+#' \donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
 #'          "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)}
-#' \dontrun{inspect_prob(mylist[[1]])}
-#' \dontrun{inspect_prob(mylist[[2]])}
-#' \dontrun{inspect_prob(mylist[[3]])}
-#' \dontrun{inspect_prob(mylist[[4]])}
-#' \dontrun{inspect_prob(mylist[[5]])}
-#' \dontrun{inspect_prob(mylist[[6]])}
-#' \dontrun{inspect_prob(mylist[[7]])}
-#' \dontrun{inspect_prob(mylist[[8]])}
-#' \dontrun{inspect_prob(mylist[[9]])}
-#' \dontrun{inspect_prob(mylist[[10]])}
-#' \dontrun{inspect_prob(mylist[[11]])}
+#' \donttest{inspect_prob(mylist[[1]])}
+#' \donttest{inspect_prob(mylist[[2]])}
+#' \donttest{inspect_prob(mylist[[3]])}
+#' \donttest{inspect_prob(mylist[[4]])}
+#' \donttest{inspect_prob(mylist[[5]])}
+#' \donttest{inspect_prob(mylist[[6]])}
+#' \donttest{inspect_prob(mylist[[7]])}
+#' \donttest{inspect_prob(mylist[[8]])}
+#' \donttest{inspect_prob(mylist[[9]])}
+#' \donttest{inspect_prob(mylist[[10]])}
+#' \donttest{inspect_prob(mylist[[11]])}
 #'
 #' @export
 
@@ -138,27 +138,27 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' inspect_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Call that throws an informative warning message:
-#' \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' \dontrun{inspect_bfactor(y)}
-#' \dontrun{inspect_bfactor(y, warning_nas = TRUE)}
-#' \dontrun{inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' \donttest{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
+#' \donttest{inspect_bfactor(y)}
+#' \donttest{inspect_bfactor(y, warning_nas = TRUE)}
+#' \donttest{inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE)}
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' \dontrun{inspect_bfactor(z)}
-#' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+#' \donttest{z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
+#' \donttest{inspect_bfactor(z)}
+#' \donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
 #'          "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)}
-#' \dontrun{inspect_bfactor(mylist[[1]])}
-#' \dontrun{inspect_bfactor(mylist[[2]])}
-#' \dontrun{inspect_bfactor(mylist[[3]])}
-#' \dontrun{inspect_bfactor(mylist[[4]])}
-#' \dontrun{inspect_bfactor(mylist[[5]])}
-#' \dontrun{inspect_bfactor(mylist[[6]])}
-#' \dontrun{inspect_bfactor(mylist[[7]])}
-#' \dontrun{inspect_bfactor(mylist[[8]])}
-#' \dontrun{inspect_bfactor(mylist[[9]])}
-#' \dontrun{inspect_bfactor(mylist[[10]])}
-#' \dontrun{inspect_bfactor(mylist[[11]])}
+#' \donttest{inspect_bfactor(mylist[[1]])}
+#' \donttest{inspect_bfactor(mylist[[2]])}
+#' \donttest{inspect_bfactor(mylist[[3]])}
+#' \donttest{inspect_bfactor(mylist[[4]])}
+#' \donttest{inspect_bfactor(mylist[[5]])}
+#' \donttest{inspect_bfactor(mylist[[6]])}
+#' \donttest{inspect_bfactor(mylist[[7]])}
+#' \donttest{inspect_bfactor(mylist[[8]])}
+#' \donttest{inspect_bfactor(mylist[[9]])}
+#' \donttest{inspect_bfactor(mylist[[10]])}
+#' \donttest{inspect_bfactor(mylist[[11]])}
 #'
 #' @export
 
@@ -236,23 +236,23 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' inspect_bfactor_log(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Call that throws an informative warning message:
-#' \dontrun{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' \dontrun{inspect_bfactor_log(y)}
-#' \dontrun{inspect_bfactor_log(y, warning_nas = TRUE)}
-#' \dontrun{inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' \donttest{y <- c(0.1, 0.2, NA, 0.4, 0.5)}
+#' \donttest{inspect_bfactor_log(y)}
+#' \donttest{inspect_bfactor_log(y, warning_nas = TRUE)}
+#' \donttest{inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+#' \donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
 #'          "0.5", list(0.5), numeric(0), NA, NaN)}
-#' \dontrun{inspect_bfactor_log(mylist[[1]])}
-#' \dontrun{inspect_bfactor_log(mylist[[2]])}
-#' \dontrun{inspect_bfactor_log(mylist[[3]])}
-#' \dontrun{inspect_bfactor_log(mylist[[4]])}
-#' \dontrun{inspect_bfactor_log(mylist[[5]])}
-#' \dontrun{inspect_bfactor_log(mylist[[6]])}
-#' \dontrun{inspect_bfactor_log(mylist[[7]])}
-#' \dontrun{inspect_bfactor_log(mylist[[8]])}
-#' \dontrun{inspect_bfactor_log(mylist[[9]])}
+#' \donttest{inspect_bfactor_log(mylist[[1]])}
+#' \donttest{inspect_bfactor_log(mylist[[2]])}
+#' \donttest{inspect_bfactor_log(mylist[[3]])}
+#' \donttest{inspect_bfactor_log(mylist[[4]])}
+#' \donttest{inspect_bfactor_log(mylist[[5]])}
+#' \donttest{inspect_bfactor_log(mylist[[6]])}
+#' \donttest{inspect_bfactor_log(mylist[[7]])}
+#' \donttest{inspect_bfactor_log(mylist[[8]])}
+#' \donttest{inspect_bfactor_log(mylist[[9]])}
 #'
 #' @export
 
@@ -320,18 +320,18 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' inspect_log_base(x3)
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{mylist <- list(NULL, numeric(0), TRUE, factor(10),
+#' \donttest{mylist <- list(NULL, numeric(0), TRUE, factor(10),
 #'         list(10), matrix(10), NaN, NA, -1, 0)}
-#' \dontrun{inspect_log_base(mylist[[1]])}
-#' \dontrun{inspect_log_base(mylist[[2]])}
-#' \dontrun{inspect_log_base(mylist[[3]])}
-#' \dontrun{inspect_log_base(mylist[[4]])}
-#' \dontrun{inspect_log_base(mylist[[5]])}
-#' \dontrun{inspect_log_base(mylist[[6]])}
-#' \dontrun{inspect_log_base(mylist[[7]])}
-#' \dontrun{inspect_log_base(mylist[[8]])}
-#' \dontrun{inspect_log_base(mylist[[9]])}
-#' \dontrun{inspect_log_base(mylist[[10]])}
+#' \donttest{inspect_log_base(mylist[[1]])}
+#' \donttest{inspect_log_base(mylist[[2]])}
+#' \donttest{inspect_log_base(mylist[[3]])}
+#' \donttest{inspect_log_base(mylist[[4]])}
+#' \donttest{inspect_log_base(mylist[[5]])}
+#' \donttest{inspect_log_base(mylist[[6]])}
+#' \donttest{inspect_log_base(mylist[[7]])}
+#' \donttest{inspect_log_base(mylist[[8]])}
+#' \donttest{inspect_log_base(mylist[[9]])}
+#' \donttest{inspect_log_base(mylist[[10]])}
 #'
 #' @export
 
@@ -393,16 +393,16 @@ inspect_log_base <- function(x){
 #' inspect_bfactor_scale(x4)
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
+#' \donttest{mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
 #'           "kassraftery", c("jeffreys", "kass-raftery"))}
-#' \dontrun{inspect_bfactor_scale(mylist[[1]])}
-#' \dontrun{inspect_bfactor_scale(mylist[[2]])}
-#' \dontrun{inspect_bfactor_scale(mylist[[3]])}
-#' \dontrun{inspect_bfactor_scale(mylist[[4]])}
-#' \dontrun{inspect_bfactor_scale(mylist[[5]])}
-#' \dontrun{inspect_bfactor_scale(mylist[[6]])}
-#' \dontrun{inspect_bfactor_scale(mylist[[7]])}
-#' \dontrun{inspect_bfactor_scale(mylist[[8]])}
+#' \donttest{inspect_bfactor_scale(mylist[[1]])}
+#' \donttest{inspect_bfactor_scale(mylist[[2]])}
+#' \donttest{inspect_bfactor_scale(mylist[[3]])}
+#' \donttest{inspect_bfactor_scale(mylist[[4]])}
+#' \donttest{inspect_bfactor_scale(mylist[[5]])}
+#' \donttest{inspect_bfactor_scale(mylist[[6]])}
+#' \donttest{inspect_bfactor_scale(mylist[[7]])}
+#' \donttest{inspect_bfactor_scale(mylist[[8]])}
 #'
 #' @export
 
@@ -455,13 +455,13 @@ inspect_bfactor_scale <- function(x){
 #' inspect_true_or_false(y)
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")}
-#' \dontrun{inspect_true_or_false(mylist[[1]])}
-#' \dontrun{inspect_true_or_false(mylist[[2]])}
-#' \dontrun{inspect_true_or_false(mylist[[3]])}
-#' \dontrun{inspect_true_or_false(mylist[[4]])}
-#' \dontrun{inspect_true_or_false(mylist[[5]])}
-#' \dontrun{inspect_true_or_false(mylist[[6]])}
+#' \donttest{mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")}
+#' \donttest{inspect_true_or_false(mylist[[1]])}
+#' \donttest{inspect_true_or_false(mylist[[2]])}
+#' \donttest{inspect_true_or_false(mylist[[3]])}
+#' \donttest{inspect_true_or_false(mylist[[4]])}
+#' \donttest{inspect_true_or_false(mylist[[5]])}
+#' \donttest{inspect_true_or_false(mylist[[6]])}
 #'
 #' @export
 
@@ -522,20 +522,20 @@ inspect_true_or_false <- function(x){
 #' inspect_categories(levels(x5))
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{y1 <- c(1, 1:5)}
-#' \dontrun{y2 <- c("yes", "no", "yes")}
-#' \dontrun{y3 <- factor(c("yes", "no", "yes"))}
-#' \dontrun{inspect_categories(y1)}
-#' \dontrun{inspect_categories(y2)}
-#' \dontrun{inspect_categories(y3)}
-#' \dontrun{mylist <- list(NULL, numeric(0),
+#' \donttest{y1 <- c(1, 1:5)}
+#' \donttest{y2 <- c("yes", "no", "yes")}
+#' \donttest{y3 <- factor(c("yes", "no", "yes"))}
+#' \donttest{inspect_categories(y1)}
+#' \donttest{inspect_categories(y2)}
+#' \donttest{inspect_categories(y3)}
+#' \donttest{mylist <- list(NULL, numeric(0),
 #'  complex(1), list(10), NaN, NA)}
-#' \dontrun{inspect_categories(mylist[[1]])}
-#' \dontrun{inspect_categories(mylist[[2]])}
-#' \dontrun{inspect_categories(mylist[[3]])}
-#' \dontrun{inspect_categories(mylist[[4]])}
-#' \dontrun{inspect_categories(mylist[[5]])}
-#' \dontrun{inspect_categories(mylist[[6]])}
+#' \donttest{inspect_categories(mylist[[1]])}
+#' \donttest{inspect_categories(mylist[[2]])}
+#' \donttest{inspect_categories(mylist[[3]])}
+#' \donttest{inspect_categories(mylist[[4]])}
+#' \donttest{inspect_categories(mylist[[5]])}
+#' \donttest{inspect_categories(mylist[[6]])}
 #'
 #' @export
 
@@ -596,22 +596,22 @@ inspect_categories <- function(x){
 #' inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 #'
 #' # Calls that throw informative error messages:
-#' \dontrun{y1 <- "kasss"}
-#' \dontrun{y2 <- "kass"}
-#' \dontrun{inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
-#' \dontrun{inspect_character_match(y2, allowed = c("Kass", "Raftery"),
+#' \donttest{y1 <- "kasss"}
+#' \donttest{y2 <- "kass"}
+#' \donttest{inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
+#' \donttest{inspect_character_match(y2, allowed = c("Kass", "Raftery"),
 #'  case_sensitive = TRUE)}
-#' \dontrun{mylist <- list(NULL, character(0), c("abc", "abcd"),
+#' \donttest{mylist <- list(NULL, character(0), c("abc", "abcd"),
 #'  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)}
-#' \dontrun{inspect_character_match(mylist[[1]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[2]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[3]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[4]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[5]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[6]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[7]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[8]], "abc")}
-#' \dontrun{inspect_character_match(mylist[[9]], "abc")}
+#' \donttest{inspect_character_match(mylist[[1]], "abc")}
+#' \donttest{inspect_character_match(mylist[[2]], "abc")}
+#' \donttest{inspect_character_match(mylist[[3]], "abc")}
+#' \donttest{inspect_character_match(mylist[[4]], "abc")}
+#' \donttest{inspect_character_match(mylist[[5]], "abc")}
+#' \donttest{inspect_character_match(mylist[[6]], "abc")}
+#' \donttest{inspect_character_match(mylist[[7]], "abc")}
+#' \donttest{inspect_character_match(mylist[[8]], "abc")}
+#' \donttest{inspect_character_match(mylist[[9]], "abc")}
 #'
 #' @export
 
@@ -685,21 +685,21 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
 #' inspect_character(x4)
 #'
 #' # Call that throws an informative warning message
-#' \dontrun{y <- c("Kass", "Raftery", NA)}
-#' \dontrun{inspect_character(y, warning_nas = TRUE)}
+#' \donttest{y <- c("Kass", "Raftery", NA)}
+#' \donttest{inspect_character(y, warning_nas = TRUE)}
 #'
 #' # Calls that throw informative error messages
-#' \dontrun{inspect_character(y, allow_nas = FALSE)}
-#' \dontrun{mylist <- list(NULL, character(0), 1,
+#' \donttest{inspect_character(y, allow_nas = FALSE)}
+#' \donttest{mylist <- list(NULL, character(0), 1,
 #'  c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)}
-#' \dontrun{inspect_character(mylist[[1]])}
-#' \dontrun{inspect_character(mylist[[2]])}
-#' \dontrun{inspect_character(mylist[[3]])}
-#' \dontrun{inspect_character(mylist[[4]])}
-#' \dontrun{inspect_character(mylist[[5]])}
-#' \dontrun{inspect_character(mylist[[6]])}
-#' \dontrun{inspect_character(mylist[[7]])}
-#' \dontrun{inspect_character(mylist[[8]])}
+#' \donttest{inspect_character(mylist[[1]])}
+#' \donttest{inspect_character(mylist[[2]])}
+#' \donttest{inspect_character(mylist[[3]])}
+#' \donttest{inspect_character(mylist[[4]])}
+#' \donttest{inspect_character(mylist[[5]])}
+#' \donttest{inspect_character(mylist[[6]])}
+#' \donttest{inspect_character(mylist[[7]])}
+#' \donttest{inspect_character(mylist[[8]])}
 #'
 #' @export
 

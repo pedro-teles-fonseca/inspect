@@ -61,25 +61,25 @@ inspect_data_dichotomous(x4, success = "yes")
 inspect_data_dichotomous(x5, success = 1)
 
 # Calls that throw an informative warning message:
-\dontrun{y1 <- c(1, 1, NA, 0, 0)}
-\dontrun{y2 <- c(0, 0)}
+\donttest{y1 <- c(1, 1, NA, 0, 0)}
+\donttest{y2 <- c(0, 0)}
 success <- 1
-\dontrun{inspect_data_dichotomous(y1, success = 1, warning_nas = TRUE)}
-\dontrun{inspect_data_dichotomous(y2, success = success)}
+\donttest{inspect_data_dichotomous(y1, success = 1, warning_nas = TRUE)}
+\donttest{inspect_data_dichotomous(y2, success = success)}
 
 # Calls that throw an informative error message:
 
-\dontrun{inspect_data_dichotomous(NULL, 1)}
-\dontrun{inspect_data_dichotomous(c(1,0), NULL)}
-\dontrun{inspect_data_dichotomous(list(1,0), 1)}
-\dontrun{inspect_data_dichotomous(c(1,0), list(1))}
-\dontrun{inspect_data_dichotomous(numeric(0), 0)}
-\dontrun{inspect_data_dichotomous(1, numeric(0))}
-\dontrun{inspect_data_dichotomous(NaN, 1)}
-\dontrun{inspect_data_dichotomous(NA, 1)}
-\dontrun{inspect_data_dichotomous(c(1,0), NA)}
-\dontrun{inspect_data_dichotomous(c(1,0), NaN)}
-\dontrun{inspect_data_dichotomous(c(1,0), 2)}
+\donttest{inspect_data_dichotomous(NULL, 1)}
+\donttest{inspect_data_dichotomous(c(1,0), NULL)}
+\donttest{inspect_data_dichotomous(list(1,0), 1)}
+\donttest{inspect_data_dichotomous(c(1,0), list(1))}
+\donttest{inspect_data_dichotomous(numeric(0), 0)}
+\donttest{inspect_data_dichotomous(1, numeric(0))}
+\donttest{inspect_data_dichotomous(NaN, 1)}
+\donttest{inspect_data_dichotomous(NA, 1)}
+\donttest{inspect_data_dichotomous(c(1,0), NA)}
+\donttest{inspect_data_dichotomous(c(1,0), NaN)}
+\donttest{inspect_data_dichotomous(c(1,0), 2)}
 
 }
 \seealso{

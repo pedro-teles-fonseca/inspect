@@ -37,19 +37,19 @@ inspect_par_haldane(x1)
 inspect_par_haldane(x2)
 
 # Calls that throw an informative error message:
-\dontrun{mylist <- list(NULL, factor(0, 0, 0),
+\donttest{mylist <- list(NULL, factor(0, 0, 0),
  matrix(c(0, 0, 0)), c("0", "0", "0"), list(0, 0, 0), c(0, NA),
   c(0, NaN, 0), c(TRUE, FALSE), numeric(0), c(1, 0, 0))}
-\dontrun{inspect_par_haldane(mylist[[1]])}
-\dontrun{inspect_par_haldane(mylist[[2]])}
-\dontrun{inspect_par_haldane(mylist[[3]])}
-\dontrun{inspect_par_haldane(mylist[[4]])}
-\dontrun{inspect_par_haldane(mylist[[5]])}
-\dontrun{inspect_par_haldane(mylist[[6]])}
-\dontrun{inspect_par_haldane(mylist[[7]])}
-\dontrun{inspect_par_haldane(mylist[[8]])}
-\dontrun{inspect_par_haldane(mylist[[9]])}
-\dontrun{inspect_par_haldane(mylist[[10]])}
+\donttest{inspect_par_haldane(mylist[[1]])}
+\donttest{inspect_par_haldane(mylist[[2]])}
+\donttest{inspect_par_haldane(mylist[[3]])}
+\donttest{inspect_par_haldane(mylist[[4]])}
+\donttest{inspect_par_haldane(mylist[[5]])}
+\donttest{inspect_par_haldane(mylist[[6]])}
+\donttest{inspect_par_haldane(mylist[[7]])}
+\donttest{inspect_par_haldane(mylist[[8]])}
+\donttest{inspect_par_haldane(mylist[[9]])}
+\donttest{inspect_par_haldane(mylist[[10]])}
 
 }
 \seealso{

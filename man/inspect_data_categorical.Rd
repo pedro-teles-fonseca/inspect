@@ -55,17 +55,17 @@ inspect_data_categorical(x5)
 inspect_data_categorical(x5)
 
 # Call that throws an informative warning message:
-\dontrun{y1 <- c(1, 1, NA, 0, 0, 2)}
-\dontrun{inspect_data_categorical(y1, warning_nas = TRUE)}
+\donttest{y1 <- c(1, 1, NA, 0, 0, 2)}
+\donttest{inspect_data_categorical(y1, warning_nas = TRUE)}
 
 # Calls that throw an informative error message:
-\dontrun{z <- c(1, 1, NA, 0, 0, 2)}
-\dontrun{inspect_data_categorical(z, allow_nas = FALSE)}
-\dontrun{inspect_data_categorical(NULL)}
-\dontrun{inspect_data_categorical(list(1,0))}
-\dontrun{inspect_data_categorical(numeric(0))}
-\dontrun{inspect_data_categorical(NaN)}
-\dontrun{inspect_data_categorical(NA)}
+\donttest{z <- c(1, 1, NA, 0, 0, 2)}
+\donttest{inspect_data_categorical(z, allow_nas = FALSE)}
+\donttest{inspect_data_categorical(NULL)}
+\donttest{inspect_data_categorical(list(1,0))}
+\donttest{inspect_data_categorical(numeric(0))}
+\donttest{inspect_data_categorical(NaN)}
+\donttest{inspect_data_categorical(NA)}
 
 }
 \seealso{

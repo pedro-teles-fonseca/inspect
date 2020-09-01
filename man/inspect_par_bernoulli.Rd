@@ -37,20 +37,20 @@ inspect_par_bernoulli(x)
 inspect_par_bernoulli(0.1)
 
 # Calls that throw an informative error message:
-\dontrun{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5), "0.5",
+\donttest{mylist <- list(NULL, TRUE, factor(.5), matrix(0.5), "0.5",
  list(0.5), NA, NaN, numeric(0), c(0.1, 0.5), -0.5, 1.1)}
-\dontrun{inspect_par_bernoulli(mylist[[1]])}
-\dontrun{inspect_par_bernoulli(mylist[[2]])}
-\dontrun{inspect_par_bernoulli(mylist[[3]])}
-\dontrun{inspect_par_bernoulli(mylist[[4]])}
-\dontrun{inspect_par_bernoulli(mylist[[5]])}
-\dontrun{inspect_par_bernoulli(mylist[[6]])}
-\dontrun{inspect_par_bernoulli(mylist[[7]])}
-\dontrun{inspect_par_bernoulli(mylist[[8]])}
-\dontrun{inspect_par_bernoulli(mylist[[9]])}
-\dontrun{inspect_par_bernoulli(mylist[[10]])}
-\dontrun{inspect_par_bernoulli(mylist[[11]])}
-\dontrun{inspect_par_bernoulli(mylist[[12]])}
+\donttest{inspect_par_bernoulli(mylist[[1]])}
+\donttest{inspect_par_bernoulli(mylist[[2]])}
+\donttest{inspect_par_bernoulli(mylist[[3]])}
+\donttest{inspect_par_bernoulli(mylist[[4]])}
+\donttest{inspect_par_bernoulli(mylist[[5]])}
+\donttest{inspect_par_bernoulli(mylist[[6]])}
+\donttest{inspect_par_bernoulli(mylist[[7]])}
+\donttest{inspect_par_bernoulli(mylist[[8]])}
+\donttest{inspect_par_bernoulli(mylist[[9]])}
+\donttest{inspect_par_bernoulli(mylist[[10]])}
+\donttest{inspect_par_bernoulli(mylist[[11]])}
+\donttest{inspect_par_bernoulli(mylist[[12]])}
 
 }
 \seealso{
