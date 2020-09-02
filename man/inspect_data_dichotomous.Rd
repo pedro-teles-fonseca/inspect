@@ -61,25 +61,24 @@ inspect_data_dichotomous(x4, success = "yes")
 inspect_data_dichotomous(x5, success = 1)
 
 # Calls that throw an informative warning message:
-if(interactive()){y1 <- c(1, 1, NA, 0, 0)}
-if(interactive()){y2 <- c(0, 0)}
+y1 <- c(1, 1, NA, 0, 0)
+y2 <- c(0, 0)
 success <- 1
-if(interactive()){inspect_data_dichotomous(y1, success = 1, warning_nas = TRUE)}
-if(interactive()){inspect_data_dichotomous(y2, success = success)}
+try(inspect_data_dichotomous(y1, success = 1, warning_nas = TRUE))
+try(inspect_data_dichotomous(y2, success = success))
 
 # Calls that throw an informative error message:
-
-if(interactive()){inspect_data_dichotomous(NULL, 1)}
-if(interactive()){inspect_data_dichotomous(c(1,0), NULL)}
-if(interactive()){inspect_data_dichotomous(list(1,0), 1)}
-if(interactive()){inspect_data_dichotomous(c(1,0), list(1))}
-if(interactive()){inspect_data_dichotomous(numeric(0), 0)}
-if(interactive()){inspect_data_dichotomous(1, numeric(0))}
-if(interactive()){inspect_data_dichotomous(NaN, 1)}
-if(interactive()){inspect_data_dichotomous(NA, 1)}
-if(interactive()){inspect_data_dichotomous(c(1,0), NA)}
-if(interactive()){inspect_data_dichotomous(c(1,0), NaN)}
-if(interactive()){inspect_data_dichotomous(c(1,0), 2)}
+try(inspect_data_dichotomous(NULL, 1))
+try(inspect_data_dichotomous(c(1,0), NULL))
+try(inspect_data_dichotomous(list(1,0), 1))
+try(inspect_data_dichotomous(c(1,0), list(1)))
+try(inspect_data_dichotomous(numeric(0), 0))
+try(inspect_data_dichotomous(1, numeric(0)))
+try(inspect_data_dichotomous(NaN, 1))
+try(inspect_data_dichotomous(NA, 1))
+try(inspect_data_dichotomous(c(1,0), NA))
+try(inspect_data_dichotomous(c(1,0), NaN))
+try(inspect_data_dichotomous(c(1,0), 2))
 
 }
 \seealso{

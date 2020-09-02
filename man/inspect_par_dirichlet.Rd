@@ -37,19 +37,19 @@ inspect_par_dirichlet(x1)
 inspect_par_dirichlet(x2)
 
 # Calls that throw an informative error message:
-if(interactive()){mylist <- list(NULL, factor(1, 1, 1),
+mylist <- list(NULL, factor(1, 1, 1),
  matrix(c(1, 1, 1)), c("1", "1", "1"), list(1, 1, 1), c(1, NA),
-  c(1, NaN, 1), c(TRUE, FALSE), numeric(0), c(-1, 1, 1))}
-if(interactive()){inspect_par_dirichlet(mylist[[1]])}
-if(interactive()){inspect_par_dirichlet(mylist[[2]])}
-if(interactive()){inspect_par_dirichlet(mylist[[3]])}
-if(interactive()){inspect_par_dirichlet(mylist[[4]])}
-if(interactive()){inspect_par_dirichlet(mylist[[5]])}
-if(interactive()){inspect_par_dirichlet(mylist[[6]])}
-if(interactive()){inspect_par_dirichlet(mylist[[7]])}
-if(interactive()){inspect_par_dirichlet(mylist[[8]])}
-if(interactive()){inspect_par_dirichlet(mylist[[9]])}
-if(interactive()){inspect_par_dirichlet(mylist[[10]])}
+  c(1, NaN, 1), c(TRUE, FALSE), numeric(0), c(-1, 1, 1))
+try(inspect_par_dirichlet(mylist[[1]]))
+try(inspect_par_dirichlet(mylist[[2]]))
+try(inspect_par_dirichlet(mylist[[3]]))
+try(inspect_par_dirichlet(mylist[[4]]))
+try(inspect_par_dirichlet(mylist[[5]]))
+try(inspect_par_dirichlet(mylist[[6]]))
+try(inspect_par_dirichlet(mylist[[7]]))
+try(inspect_par_dirichlet(mylist[[8]]))
+try(inspect_par_dirichlet(mylist[[9]]))
+try(inspect_par_dirichlet(mylist[[10]]))
 
 }
 \seealso{

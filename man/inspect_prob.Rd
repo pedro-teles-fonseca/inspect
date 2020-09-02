@@ -51,29 +51,29 @@ inspect_prob(x2, warning_nas = FALSE)
 inspect_prob(x2, allow_nas = TRUE, warning_nas = FALSE)
 
 # Calls that throw an informative warning message:
-if(interactive()){y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-if(interactive()){inspect_prob(y)}
-if(interactive()){inspect_prob(y, allow_nas = TRUE)}
-if(interactive()){inspect_prob(y, allow_nas = TRUE, warning_nas = TRUE)}
+y <- c(0.1, 0.2, NA, 0.4, 0.5)
+try(inspect_prob(y))
+try(inspect_prob(y, allow_nas = TRUE))
+try(inspect_prob(y, allow_nas = TRUE, warning_nas = TRUE))
 
 # Calls that throw an informative error message:
-if(interactive()){z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-if(interactive()){inspect_prob(z1)}
-if(interactive()){z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-if(interactive()){inspect_prob(z2, allow_nas = FALSE)}
-if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)}
-if(interactive()){inspect_prob(mylist[[1]])}
-if(interactive()){inspect_prob(mylist[[2]])}
-if(interactive()){inspect_prob(mylist[[3]])}
-if(interactive()){inspect_prob(mylist[[4]])}
-if(interactive()){inspect_prob(mylist[[5]])}
-if(interactive()){inspect_prob(mylist[[6]])}
-if(interactive()){inspect_prob(mylist[[7]])}
-if(interactive()){inspect_prob(mylist[[8]])}
-if(interactive()){inspect_prob(mylist[[9]])}
-if(interactive()){inspect_prob(mylist[[10]])}
-if(interactive()){inspect_prob(mylist[[11]])}
+z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+try(inspect_prob(z1))
+z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+try(inspect_prob(z2, allow_nas = FALSE))
+mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+         "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)
+try(inspect_prob(mylist[[1]]))
+try(inspect_prob(mylist[[2]]))
+try(inspect_prob(mylist[[3]]))
+try(inspect_prob(mylist[[4]]))
+try(inspect_prob(mylist[[5]]))
+try(inspect_prob(mylist[[6]]))
+try(inspect_prob(mylist[[7]]))
+try(inspect_prob(mylist[[8]]))
+try(inspect_prob(mylist[[9]]))
+try(inspect_prob(mylist[[10]]))
+try(inspect_prob(mylist[[11]]))
 
 }
 \seealso{

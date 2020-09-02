@@ -55,17 +55,17 @@ inspect_data_categorical(x5)
 inspect_data_categorical(x5)
 
 # Call that throws an informative warning message:
-if(interactive()){y1 <- c(1, 1, NA, 0, 0, 2)}
-if(interactive()){inspect_data_categorical(y1, warning_nas = TRUE)}
+y1 <- c(1, 1, NA, 0, 0, 2)
+try(inspect_data_categorical(y1, warning_nas = TRUE))
 
 # Calls that throw an informative error message:
-if(interactive()){z <- c(1, 1, NA, 0, 0, 2)}
-if(interactive()){inspect_data_categorical(z, allow_nas = FALSE)}
-if(interactive()){inspect_data_categorical(NULL)}
-if(interactive()){inspect_data_categorical(list(1,0))}
-if(interactive()){inspect_data_categorical(numeric(0))}
-if(interactive()){inspect_data_categorical(NaN)}
-if(interactive()){inspect_data_categorical(NA)}
+z <- c(1, 1, NA, 0, 0, 2)
+try(inspect_data_categorical(z, allow_nas = FALSE))
+try(inspect_data_categorical(NULL))
+try(inspect_data_categorical(list(1,0)))
+try(inspect_data_categorical(numeric(0)))
+try(inspect_data_categorical(NaN))
+try(inspect_data_categorical(NA))
 
 }
 \seealso{

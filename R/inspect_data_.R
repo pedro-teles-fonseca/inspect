@@ -45,25 +45,24 @@
 #' inspect_data_dichotomous(x5, success = 1)
 #'
 #' # Calls that throw an informative warning message:
-#' if(interactive()){y1 <- c(1, 1, NA, 0, 0)}
-#' if(interactive()){y2 <- c(0, 0)}
+#' y1 <- c(1, 1, NA, 0, 0)
+#' y2 <- c(0, 0)
 #' success <- 1
-#' if(interactive()){inspect_data_dichotomous(y1, success = 1, warning_nas = TRUE)}
-#' if(interactive()){inspect_data_dichotomous(y2, success = success)}
+#' try(inspect_data_dichotomous(y1, success = 1, warning_nas = TRUE))
+#' try(inspect_data_dichotomous(y2, success = success))
 #'
 #' # Calls that throw an informative error message:
-#'
-#' if(interactive()){inspect_data_dichotomous(NULL, 1)}
-#' if(interactive()){inspect_data_dichotomous(c(1,0), NULL)}
-#' if(interactive()){inspect_data_dichotomous(list(1,0), 1)}
-#' if(interactive()){inspect_data_dichotomous(c(1,0), list(1))}
-#' if(interactive()){inspect_data_dichotomous(numeric(0), 0)}
-#' if(interactive()){inspect_data_dichotomous(1, numeric(0))}
-#' if(interactive()){inspect_data_dichotomous(NaN, 1)}
-#' if(interactive()){inspect_data_dichotomous(NA, 1)}
-#' if(interactive()){inspect_data_dichotomous(c(1,0), NA)}
-#' if(interactive()){inspect_data_dichotomous(c(1,0), NaN)}
-#' if(interactive()){inspect_data_dichotomous(c(1,0), 2)}
+#' try(inspect_data_dichotomous(NULL, 1))
+#' try(inspect_data_dichotomous(c(1,0), NULL))
+#' try(inspect_data_dichotomous(list(1,0), 1))
+#' try(inspect_data_dichotomous(c(1,0), list(1)))
+#' try(inspect_data_dichotomous(numeric(0), 0))
+#' try(inspect_data_dichotomous(1, numeric(0)))
+#' try(inspect_data_dichotomous(NaN, 1))
+#' try(inspect_data_dichotomous(NA, 1))
+#' try(inspect_data_dichotomous(c(1,0), NA))
+#' try(inspect_data_dichotomous(c(1,0), NaN))
+#' try(inspect_data_dichotomous(c(1,0), 2))
 #'
 #' @export
 
@@ -165,17 +164,17 @@ inspect_data_dichotomous <- function(data, success, allow_nas = TRUE, warning_na
 #' inspect_data_categorical(x5)
 #'
 #' # Call that throws an informative warning message:
-#' if(interactive()){y1 <- c(1, 1, NA, 0, 0, 2)}
-#' if(interactive()){inspect_data_categorical(y1, warning_nas = TRUE)}
+#' y1 <- c(1, 1, NA, 0, 0, 2)
+#' try(inspect_data_categorical(y1, warning_nas = TRUE))
 #'
 #' # Calls that throw an informative error message:
-#' if(interactive()){z <- c(1, 1, NA, 0, 0, 2)}
-#' if(interactive()){inspect_data_categorical(z, allow_nas = FALSE)}
-#' if(interactive()){inspect_data_categorical(NULL)}
-#' if(interactive()){inspect_data_categorical(list(1,0))}
-#' if(interactive()){inspect_data_categorical(numeric(0))}
-#' if(interactive()){inspect_data_categorical(NaN)}
-#' if(interactive()){inspect_data_categorical(NA)}
+#' z <- c(1, 1, NA, 0, 0, 2)
+#' try(inspect_data_categorical(z, allow_nas = FALSE))
+#' try(inspect_data_categorical(NULL))
+#' try(inspect_data_categorical(list(1,0)))
+#' try(inspect_data_categorical(numeric(0)))
+#' try(inspect_data_categorical(NaN))
+#' try(inspect_data_categorical(NA))
 #'
 #' @export
 
@@ -258,25 +257,25 @@ inspect_data_categorical <- function(data, allow_nas = TRUE, warning_nas = FALSE
 #' inspect_data_cat_as_dichotomous(x5, success = 1)
 #'
 #' # Calls that throw an informative warning message:
-#' if(interactive()){y1 <- c(1, 1, NA, 0, 0)}
-#' if(interactive()){y2 <- c(0, 0)}
-#' if(interactive()){success <- 1}
-#' if(interactive()){inspect_data_cat_as_dichotomous(y1, success = 1, warning_nas = TRUE)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(y2, success = success)}
+#' y1 <- c(1, 1, NA, 0, 0)
+#' y2 <- c(0, 0)
+#' success <- 1
+#' try(inspect_data_cat_as_dichotomous(y1, success = 1, warning_nas = TRUE))
+#' try(inspect_data_cat_as_dichotomous(y2, success = success))
 #'
 #' # Calls that throw an informative error message:
-#' if(interactive()){inspect_data_cat_as_dichotomous(y1, 1, allow_nas = FALSE)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(NULL, 1)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), NULL)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(list(1,0), 1)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), list(1))}
-#' if(interactive()){inspect_data_cat_as_dichotomous(numeric(0), 0)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(1, numeric(0))}
-#' if(interactive()){inspect_data_cat_as_dichotomous(NaN, 1)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(NA, 1)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), NA)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), NaN)}
-#' if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), 2)}
+#' try(inspect_data_cat_as_dichotomous(y1, 1, allow_nas = FALSE))
+#' try(inspect_data_cat_as_dichotomous(NULL, 1))
+#' try(inspect_data_cat_as_dichotomous(c(1,0), NULL))
+#' try(inspect_data_cat_as_dichotomous(list(1,0), 1))
+#' try(inspect_data_cat_as_dichotomous(c(1,0), list(1)))
+#' try(inspect_data_cat_as_dichotomous(numeric(0), 0))
+#' try(inspect_data_cat_as_dichotomous(1, numeric(0)))
+#' try(inspect_data_cat_as_dichotomous(NaN, 1))
+#' try(inspect_data_cat_as_dichotomous(NA, 1))
+#' try(inspect_data_cat_as_dichotomous(c(1,0), NA))
+#' try(inspect_data_cat_as_dichotomous(c(1,0), NaN))
+#' try(inspect_data_cat_as_dichotomous(c(1,0), 2))
 #'
 #' @export
 
@@ -328,10 +327,3 @@ inspect_data_cat_as_dichotomous <- function(data, success, allow_nas = TRUE, war
     warning(paste(s_output_name, "not observed in", paste0(data_output_name, ".")))
   }
 }
-
-
-
-
-
-
-

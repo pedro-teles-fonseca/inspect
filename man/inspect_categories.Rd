@@ -43,20 +43,20 @@ inspect_categories(x4)
 inspect_categories(levels(x5))
 
 # Calls that throw informative error messages:
-if(interactive()){y1 <- c(1, 1:5)}
-if(interactive()){y2 <- c("yes", "no", "yes")}
-if(interactive()){y3 <- factor(c("yes", "no", "yes"))}
-if(interactive()){inspect_categories(y1)}
-if(interactive()){inspect_categories(y2)}
-if(interactive()){inspect_categories(y3)}
-if(interactive()){mylist <- list(NULL, numeric(0),
- complex(1), list(10), NaN, NA)}
-if(interactive()){inspect_categories(mylist[[1]])}
-if(interactive()){inspect_categories(mylist[[2]])}
-if(interactive()){inspect_categories(mylist[[3]])}
-if(interactive()){inspect_categories(mylist[[4]])}
-if(interactive()){inspect_categories(mylist[[5]])}
-if(interactive()){inspect_categories(mylist[[6]])}
+y1 <- c(1, 1:5)
+y2 <- c("yes", "no", "yes")
+y3 <- factor(c("yes", "no", "yes"))
+try(inspect_categories(y1))
+try(inspect_categories(y2))
+try(inspect_categories(y3))
+try(mylist <- list(NULL, numeric(0),
+ complex(1), list(10), NaN, NA))
+try(inspect_categories(mylist[[1]]))
+try(inspect_categories(mylist[[2]]))
+try(inspect_categories(mylist[[3]]))
+try(inspect_categories(mylist[[4]]))
+try(inspect_categories(mylist[[5]]))
+try(inspect_categories(mylist[[6]]))
 
 }
 \seealso{

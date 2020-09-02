@@ -51,27 +51,27 @@ inspect_bfactor(x2, warning_nas = FALSE)
 inspect_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
 
 # Call that throws an informative warning message:
-if(interactive()){y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-if(interactive()){inspect_bfactor(y)}
-if(interactive()){inspect_bfactor(y, warning_nas = TRUE)}
-if(interactive()){inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE)}
+y <- c(0.1, 0.2, NA, 0.4, 0.5)
+try(inspect_bfactor(y))
+try(inspect_bfactor(y, warning_nas = TRUE))
+try(inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE))
 
 # Calls that throw informative error messages:
-if(interactive()){z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-if(interactive()){inspect_bfactor(z)}
-if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)}
-if(interactive()){inspect_bfactor(mylist[[1]])}
-if(interactive()){inspect_bfactor(mylist[[2]])}
-if(interactive()){inspect_bfactor(mylist[[3]])}
-if(interactive()){inspect_bfactor(mylist[[4]])}
-if(interactive()){inspect_bfactor(mylist[[5]])}
-if(interactive()){inspect_bfactor(mylist[[6]])}
-if(interactive()){inspect_bfactor(mylist[[7]])}
-if(interactive()){inspect_bfactor(mylist[[8]])}
-if(interactive()){inspect_bfactor(mylist[[9]])}
-if(interactive()){inspect_bfactor(mylist[[10]])}
-if(interactive()){inspect_bfactor(mylist[[11]])}
+z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+try(inspect_bfactor(z))
+mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+         "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)
+try(inspect_bfactor(mylist[[1]]))
+try(inspect_bfactor(mylist[[2]]))
+try(inspect_bfactor(mylist[[3]]))
+try(inspect_bfactor(mylist[[4]]))
+try(inspect_bfactor(mylist[[5]]))
+try(inspect_bfactor(mylist[[6]]))
+try(inspect_bfactor(mylist[[7]]))
+try(inspect_bfactor(mylist[[8]]))
+try(inspect_bfactor(mylist[[9]]))
+try(inspect_bfactor(mylist[[10]]))
+try(inspect_bfactor(mylist[[11]]))
 
 }
 \seealso{

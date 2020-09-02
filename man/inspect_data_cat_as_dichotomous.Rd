@@ -65,25 +65,25 @@ inspect_data_cat_as_dichotomous(x4, success = "yes")
 inspect_data_cat_as_dichotomous(x5, success = 1)
 
 # Calls that throw an informative warning message:
-if(interactive()){y1 <- c(1, 1, NA, 0, 0)}
-if(interactive()){y2 <- c(0, 0)}
-if(interactive()){success <- 1}
-if(interactive()){inspect_data_cat_as_dichotomous(y1, success = 1, warning_nas = TRUE)}
-if(interactive()){inspect_data_cat_as_dichotomous(y2, success = success)}
+y1 <- c(1, 1, NA, 0, 0)
+y2 <- c(0, 0)
+success <- 1
+try(inspect_data_cat_as_dichotomous(y1, success = 1, warning_nas = TRUE))
+try(inspect_data_cat_as_dichotomous(y2, success = success))
 
 # Calls that throw an informative error message:
-if(interactive()){inspect_data_cat_as_dichotomous(y1, 1, allow_nas = FALSE)}
-if(interactive()){inspect_data_cat_as_dichotomous(NULL, 1)}
-if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), NULL)}
-if(interactive()){inspect_data_cat_as_dichotomous(list(1,0), 1)}
-if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), list(1))}
-if(interactive()){inspect_data_cat_as_dichotomous(numeric(0), 0)}
-if(interactive()){inspect_data_cat_as_dichotomous(1, numeric(0))}
-if(interactive()){inspect_data_cat_as_dichotomous(NaN, 1)}
-if(interactive()){inspect_data_cat_as_dichotomous(NA, 1)}
-if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), NA)}
-if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), NaN)}
-if(interactive()){inspect_data_cat_as_dichotomous(c(1,0), 2)}
+try(inspect_data_cat_as_dichotomous(y1, 1, allow_nas = FALSE))
+try(inspect_data_cat_as_dichotomous(NULL, 1))
+try(inspect_data_cat_as_dichotomous(c(1,0), NULL))
+try(inspect_data_cat_as_dichotomous(list(1,0), 1))
+try(inspect_data_cat_as_dichotomous(c(1,0), list(1)))
+try(inspect_data_cat_as_dichotomous(numeric(0), 0))
+try(inspect_data_cat_as_dichotomous(1, numeric(0)))
+try(inspect_data_cat_as_dichotomous(NaN, 1))
+try(inspect_data_cat_as_dichotomous(NA, 1))
+try(inspect_data_cat_as_dichotomous(c(1,0), NA))
+try(inspect_data_cat_as_dichotomous(c(1,0), NaN))
+try(inspect_data_cat_as_dichotomous(c(1,0), 2))
 
 }
 \seealso{

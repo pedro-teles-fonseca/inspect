@@ -43,22 +43,22 @@ inspect_character_match(x1, allowed = c("Kass", "Raftery"))
 inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 
 # Calls that throw informative error messages:
-if(interactive()){y1 <- "kasss"}
-if(interactive()){y2 <- "kass"}
-if(interactive()){inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
-if(interactive()){inspect_character_match(y2, allowed = c("Kass", "Raftery"),
- case_sensitive = TRUE)}
-if(interactive()){mylist <- list(NULL, character(0), c("abc", "abcd"),
- c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)}
-if(interactive()){inspect_character_match(mylist[[1]], "abc")}
-if(interactive()){inspect_character_match(mylist[[2]], "abc")}
-if(interactive()){inspect_character_match(mylist[[3]], "abc")}
-if(interactive()){inspect_character_match(mylist[[4]], "abc")}
-if(interactive()){inspect_character_match(mylist[[5]], "abc")}
-if(interactive()){inspect_character_match(mylist[[6]], "abc")}
-if(interactive()){inspect_character_match(mylist[[7]], "abc")}
-if(interactive()){inspect_character_match(mylist[[8]], "abc")}
-if(interactive()){inspect_character_match(mylist[[9]], "abc")}
+y1 <- "kasss"
+y2 <- "kass"
+try(inspect_character_match(y1, allowed = c("Kass", "Raftery")))
+try(inspect_character_match(y2, allowed = c("Kass", "Raftery"),
+ case_sensitive = TRUE))
+mylist <- list(NULL, character(0), c("abc", "abcd"),
+ c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)
+try(inspect_character_match(mylist[[1]], "abc"))
+try(inspect_character_match(mylist[[2]], "abc"))
+try(inspect_character_match(mylist[[3]], "abc"))
+try(inspect_character_match(mylist[[4]], "abc"))
+try(inspect_character_match(mylist[[5]], "abc"))
+try(inspect_character_match(mylist[[6]], "abc"))
+try(inspect_character_match(mylist[[7]], "abc"))
+try(inspect_character_match(mylist[[8]], "abc"))
+try(inspect_character_match(mylist[[9]], "abc"))
 
 }
 \seealso{

@@ -36,29 +36,29 @@
 #' inspect_prob(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Calls that throw an informative warning message:
-#' if(interactive()){y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' if(interactive()){inspect_prob(y)}
-#' if(interactive()){inspect_prob(y, allow_nas = TRUE)}
-#' if(interactive()){inspect_prob(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' y <- c(0.1, 0.2, NA, 0.4, 0.5)
+#' try(inspect_prob(y))
+#' try(inspect_prob(y, allow_nas = TRUE))
+#' try(inspect_prob(y, allow_nas = TRUE, warning_nas = TRUE))
 #'
 #' # Calls that throw an informative error message:
-#' if(interactive()){z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' if(interactive()){inspect_prob(z1)}
-#' if(interactive()){z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' if(interactive()){inspect_prob(z2, allow_nas = FALSE)}
-#' if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)}
-#' if(interactive()){inspect_prob(mylist[[1]])}
-#' if(interactive()){inspect_prob(mylist[[2]])}
-#' if(interactive()){inspect_prob(mylist[[3]])}
-#' if(interactive()){inspect_prob(mylist[[4]])}
-#' if(interactive()){inspect_prob(mylist[[5]])}
-#' if(interactive()){inspect_prob(mylist[[6]])}
-#' if(interactive()){inspect_prob(mylist[[7]])}
-#' if(interactive()){inspect_prob(mylist[[8]])}
-#' if(interactive()){inspect_prob(mylist[[9]])}
-#' if(interactive()){inspect_prob(mylist[[10]])}
-#' if(interactive()){inspect_prob(mylist[[11]])}
+#' z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+#' try(inspect_prob(z1))
+#' z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+#' try(inspect_prob(z2, allow_nas = FALSE))
+#' mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+#'          "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)
+#' try(inspect_prob(mylist[[1]]))
+#' try(inspect_prob(mylist[[2]]))
+#' try(inspect_prob(mylist[[3]]))
+#' try(inspect_prob(mylist[[4]]))
+#' try(inspect_prob(mylist[[5]]))
+#' try(inspect_prob(mylist[[6]]))
+#' try(inspect_prob(mylist[[7]]))
+#' try(inspect_prob(mylist[[8]]))
+#' try(inspect_prob(mylist[[9]]))
+#' try(inspect_prob(mylist[[10]]))
+#' try(inspect_prob(mylist[[11]]))
 #'
 #' @export
 
@@ -138,27 +138,27 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' inspect_bfactor(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Call that throws an informative warning message:
-#' if(interactive()){y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' if(interactive()){inspect_bfactor(y)}
-#' if(interactive()){inspect_bfactor(y, warning_nas = TRUE)}
-#' if(interactive()){inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' y <- c(0.1, 0.2, NA, 0.4, 0.5)
+#' try(inspect_bfactor(y))
+#' try(inspect_bfactor(y, warning_nas = TRUE))
+#' try(inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE))
 #'
 #' # Calls that throw informative error messages:
-#' if(interactive()){z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)}
-#' if(interactive()){inspect_bfactor(z)}
-#' if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)}
-#' if(interactive()){inspect_bfactor(mylist[[1]])}
-#' if(interactive()){inspect_bfactor(mylist[[2]])}
-#' if(interactive()){inspect_bfactor(mylist[[3]])}
-#' if(interactive()){inspect_bfactor(mylist[[4]])}
-#' if(interactive()){inspect_bfactor(mylist[[5]])}
-#' if(interactive()){inspect_bfactor(mylist[[6]])}
-#' if(interactive()){inspect_bfactor(mylist[[7]])}
-#' if(interactive()){inspect_bfactor(mylist[[8]])}
-#' if(interactive()){inspect_bfactor(mylist[[9]])}
-#' if(interactive()){inspect_bfactor(mylist[[10]])}
-#' if(interactive()){inspect_bfactor(mylist[[11]])}
+#' z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
+#' try(inspect_bfactor(z))
+#' mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+#'          "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)
+#' try(inspect_bfactor(mylist[[1]]))
+#' try(inspect_bfactor(mylist[[2]]))
+#' try(inspect_bfactor(mylist[[3]]))
+#' try(inspect_bfactor(mylist[[4]]))
+#' try(inspect_bfactor(mylist[[5]]))
+#' try(inspect_bfactor(mylist[[6]]))
+#' try(inspect_bfactor(mylist[[7]]))
+#' try(inspect_bfactor(mylist[[8]]))
+#' try(inspect_bfactor(mylist[[9]]))
+#' try(inspect_bfactor(mylist[[10]]))
+#' try(inspect_bfactor(mylist[[11]]))
 #'
 #' @export
 
@@ -236,23 +236,23 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' inspect_bfactor_log(x2, allow_nas = TRUE, warning_nas = FALSE)
 #'
 #' # Call that throws an informative warning message:
-#' if(interactive()){y <- c(0.1, 0.2, NA, 0.4, 0.5)}
-#' if(interactive()){inspect_bfactor_log(y)}
-#' if(interactive()){inspect_bfactor_log(y, warning_nas = TRUE)}
-#' if(interactive()){inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE)}
+#' y <- c(0.1, 0.2, NA, 0.4, 0.5)
+#' try(inspect_bfactor_log(y))
+#' try(inspect_bfactor_log(y, warning_nas = TRUE))
+#' try(inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE))
 #'
 #' # Calls that throw informative error messages:
-#' if(interactive()){mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), numeric(0), NA, NaN)}
-#' if(interactive()){inspect_bfactor_log(mylist[[1]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[2]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[3]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[4]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[5]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[6]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[7]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[8]])}
-#' if(interactive()){inspect_bfactor_log(mylist[[9]])}
+#' mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
+#'          "0.5", list(0.5), numeric(0), NA, NaN)
+#' try(inspect_bfactor_log(mylist[[1]]))
+#' try(inspect_bfactor_log(mylist[[2]]))
+#' try(inspect_bfactor_log(mylist[[3]]))
+#' try(inspect_bfactor_log(mylist[[4]]))
+#' try(inspect_bfactor_log(mylist[[5]]))
+#' try(inspect_bfactor_log(mylist[[6]]))
+#' try(inspect_bfactor_log(mylist[[7]]))
+#' try(inspect_bfactor_log(mylist[[8]]))
+#' try(inspect_bfactor_log(mylist[[9]]))
 #'
 #' @export
 
@@ -320,18 +320,18 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #' inspect_log_base(x3)
 #'
 #' # Calls that throw informative error messages:
-#' if(interactive()){mylist <- list(NULL, numeric(0), TRUE, factor(10),
-#'         list(10), matrix(10), NaN, NA, -1, 0)}
-#' if(interactive()){inspect_log_base(mylist[[1]])}
-#' if(interactive()){inspect_log_base(mylist[[2]])}
-#' if(interactive()){inspect_log_base(mylist[[3]])}
-#' if(interactive()){inspect_log_base(mylist[[4]])}
-#' if(interactive()){inspect_log_base(mylist[[5]])}
-#' if(interactive()){inspect_log_base(mylist[[6]])}
-#' if(interactive()){inspect_log_base(mylist[[7]])}
-#' if(interactive()){inspect_log_base(mylist[[8]])}
-#' if(interactive()){inspect_log_base(mylist[[9]])}
-#' if(interactive()){inspect_log_base(mylist[[10]])}
+#' mylist <- list(NULL, numeric(0), TRUE, factor(10),
+#'         list(10), matrix(10), NaN, NA, -1, 0)
+#' try(inspect_log_base(mylist[[1]]))
+#' try(inspect_log_base(mylist[[2]]))
+#' try(inspect_log_base(mylist[[3]]))
+#' try(inspect_log_base(mylist[[4]]))
+#' try(inspect_log_base(mylist[[5]]))
+#' try(inspect_log_base(mylist[[6]]))
+#' try(inspect_log_base(mylist[[7]]))
+#' try(inspect_log_base(mylist[[8]]))
+#' try(inspect_log_base(mylist[[9]]))
+#' try(inspect_log_base(mylist[[10]]))
 #'
 #' @export
 
@@ -393,16 +393,16 @@ inspect_log_base <- function(x){
 #' inspect_bfactor_scale(x4)
 #'
 #' # Calls that throw informative error messages:
-#' if(interactive()){mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
-#'           "kassraftery", c("jeffreys", "kass-raftery"))}
-#' if(interactive()){inspect_bfactor_scale(mylist[[1]])}
-#' if(interactive()){inspect_bfactor_scale(mylist[[2]])}
-#' if(interactive()){inspect_bfactor_scale(mylist[[3]])}
-#' if(interactive()){inspect_bfactor_scale(mylist[[4]])}
-#' if(interactive()){inspect_bfactor_scale(mylist[[5]])}
-#' if(interactive()){inspect_bfactor_scale(mylist[[6]])}
-#' if(interactive()){inspect_bfactor_scale(mylist[[7]])}
-#' if(interactive()){inspect_bfactor_scale(mylist[[8]])}
+#' mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
+#'           "kassraftery", c("jeffreys", "kass-raftery"))
+#' try(inspect_bfactor_scale(mylist[[1]]))
+#' try(inspect_bfactor_scale(mylist[[2]]))
+#' try(inspect_bfactor_scale(mylist[[3]]))
+#' try(inspect_bfactor_scale(mylist[[4]]))
+#' try(inspect_bfactor_scale(mylist[[5]]))
+#' try(inspect_bfactor_scale(mylist[[6]]))
+#' try(inspect_bfactor_scale(mylist[[7]]))
+#' try(inspect_bfactor_scale(mylist[[8]]))
 #'
 #' @export
 
@@ -455,13 +455,13 @@ inspect_bfactor_scale <- function(x){
 #' inspect_true_or_false(y)
 #'
 #' # Calls that throw informative error messages:
-#' if(interactive()){mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")}
-#' if(interactive()){inspect_true_or_false(mylist[[1]])}
-#' if(interactive()){inspect_true_or_false(mylist[[2]])}
-#' if(interactive()){inspect_true_or_false(mylist[[3]])}
-#' if(interactive()){inspect_true_or_false(mylist[[4]])}
-#' if(interactive()){inspect_true_or_false(mylist[[5]])}
-#' if(interactive()){inspect_true_or_false(mylist[[6]])}
+#' mylist <- list(NULL, NA, NaN, 1, 0, "TRUE")
+#' try(inspect_true_or_false(mylist[[1]]))
+#' try(inspect_true_or_false(mylist[[2]]))
+#' try(inspect_true_or_false(mylist[[3]]))
+#' try(inspect_true_or_false(mylist[[4]]))
+#' try(inspect_true_or_false(mylist[[5]]))
+#' try(inspect_true_or_false(mylist[[6]]))
 #'
 #' @export
 
@@ -522,20 +522,20 @@ inspect_true_or_false <- function(x){
 #' inspect_categories(levels(x5))
 #'
 #' # Calls that throw informative error messages:
-#' if(interactive()){y1 <- c(1, 1:5)}
-#' if(interactive()){y2 <- c("yes", "no", "yes")}
-#' if(interactive()){y3 <- factor(c("yes", "no", "yes"))}
-#' if(interactive()){inspect_categories(y1)}
-#' if(interactive()){inspect_categories(y2)}
-#' if(interactive()){inspect_categories(y3)}
-#' if(interactive()){mylist <- list(NULL, numeric(0),
-#'  complex(1), list(10), NaN, NA)}
-#' if(interactive()){inspect_categories(mylist[[1]])}
-#' if(interactive()){inspect_categories(mylist[[2]])}
-#' if(interactive()){inspect_categories(mylist[[3]])}
-#' if(interactive()){inspect_categories(mylist[[4]])}
-#' if(interactive()){inspect_categories(mylist[[5]])}
-#' if(interactive()){inspect_categories(mylist[[6]])}
+#' y1 <- c(1, 1:5)
+#' y2 <- c("yes", "no", "yes")
+#' y3 <- factor(c("yes", "no", "yes"))
+#' try(inspect_categories(y1))
+#' try(inspect_categories(y2))
+#' try(inspect_categories(y3))
+#' try(mylist <- list(NULL, numeric(0),
+#'  complex(1), list(10), NaN, NA))
+#' try(inspect_categories(mylist[[1]]))
+#' try(inspect_categories(mylist[[2]]))
+#' try(inspect_categories(mylist[[3]]))
+#' try(inspect_categories(mylist[[4]]))
+#' try(inspect_categories(mylist[[5]]))
+#' try(inspect_categories(mylist[[6]]))
 #'
 #' @export
 
@@ -596,22 +596,22 @@ inspect_categories <- function(x){
 #' inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 #'
 #' # Calls that throw informative error messages:
-#' if(interactive()){y1 <- "kasss"}
-#' if(interactive()){y2 <- "kass"}
-#' if(interactive()){inspect_character_match(y1, allowed = c("Kass", "Raftery"))}
-#' if(interactive()){inspect_character_match(y2, allowed = c("Kass", "Raftery"),
-#'  case_sensitive = TRUE)}
-#' if(interactive()){mylist <- list(NULL, character(0), c("abc", "abcd"),
-#'  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)}
-#' if(interactive()){inspect_character_match(mylist[[1]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[2]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[3]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[4]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[5]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[6]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[7]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[8]], "abc")}
-#' if(interactive()){inspect_character_match(mylist[[9]], "abc")}
+#' y1 <- "kasss"
+#' y2 <- "kass"
+#' try(inspect_character_match(y1, allowed = c("Kass", "Raftery")))
+#' try(inspect_character_match(y2, allowed = c("Kass", "Raftery"),
+#'  case_sensitive = TRUE))
+#' mylist <- list(NULL, character(0), c("abc", "abcd"),
+#'  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)
+#' try(inspect_character_match(mylist[[1]], "abc"))
+#' try(inspect_character_match(mylist[[2]], "abc"))
+#' try(inspect_character_match(mylist[[3]], "abc"))
+#' try(inspect_character_match(mylist[[4]], "abc"))
+#' try(inspect_character_match(mylist[[5]], "abc"))
+#' try(inspect_character_match(mylist[[6]], "abc"))
+#' try(inspect_character_match(mylist[[7]], "abc"))
+#' try(inspect_character_match(mylist[[8]], "abc"))
+#' try(inspect_character_match(mylist[[9]], "abc"))
 #'
 #' @export
 
@@ -685,21 +685,21 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
 #' inspect_character(x4)
 #'
 #' # Call that throws an informative warning message
-#' if(interactive()){y <- c("Kass", "Raftery", NA)}
-#' if(interactive()){inspect_character(y, warning_nas = TRUE)}
+#' y <- c("Kass", "Raftery", NA)
+#' try(inspect_character(y, warning_nas = TRUE))
 #'
 #' # Calls that throw informative error messages
-#' if(interactive()){inspect_character(y, allow_nas = FALSE)}
-#' if(interactive()){mylist <- list(NULL, character(0), 1,
-#'  c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)}
-#' if(interactive()){inspect_character(mylist[[1]])}
-#' if(interactive()){inspect_character(mylist[[2]])}
-#' if(interactive()){inspect_character(mylist[[3]])}
-#' if(interactive()){inspect_character(mylist[[4]])}
-#' if(interactive()){inspect_character(mylist[[5]])}
-#' if(interactive()){inspect_character(mylist[[6]])}
-#' if(interactive()){inspect_character(mylist[[7]])}
-#' if(interactive()){inspect_character(mylist[[8]])}
+#' try(inspect_character(y, allow_nas = FALSE))
+#' mylist <- list(NULL, character(0), 1,
+#'  c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)
+#' try(inspect_character(mylist[[1]]))
+#' try(inspect_character(mylist[[2]]))
+#' try(inspect_character(mylist[[3]]))
+#' try(inspect_character(mylist[[4]]))
+#' try(inspect_character(mylist[[5]]))
+#' try(inspect_character(mylist[[6]]))
+#' try(inspect_character(mylist[[7]]))
+#' try(inspect_character(mylist[[8]]))
 #'
 #' @export
 
@@ -735,17 +735,3 @@ inspect_character <- function(x, allow_nas = TRUE, warning_nas = FALSE){
     stop(paste("Invalid argument: the type of", output_name, "must be character."))
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

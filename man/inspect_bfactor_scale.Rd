@@ -41,16 +41,16 @@ inspect_bfactor_scale(x3)
 inspect_bfactor_scale(x4)
 
 # Calls that throw informative error messages:
-if(interactive()){mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
-          "kassraftery", c("jeffreys", "kass-raftery"))}
-if(interactive()){inspect_bfactor_scale(mylist[[1]])}
-if(interactive()){inspect_bfactor_scale(mylist[[2]])}
-if(interactive()){inspect_bfactor_scale(mylist[[3]])}
-if(interactive()){inspect_bfactor_scale(mylist[[4]])}
-if(interactive()){inspect_bfactor_scale(mylist[[5]])}
-if(interactive()){inspect_bfactor_scale(mylist[[6]])}
-if(interactive()){inspect_bfactor_scale(mylist[[7]])}
-if(interactive()){inspect_bfactor_scale(mylist[[8]])}
+mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
+          "kassraftery", c("jeffreys", "kass-raftery"))
+try(inspect_bfactor_scale(mylist[[1]]))
+try(inspect_bfactor_scale(mylist[[2]]))
+try(inspect_bfactor_scale(mylist[[3]]))
+try(inspect_bfactor_scale(mylist[[4]]))
+try(inspect_bfactor_scale(mylist[[5]]))
+try(inspect_bfactor_scale(mylist[[6]]))
+try(inspect_bfactor_scale(mylist[[7]]))
+try(inspect_bfactor_scale(mylist[[8]]))
 
 }
 \seealso{
