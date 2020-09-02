@@ -1,7 +1,16 @@
 
-## Release summary
+## Submission summary
 
-* This is the first submission of `inspector`.
+This is a **resubmission**. 
+
+I was asked to replace `\dontrun{}` by `\donttest{}` in the Rd-files. I was using `\dontrun{}` to wrap some examples that are supposed to throw informative error/warning messages and therefore should only be run interactively by the users.
+
+Since R 4.0.0, `R CMD check --as-cran` runs `\donttest` examples by default, and hence wrapping the aforementioned examples in `\donttest{}` instead of `\dontrun{}` results in actual errors in `R CMD check --as-cran`:
+  
+```{r}
+checking examples with --run-donttest ... ERROR
+```
+To avoid this, I opted for a different approach. The examples that are supposed to return error/warning messages are now wrapped in `try()` instead of `\dontrun{}`. As a consequence, they can be run without returning in actual errors. This solution also plays well with `example()`: it prints all the error/warning messages without stopping the execution or returning errors. 
 
 ## Test environments
 
@@ -12,8 +21,7 @@
 | macOS Catalina 10.15.5 | R 4.0.1   | Ok          | 2 NOTEs               |
 | Ubuntu 20.04 LTS       | R 4.0.1   | Ok          | 2 NOTEs               |
 
-* Note 1: `Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt>`
-New submission`. This is a standard note for first submissions and should be safe to ignore.
+* Note 1: `Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt> New submission`. This is a standard note for first submissions and should be safe to ignore.
 
 * Note 2: `unable to verify current time`. After browsing through R CMD check's code I realized that it depends on an external web source to check current time (http://worldclockapi.com/). This website is currently offline and that should be the source of the problem. If that's the case, there is nothing I can do about this note. 
 
