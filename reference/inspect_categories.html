@@ -185,21 +185,30 @@
 <span class='fu'>inspect_categories</span>(<span class='fu'><a href='https://rdrr.io/r/base/levels.html'>levels</a></span>(<span class='kw'>x5</span>))
 
 <span class='co'># Calls that throw informative error messages:</span>
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='kw'>y1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='kw'>y2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='kw'>y3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>))}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>y1</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>y2</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>y3</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>),
- <span class='fu'><a href='https://rdrr.io/r/base/complex.html'>complex</a></span>(<span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>10</span>), <span class='fl'>NaN</span>, <span class='fl'>NA</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]])}
-
+<span class='kw'>y1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>)
+<span class='kw'>y2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>)
+<span class='kw'>y3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>y1</span>))
+</div><div class='output co'>#&gt; Error in inspect_categories(y1) : 
+#&gt;   Invalid argument: all element of y1 must be unique.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>y2</span>))
+</div><div class='output co'>#&gt; Error in inspect_categories(y2) : 
+#&gt;   Invalid argument: all element of y2 must be unique.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>y3</span>))
+</div><div class='output co'>#&gt; Error in inspect_categories(y3) : 
+#&gt;   Invalid argument: all element of y3 must be unique.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>),
+ <span class='fu'><a href='https://rdrr.io/r/base/complex.html'>complex</a></span>(<span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>10</span>), <span class='fl'>NaN</span>, <span class='fl'>NA</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_categories(mylist[[1]]) : 
+#&gt;   Invalid argument: mylist[[1]] is NULL.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_categories(mylist[[2]]) : 
+#&gt;   Invalid argument: mylist[[2]] is empty.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_categories(mylist[[3]]) : 
+#&gt;   Invalid argument: the type of mylist[[3]] must be 'logical', 'integer', 'double' or 'character'.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_categories(mylist[[4]]) : 
+#&gt;   Invalid argument: mylist[[4]] must be of an atomic type.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_categories(mylist[[5]]) : 
+#&gt;   Invalid argument: there are NA or NaN values in mylist[[5]].</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_categories</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_categories(mylist[[6]]) : 
+#&gt;   Invalid argument: there are NA or NaN values in mylist[[6]].</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -197,18 +197,23 @@
 <span class='fu'>inspect_data_categorical</span>(<span class='kw'>x5</span>)
 
 <span class='co'># Call that throws an informative warning message:</span>
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='kw'>y1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>2</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_data_categorical</span>(<span class='kw'>y1</span>, warning_nas = <span class='fl'>TRUE</span>)}
-
+<span class='kw'>y1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>2</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_data_categorical</span>(<span class='kw'>y1</span>, warning_nas = <span class='fl'>TRUE</span>))
+</div><div class='output co'>#&gt; <span class='warning'>Warning: There are NA or NaN values in y1.</span></div><div class='input'>
 <span class='co'># Calls that throw an informative error message:</span>
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='kw'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>2</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_data_categorical</span>(<span class='kw'>z</span>, allow_nas = <span class='fl'>FALSE</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_data_categorical</span>(<span class='kw'>NULL</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_data_categorical</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>1</span>,<span class='fl'>0</span>))}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_data_categorical</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_data_categorical</span>(<span class='fl'>NaN</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_data_categorical</span>(<span class='fl'>NA</span>)}
-
+<span class='kw'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>2</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_data_categorical</span>(<span class='kw'>z</span>, allow_nas = <span class='fl'>FALSE</span>))
+</div><div class='output co'>#&gt; Error in inspect_data_categorical(z, allow_nas = FALSE) : 
+#&gt;   Invalid argument: there are NA or NaN values in  z.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_data_categorical</span>(<span class='kw'>NULL</span>))
+</div><div class='output co'>#&gt; Error in inspect_data_categorical(NULL) : Invalid argument: NULL is NULL.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_data_categorical</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>1</span>,<span class='fl'>0</span>)))
+</div><div class='output co'>#&gt; Error in inspect_data_categorical(list(1, 0)) : 
+#&gt;   Invalid argument: list(1, 0) must be atomic.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_data_categorical</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>)))
+</div><div class='output co'>#&gt; Error in inspect_data_categorical(numeric(0)) : 
+#&gt;   Invalid argument: numeric(0) is empty.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_data_categorical</span>(<span class='fl'>NaN</span>))
+</div><div class='output co'>#&gt; Error in inspect_data_categorical(NaN) : 
+#&gt;   Invalid argument: all elements of NaN are NA or NaN.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_data_categorical</span>(<span class='fl'>NA</span>))
+</div><div class='output co'>#&gt; Error in inspect_data_categorical(NA) : 
+#&gt;   Invalid argument: all elements of NA are NA or NaN.</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

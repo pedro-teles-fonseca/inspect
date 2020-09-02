@@ -177,19 +177,29 @@
 <span class='fu'>inspect_log_base</span>(<span class='kw'>x3</span>)
 
 <span class='co'># Calls that throw informative error messages:</span>
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>), <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fl'>10</span>),
-        <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>10</span>), <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>10</span>), <span class='fl'>NaN</span>, <span class='fl'>NA</span>, <span class='op'>-</span><span class='fl'>1</span>, <span class='fl'>0</span>)}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>7</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>8</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>9</span>]])}
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>10</span>]])}
-
+<span class='kw'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>), <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fl'>10</span>),
+        <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>10</span>), <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>10</span>), <span class='fl'>NaN</span>, <span class='fl'>NA</span>, <span class='op'>-</span><span class='fl'>1</span>, <span class='fl'>0</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>1</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[1]]) : 
+#&gt;   Invalid argument: mylist[[1]] is NULL.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>2</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[2]]) : 
+#&gt;   Invalid argument: mylist[[2]] must be an atomic vector of length 1.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>3</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[3]]) : 
+#&gt;   Invalid argument: the type of mylist[[3]] must be numeric.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>4</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[4]]) : 
+#&gt;   Invalid argument: mylist[[4]] must be an atomic vector of length 1.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>5</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[5]]) : 
+#&gt;   Invalid argument: mylist[[5]] must be an atomic vector of length 1.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>6</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[6]]) : 
+#&gt;   Invalid argument: mylist[[6]] must be an atomic vector of length 1.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>7</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[7]]) : 
+#&gt;   Invalid argument: mylist[[7]] is NA or NaN.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>8</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[8]]) : 
+#&gt;   Invalid argument: mylist[[8]] is NA or NaN.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>9</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[9]]) : 
+#&gt;   Invalid argument: mylist[[9]] must be positive.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>inspect_log_base</span>(<span class='kw'>mylist</span>[[<span class='fl'>10</span>]]))
+</div><div class='output co'>#&gt; Error in inspect_log_base(mylist[[10]]) : 
+#&gt;   Invalid argument: mylist[[10]] must be positive.</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
