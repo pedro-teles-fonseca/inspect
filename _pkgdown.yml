@@ -32,7 +32,7 @@ reference:
       - '`inspect_log_base`'
       - '`inspect_true_or_false`'
       - '`inspect_categories`'
-      - '`inspect_character_match`'
       - '`inspect_character`'
-      - '`inspect_scale`'
+      - '`inspect_character_match`'
+      - '`inspect_bfactor_scale`'
 
