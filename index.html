@@ -112,8 +112,7 @@
 <p>The development version of <code>inspector</code> can be installed from <a href="https://github.com/">GitHub</a> using the <a href="https://github.com/r-lib/devtools"><code>devtools</code></a> package:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="co"># install.packages("devtools")</span>
-<span class="kw">devtools</span>::<span class="fu">install_github</span>(<span class="st">"pedro-teles-fonseca/inspector"</span>)
-</pre></div>
+<span class="kw">devtools</span>::<span class="fu">install_github</span>(<span class="st">"pedro-teles-fonseca/inspector"</span>)</pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -129,8 +128,7 @@
 }
 
 <span class="fu">flip_coins</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
-<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
-</pre></div>
+<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span></pre></div>
 <p>Since <code>bias</code> is a probability, it is natural that we require <code>flip_coins()</code> to only accept values of <code>bias</code> between 0 and 1. Furthermore, we may want to ensure that <code>bias</code> is not null, not missing, and is a numeric vector of length 1. This results an a quite verbose function body:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 
@@ -161,8 +159,7 @@
 }
 
 <span class="fu">flip_coins</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
-<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
-</pre></div>
+<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span></pre></div>
 <p>The <code>inspector</code> package was built to automate this kind of validation task. In the <code>flip_coins()</code> example, to perform an equivalent validation of inputs we can use <code>inspect_par_bernoulli</code>, since <code>bias</code> is the parameter of a Bernoulli distribution:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 
@@ -176,8 +173,7 @@
 }
 
 <span class="fu">flip_coins</span>(n = <span class="fl">5</span>, bias = <span class="fl">0.5</span>)
-<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span>
-</pre></div>
+<span class="co">#&gt; [1] "heads" "heads" "heads" "tails" "heads"</span></pre></div>
 <p>This results in a tidier function body since the validation of <code>bias</code> is abstracted away from the body of the function.</p>
 <p>Now imagine we want to implement equation 4 from Berger and Delampady (1987), a formula that calculates posterior probabilities using prior probabilities and Bayes factors as input. In this case we need to validate a vector of Bayes factors, lets call it <code>bf</code>, and a vector of prior probabilities, lets call it <code>prior_prob</code>. Since <code>bf</code> is expected to contain valid Bayes factor values, we need to ensure that only non-empty numeric vectors, containing only non-negative values, are accepted. Since <code>prior_prob</code> is a vector of probabilities, we need to check if it is a non-empty numeric vector containing only values between 0 and 1. Since we are now validating two inputs, the function body would be even more verbose than in the <code>flip_coins()</code> example:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
@@ -224,8 +220,7 @@
 }
 
 <span class="fu">bfactor_to_prob</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2.1</span>, <span class="fl">0.5</span>, <span class="fl">11</span>))
-<span class="co">#&gt; [1] 0.6774194 0.3333333 0.9166667</span>
-</pre></div>
+<span class="co">#&gt; [1] 0.6774194 0.3333333 0.9166667</span></pre></div>
 <p>Now lets use <code>inspector</code> instead. To perform an equivalent validation of inputs we can use <code><a href="reference/inspect_bfactor.html">inspect_bfactor()</a></code> to validate <code>bf</code> and <code><a href="reference/inspect_prob.html">inspect_prob()</a></code> to validate <code>prior_prob</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="kw">bfactor_to_prob</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">bf</span>, <span class="kw">prior_prob</span> = <span class="fl">.5</span>) {
@@ -237,8 +232,7 @@
 }
 
 <span class="fu">bfactor_to_prob</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2.1</span>, <span class="fl">0.5</span>, <span class="fl">11</span>))
-<span class="co">#&gt; [1] 0.6774194 0.3333333 0.9166667</span>
-</pre></div>
+<span class="co">#&gt; [1] 0.6774194 0.3333333 0.9166667</span></pre></div>
 </div>
 <div id="getting-help" class="section level2">
 <h2 class="hasAnchor">
