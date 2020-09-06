@@ -35,9 +35,9 @@ automate common sets of validation tasks, namely:
   - `inspect_bfactor_log()` checks if an object is a numeric vector of
     valid logarithmic Bayes factors values.
 
-  - `inspect_bfactor_scale` validates Bayes factor interpretation scales
-    (from in the [`pcal`](https://pedro-teles-fonseca.github.io/pcal/)
-    package).
+  - `inspect_bfactor_scale()` validates Bayes factor interpretation
+    scales (from in the
+    [`pcal`](https://pedro-teles-fonseca.github.io/pcal/) package).
 
   - `inspect_categories()` validates factor levels.
 
