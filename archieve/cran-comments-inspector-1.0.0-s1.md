@@ -1,5 +1,5 @@
 
-## Release summary
+## Submission summary
 
 * This is the first submission of `inspector`.
 
