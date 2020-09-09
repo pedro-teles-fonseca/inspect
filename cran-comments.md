@@ -1,4 +1,19 @@
 
+## Submission summary
+
+This is a **resubmission**. 
+
+I was asked to replace `\dontrun{}` by `\donttest{}` in the Rd-files. I was using `\dontrun{}` to wrap some examples that are supposed to throw informative error/warning messages and therefore should only be run interactively by the users. 
+
+Since R 4.0.0, `R CMD check --as-cran` runs `\donttest` examples by default, and hence wrapping the aforementioned examples with `\donttest{}` doesn't prevent them from being evaluated, which returns errors and causes the package fail `R CMD check --as-cran`:
+  
+```{r}
+checking examples with --run-donttest ... ERROR
+```
+Also, using `\donttest{}` with examples that are supposed to throw error messages doesn't interact well with `example()` because the execution is stopped at the first error and consequently not all examples are printed.
+
+To avoid this, I opted for a different approach. The examples that are supposed to return error/warning messages are now wrapped in `try()` instead of `\dontrun{}`. As a consequence, they can be run without returning in actual errors. This solution also interacts well with `example()`: it prints all the error/warning messages without stopping the execution or returning errors. 
+
 ## Test environments
 
 ### Local 
