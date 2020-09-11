@@ -38,7 +38,7 @@ automate common sets of validation tasks, namely:
     valid logarithmic Bayes factors values.
 
   - `inspect_bfactor_scale()` validates Bayes factor interpretation
-    scales (from in the
+    scales (from the
     [`pcal`](https://pedro-teles-fonseca.github.io/pcal/) package).
 
   - `inspect_categories()` validates factor levels.
