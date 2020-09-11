@@ -1,5 +1,6 @@
 
 #' @docType package
+#' @importFrom Rdpack reprompt
 #'
 #' @title Package 'inspector'
 #'
