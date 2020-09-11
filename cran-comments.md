@@ -1,12 +1,18 @@
 
 ## Submission summary
 
-This is a **resubmission**. 
+This is a patch release to fix the following issue detected by CRAN's tests:
 
-I was asked to replace `\dontrun{}` by `\donttest{}` in the Rd-files. I was using `\dontrun{}` to wrap some examples that are supposed to throw informative error/warning messages and therefore should only be run interactively by the users. 
+```{r}
+checking whether package ‘inspector’ can be installed ... WARNING
+Found the following significant warnings:
+  Warning: Rd macro package 'Rdpack' is not installed.
+```
 
-Since R 4.0.0, `R CMD check --as-cran` runs `\donttest` examples by default, and hence wrapping the aforementioned examples with `\donttest{}` doesn't prevent them from being evaluated, which returns errors and causes the package fail `R CMD check --as-cran`:
-  
+- The `Rdpack` package is now in the imports field of the DESCRIPTION file. 
+
+- `Rdpack` is now imported through NAMESPACE file.
+
 ```{r}
 checking examples with --run-donttest ... ERROR
 ```
@@ -74,6 +80,7 @@ To avoid this, I opted for a different approach. The examples that are supposed 
 | Linux (Xenial)       | R-release  | Passed |
 | Linux (Xenial)       | R-devel    | Passed |
 
+## Downstream dependencies
 
-
+There are currently no downstream dependencies for this package.
 
