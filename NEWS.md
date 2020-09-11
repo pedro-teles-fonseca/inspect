@@ -1,4 +1,8 @@
 
 # inspector 1.0.0
 
-* This is the first CRAN release of `inspector`.
+This is a patch release to fix an issue with the dependencies of the package detected by CRAN's tests. There are no consequences to the users of this package. 
+
+# inspector 1.0.0
+
+This is the first CRAN release of `inspector`.
