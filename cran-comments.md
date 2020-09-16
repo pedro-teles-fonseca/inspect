@@ -13,13 +13,6 @@ Found the following significant warnings:
 
 - `Rdpack` is now imported through NAMESPACE file.
 
-```{r}
-checking examples with --run-donttest ... ERROR
-```
-Also, using `\donttest{}` with examples that are supposed to throw error messages doesn't interact well with `example()` because the execution is stopped at the first error and consequently not all examples are printed.
-
-To avoid this, I opted for a different approach. The examples that are supposed to return error/warning messages are now wrapped in `try()` instead of `\dontrun{}`. As a consequence, they can be run without returning in actual errors. This solution also interacts well with `example()`: it prints all the error/warning messages without stopping the execution or returning errors. 
-
 ## Test environments
 
 ### Local 
