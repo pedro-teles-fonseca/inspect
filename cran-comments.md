@@ -19,21 +19,15 @@ Found the following significant warnings:
 
 | Platform               | R version | R CMD check | R CMD check --as-cran |
 | -----                  | -----     | -----       | -----                 |
-| macOS Catalina 10.15.5 | R 4.0.1   | Ok          | 2 NOTEs               |
-| Ubuntu 20.04 LTS       | R 4.0.1   | Ok          | 2 NOTEs               |
+| macOS Catalina 10.15.5 | R 4.0.1   | Ok          | 1 NOTE                |
+| Ubuntu 20.04 LTS       | R 4.0.1   | Ok          | 1 NOTE                |
 
-* Note 1: 
-  ```{r}
-  Maintainer: 'Pedro Fonseca <pedro.teles.fonseca@phd.iseg.ulisboa.pt> 
-  New submission
-  ```
-  This is a standard note for first submissions and should be safe to ignore.
+* Note: 
 
-* Note 2: 
-  ```
-  unable to verify current time
-  ```
-   After browsing through R CMD check's code I realized that it depends on two external web resources to obtain the current time: http://worldclockapi.org and http://worldclockapi.com/. Both these websites are currently offline and that should be the source of the problem. If that's the case, there is nothing I can do about this note. 
+```
+unable to verify current time
+```
+After browsing through R CMD check's code I realized that it depends on two external web resources to obtain the current time: http://worldclockapi.org and http://worldclockapi.com/. Both these websites are currently offline and that should be the source of the problem. If that's the case, there is nothing I can do about this note. 
 
 ### Win-builder
 
