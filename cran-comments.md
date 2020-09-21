@@ -1,17 +1,7 @@
 
 ## Submission summary
 
-This is a patch release to fix the following issue detected by CRAN's tests:
 
-```{r}
-checking whether package ‘inspector’ can be installed ... WARNING
-Found the following significant warnings:
-  Warning: Rd macro package 'Rdpack' is not installed.
-```
-
-- The `Rdpack` package is now in the imports field of the DESCRIPTION file. 
-
-- `Rdpack` is now imported through NAMESPACE file.
 
 ## Test environments
 
