@@ -230,7 +230,7 @@ bfactor_to_prob <- function(bf, prior_prob = .5) {
   inspect_bfactor(bf)
   inspect_prob(prior_prob)
 
-  (1 + (1 - prior_prob) / prior_prob * (1 / bf)) ^(-1)
+  (1 + (1 - prior_prob) / prior_prob * (1 / bf)) ^ (-1)
 }
 
 bfactor_to_prob(c(2.1, 0.5, 11))
