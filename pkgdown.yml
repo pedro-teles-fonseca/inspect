@@ -2,8 +2,8 @@ pandoc: 2.7.3
 pkgdown: 1.6.1.9000
 pkgdown_sha: 6094ac3dd80a1f3f1d4e2f47d0ed4716d51362b0
 articles: {}
-last_built: 2020-11-16T02:57Z
+last_built: 2020-11-16T03:26Z
 urls:
-  reference: https://pedro-teles-fonseca.github.io/inspector//reference
-  article: https://pedro-teles-fonseca.github.io/inspector//articles
+  reference: https://ptfonseca.github.io/inspector//reference
+  article: https://ptfonseca.github.io/inspector//articles
 
