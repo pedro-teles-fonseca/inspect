@@ -5,10 +5,10 @@ citEntry(entry = "Manual",
          title = "inspector: Validation of Arguments and Objects in User-Defined Functions",
          author = as.person("Pedro Fonseca"),
          year = "2020",
-         note = "R package version 1.0.1",
-         url = "https://pedro-teles-fonseca.github.io/inspector/",
+         note = "R package version 1.0.2",
+         url = "https://ptfonseca.github.io/inspector/",
          textVersion =
            paste("Pedro Fonseca (2020).",
                  "inspector: Validation of Arguments and Objects in User-Defined Functions.",
-                 "R package version 1.0.1")
+                 "R package version 1.0.2")
          )
