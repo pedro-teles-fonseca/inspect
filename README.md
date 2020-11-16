@@ -73,9 +73,8 @@ and less verbose functions.
 
 ## Installation
 
-The development version of `inspector` can be installed from
-[GitHub](https://github.com/) using the
-[`devtools`](https://github.com/r-lib/devtools) package:
+The development version of `inspector` can be installed from Github
+using the [`devtools`](https://devtools.r-lib.org) package:
 
 ``` r
 # install.packages("devtools")
@@ -240,8 +239,8 @@ bfactor_to_prob(c(2.1, 0.5, 11))
 ## Getting Help
 
 If you find a bug, please file an issue with a minimal reproducible
-example on [GitHub](https://github.com/ptfonseca/inspector). Feature
-requests are also welcome. You can contact me at
+example on [GitHub](https://github.com/ptfonseca/inspector/issues).
+Feature requests are also welcome. You can contact me at
 <ptfonseca@iseg.ulisboa.pt>.
 
 ## References
