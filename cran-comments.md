@@ -16,11 +16,9 @@ This is a small patch release to fix some broken URLs in the DESCRIPTION, README
 
 | R version  | Status |
 | -----      | -----  |
-| R-oldrel   | 1 NOTE |
-| R-release  | 1 NOTE |
-| R-devel    | 1 NOTE |
-
-* Note: same as note 1 above.
+| R-oldrel   | OK     |
+| R-release  | OK     |
+| R-devel    | OK     |
 
 ### R-Hub
 
