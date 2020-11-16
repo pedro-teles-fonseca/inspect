@@ -213,6 +213,6 @@ bfactor_to_prob(c(2.1, 0.5, 11))
 If you find a bug, please file an issue with a minimal reproducible
 example on [GitHub](https://github.com/ptfonseca/inspector).
 Feature requests are also welcome. You can contact me at
-<pedro.teles.fonseca@phd.iseg.ulisboa.pt>.
+<ptfonseca@iseg.ulisboa.pt>.
 
 ## References
