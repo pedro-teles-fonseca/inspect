@@ -1,7 +1,7 @@
 
 ## Submission summary
 
-
+This is a small patch release and its main objective is to update some URLs in the DESCRIPTION, README and CITATION files. The older URLs are not working anymore because of a change in my GitHub username.
 
 ## Test environments
 
