@@ -8,11 +8,11 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/inspector)](https://CRAN.R-project.org/package=inspector)
 [![Build
-Status](https://travis-ci.com/pedro-teles-fonseca/inspector.svg?branch=master)](https://travis-ci.com/pedro-teles-fonseca/inspector)
+Status](https://travis-ci.com/ptfonseca/inspector.svg?branch=master)](https://travis-ci.com/ptfonseca/inspector)
 [![R build
-status](https://github.com/pedro-teles-fonseca/inspector/workflows/R-CMD-check/badge.svg)](https://github.com/pedro-teles-fonseca/inspector/actions)
-![pkgdown](https://github.com/pedro-teles-fonseca/inspector/workflows/pkgdown/badge.svg)
-[![codecov](https://codecov.io/gh/pedro-teles-fonseca/inspector/branch/master/graph/badge.svg?branch=master&kill_cache=1)](https://codecov.io/gh/pedro-teles-fonseca/inspector)
+status](https://github.com/ptfonseca/inspector/workflows/R-CMD-check/badge.svg)](https://github.com/ptfonseca/inspector/actions)
+![pkgdown](https://github.com/ptfonseca/inspector/workflows/pkgdown/badge.svg)
+[![codecov](https://codecov.io/gh/ptfonseca/inspector/branch/master/graph/badge.svg?branch=master&kill_cache=1)](https://codecov.io/gh/ptfonseca/inspector)
 [![MIT
 license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://lbesson.mit-license.org/)
 <!-- badges: end -->
@@ -38,8 +38,8 @@ automate common sets of validation tasks, namely:
     valid logarithmic Bayes factors values.
 
   - `inspect_bfactor_scale()` validates Bayes factor interpretation
-    scales (from the
-    [`pcal`](https://pedro-teles-fonseca.github.io/pcal/) package).
+    scales (from the [`pcal`](https://ptfonseca.github.io/pcal/)
+    package).
 
   - `inspect_categories()` validates factor levels.
 
@@ -79,7 +79,7 @@ The development version of `inspector` can be installed from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("pedro-teles-fonseca/inspector")
+devtools::install_github("ptfonseca/inspector")
 ```
 
 ## Usage
@@ -240,8 +240,8 @@ bfactor_to_prob(c(2.1, 0.5, 11))
 ## Getting Help
 
 If you find a bug, please file an issue with a minimal reproducible
-example on [GitHub](https://github.com/pedro-teles-fonseca/inspector).
-Feature requests are also welcome. You can contact me at
+example on [GitHub](https://github.com/ptfonseca/inspector). Feature
+requests are also welcome. You can contact me at
 <pedro.teles.fonseca@phd.iseg.ulisboa.pt>.
 
 ## References

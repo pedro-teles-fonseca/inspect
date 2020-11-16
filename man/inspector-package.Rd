@@ -14,9 +14,9 @@ For a complete list of functions see \code{library(help = "inspector")}. For ins
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://pedro-teles-fonseca.github.io/inspector/}
-  \item \url{https://github.com/pedro-teles-fonseca/inspector}
-  \item Report bugs at \url{https://github.com/pedro-teles-fonseca/inspector/issues}
+  \item \url{https://ptfonseca.github.io/inspector/}
+  \item \url{https://github.com/ptfonseca/inspector}
+  \item Report bugs at \url{https://github.com/ptfonseca/inspector/issues}
 }
 
 }
