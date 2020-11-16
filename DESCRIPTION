@@ -1,7 +1,7 @@
 Package: inspector
 Type: Package
 Title: Validation of Arguments and Objects in User-Defined Functions
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: c(
   person("Pedro", "Fonseca", email = "pedro.teles.fonseca@phd.iseg.ulisboa.pt", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5708-081X")),
   person(given = "FCT", role = "fnd"))
@@ -9,9 +9,9 @@ Description: Utility functions that implement and automate common sets of valida
     These functions are particularly useful to validate inputs, intermediate objects and output 
     values in user-defined functions, resulting in tidier and less verbose functions.
 License: MIT + file LICENSE
-URL: https://pedro-teles-fonseca.github.io/inspector/,
-     https://github.com/pedro-teles-fonseca/inspector
-BugReports: https://github.com/pedro-teles-fonseca/inspector/issues
+URL: https://ptfonseca.github.io/inspector/,
+     https://github.com/ptfonseca/inspector
+BugReports: https://github.com/ptfonseca/inspector/issues
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.10)
