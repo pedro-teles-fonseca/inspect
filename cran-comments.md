@@ -9,8 +9,8 @@ This is a small patch release to fix some broken URLs in the DESCRIPTION, README
 
 | Platform               | R version | R CMD check | R CMD check --as-cran |
 | -----                  | -----     | -----       | -----                 |
-| macOS Catalina 10.15.5 | R 4.0.1   | Ok          | 1 NOTE                |
-| Ubuntu 20.04 LTS       | R 4.0.1   | Ok          | 1 NOTE                |
+| macOS Catalina 10.15.5 | R 4.0.1   | Ok          | Ok                    |
+| Ubuntu 20.04 LTS       | R 4.0.1   | Ok          | Ok                    |
 
 ### Win-builder
 
