@@ -1,7 +1,7 @@
 
 # inspector 1.0.2
 
-Fixed typo in the README.
+This is a small patch realease to fix some broken URLs in the documentation and metadata of the package. Some typos on the README were also corrected.
 
 # inspector 1.0.1
 
