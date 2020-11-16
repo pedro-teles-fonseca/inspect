@@ -1,6 +1,8 @@
 
 ## Submission summary
 
+This is a small patch release to fix some broken URLs in the DESCRIPTION, README and CITATION files. The old URLs are not working anymore because of a change in my GitHub username.
+
 ## Test environments
 
 ### Local 
