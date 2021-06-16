@@ -62,8 +62,10 @@
 #' try(inspect_prob(z1))
 #' z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
 #' try(inspect_prob(z2, allow_nas = FALSE))
-#' mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)
+#' mylist <- list(
+#'   NULL, TRUE, factor(.5), matrix(0.5),
+#'   "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5
+#' )
 #' try(inspect_prob(mylist[[1]]))
 #' try(inspect_prob(mylist[[2]]))
 #' try(inspect_prob(mylist[[3]]))
@@ -75,11 +77,9 @@
 #' try(inspect_prob(mylist[[9]]))
 #' try(inspect_prob(mylist[[10]]))
 #' try(inspect_prob(mylist[[11]]))
-#'
 #' @export
 
 inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
-
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
@@ -112,7 +112,7 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
     stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
   if (any(x_filtered < 0, x_filtered > 1)) {
-    stop(paste("Invalid argument: all elements of",  output_name, "must be in the [0, 1] interval."))
+    stop(paste("Invalid argument: all elements of", output_name, "must be in the [0, 1] interval."))
   }
 }
 
@@ -162,8 +162,10 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 #' # Calls that throw informative error messages:
 #' z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
 #' try(inspect_bfactor(z))
-#' mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)
+#' mylist <- list(
+#'   NULL, TRUE, factor(.5), matrix(0.5),
+#'   "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5
+#' )
 #' try(inspect_bfactor(mylist[[1]]))
 #' try(inspect_bfactor(mylist[[2]]))
 #' try(inspect_bfactor(mylist[[3]]))
@@ -175,11 +177,9 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 #' try(inspect_bfactor(mylist[[9]]))
 #' try(inspect_bfactor(mylist[[10]]))
 #' try(inspect_bfactor(mylist[[11]]))
-#'
 #' @export
 
 inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
-
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
@@ -258,8 +258,10 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 #' try(inspect_bfactor_log(y, allow_nas = TRUE, warning_nas = TRUE))
 #'
 #' # Calls that throw informative error messages:
-#' mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-#'          "0.5", list(0.5), numeric(0), NA, NaN)
+#' mylist <- list(
+#'   NULL, TRUE, factor(.5), matrix(0.5),
+#'   "0.5", list(0.5), numeric(0), NA, NaN
+#' )
 #' try(inspect_bfactor_log(mylist[[1]]))
 #' try(inspect_bfactor_log(mylist[[2]]))
 #' try(inspect_bfactor_log(mylist[[3]]))
@@ -269,11 +271,9 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 #' try(inspect_bfactor_log(mylist[[7]]))
 #' try(inspect_bfactor_log(mylist[[8]]))
 #' try(inspect_bfactor_log(mylist[[9]]))
-#'
 #' @export
 
 inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
-
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
@@ -336,8 +336,10 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 #' inspect_log_base(x3)
 #'
 #' # Calls that throw informative error messages:
-#' mylist <- list(NULL, numeric(0), TRUE, factor(10),
-#'         list(10), matrix(10), NaN, NA, -1, 0)
+#' mylist <- list(
+#'   NULL, numeric(0), TRUE, factor(10),
+#'   list(10), matrix(10), NaN, NA, -1, 0
+#' )
 #' try(inspect_log_base(mylist[[1]]))
 #' try(inspect_log_base(mylist[[2]]))
 #' try(inspect_log_base(mylist[[3]]))
@@ -348,11 +350,9 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 #' try(inspect_log_base(mylist[[8]]))
 #' try(inspect_log_base(mylist[[9]]))
 #' try(inspect_log_base(mylist[[10]]))
-#'
 #' @export
 
 inspect_log_base <- function(x) {
-
   output_name <- deparse(substitute(x))
 
   if (is.null(x)) {
@@ -360,7 +360,7 @@ inspect_log_base <- function(x) {
   }
 
   if (any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))
-    ) {
+  ) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector of length 1."))
   }
   if (is.na(x)) {
@@ -409,8 +409,10 @@ inspect_log_base <- function(x) {
 #' inspect_bfactor_scale(x4)
 #'
 #' # Calls that throw informative error messages:
-#' mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
-#'           "kassraftery", c("jeffreys", "kass-raftery"))
+#' mylist <- list(
+#'   NULL, NA, NaN, 10, "Bayes", "Jeff",
+#'   "kassraftery", c("jeffreys", "kass-raftery")
+#' )
 #' try(inspect_bfactor_scale(mylist[[1]]))
 #' try(inspect_bfactor_scale(mylist[[2]]))
 #' try(inspect_bfactor_scale(mylist[[3]]))
@@ -419,11 +421,9 @@ inspect_log_base <- function(x) {
 #' try(inspect_bfactor_scale(mylist[[6]]))
 #' try(inspect_bfactor_scale(mylist[[7]]))
 #' try(inspect_bfactor_scale(mylist[[8]]))
-#'
 #' @export
 
 inspect_bfactor_scale <- function(x) {
-
   output_name <- deparse(substitute(x))
 
   if (is.null(x)) {
@@ -478,11 +478,9 @@ inspect_bfactor_scale <- function(x) {
 #' try(inspect_true_or_false(mylist[[4]]))
 #' try(inspect_true_or_false(mylist[[5]]))
 #' try(inspect_true_or_false(mylist[[6]]))
-#'
 #' @export
 
 inspect_true_or_false <- function(x) {
-
   output_name <- deparse(substitute(x))
 
   if (is.null(x)) {
@@ -544,19 +542,19 @@ inspect_true_or_false <- function(x) {
 #' try(inspect_categories(y1))
 #' try(inspect_categories(y2))
 #' try(inspect_categories(y3))
-#' try(mylist <- list(NULL, numeric(0),
-#'  complex(1), list(10), NaN, NA))
+#' try(mylist <- list(
+#'   NULL, numeric(0),
+#'   complex(1), list(10), NaN, NA
+#' ))
 #' try(inspect_categories(mylist[[1]]))
 #' try(inspect_categories(mylist[[2]]))
 #' try(inspect_categories(mylist[[3]]))
 #' try(inspect_categories(mylist[[4]]))
 #' try(inspect_categories(mylist[[5]]))
 #' try(inspect_categories(mylist[[6]]))
-#'
 #' @export
 
 inspect_categories <- function(x) {
-
   output_name <- deparse(substitute(x))
 
   if (is.null(x)) {
@@ -572,7 +570,7 @@ inspect_categories <- function(x) {
     stop(paste("Invalid argument: the type of", output_name, "must be 'logical', 'integer', 'double' or 'character'."))
   }
   if (any(is.na(x))) {
-    stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
+    stop(paste("Invalid argument: there are NA or NaN values in", paste0(output_name, ".")))
   }
   if (isFALSE(length(unique(x)) == length(x))) {
     stop(paste("Invalid argument: all element of", output_name, "must be unique."))
@@ -615,10 +613,14 @@ inspect_categories <- function(x) {
 #' y1 <- "kasss"
 #' y2 <- "kass"
 #' try(inspect_character_match(y1, allowed = c("Kass", "Raftery")))
-#' try(inspect_character_match(y2, allowed = c("Kass", "Raftery"),
-#'  case_sensitive = TRUE))
-#' mylist <- list(NULL, character(0), c("abc", "abcd"),
-#'  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)
+#' try(inspect_character_match(y2,
+#'   allowed = c("Kass", "Raftery"),
+#'   case_sensitive = TRUE
+#' ))
+#' mylist <- list(
+#'   NULL, character(0), c("abc", "abcd"),
+#'   c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA
+#' )
 #' try(inspect_character_match(mylist[[1]], "abc"))
 #' try(inspect_character_match(mylist[[2]], "abc"))
 #' try(inspect_character_match(mylist[[3]], "abc"))
@@ -628,11 +630,9 @@ inspect_categories <- function(x) {
 #' try(inspect_character_match(mylist[[7]], "abc"))
 #' try(inspect_character_match(mylist[[8]], "abc"))
 #' try(inspect_character_match(mylist[[9]], "abc"))
-#'
 #' @export
 
 inspect_character_match <- function(x, allowed, case_sensitive = FALSE) {
-
   inspect_character(allowed)
   inspect_true_or_false(case_sensitive)
 
@@ -706,8 +706,10 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE) {
 #'
 #' # Calls that throw informative error messages
 #' try(inspect_character(y, allow_nas = FALSE))
-#' mylist <- list(NULL, character(0), 1,
-#'  c(1, 2), factor(c(1,2)), list(c(1,2)), NaN, NA)
+#' mylist <- list(
+#'   NULL, character(0), 1,
+#'   c(1, 2), factor(c(1, 2)), list(c(1, 2)), NaN, NA
+#' )
 #' try(inspect_character(mylist[[1]]))
 #' try(inspect_character(mylist[[2]]))
 #' try(inspect_character(mylist[[3]]))
@@ -716,11 +718,9 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE) {
 #' try(inspect_character(mylist[[6]]))
 #' try(inspect_character(mylist[[7]]))
 #' try(inspect_character(mylist[[8]]))
-#'
 #' @export
 
 inspect_character <- function(x, allow_nas = TRUE, warning_nas = FALSE) {
-
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 

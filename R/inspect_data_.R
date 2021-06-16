@@ -53,21 +53,19 @@
 #'
 #' # Calls that throw an informative error message:
 #' try(inspect_data_dichotomous(NULL, 1))
-#' try(inspect_data_dichotomous(c(1,0), NULL))
-#' try(inspect_data_dichotomous(list(1,0), 1))
-#' try(inspect_data_dichotomous(c(1,0), list(1)))
+#' try(inspect_data_dichotomous(c(1, 0), NULL))
+#' try(inspect_data_dichotomous(list(1, 0), 1))
+#' try(inspect_data_dichotomous(c(1, 0), list(1)))
 #' try(inspect_data_dichotomous(numeric(0), 0))
 #' try(inspect_data_dichotomous(1, numeric(0)))
 #' try(inspect_data_dichotomous(NaN, 1))
 #' try(inspect_data_dichotomous(NA, 1))
-#' try(inspect_data_dichotomous(c(1,0), NA))
-#' try(inspect_data_dichotomous(c(1,0), NaN))
-#' try(inspect_data_dichotomous(c(1,0), 2))
-#'
+#' try(inspect_data_dichotomous(c(1, 0), NA))
+#' try(inspect_data_dichotomous(c(1, 0), NaN))
+#' try(inspect_data_dichotomous(c(1, 0), 2))
 #' @export
 
 inspect_data_dichotomous <- function(data, success, allow_nas = TRUE, warning_nas = FALSE) {
-
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
@@ -105,7 +103,7 @@ inspect_data_dichotomous <- function(data, success, allow_nas = TRUE, warning_na
     stop(paste("Invalid argument: there are more than two levels'."))
   }
   if (all(is.na(data))) {
-    stop(paste("Invalid argument: all elements of",  data_output_name, "are NA or NaN."))
+    stop(paste("Invalid argument: all elements of", data_output_name, "are NA or NaN."))
   }
   if (any(is.na(data))) {
     if (isFALSE(allow_nas)) {
@@ -171,15 +169,13 @@ inspect_data_dichotomous <- function(data, success, allow_nas = TRUE, warning_na
 #' z <- c(1, 1, NA, 0, 0, 2)
 #' try(inspect_data_categorical(z, allow_nas = FALSE))
 #' try(inspect_data_categorical(NULL))
-#' try(inspect_data_categorical(list(1,0)))
+#' try(inspect_data_categorical(list(1, 0)))
 #' try(inspect_data_categorical(numeric(0)))
 #' try(inspect_data_categorical(NaN))
 #' try(inspect_data_categorical(NA))
-#'
 #' @export
 
 inspect_data_categorical <- function(data, allow_nas = TRUE, warning_nas = FALSE) {
-
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
@@ -198,7 +194,7 @@ inspect_data_categorical <- function(data, allow_nas = TRUE, warning_nas = FALSE
     stop(paste("Invalid argument: the type of", data_output_name, "must be 'logical', 'integer', 'double' or 'character'."))
   }
   if (all(is.na(data))) {
-    stop(paste("Invalid argument: all elements of",  data_output_name, "are NA or NaN."))
+    stop(paste("Invalid argument: all elements of", data_output_name, "are NA or NaN."))
   }
   if (any(is.na(data))) {
     if (isFALSE(allow_nas)) {
@@ -266,21 +262,19 @@ inspect_data_categorical <- function(data, allow_nas = TRUE, warning_nas = FALSE
 #' # Calls that throw an informative error message:
 #' try(inspect_data_cat_as_dichotom(y1, 1, allow_nas = FALSE))
 #' try(inspect_data_cat_as_dichotom(NULL, 1))
-#' try(inspect_data_cat_as_dichotom(c(1,0), NULL))
-#' try(inspect_data_cat_as_dichotom(list(1,0), 1))
-#' try(inspect_data_cat_as_dichotom(c(1,0), list(1)))
+#' try(inspect_data_cat_as_dichotom(c(1, 0), NULL))
+#' try(inspect_data_cat_as_dichotom(list(1, 0), 1))
+#' try(inspect_data_cat_as_dichotom(c(1, 0), list(1)))
 #' try(inspect_data_cat_as_dichotom(numeric(0), 0))
 #' try(inspect_data_cat_as_dichotom(1, numeric(0)))
 #' try(inspect_data_cat_as_dichotom(NaN, 1))
 #' try(inspect_data_cat_as_dichotom(NA, 1))
-#' try(inspect_data_cat_as_dichotom(c(1,0), NA))
-#' try(inspect_data_cat_as_dichotom(c(1,0), NaN))
-#' try(inspect_data_cat_as_dichotom(c(1,0), 2))
-#'
+#' try(inspect_data_cat_as_dichotom(c(1, 0), NA))
+#' try(inspect_data_cat_as_dichotom(c(1, 0), NaN))
+#' try(inspect_data_cat_as_dichotom(c(1, 0), 2))
 #' @export
 
 inspect_data_cat_as_dichotom <- function(data, success, allow_nas = TRUE, warning_nas = FALSE) {
-
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
@@ -309,7 +303,7 @@ inspect_data_cat_as_dichotom <- function(data, success, allow_nas = TRUE, warnin
     stop(paste("Invalid argument: the type of", s_output_name, "must be 'logical', 'integer', 'double' or 'character'."))
   }
   if (all(is.na(data))) {
-    stop(paste("Invalid argument: all elements of",  data_output_name, "are NA or NaN."))
+    stop(paste("Invalid argument: all elements of", data_output_name, "are NA or NaN."))
   }
   if (is.na(success)) {
     stop(paste("Invalid argument:", s_output_name, "is NA or NaN."))

@@ -9,31 +9,45 @@ inspect_prob(x, allow_nas = TRUE, warning_nas = TRUE)
 \arguments{
 \item{x}{An arbitrary object.}
 
-\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x}
+are allowed. If \code{FALSE}, execution is stopped and an error message is thrown
+in case there are \code{NA} or \code{NaN} values in \code{x}.}
 
-\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} values pass silently otherwise (if \code{allow_nas} is set to \code{TRUE}).}
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or
+\code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} values pass
+silently otherwise (if \code{allow_nas} is set to \code{TRUE}).}
 }
 \value{
-\code{inspect_prob} does not return any output. There are three possible outcomes:
+\code{inspect_prob} does not return any output. There are three possible
+outcomes:
 \itemize{
 \item The call is silent if:
 \itemize{
-\item \code{x} is a numeric vector of valid probability values and there are no \code{NA} or \code{NaN} values in \code{x}.
-\item \code{x} is a numeric vector of valid probability values, there are some \code{NA} or \code{NaN} values in \code{x}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+\item \code{x} is a numeric vector of valid probability values and there are no \code{NA}
+or \code{NaN} values in \code{x}.
+\item \code{x} is a numeric vector of valid probability values, there are some \code{NA}
+or \code{NaN} values in \code{x}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is
+set to \code{FALSE}.
 }
-\item An informative warning message is thrown if \code{x} is a numeric vector of valid probability values, there are some \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative warning message is thrown if \code{x} is a numeric vector of
+valid probability values, there are some \code{NA} or \code{NaN} values in \code{x} and both
+\code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
 \item An informative error message is thrown and the execution is stopped if:
 \itemize{
 \item \code{x} is not a numeric vector of valid probability values.
-\item \code{x} is a numeric vector of valid probability values, there are some \code{NA} or \code{NaN} values in \code{x} and \code{allow_nas} is set to \code{FALSE}.
+\item \code{x} is a numeric vector of valid probability values, there are some \code{NA}
+or \code{NaN} values in \code{x} and \code{allow_nas} is set to \code{FALSE}.
 }
 }
 }
 \description{
-\code{inspect_prob} checks if an object is a numeric vector of valid probability values. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+\code{inspect_prob} checks if an object is a numeric vector of valid
+probability values. This can be useful to validate inputs, intermediate
+calculations or outputs in user-defined functions.
 }
 \details{
-\code{inspect_prob} conducts a series of tests to check if \code{x} is a numeric vector of valid probability values. Namely, \code{inspect_prob} checks if:
+\code{inspect_prob} conducts a series of tests to check if \code{x} is a
+numeric vector of valid probability values. Namely, \code{inspect_prob} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector.
@@ -78,7 +92,9 @@ try(inspect_prob(mylist[[11]]))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_par_bernoulli}} to check if an object is a valid Bernoulli/Binomial proportion.
-\item \code{\link[inspector]{inspect_par_multinomial}} to check if an object is a numeric vector of valid Multinomial proportions.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to check if an object is a
+valid Bernoulli/Binomial proportion.
+\item \code{\link[inspector]{inspect_par_multinomial}} to check if an object is
+a numeric vector of valid Multinomial proportions.
 }
 }
