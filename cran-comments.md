@@ -1,6 +1,12 @@
 
 ## Submission summary
 
+This is a small patch release to fix the following note from CRANs checks:
+```
+checking LazyData ... NOTE
+'LazyData' is specified without a 'data' directory
+```
+
 ## Test environments
 
 ### Local 
