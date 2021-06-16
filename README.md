@@ -50,7 +50,7 @@ automate common sets of validation tasks, namely:
 
 -   `inspect_data_dichotomous()` validates dichotomous data
 
--   `inspect_data_categorical()` and `inspect_data_cat_as_dichotomous()`
+-   `inspect_data_categorical()` and `inspect_data_cat_as_dichotom()`
     validate categorical data.
 
 -   `inspect_par_bernoulli()` validates parameters for the Bernoulli and
@@ -89,7 +89,7 @@ coin. Assuming that `bias` is the probability of the “heads” outcome:
 ``` r
 set.seed(123)
 
-flip_coins <- function(n, bias){ 
+flip_coins <- function(n, bias) { 
   
   sample(x = c("heads", "tails"), size = n, replace = TRUE)
 }
@@ -107,24 +107,24 @@ function body:
 ``` r
 set.seed(123)
 
-flip_coins <- function(n, bias){
+flip_coins <- function(n, bias) {
   
-  if(is.null(bias)){
+  if (is.null(bias)) {
     stop(paste("Invalid argument: bias is NULL."))
   }
-  if(any(isFALSE(is.atomic(bias)), isFALSE(is.vector(bias)))){
+  if (any(isFALSE(is.atomic(bias)), isFALSE(is.vector(bias)))) {
     stop(paste("Invalid argument: bias must be an atomic vector."))
   }
-  if(isFALSE(length(bias) == 1)){
+  if (isFALSE(length(bias) == 1)) {
     stop(paste("Invalid argument: bias must be of length 1."))
   }
-  if(is.na(bias)){
+  if (is.na(bias)) {
     stop(paste("Invalid argument: bias is NA or NaN."))
   }
-  if(isFALSE(is.numeric(bias))){
+  if (isFALSE(is.numeric(bias))) {
     stop(paste("Invalid argument: bias must be numeric."))
   }
-  if(any(bias >= 1, bias <= 0)) {
+  if (any(bias >= 1, bias <= 0)) {
     stop(paste("Invalid argument: bias must be in the (0, 1) interval."))
   }
   
@@ -143,7 +143,7 @@ parameter of a Bernoulli distribution:
 ``` r
 set.seed(123)
 
-flip_coins <- function(n, bias){
+flip_coins <- function(n, bias) {
   
   inspect_par_bernoulli(bias)
   
@@ -172,40 +172,40 @@ be even more verbose than in the `flip_coins()` example:
 ``` r
 bfactor_to_prob <- function(bf, prior_prob = .5) {
 
-  if(is.null(bf)){
+  if (is.null(bf)) {
     stop(paste("Invalid argument: bf is NULL."))
   }
-  if(any(isFALSE(is.atomic(bf)), isFALSE(is.vector(bf)))){
+  if (any(isFALSE(is.atomic(bf)), isFALSE(is.vector(bf)))) {
     stop(paste("Invalid argument: bf must be an atomic vector."))
   }
-  if(length(bf) == 0){
+  if (length(bf) == 0) {
     stop(paste("Invalid argument: bf is empty."))
   }
-  if(all(is.na(bf))){
+  if (all(is.na(bf))) {
     stop(paste("Invalid argument: all elements of bf are NA or NaN."))
   }
-  if(isFALSE(is.numeric(bf))){
+  if (isFALSE(is.numeric(bf))) {
     stop(paste("Invalid argument: the type of bf must be numeric."))
   }
-  if(any(bf[!is.na(bf)] < 0)){
+  if (any(bf[!is.na(bf)] < 0)) {
     stop(paste("Invalid argument: all elements of bf must be non-negative."))
   }
-  if(is.null(prior_prob)){
+  if (is.null(prior_prob)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(prior_prob)), isFALSE(is.vector(prior_prob)))){
+  if (any(isFALSE(is.atomic(prior_prob)), isFALSE(is.vector(prior_prob)))) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
-  if(length(prior_prob) == 0){
+  if (length(prior_prob) == 0) {
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
-  if(all(is.na(prior_prob))){
+  if (all(is.na(prior_prob))) {
     stop(paste("Invalid argument: all elements of", output_name, "are NA or NaN."))
   }
-  if(isFALSE(is.numeric(prior_prob))){
+  if (isFALSE(is.numeric(prior_prob))) {
     stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
-  if(any(prior_prob[!is.na(prior_prob)] < 0, prior_prob[!is.na(prior_prob)] > 1)){
+  if (any(prior_prob[!is.na(prior_prob)] < 0, prior_prob[!is.na(prior_prob)] > 1)) {
     stop(paste("Invalid argument: all elements of",  output_name, "must be in the [0, 1] interval."))
   }
 
