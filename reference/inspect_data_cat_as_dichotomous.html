@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Validate categorical data as dichotomous — inspect_data_cat_as_dichotomous • inspector</title>
+<title>Validate categorical data as dichotomous — inspect_data_cat_as_dichotom • inspector</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Validate categorical data as dichotomous — inspect_data_cat_as_dichotomous" />
-<meta property="og:description" content="inspect_data_cat_as_dichotomous checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions." />
+<meta property="og:title" content="Validate categorical data as dichotomous — inspect_data_cat_as_dichotom" />
+<meta property="og:description" content="inspect_data_cat_as_dichotom checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions." />
 
 
 
@@ -129,10 +129,10 @@
     </div>
 
     <div class="ref-description">
-    <p><code>inspect_data_cat_as_dichotomous</code> checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions.</p>
+    <p><code>inspect_data_cat_as_dichotom</code> checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span>
   <span class='va'>data</span>,
   <span class='va'>success</span>,
   allow_nas <span class='op'>=</span> <span class='cn'>TRUE</span>,
@@ -158,7 +158,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>inspect_data_cat_as_dichotomous</code> does not return any output. There are three possible outcomes:</p><ul>
+    <p><code>inspect_data_cat_as_dichotom</code> does not return any output. There are three possible outcomes:</p><ul>
 <li><p>The call is silent if:</p><ul>
 <li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data and there are no <code>NA</code> or <code>NaN</code> values in <code>data</code>.</p></li>
 <li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data, there are some <code>NA</code> or <code>NaN</code> values in <code>data</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
@@ -175,7 +175,7 @@
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>inspect_data_cat_as_dichotomous</code> conducts a series of tests to check if <code>data</code> contains valid categorical data that is eligible to be used as dichotomous data. Namely, <code>inspect_data_cat_as_dichotomous</code> checks if:</p><ul>
+    <p><code>inspect_data_cat_as_dichotom</code> conducts a series of tests to check if <code>data</code> contains valid categorical data that is eligible to be used as dichotomous data. Namely, <code>inspect_data_cat_as_dichotom</code> checks if:</p><ul>
 <li><p><code>data</code> and <code>success</code> are <code>NULL</code> or empty.</p></li>
 <li><p><code>data</code> and <code>success</code> are atomic and have an eligible data type (logical, integer, double, character).</p></li>
 <li><p><code>data</code> and <code>success</code> have <code>NA</code> or <code>NaN</code> values.</p></li>
@@ -201,56 +201,56 @@
 <span class='r-in'><span class='va'>x3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='va'>x4</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span><span class='op'>)</span><span class='op'>)</span></span>
 <span class='r-in'><span class='va'>x5</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='cn'>NA</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>x1</span>, success <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>x2</span>, success <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>x3</span>, success <span class='op'>=</span> <span class='st'>"yes"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>x4</span>, success <span class='op'>=</span> <span class='st'>"yes"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>x5</span>, success <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>x1</span>, success <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>x2</span>, success <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>x3</span>, success <span class='op'>=</span> <span class='st'>"yes"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>x4</span>, success <span class='op'>=</span> <span class='st'>"yes"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>x5</span>, success <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Calls that throw an informative warning message:</span></span>
 <span class='r-in'><span class='va'>y1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span>, <span class='cn'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span></span>
 <span class='r-in'><span class='va'>y2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span></span>
 <span class='r-in'><span class='va'>success</span> <span class='op'>&lt;-</span> <span class='fl'>1</span></span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>y1</span>, success <span class='op'>=</span> <span class='fl'>1</span>, warning_nas <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>y1</span>, success <span class='op'>=</span> <span class='fl'>1</span>, warning_nas <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></span>
 <span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>There are NA or NaN values in y1.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>y2</span>, success <span class='op'>=</span> <span class='va'>success</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>y2</span>, success <span class='op'>=</span> <span class='va'>success</span><span class='op'>)</span><span class='op'>)</span></span>
 <span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>success not observed in y2.</span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Calls that throw an informative error message:</span></span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='va'>y1</span>, <span class='fl'>1</span>, allow_nas <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(y1, 1, allow_nas = FALSE) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='va'>y1</span>, <span class='fl'>1</span>, allow_nas <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(y1, 1, allow_nas = FALSE) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: there are NA or NaN values in  y1.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='cn'>NULL</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(NULL, 1) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='cn'>NULL</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(NULL, 1) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: NULL is NULL.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(c(1, 0), NULL) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(c(1, 0), NULL) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: NULL is NULL.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(list(1, 0), 1) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(list(1, 0), 1) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: list(1, 0) must be atomic.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(c(1, 0), list(1)) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(c(1, 0), list(1)) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: list(1) must be atomic and have length 1.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(numeric(0), 0) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(numeric(0), 0) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: numeric(0) is empty.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(1, numeric(0)) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(1, numeric(0)) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: numeric(0) must be atomic and have length 1.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='cn'>NaN</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(NaN, 1) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='cn'>NaN</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(NaN, 1) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: all elements of NaN are NA or NaN.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='cn'>NA</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(NA, 1) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='cn'>NA</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(NA, 1) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: all elements of NA are NA or NaN.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(c(1, 0), NA) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(c(1, 0), NA) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: NA is NA or NaN.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='cn'>NaN</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotomous(c(1, 0), NaN) : </span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='cn'>NaN</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_data_cat_as_dichotom(c(1, 0), NaN) : </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: NaN is NA or NaN.</span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotomous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
 <span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>2 not observed in c(1, 0).</span>
 <span class='r-in'></span>
 </code></pre></div>
