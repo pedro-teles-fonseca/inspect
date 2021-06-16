@@ -131,7 +131,7 @@ test_that("inspect_data_dichotomous error 13", {
 })
 
 test_that("inspect_data_dichotomous error 14", {
-  x <- c(1 , 0, NA)
+  x <- c(1, 0, NA)
   expect_error(
     inspect_data_dichotomous(x, 1, allow_nas = FALSE),
     "Invalid argument: there are NA or NaN values in  x."
@@ -320,151 +320,151 @@ test_that("inspect_data_categorical error 6", {
 })
 
 test_that("inspect_data_dichotomous error 7", {
-  x <- c(1 , 0, NA)
+  x <- c(1, 0, NA)
   expect_error(
     inspect_data_categorical(x, allow_nas = FALSE),
     "Invalid argument: there are NA or NaN values in  x."
   )
 })
 
-context("inspect_data_cat_as_dichotomous")
+context("inspect_data_cat_as_dichotom")
 
-test_that("inspect_data_cat_as_dichotomous silent 1", {
+test_that("inspect_data_cat_as_dichotom silent 1", {
   x <- c(1, 0, 0, 1, 0)
   expect_silent(inspect_data_dichotomous(x, success = 1))
 })
 
-test_that("inspect_data_cat_as_dichotomous silent 2", {
+test_that("inspect_data_cat_as_dichotom silent 2", {
   x <- c(FALSE, FALSE, TRUE)
   expect_silent(inspect_data_dichotomous(x, success = TRUE))
 })
 
-test_that("inspect_data_cat_as_dichotomous silent 3", {
+test_that("inspect_data_cat_as_dichotom silent 3", {
   x <- c("yes", "no", "yes")
   expect_silent(inspect_data_dichotomous(x, success = "yes"))
 })
 
-test_that("inspect_data_cat_as_dichotomous silent 4", {
+test_that("inspect_data_cat_as_dichotom silent 4", {
   x <- factor(c("yes", "no", "yes"))
   expect_silent(inspect_data_dichotomous(x, success = "yes"))
 })
 
-test_that("inspect_data_cat_as_dichotomous silent 4", {
+test_that("inspect_data_cat_as_dichotom silent 4", {
   x <- c(1, 0, 0, 1, 0, NA)
   expect_silent(inspect_data_dichotomous(x, success = 1))
 })
 
-test_that("inspect_data_cat_as_dichotomous warning 1", {
+test_that("inspect_data_cat_as_dichotom warning 1", {
   x <- c(1, 1, NA, 0, 0)
   expect_warning(
-    inspect_data_cat_as_dichotomous(x, success = 1, warning_nas = TRUE),
+    inspect_data_cat_as_dichotom(x, success = 1, warning_nas = TRUE),
     "There are NA or NaN values in x."
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous warning 2", {
+test_that("inspect_data_cat_as_dichotom warning 2", {
   x <- c(0, 0)
   success <- 1
   expect_warning(
-    inspect_data_cat_as_dichotomous(x, success = success),
+    inspect_data_cat_as_dichotom(x, success = success),
     "success not observed in x."
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous warning 3", {
+test_that("inspect_data_cat_as_dichotom warning 3", {
   x <- c(1, 0)
-  expect_warning(inspect_data_cat_as_dichotomous(x, 2),
+  expect_warning(inspect_data_cat_as_dichotom(x, 2),
                  "2 not observed in x.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 1", {
+test_that("inspect_data_cat_as_dichotom error 1", {
   x <- c(1, 1, NA, 0, 0)
   expect_error(
-    inspect_data_cat_as_dichotomous(x, 1, allow_nas = FALSE),
+    inspect_data_cat_as_dichotom(x, 1, allow_nas = FALSE),
     "Invalid argument: there are NA or NaN values in  x."
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous error 2", {
-  expect_error(inspect_data_cat_as_dichotomous(NULL, 1),
+test_that("inspect_data_cat_as_dichotom error 2", {
+  expect_error(inspect_data_cat_as_dichotom(NULL, 1),
                "NULL is NULL.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 3", {
-  expect_error(inspect_data_cat_as_dichotomous(c(1, 0), NULL),
+test_that("inspect_data_cat_as_dichotom error 3", {
+  expect_error(inspect_data_cat_as_dichotom(c(1, 0), NULL),
                "NULL is NULL.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 4", {
+test_that("inspect_data_cat_as_dichotom error 4", {
   x <- list(1, 0)
-  expect_error(inspect_data_cat_as_dichotomous(x, 1),
+  expect_error(inspect_data_cat_as_dichotom(x, 1),
                "Invalid argument: x must be atomic.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 5", {
+test_that("inspect_data_cat_as_dichotom error 5", {
   x <- list(1)
-  expect_error(inspect_data_cat_as_dichotomous(c(1, 0), x),
+  expect_error(inspect_data_cat_as_dichotom(c(1, 0), x),
                "Invalid argument: x must be atomic.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 6", {
+test_that("inspect_data_cat_as_dichotom error 6", {
   x <- numeric(0)
-  expect_error(inspect_data_cat_as_dichotomous(x, 0),
+  expect_error(inspect_data_cat_as_dichotom(x, 0),
                "Invalid argument: x is empty.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 7", {
+test_that("inspect_data_cat_as_dichotom error 7", {
   x <- numeric(0)
   expect_error(
-    inspect_data_cat_as_dichotomous(1, x),
+    inspect_data_cat_as_dichotom(1, x),
     "Invalid argument: x must be atomic and have length 1."
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous error 8", {
+test_that("inspect_data_cat_as_dichotom error 8", {
   expect_error(
-    inspect_data_cat_as_dichotomous(NaN, 1),
+    inspect_data_cat_as_dichotom(NaN, 1),
     "Invalid argument: all elements of NaN are NA or NaN."
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous error 9", {
+test_that("inspect_data_cat_as_dichotom error 9", {
   expect_error(
-    inspect_data_cat_as_dichotomous(NA, 1),
+    inspect_data_cat_as_dichotom(NA, 1),
     "Invalid argument: all elements of NA are NA or NaN."
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous error 10", {
-  expect_error(inspect_data_cat_as_dichotomous(c(1, 0), NA),
+test_that("inspect_data_cat_as_dichotom error 10", {
+  expect_error(inspect_data_cat_as_dichotom(c(1, 0), NA),
                "Invalid argument: NA is NA or NaN.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 11", {
-  expect_error(inspect_data_cat_as_dichotomous(c(1, 0), NaN),
+test_that("inspect_data_cat_as_dichotom error 11", {
+  expect_error(inspect_data_cat_as_dichotom(c(1, 0), NaN),
                "Invalid argument: NaN is NA or NaN.")
 })
 
-test_that("inspect_data_cat_as_dichotomous error 11", {
-  x <- c(1 , 0, NA)
+test_that("inspect_data_cat_as_dichotom error 11", {
+  x <- c(1, 0, NA)
   expect_error(
-    inspect_data_cat_as_dichotomous(x, 1, allow_nas = FALSE),
+    inspect_data_cat_as_dichotom(x, 1, allow_nas = FALSE),
     "Invalid argument: there are NA or NaN values in  x."
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous error 12", {
+test_that("inspect_data_cat_as_dichotom error 12", {
   x <- complex(1)
   expect_error(
-    inspect_data_cat_as_dichotomous(x, 1),
+    inspect_data_cat_as_dichotom(x, 1),
     "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'"
   )
 })
 
-test_that("inspect_data_cat_as_dichotomous error 13", {
+test_that("inspect_data_cat_as_dichotom error 13", {
   x <- complex(1)
   expect_error(
-    inspect_data_cat_as_dichotomous(c(1, 0), x),
+    inspect_data_cat_as_dichotom(c(1, 0), x),
     "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'"
   )
 })

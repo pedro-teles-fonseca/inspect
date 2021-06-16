@@ -62,7 +62,7 @@ try(inspect_categories(mylist[[6]]))
 \seealso{
 \itemize{
 \item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotomous}} to validate categorical data.
+\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical data.
 \item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
 \item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
 \item \code{\link[inspector]{inspect_character}} to validate character vectors.
