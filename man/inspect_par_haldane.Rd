@@ -37,9 +37,11 @@ inspect_par_haldane(x1)
 inspect_par_haldane(x2)
 
 # Calls that throw an informative error message:
-mylist <- list(NULL, factor(0, 0, 0),
+mylist <- list(
+  NULL, factor(0, 0, 0),
   matrix(c(0, 0, 0)), c("0", "0", "0"), list(0, 0, 0), c(0, NA),
-  c(0, NaN, 0), c(TRUE, FALSE), numeric(0), c(1, 0, 0))
+  c(0, NaN, 0), c(TRUE, FALSE), numeric(0), c(1, 0, 0)
+)
 try(inspect_par_haldane(mylist[[1]]))
 try(inspect_par_haldane(mylist[[2]]))
 try(inspect_par_haldane(mylist[[3]]))
@@ -50,7 +52,6 @@ try(inspect_par_haldane(mylist[[7]]))
 try(inspect_par_haldane(mylist[[8]]))
 try(inspect_par_haldane(mylist[[9]]))
 try(inspect_par_haldane(mylist[[10]]))
-
 }
 \seealso{
 \itemize{

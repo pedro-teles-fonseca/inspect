@@ -49,15 +49,16 @@ y3 <- factor(c("yes", "no", "yes"))
 try(inspect_categories(y1))
 try(inspect_categories(y2))
 try(inspect_categories(y3))
-try(mylist <- list(NULL, numeric(0),
- complex(1), list(10), NaN, NA))
+try(mylist <- list(
+  NULL, numeric(0),
+  complex(1), list(10), NaN, NA
+))
 try(inspect_categories(mylist[[1]]))
 try(inspect_categories(mylist[[2]]))
 try(inspect_categories(mylist[[3]]))
 try(inspect_categories(mylist[[4]]))
 try(inspect_categories(mylist[[5]]))
 try(inspect_categories(mylist[[6]]))
-
 }
 \seealso{
 \itemize{

@@ -59,8 +59,10 @@ try(inspect_bfactor(y, allow_nas = TRUE, warning_nas = TRUE))
 # Calls that throw informative error messages:
 z <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
 try(inspect_bfactor(z))
-mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5)
+mylist <- list(
+  NULL, TRUE, factor(.5), matrix(0.5),
+  "0.5", list(0.5), NA, NaN, numeric(0), -0.5, -5
+)
 try(inspect_bfactor(mylist[[1]]))
 try(inspect_bfactor(mylist[[2]]))
 try(inspect_bfactor(mylist[[3]]))
@@ -72,7 +74,6 @@ try(inspect_bfactor(mylist[[8]]))
 try(inspect_bfactor(mylist[[9]]))
 try(inspect_bfactor(mylist[[10]]))
 try(inspect_bfactor(mylist[[11]]))
-
 }
 \seealso{
 \itemize{

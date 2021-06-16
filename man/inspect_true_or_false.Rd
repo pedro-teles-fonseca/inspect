@@ -43,7 +43,6 @@ try(inspect_true_or_false(mylist[[3]]))
 try(inspect_true_or_false(mylist[[4]]))
 try(inspect_true_or_false(mylist[[5]]))
 try(inspect_true_or_false(mylist[[6]]))
-
 }
 \seealso{
 \itemize{

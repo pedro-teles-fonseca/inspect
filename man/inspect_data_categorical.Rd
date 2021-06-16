@@ -62,11 +62,10 @@ try(inspect_data_categorical(y1, warning_nas = TRUE))
 z <- c(1, 1, NA, 0, 0, 2)
 try(inspect_data_categorical(z, allow_nas = FALSE))
 try(inspect_data_categorical(NULL))
-try(inspect_data_categorical(list(1,0)))
+try(inspect_data_categorical(list(1, 0)))
 try(inspect_data_categorical(numeric(0)))
 try(inspect_data_categorical(NaN))
 try(inspect_data_categorical(NA))
-
 }
 \seealso{
 \itemize{

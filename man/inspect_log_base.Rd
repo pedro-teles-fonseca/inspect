@@ -39,8 +39,10 @@ inspect_log_base(x2)
 inspect_log_base(x3)
 
 # Calls that throw informative error messages:
-mylist <- list(NULL, numeric(0), TRUE, factor(10),
-        list(10), matrix(10), NaN, NA, -1, 0)
+mylist <- list(
+  NULL, numeric(0), TRUE, factor(10),
+  list(10), matrix(10), NaN, NA, -1, 0
+)
 try(inspect_log_base(mylist[[1]]))
 try(inspect_log_base(mylist[[2]]))
 try(inspect_log_base(mylist[[3]]))
@@ -51,7 +53,6 @@ try(inspect_log_base(mylist[[7]]))
 try(inspect_log_base(mylist[[8]]))
 try(inspect_log_base(mylist[[9]]))
 try(inspect_log_base(mylist[[10]]))
-
 }
 \seealso{
 \itemize{

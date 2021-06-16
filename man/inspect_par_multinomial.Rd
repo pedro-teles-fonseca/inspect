@@ -33,14 +33,16 @@ inspect_par_multinomial(x)
 \examples{
 # Calls that pass silently:
 x1 <- c(0.5, 0.5)
-x2 <- rep(1/5, 5)
+x2 <- rep(1 / 5, 5)
 inspect_par_multinomial(x1)
 inspect_par_multinomial(x2)
 
 # Calls that throw an informative error message:
-mylist <- list(NULL, TRUE, factor(0.5, 0.5),
+mylist <- list(
+  NULL, TRUE, factor(0.5, 0.5),
   matrix(c(0.5, 0.5)), c("0.5", "0.5"), list(0.5, 0.5),
-  c(0.9, NA), c(0.9, NaN), numeric(0), NA, c(0.9, 0.6), c(-0.1, 0.9))
+  c(0.9, NA), c(0.9, NaN), numeric(0), NA, c(0.9, 0.6), c(-0.1, 0.9)
+)
 try(inspect_par_multinomial(mylist[[1]]))
 try(inspect_par_multinomial(mylist[[2]]))
 try(inspect_par_multinomial(mylist[[3]]))
@@ -53,7 +55,6 @@ try(inspect_par_multinomial(mylist[[9]]))
 try(inspect_par_multinomial(mylist[[10]]))
 try(inspect_par_multinomial(mylist[[11]]))
 try(inspect_par_multinomial(mylist[[12]]))
-
 }
 \seealso{
 \itemize{

@@ -46,10 +46,14 @@ inspect_character_match(x2, allowed = c("Kass", "Raftery"))
 y1 <- "kasss"
 y2 <- "kass"
 try(inspect_character_match(y1, allowed = c("Kass", "Raftery")))
-try(inspect_character_match(y2, allowed = c("Kass", "Raftery"),
- case_sensitive = TRUE))
-mylist <- list(NULL, character(0), c("abc", "abcd"),
- c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA)
+try(inspect_character_match(y2,
+  allowed = c("Kass", "Raftery"),
+  case_sensitive = TRUE
+))
+mylist <- list(
+  NULL, character(0), c("abc", "abcd"),
+  c("abc", "abc"), "ab", list("abc"), factor("abc"), NaN, NA
+)
 try(inspect_character_match(mylist[[1]], "abc"))
 try(inspect_character_match(mylist[[2]], "abc"))
 try(inspect_character_match(mylist[[3]], "abc"))
@@ -59,7 +63,6 @@ try(inspect_character_match(mylist[[6]], "abc"))
 try(inspect_character_match(mylist[[7]], "abc"))
 try(inspect_character_match(mylist[[8]], "abc"))
 try(inspect_character_match(mylist[[9]], "abc"))
-
 }
 \seealso{
 \itemize{

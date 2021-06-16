@@ -74,17 +74,16 @@ try(inspect_data_cat_as_dichotom(y2, success = success))
 # Calls that throw an informative error message:
 try(inspect_data_cat_as_dichotom(y1, 1, allow_nas = FALSE))
 try(inspect_data_cat_as_dichotom(NULL, 1))
-try(inspect_data_cat_as_dichotom(c(1,0), NULL))
-try(inspect_data_cat_as_dichotom(list(1,0), 1))
-try(inspect_data_cat_as_dichotom(c(1,0), list(1)))
+try(inspect_data_cat_as_dichotom(c(1, 0), NULL))
+try(inspect_data_cat_as_dichotom(list(1, 0), 1))
+try(inspect_data_cat_as_dichotom(c(1, 0), list(1)))
 try(inspect_data_cat_as_dichotom(numeric(0), 0))
 try(inspect_data_cat_as_dichotom(1, numeric(0)))
 try(inspect_data_cat_as_dichotom(NaN, 1))
 try(inspect_data_cat_as_dichotom(NA, 1))
-try(inspect_data_cat_as_dichotom(c(1,0), NA))
-try(inspect_data_cat_as_dichotom(c(1,0), NaN))
-try(inspect_data_cat_as_dichotom(c(1,0), 2))
-
+try(inspect_data_cat_as_dichotom(c(1, 0), NA))
+try(inspect_data_cat_as_dichotom(c(1, 0), NaN))
+try(inspect_data_cat_as_dichotom(c(1, 0), 2))
 }
 \seealso{
 \itemize{

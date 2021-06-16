@@ -75,8 +75,10 @@ z1 <- c(-0.9, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
 try(inspect_prob(z1))
 z2 <- c(NA, 0, 0.1, 0.2, 0.3, 0.4, 0.5)
 try(inspect_prob(z2, allow_nas = FALSE))
-mylist <- list(NULL, TRUE, factor(.5), matrix(0.5),
-         "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5)
+mylist <- list(
+  NULL, TRUE, factor(.5), matrix(0.5),
+  "0.5", list(0.5), NA, NaN, numeric(0), 1.1, -0.5
+)
 try(inspect_prob(mylist[[1]]))
 try(inspect_prob(mylist[[2]]))
 try(inspect_prob(mylist[[3]]))
@@ -88,7 +90,6 @@ try(inspect_prob(mylist[[8]]))
 try(inspect_prob(mylist[[9]]))
 try(inspect_prob(mylist[[10]]))
 try(inspect_prob(mylist[[11]]))
-
 }
 \seealso{
 \itemize{

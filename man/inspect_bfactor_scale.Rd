@@ -41,8 +41,10 @@ inspect_bfactor_scale(x3)
 inspect_bfactor_scale(x4)
 
 # Calls that throw informative error messages:
-mylist <- list(NULL, NA, NaN, 10, "Bayes", "Jeff",
-          "kassraftery", c("jeffreys", "kass-raftery"))
+mylist <- list(
+  NULL, NA, NaN, 10, "Bayes", "Jeff",
+  "kassraftery", c("jeffreys", "kass-raftery")
+)
 try(inspect_bfactor_scale(mylist[[1]]))
 try(inspect_bfactor_scale(mylist[[2]]))
 try(inspect_bfactor_scale(mylist[[3]]))
@@ -51,7 +53,6 @@ try(inspect_bfactor_scale(mylist[[5]]))
 try(inspect_bfactor_scale(mylist[[6]]))
 try(inspect_bfactor_scale(mylist[[7]]))
 try(inspect_bfactor_scale(mylist[[8]]))
-
 }
 \seealso{
 \itemize{

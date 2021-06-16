@@ -38,9 +38,11 @@ inspect_par_beta(x1)
 inspect_par_beta(x2)
 
 # Calls that throw an informative error message:
-mylist <- list(NULL, 1, factor(1, 1),
+mylist <- list(
+  NULL, 1, factor(1, 1),
   matrix(c(1, 1)), c("1", "1"), list(1, 1), c(1, NA),
-  c(1, NaN), c(TRUE, FALSE), numeric(0), c(-1, 1))
+  c(1, NaN), c(TRUE, FALSE), numeric(0), c(-1, 1)
+)
 try(inspect_par_beta(mylist[[1]]))
 try(inspect_par_beta(mylist[[2]]))
 try(inspect_par_beta(mylist[[3]]))
@@ -52,7 +54,6 @@ try(inspect_par_beta(mylist[[8]]))
 try(inspect_par_beta(mylist[[9]]))
 try(inspect_par_beta(mylist[[10]]))
 try(inspect_par_beta(mylist[[11]]))
-
 }
 \seealso{
 \itemize{

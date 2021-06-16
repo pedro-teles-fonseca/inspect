@@ -69,17 +69,16 @@ try(inspect_data_dichotomous(y2, success = success))
 
 # Calls that throw an informative error message:
 try(inspect_data_dichotomous(NULL, 1))
-try(inspect_data_dichotomous(c(1,0), NULL))
-try(inspect_data_dichotomous(list(1,0), 1))
-try(inspect_data_dichotomous(c(1,0), list(1)))
+try(inspect_data_dichotomous(c(1, 0), NULL))
+try(inspect_data_dichotomous(list(1, 0), 1))
+try(inspect_data_dichotomous(c(1, 0), list(1)))
 try(inspect_data_dichotomous(numeric(0), 0))
 try(inspect_data_dichotomous(1, numeric(0)))
 try(inspect_data_dichotomous(NaN, 1))
 try(inspect_data_dichotomous(NA, 1))
-try(inspect_data_dichotomous(c(1,0), NA))
-try(inspect_data_dichotomous(c(1,0), NaN))
-try(inspect_data_dichotomous(c(1,0), 2))
-
+try(inspect_data_dichotomous(c(1, 0), NA))
+try(inspect_data_dichotomous(c(1, 0), NaN))
+try(inspect_data_dichotomous(c(1, 0), 2))
 }
 \seealso{
 \itemize{
