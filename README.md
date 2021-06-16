@@ -22,49 +22,49 @@ MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensour
 The `inspector` package provides utility functions that implement and
 automate common sets of validation tasks, namely:
 
-  - `inspect_prob()` checks if an object is a numeric vector of valid
+-   `inspect_prob()` checks if an object is a numeric vector of valid
     probability values.
 
-  - `inspect_log_base()` checks if an object is a valid logarithmic
+-   `inspect_log_base()` checks if an object is a valid logarithmic
     base.
 
-  - `inspect_true_or_false()` checks if an object is a non-missing
+-   `inspect_true_or_false()` checks if an object is a non-missing
     logical value.
 
-  - `inspect_bfactor()` checks if an object is a numeric vector of valid
+-   `inspect_bfactor()` checks if an object is a numeric vector of valid
     Bayes factors values.
 
-  - `inspect_bfactor_log()` checks if an object is a numeric vector of
+-   `inspect_bfactor_log()` checks if an object is a numeric vector of
     valid logarithmic Bayes factors values.
 
-  - `inspect_bfactor_scale()` validates Bayes factor interpretation
+-   `inspect_bfactor_scale()` validates Bayes factor interpretation
     scales (from the [`pcal`](https://ptfonseca.github.io/pcal/)
     package).
 
-  - `inspect_categories()` validates factor levels.
+-   `inspect_categories()` validates factor levels.
 
-  - `inspect_character()` validates character vectors.
+-   `inspect_character()` validates character vectors.
 
-  - `inspect_character_match()` validates character values with
+-   `inspect_character_match()` validates character values with
     predefined allowed values.
 
-  - `inspect_data_dichotomous()` validates dichotomous data
+-   `inspect_data_dichotomous()` validates dichotomous data
 
-  - `inspect_data_categorical()` and `inspect_data_cat_as_dichotomous()`
+-   `inspect_data_categorical()` and `inspect_data_cat_as_dichotomous()`
     validate categorical data.
 
-  - `inspect_par_bernoulli()` validates parameters for the Bernoulli and
+-   `inspect_par_bernoulli()` validates parameters for the Bernoulli and
     Binomial distributions.
 
-  - `inspect_par_multinomial()` validates parameters for the Multinomial
+-   `inspect_par_multinomial()` validates parameters for the Multinomial
     distribution.
 
-  - `inspect_par_beta()` validates parameters for the Beta distribution.
+-   `inspect_par_beta()` validates parameters for the Beta distribution.
 
-  - `inspect_par_dirichlet()` validates parameters for the Dirichlet
+-   `inspect_par_dirichlet()` validates parameters for the Dirichlet
     distribution.
 
-  - `inspect_par_haldane()` validates parameters for the Haldane
+-   `inspect_par_haldane()` validates parameters for the Haldane
     distribution.
 
 These functions are particularly useful to validate inputs, intermediate
@@ -87,7 +87,6 @@ Imagine we want to write a function that simulates `n` flips of the same
 coin. Assuming that `bias` is the probability of the “heads” outcome:
 
 ``` r
-
 set.seed(123)
 
 flip_coins <- function(n, bias){ 
@@ -106,7 +105,6 @@ and is a numeric vector of length 1. This results an a quite verbose
 function body:
 
 ``` r
-
 set.seed(123)
 
 flip_coins <- function(n, bias){
@@ -143,7 +141,6 @@ of inputs we can use `inspect_par_bernoulli`, since `bias` is the
 parameter of a Bernoulli distribution:
 
 ``` r
-
 set.seed(123)
 
 flip_coins <- function(n, bias){
@@ -240,14 +237,14 @@ bfactor_to_prob(c(2.1, 0.5, 11))
 
 If you find a bug, please file an issue with a minimal reproducible
 example on [GitHub](https://github.com/ptfonseca/inspector/issues).
-Feature requests are also welcome. You can contact me at
+Feature requests are also welcome. You can find me at
 <ptfonseca@iseg.ulisboa.pt>.
 
 ## References
 
-<div id="refs" class="references hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-bergerDelampady1987">
+<div id="ref-bergerDelampady1987" class="csl-entry">
 
 Berger, James O., and Mohan Delampady. 1987. “Testing Precise
 Hypotheses.” *Statistical Science* 2 (3): 317–35.
