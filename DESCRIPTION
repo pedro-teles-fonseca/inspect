@@ -1,7 +1,7 @@
 Package: inspector
 Type: Package
 Title: Validation of Arguments and Objects in User-Defined Functions
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: c(
   person("Pedro", "Fonseca", email = "pedro.teles.fonseca@phd.iseg.ulisboa.pt", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5708-081X")),
   person(given = "FCT", role = "fnd"))
