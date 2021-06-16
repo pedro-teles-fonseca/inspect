@@ -1,31 +1,47 @@
 
 #' @title Validate vectors of probabilities
 #'
-#' @description `inspect_prob` checks if an object is a numeric vector of valid probability values. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_prob` checks if an object is a numeric vector of valid
+#' probability values. This can be useful to validate inputs, intermediate
+#' calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
-#' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x` are allowed. If `FALSE`, execution is stopped and an error message is thrown in case there are `NA` or `NaN` values in `x`.
-#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or `NaN` values in `x` generates a warning message. `NA` and `NaN` values pass silently otherwise (if `allow_nas` is set to `TRUE`).
+#' @param allow_nas Logical value. If `TRUE` then `NA` and `NaN` values in `x`
+#' are allowed. If `FALSE`, execution is stopped and an error message is thrown
+#' in case there are `NA` or `NaN` values in `x`.
+#' @param warning_nas Logical value. If `TRUE` then the presence of `NA` or
+#' `NaN` values in `x` generates a warning message. `NA` and `NaN` values pass
+#' silently otherwise (if `allow_nas` is set to `TRUE`).
 #'
-#' @details `inspect_prob` conducts a series of tests to check if `x` is a numeric vector of valid probability values. Namely, `inspect_prob` checks if:
+#' @details `inspect_prob` conducts a series of tests to check if `x` is a
+#' numeric vector of valid probability values. Namely, `inspect_prob` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is an atomic vector.
 #' * `x` is numeric.
 #' * `x` has `NA` or `NaN` values.
 #' *  The values of `x` are in the \[0, 1\] interval.
 #'
-#' @return `inspect_prob` does not return any output. There are three possible outcomes:
+#' @return `inspect_prob` does not return any output. There are three possible
+#' outcomes:
 #' * The call is silent if:
-#'   * `x` is a numeric vector of valid probability values and there are no `NA` or `NaN` values in `x`.
-#'   * `x` is a numeric vector of valid probability values, there are some `NA` or `NaN` values in `x`, `allow_nas` is set to `TRUE` and `warning_nas` is set to `FALSE`.
-#' * An informative warning message is thrown if `x` is a numeric vector of valid probability values, there are some `NA` or `NaN` values in `x` and both `allow_nas` and `warning_nas` are set to `TRUE`.
+#'   * `x` is a numeric vector of valid probability values and there are no `NA`
+#'    or `NaN` values in `x`.
+#'   * `x` is a numeric vector of valid probability values, there are some `NA`
+#'   or `NaN` values in `x`, `allow_nas` is set to `TRUE` and `warning_nas` is
+#'   set to `FALSE`.
+#' * An informative warning message is thrown if `x` is a numeric vector of
+#' valid probability values, there are some `NA` or `NaN` values in `x` and both
+#' `allow_nas` and `warning_nas` are set to `TRUE`.
 #' * An informative error message is thrown and the execution is stopped if:
 #'   * `x` is not a numeric vector of valid probability values.
-#'   * `x` is a numeric vector of valid probability values, there are some `NA` or `NaN` values in `x` and `allow_nas` is set to `FALSE`.
+#'   * `x` is a numeric vector of valid probability values, there are some `NA`
+#'   or `NaN` values in `x` and `allow_nas` is set to `FALSE`.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to check if an object is a valid Bernoulli/Binomial proportion.
-#' * \code{\link[inspector]{inspect_par_multinomial}} to check if an object is a numeric vector of valid Multinomial proportions.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to check if an object is a
+#' valid Bernoulli/Binomial proportion.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to check if an object is
+#' a numeric vector of valid Multinomial proportions.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -62,7 +78,7 @@
 #'
 #' @export
 
-inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
+inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
@@ -71,31 +87,31 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 
   x_filtered <- x[!is.na(x)]
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+  if (any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
-  if(length(x) == 0){
+  if (length(x) == 0) {
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
-  if(all(is.na(x))){
+  if (all(is.na(x))) {
     stop(paste("Invalid argument: all elements of", output_name, "are NA or NaN."))
   }
-  if(any(is.na(x))){
-    if(isFALSE(allow_nas)) {
+  if (any(is.na(x))) {
+    if (isFALSE(allow_nas)) {
       stop(paste("Invalid argument: There are NA or NaN values in ", paste0(output_name, ".")))
     } else {
-      if(isTRUE(warning_nas)){
+      if (isTRUE(warning_nas)) {
         warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
       }
     }
   }
-  if(isFALSE(is.numeric(x))){
+  if (isFALSE(is.numeric(x))) {
     stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
-  if(any(x_filtered < 0, x_filtered > 1)){
+  if (any(x_filtered < 0, x_filtered > 1)) {
     stop(paste("Invalid argument: all elements of",  output_name, "must be in the [0, 1] interval."))
   }
 }
@@ -162,36 +178,36 @@ inspect_prob <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @export
 
-inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
+inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
   output_name <- deparse(substitute(x))
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+  if (any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
-  if(length(x) == 0){
+  if (length(x) == 0) {
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
-  if(all(is.na(x))){
+  if (all(is.na(x))) {
     stop(paste("Invalid argument: all elements of ", output_name, "are NA or NaN."))
   }
-  if(isFALSE(is.numeric(x))){
+  if (isFALSE(is.numeric(x))) {
     stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
-  if(any(x[!is.na(x)] < 0)){
+  if (any(x[!is.na(x)] < 0)) {
     stop(paste("Invalid argument: all elements of", output_name, "must be non-negative."))
   }
-  if(any(is.na(x))){
-    if(isFALSE(allow_nas)) {
+  if (any(is.na(x))) {
+    if (isFALSE(allow_nas)) {
       stop(paste("Invalid argument: There are NA or NaN values in ", paste0(output_name, ".")))
     } else {
-      if(isTRUE(warning_nas)){
+      if (isTRUE(warning_nas)) {
         warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
       }
     }
@@ -256,33 +272,33 @@ inspect_bfactor <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @export
 
-inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
+inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE) {
 
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
   output_name <- deparse(substitute(x))
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+  if (any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
-  if(length(x) == 0){
+  if (length(x) == 0) {
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
-  if(all(is.na(x))){
+  if (all(is.na(x))) {
     stop(paste("Invalid argument: all elements of ", output_name, "are NA or NaN."))
   }
-  if(isFALSE(is.numeric(x))){
+  if (isFALSE(is.numeric(x))) {
     stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
-  if(any(is.na(x))){
-    if(isFALSE(allow_nas)) {
+  if (any(is.na(x))) {
+    if (isFALSE(allow_nas)) {
       stop(paste("Invalid argument: There are NA or NaN values in ", paste0(output_name, ".")))
     } else {
-      if(isTRUE(warning_nas)){
+      if (isTRUE(warning_nas)) {
         warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
       }
     }
@@ -335,25 +351,25 @@ inspect_bfactor_log <- function(x, allow_nas = TRUE, warning_nas = TRUE){
 #'
 #' @export
 
-inspect_log_base <- function(x){
+inspect_log_base <- function(x) {
 
   output_name <- deparse(substitute(x))
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
 
-  if(any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))
-    ){
+  if (any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))
+    ) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector of length 1."))
   }
-  if(is.na(x)){
+  if (is.na(x)) {
     stop(paste("Invalid argument:", output_name, "is NA or NaN."))
   }
-  if(isFALSE(is.numeric(x))){
+  if (isFALSE(is.numeric(x))) {
     stop(paste("Invalid argument: the type of", output_name, "must be numeric."))
   }
-  if(isTRUE(x <= 0)){
+  if (isTRUE(x <= 0)) {
     stop(paste("Invalid argument:", output_name, "must be positive."))
   }
 }
@@ -406,23 +422,23 @@ inspect_log_base <- function(x){
 #'
 #' @export
 
-inspect_bfactor_scale <- function(x){
+inspect_bfactor_scale <- function(x) {
 
   output_name <- deparse(substitute(x))
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))){
+  if (any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector of length 1."))
   }
-  if(is.na(x)){
+  if (is.na(x)) {
     stop(paste("Invalid argument:", output_name, "is NA or NaN."))
   }
-  if(!is.character(x)){
+  if (!is.character(x)) {
     stop(paste("Invalid argument: the type of", output_name, "must be character."))
   }
-  if(isFALSE(tolower(x) %in% c("jeffreys", "kass-raftery"))){
+  if (isFALSE(tolower(x) %in% c("jeffreys", "kass-raftery"))) {
     stop(paste("Invalid argument:", output_name, "must be either 'jeffreys' or 'kass-raftery'."))
   }
 }
@@ -465,20 +481,20 @@ inspect_bfactor_scale <- function(x){
 #'
 #' @export
 
-inspect_true_or_false <- function(x){
+inspect_true_or_false <- function(x) {
 
   output_name <- deparse(substitute(x))
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))){
+  if (any(isFALSE(is.vector(x)), isFALSE(is.atomic(x)), isFALSE(length(x) == 1))) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector of length 1."))
   }
-  if(is.na(x)){
+  if (is.na(x)) {
     stop(paste("Invalid argument:", output_name, "is NA or NaN."))
   }
-  if(isFALSE(is.logical(x))){
+  if (isFALSE(is.logical(x))) {
     stop(paste("Invalid argument: the type of", output_name, "must be logical."))
   }
 }
@@ -502,7 +518,7 @@ inspect_true_or_false <- function(x){
 #'
 #' @seealso
 #' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotomous}} to validate categorical data.
+#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical data.
 #' * \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
 #' * \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
 #' * \code{\link[inspector]{inspect_character}} to validate character vectors.
@@ -539,26 +555,26 @@ inspect_true_or_false <- function(x){
 #'
 #' @export
 
-inspect_categories <- function(x){
+inspect_categories <- function(x) {
 
   output_name <- deparse(substitute(x))
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(isFALSE(is.atomic(x))){
+  if (isFALSE(is.atomic(x))) {
     stop(paste("Invalid argument:", output_name, "must be of an atomic type."))
   }
-  if(isTRUE(length(x) == 0)){
+  if (isTRUE(length(x) == 0)) {
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
-  if(isFALSE(typeof(x) %in% c("logical", "integer", "double", "character"))){
+  if (isFALSE(typeof(x) %in% c("logical", "integer", "double", "character"))) {
     stop(paste("Invalid argument: the type of", output_name, "must be 'logical', 'integer', 'double' or 'character'."))
   }
-  if(any(is.na(x))){
+  if (any(is.na(x))) {
     stop(paste("Invalid argument: there are NA or NaN values in",  paste0(output_name, ".")))
   }
-  if(isFALSE(length(unique(x)) == length(x))){
+  if (isFALSE(length(unique(x)) == length(x))) {
     stop(paste("Invalid argument: all element of", output_name, "must be unique."))
   }
 }
@@ -615,7 +631,7 @@ inspect_categories <- function(x){
 #'
 #' @export
 
-inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
+inspect_character_match <- function(x, allowed, case_sensitive = FALSE) {
 
   inspect_character(allowed)
   inspect_true_or_false(case_sensitive)
@@ -623,24 +639,24 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
   x_output_name <- deparse(substitute(x))
 
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", x_output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)), isFALSE(length(x) == 1))){
+  if (any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)), isFALSE(length(x) == 1))) {
     stop(paste("Invalid argument:", x_output_name, "must be an atomic vector of length 1."))
   }
-  if(is.na(x)){
+  if (is.na(x)) {
     stop(paste("Invalid argument:", x_output_name, "is NA or NaN."))
   }
-  if(isFALSE(is.character(x))){
+  if (isFALSE(is.character(x))) {
     stop(paste("Invalid argument: the type of", x_output_name, "must be character."))
   }
-  if(isFALSE(case_sensitive)){
-    if(isFALSE(tolower(x) %in% tolower(allowed))){
+  if (isFALSE(case_sensitive)) {
+    if (isFALSE(tolower(x) %in% tolower(allowed))) {
       stop(paste("Invalid argument:", x_output_name, "=", paste0("'", x, "'"), "is not allowed."))
     }
   } else {
-    if(isFALSE(x %in% allowed)){
+    if (isFALSE(x %in% allowed)) {
       stop(paste("Invalid argument:", x_output_name, "=", paste0("'", x, "'"), "is not allowed."))
     }
   }
@@ -703,35 +719,35 @@ inspect_character_match <- function(x, allowed, case_sensitive = FALSE){
 #'
 #' @export
 
-inspect_character <- function(x, allow_nas = TRUE, warning_nas = FALSE){
+inspect_character <- function(x, allow_nas = TRUE, warning_nas = FALSE) {
 
   inspect_true_or_false(allow_nas)
   inspect_true_or_false(warning_nas)
 
   output_name <- deparse(substitute(x))
 
-  if(is.null(x)){
+  if (is.null(x)) {
     stop(paste("Invalid argument:", output_name, "is NULL."))
   }
-  if(any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))){
+  if (any(isFALSE(is.atomic(x)), isFALSE(is.vector(x)))) {
     stop(paste("Invalid argument:", output_name, "must be an atomic vector."))
   }
-  if(length(x) == 0){
+  if (length(x) == 0) {
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
-  if(all(is.na(x))){
+  if (all(is.na(x))) {
     stop(paste("Invalid argument: all elements of", output_name, "are NA or NaN."))
   }
-  if(any(is.na(x))){
-    if(isFALSE(allow_nas)) {
+  if (any(is.na(x))) {
+    if (isFALSE(allow_nas)) {
       stop(paste("Invalid argument: There are NA or NaN values in", paste0(output_name, ".")))
     } else {
-      if(isTRUE(warning_nas)){
+      if (isTRUE(warning_nas)) {
         warning(paste("There are NA or NaN values in", paste0(output_name, ".")))
       }
     }
   }
-  if(isFALSE(is.character(x))){
+  if (isFALSE(is.character(x))) {
     stop(paste("Invalid argument: the type of", output_name, "must be character."))
   }
 }
