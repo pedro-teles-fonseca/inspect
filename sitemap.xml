@@ -1,60 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ptfonseca.github.io/inspector//index.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/404.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_bfactor.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_bfactor_log.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_bfactor_scale.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/authors.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_categories.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/index.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_character.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/news/index.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_character_match.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_data_cat_as_dichotomous.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_bfactor.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_data_categorical.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_bfactor_log.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_data_dichotomous.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_bfactor_scale.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_log_base.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_categories.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_par_bernoulli.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_character.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_par_beta.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_character_match.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_par_dirichlet.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_data_cat_as_dichotomous.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_par_haldane.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_data_categorical.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_par_multinomial.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_data_dichotomous.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_prob.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_log_base.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspect_true_or_false.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_par_bernoulli.html</loc>
   </url>
   <url>
-    <loc>https://ptfonseca.github.io/inspector//reference/inspector-package.html</loc>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_par_beta.html</loc>
+  </url>
+  <url>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_par_dirichlet.html</loc>
+  </url>
+  <url>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_par_haldane.html</loc>
+  </url>
+  <url>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_par_multinomial.html</loc>
+  </url>
+  <url>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_prob.html</loc>
+  </url>
+  <url>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspect_true_or_false.html</loc>
+  </url>
+  <url>
+    <loc>https://ptfonseca.github.io/inspector/reference/inspector-package.html</loc>
   </url>
 </urlset>

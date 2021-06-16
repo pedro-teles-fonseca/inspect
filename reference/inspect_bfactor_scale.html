@@ -45,6 +45,8 @@
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -66,9 +68,15 @@
 </script>
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -82,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">inspector</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
       </span>
     </div>
 
@@ -98,7 +106,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ptfonseca/inspector/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -124,7 +132,7 @@
     <p><code>inspect_bfactor_scale</code> checks if an object is a character vector of <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1 that is eligible to represent one of the Bayes factor interpretation scales available in the <code>pcal</code> package. This can be useful to validate inputs in user-defined functions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,37 +172,45 @@
 </div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Calls that pass silently:</span>
-<span class='va'>x1</span> <span class='op'>&lt;-</span> <span class='st'>"Jeffreys"</span>
-<span class='va'>x2</span> <span class='op'>&lt;-</span> <span class='st'>"jeffreys"</span>
-<span class='va'>x3</span> <span class='op'>&lt;-</span> <span class='st'>"kass-raftery"</span>
-<span class='va'>x4</span> <span class='op'>&lt;-</span> <span class='st'>"Kass-Raftery"</span>
-<span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x1</span><span class='op'>)</span>
-<span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x2</span><span class='op'>)</span>
-<span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x3</span><span class='op'>)</span>
-<span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x4</span><span class='op'>)</span>
-
-<span class='co'># Calls that throw informative error messages:</span>
-<span class='va'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='cn'>NULL</span>, <span class='cn'>NA</span>, <span class='cn'>NaN</span>, <span class='fl'>10</span>, <span class='st'>"Bayes"</span>, <span class='st'>"Jeff"</span>,
-          <span class='st'>"kassraftery"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"jeffreys"</span>, <span class='st'>"kass-raftery"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[1]]) : 
-#&gt;   Invalid argument: mylist[[1]] is NULL.</div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[2]]) : 
-#&gt;   Invalid argument: mylist[[2]] is NA or NaN.</div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>3</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[3]]) : 
-#&gt;   Invalid argument: mylist[[3]] is NA or NaN.</div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[4]]) : 
-#&gt;   Invalid argument: the type of mylist[[4]] must be character.</div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>5</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[5]]) : 
-#&gt;   Invalid argument: mylist[[5]] must be either 'jeffreys' or 'kass-raftery'.</div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>6</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[6]]) : 
-#&gt;   Invalid argument: mylist[[6]] must be either 'jeffreys' or 'kass-raftery'.</div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>7</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[7]]) : 
-#&gt;   Invalid argument: mylist[[7]] must be either 'jeffreys' or 'kass-raftery'.</div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>8</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Error in inspect_bfactor_scale(mylist[[8]]) : 
-#&gt;   Invalid argument: mylist[[8]] must be an atomic vector of length 1.</div><div class='input'>
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># Calls that pass silently:</span></span>
+<span class='r-in'><span class='va'>x1</span> <span class='op'>&lt;-</span> <span class='st'>"Jeffreys"</span></span>
+<span class='r-in'><span class='va'>x2</span> <span class='op'>&lt;-</span> <span class='st'>"jeffreys"</span></span>
+<span class='r-in'><span class='va'>x3</span> <span class='op'>&lt;-</span> <span class='st'>"kass-raftery"</span></span>
+<span class='r-in'><span class='va'>x4</span> <span class='op'>&lt;-</span> <span class='st'>"Kass-Raftery"</span></span>
+<span class='r-in'><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x1</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x2</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x3</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>x4</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Calls that throw informative error messages:</span></span>
+<span class='r-in'><span class='va'>mylist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='cn'>NULL</span>, <span class='cn'>NA</span>, <span class='cn'>NaN</span>, <span class='fl'>10</span>, <span class='st'>"Bayes"</span>, <span class='st'>"Jeff"</span>,</span>
+<span class='r-in'>          <span class='st'>"kassraftery"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"jeffreys"</span>, <span class='st'>"kass-raftery"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[1]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: mylist[[1]] is NULL.</span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[2]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: mylist[[2]] is NA or NaN.</span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>3</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[3]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: mylist[[3]] is NA or NaN.</span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[4]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: the type of mylist[[4]] must be character.</span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>5</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[5]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: mylist[[5]] must be either 'jeffreys' or 'kass-raftery'.</span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>6</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[6]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: mylist[[6]] must be either 'jeffreys' or 'kass-raftery'.</span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>7</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[7]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: mylist[[7]] must be either 'jeffreys' or 'kass-raftery'.</span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>inspect_bfactor_scale</span><span class='op'>(</span><span class='va'>mylist</span><span class='op'>[[</span><span class='fl'>8</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Error in inspect_bfactor_scale(mylist[[8]]) : </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Invalid argument: mylist[[8]] must be an atomic vector of length 1.</span>
+<span class='r-in'></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -206,11 +222,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Pedro Fonseca, FCT.</p>
+  <p><p>Developed by Pedro Fonseca, FCT.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -218,6 +234,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -1,9 +1,9 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1.9000
-pkgdown_sha: 6094ac3dd80a1f3f1d4e2f47d0ed4716d51362b0
+pkgdown: 1.6.1.9001
+pkgdown_sha: 9ce6af43b55cd21e9563526e12a12d1243657bf6
 articles: {}
-last_built: 2020-11-16T16:49Z
+last_built: 2021-06-16T16:33Z
 urls:
-  reference: https://ptfonseca.github.io/inspector//reference
-  article: https://ptfonseca.github.io/inspector//articles
+  reference: https://ptfonseca.github.io/inspector/reference
+  article: https://ptfonseca.github.io/inspector/articles
 
