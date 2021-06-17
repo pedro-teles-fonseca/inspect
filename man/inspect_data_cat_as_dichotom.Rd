@@ -12,40 +12,60 @@ inspect_data_cat_as_dichotom(
 )
 }
 \arguments{
-\item{data, success}{Arbitrary objects. \code{success} is meant to indicate the value of \code{data} that corresponds to a success.}
+\item{data, success}{Arbitrary objects. \code{success} is meant to indicate the
+value of \code{data} that corresponds to a success.}
 
-\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{data} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{data}.}
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in
+\code{data} are allowed. If \code{FALSE}, execution is stopped and an error message is
+thrown in case there are \code{NA} or \code{NaN} values in \code{data}.}
 
-\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{data} generates a warning message. \code{NA} and \code{NaN} values pass silently otherwise (if \code{allow_nas} is set to\code{TRUE}).}
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or
+\code{NaN} values in \code{data} generates a warning message. \code{NA} and \code{NaN} values
+pass silently otherwise (if \code{allow_nas} is set to\code{TRUE}).}
 }
 \value{
-\code{inspect_data_cat_as_dichotom} does not return any output. There are three possible outcomes:
+\code{inspect_data_cat_as_dichotom} does not return any output. There are
+three possible outcomes:
 \itemize{
 \item The call is silent if:
 \itemize{
-\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data and there are no \code{NA} or \code{NaN} values in \code{data}.
-\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data, there are some \code{NA} or \code{NaN} values in \code{data}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+\item \code{data} contains valid categorical data that is eligible to be used as
+dichotomous data and there are no \code{NA} or \code{NaN} values in \code{data}.
+\item \code{data} contains valid categorical data that is eligible to be used as
+dichotomous data, there are some \code{NA} or \code{NaN} values in \code{data},
+\code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
 }
 \item An informative warning message is thrown if:
 \itemize{
-\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data and \code{success} is not observed in \code{data}.
-\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data, there are \code{NA} or \code{NaN} values in \code{data} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item \code{data} contains valid categorical data that is eligible to be used as
+dichotomous data and \code{success} is not observed in \code{data}.
+\item \code{data} contains valid categorical data that is eligible to be used as
+dichotomous data, there are \code{NA} or \code{NaN} values in \code{data} and both
+\code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
 }
 \item An informative error message is thrown and the execution is stopped if:
 \itemize{
-\item \code{data} does not contain valid categorical data that is eligible to be used as dichotomous data.
-\item \code{data} contains valid categorical data that is eligible to be used as dichotomous data, there are some \code{NA} or \code{NaN} values in \code{data} and \code{allow_nas} is set to \code{FALSE}.
+\item \code{data} does not contain valid categorical data that is eligible to be
+used as dichotomous data.
+\item \code{data} contains valid categorical data that is eligible to be used as
+dichotomous data, there are some \code{NA} or \code{NaN} values in \code{data} and
+\code{allow_nas} is set to \code{FALSE}.
 }
 }
 }
 \description{
-\code{inspect_data_cat_as_dichotom} checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions.
+\code{inspect_data_cat_as_dichotom} checks if an object contains
+valid categorical data that is eligible to be used as dichotomous data. This
+can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_data_cat_as_dichotom} conducts a series of tests to check if \code{data} contains valid categorical data that is eligible to be used as dichotomous data. Namely, \code{inspect_data_cat_as_dichotom} checks if:
+\code{inspect_data_cat_as_dichotom} conducts a series of tests to check
+if \code{data} contains valid categorical data that is eligible to be used as
+dichotomous data. Namely, \code{inspect_data_cat_as_dichotom} checks if:
 \itemize{
 \item \code{data} and \code{success} are \code{NULL} or empty.
-\item \code{data} and \code{success} are atomic and have an eligible data type (logical, integer, double, character).
+\item \code{data} and \code{success} are atomic and have an eligible data type (logical,
+integer, double, character).
 \item \code{data} and \code{success} have \code{NA} or \code{NaN} values.
 \item \code{success} has \code{\link[base]{length}} 1.
 \item \code{success} is observed in \code{data}.
@@ -88,8 +108,11 @@ try(inspect_data_cat_as_dichotom(c(1, 0), 2))
 \seealso{
 \itemize{
 \item \code{\link[inspector]{inspect_data_categorical}} to validate categorical.
-\item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
-\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
+\item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of
+Multinomial proportions.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous
+data.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate
+Bernoulli/Binomial proportions.
 }
 }

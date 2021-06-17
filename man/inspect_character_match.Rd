@@ -14,17 +14,24 @@ inspect_character_match(x, allowed, case_sensitive = FALSE)
 \item{case_sensitive}{A non-missing logical value.}
 }
 \value{
-\code{inspect_character_match} does not return any output. There are two possible outcomes:
+\code{inspect_character_match} does not return any output. There are two
+possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is a character vector of \code{\link[base]{length}} 1 whose value belongs to the set of allowed values.
+\item The call is silent if \code{x} is a character vector of
+\code{\link[base]{length}} 1 whose value belongs to the set of allowed
+values.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_character_match} checks if an object is a character vector of \code{\link[base]{length}} 1 that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.
+\code{inspect_character_match} checks if an object is a character
+vector of \code{\link[base]{length}} 1 that belongs to a set of allowed
+values. This can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_character_match} conducts a series of tests to check if \code{x} is a character vector of \code{\link[base]{length}} 1 whose value belongs to the set of allowed values. Namely, \code{inspect_character_match} checks if:
+\code{inspect_character_match} conducts a series of tests to check if \code{x}
+is a character vector of \code{\link[base]{length}} 1 whose value belongs to
+the set of allowed values. Namely, \code{inspect_character_match} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector of \code{\link[base]{length}} 1.
@@ -33,7 +40,9 @@ inspect_character_match(x, allowed, case_sensitive = FALSE)
 \item \code{x} is one of the allowed values (as specified in the \code{allowed} argument).
 }
 
-By default, the comparison of \code{x} with \code{allowed} is not case sensitive. If you only want case sensitive matches of \code{x} to \code{allowed} set \code{case_sensitive} to \code{TRUE}.
+By default, the comparison of \code{x} with \code{allowed} is not case sensitive. If
+you only want case sensitive matches of \code{x} to \code{allowed} set \code{case_sensitive}
+to \code{TRUE}.
 }
 \examples{
 # Calls that pass silently:
@@ -66,7 +75,9 @@ try(inspect_character_match(mylist[[9]], "abc"))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_character}} to validate character vectors with arbitrary allowed values.
-\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a non-missing logical value.
+\item \code{\link[inspector]{inspect_character}} to validate character vectors
+with arbitrary allowed values.
+\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a
+non-missing logical value.
 }
 }

@@ -9,31 +9,42 @@ inspect_character(x, allow_nas = TRUE, warning_nas = FALSE)
 \arguments{
 \item{x}{An arbitrary object.}
 
-\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x}
+are allowed. If \code{FALSE}, execution is stopped and an error message is thrown
+in case there are \code{NA} or \code{NaN} values in \code{x}.}
 
-\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} values pass silently otherwise (if \code{allow_nas} is set to \code{TRUE}).}
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or
+\code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} values pass
+silently otherwise (if \code{allow_nas} is set to \code{TRUE}).}
 }
 \value{
-\code{inspect_character} does not return any output. There are three possible outcomes:
+\code{inspect_character} does not return any output. There are three
+possible outcomes:
 \itemize{
 \item The call is silent if:
 \itemize{
 \item \code{x} is a character vector and there are no \code{NA} or \code{NaN} values in \code{x}.
-\item \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+\item \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x},
+\code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
 }
-\item An informative warning message is thrown if \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative warning message is thrown if \code{x} is a character vector,
+there are some \code{NA} or \code{NaN} values in \code{x} and both \code{allow_nas} and
+\code{warning_nas} are set to \code{TRUE}.
 \item An informative error message is thrown if:
 \itemize{
 \item \code{x} is not a character vector.
-\item \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x} and \code{allow_nas} is set to \code{FALSE}.
+\item \code{x} is a character vector, there are some \code{NA} or \code{NaN} values in \code{x}
+and \code{allow_nas} is set to \code{FALSE}.
 }
 }
 }
 \description{
-\code{inspect_character} checks if an object is a character vector. This can be useful to validate inputs in user-defined functions.
+\code{inspect_character} checks if an object is a character vector.
+This can be useful to validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_character} conducts a series of tests to check if \code{x} is a character vector. Namely, \code{inspect_character} checks if:
+\code{inspect_character} conducts a series of tests to check if \code{x} is a
+character vector. Namely, \code{inspect_character} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector.
@@ -73,7 +84,9 @@ try(inspect_character(mylist[[8]]))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_character_match}} to validate character vectors with predefined allowed values.
-\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a non-missing logical value.
+\item \code{\link[inspector]{inspect_character_match}} to validate character
+vectors with predefined allowed values.
+\item \code{\link[inspector]{inspect_true_or_false}} to check if an object is a
+non-missing logical value.
 }
 }

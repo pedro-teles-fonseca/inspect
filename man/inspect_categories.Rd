@@ -10,17 +10,22 @@ inspect_categories(x)
 \item{x}{An arbitrary object.}
 }
 \value{
-\code{inspect_categories} does not return any output. There are two possible outcomes:
+\code{inspect_categories} does not return any output. There are two
+possible outcomes:
 \itemize{
 \item The call is silent if \code{x} is eligible to be used as the levels of a factor.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_categories} checks if an object is eligible to be used as the levels of a factor. This can be useful to validate inputs in user-defined functions.
+\code{inspect_categories} checks if an object is eligible to be used
+as the levels of a factor. This can be useful to validate inputs in
+user-defined functions.
 }
 \details{
-\code{inspect_categories} conducts a series of tests to check if \code{x} is eligible to be used as the levels of a factor. Namely, \code{inspect_categories} checks if:
+\code{inspect_categories} conducts a series of tests to check if \code{x}
+is eligible to be used as the levels of a factor. Namely,
+\code{inspect_categories} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is atomic.
@@ -62,11 +67,17 @@ try(inspect_categories(mylist[[6]]))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical data.
-\item \code{\link[inspector]{inspect_par_bernoulli}} to validate Bernoulli/Binomial proportions.
-\item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of Multinomial proportions.
+\item \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous
+data.
+\item \code{\link[inspector]{inspect_data_categorical}} and
+\code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical
+data.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate
+Bernoulli/Binomial proportions.
+\item \code{\link[inspector]{inspect_par_multinomial}} to validate vectors of
+Multinomial proportions.
 \item \code{\link[inspector]{inspect_character}} to validate character vectors.
-\item \code{\link[inspector]{inspect_character_match}} to validate character vectors with predefined allowed values.
+\item \code{\link[inspector]{inspect_character_match}} to validate character
+vectors with predefined allowed values.
 }
 }

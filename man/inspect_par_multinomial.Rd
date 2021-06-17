@@ -10,17 +10,22 @@ inspect_par_multinomial(x)
 \item{x}{An arbitrary object.}
 }
 \value{
-\code{inspect_par_multinomial} does not return any output. There are two possible outcomes:
+\code{inspect_par_multinomial} does not return any output.
+There are two possible outcomes:
 \itemize{
 \item The call is silent if \code{x} is an eligible vector of Multinomial proportions.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_par_multinomial} checks if an object is an eligible vector of Multinomial proportions. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+\code{inspect_par_multinomial} checks if an object is an eligible
+vector of Multinomial proportions. This can be useful to validate inputs,
+intermediate calculations or outputs in user-defined functions.
 }
 \details{
-\code{inspect_par_multinomial} conducts a series of tests to check if \code{x} is an eligible vector of Multinomial proportions. Namely, \code{inspect_par_multinomial} checks if:
+\code{inspect_par_multinomial} conducts a series of tests to check if
+\code{x} is an eligible vector of Multinomial proportions. Namely,
+\code{inspect_par_multinomial} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector
@@ -58,11 +63,18 @@ try(inspect_par_multinomial(mylist[[12]]))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
-\item \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
-\item \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
-\item \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
-\item \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical data.
-\item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for
+the Bernoulli/Binomial distribution.
+\item \code{\link[inspector]{inspect_par_beta}} to validate parameters for the
+Beta distribution.
+\item \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for
+the Dirichlet distribution.
+\item \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the
+Haldane distribution.
+\item \code{\link[inspector]{inspect_data_categorical}} and
+\code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical
+data.
+\item \code{\link[inspector]{inspect_prob}} to check if an object is a numeric
+vector of valid probability values.
 }
 }

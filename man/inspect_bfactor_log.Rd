@@ -9,31 +9,46 @@ inspect_bfactor_log(x, allow_nas = TRUE, warning_nas = TRUE)
 \arguments{
 \item{x}{An arbitrary object.}
 
-\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x} are allowed. If \code{FALSE}, execution is stopped and an error message is thrown in case there are \code{NA} or \code{NaN} values in \code{x}.}
+\item{allow_nas}{Logical value. If \code{TRUE} then \code{NA} and \code{NaN} values in \code{x}
+are allowed. If \code{FALSE}, execution is stopped and an error message is thrown
+in case there are \code{NA} or \code{NaN} values in \code{x}.}
 
-\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or \code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} values pass silently otherwise (if \code{allow_nas} is \code{TRUE}).}
+\item{warning_nas}{Logical value. If \code{TRUE} then the presence of \code{NA} or
+\code{NaN} values in \code{x} generates a warning message. \code{NA} and \code{NaN} values pass
+silently otherwise (if \code{allow_nas} is \code{TRUE}).}
 }
 \value{
-\code{inspect_bfactor_log} does not return any output. There are three possible outcomes:
+\code{inspect_bfactor_log} does not return any output. There are three
+possible outcomes:
 \itemize{
 \item The call is silent if:
 \itemize{
-\item \code{x} is a numeric vector of valid logarithmic Bayes factor values and there are no \code{NA} or \code{NaN} values in \code{x}.
-\item \code{x} is a numeric vector of valid logarithmic Bayes factor values, there are some \code{NA} or \code{NaN} values in \code{x}, \code{allow_nas} is set to \code{TRUE} and \code{warning_nas} is set to \code{FALSE}.
+\item \code{x} is a numeric vector of valid logarithmic Bayes factor values and
+there are no \code{NA} or \code{NaN} values in \code{x}.
+\item \code{x} is a numeric vector of valid logarithmic Bayes factor values, there
+are some \code{NA} or \code{NaN} values in \code{x}, \code{allow_nas} is set to \code{TRUE} and
+\code{warning_nas} is set to \code{FALSE}.
 }
-\item An informative warning message is given if \code{x} is a numeric vector of valid logarithmic Bayes factor values, there are some \code{NA} or \code{NaN} values in \code{x} and both  \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
+\item An informative warning message is given if \code{x} is a numeric vector of valid
+logarithmic Bayes factor values, there are some \code{NA} or \code{NaN} values in \code{x}
+and both  \code{allow_nas} and \code{warning_nas} are set to \code{TRUE}.
 \item An informative error message is thrown and the execution is stopped if:
 \itemize{
 \item \code{x} is not a numeric vector of valid logarithmic Bayes factor values.
-\item \code{x} is a numeric vector of valid logarithmic Bayes factor values, there are some \code{NA} or \code{NaN} values in \code{x} and \code{allow_nas} is set to \code{FALSE}.
+\item \code{x} is a numeric vector of valid logarithmic Bayes factor values, there
+are some \code{NA} or \code{NaN} values in \code{x} and \code{allow_nas} is set to \code{FALSE}.
 }
 }
 }
 \description{
-\code{inspect_bfactor_log} checks if an object is a numeric vector of valid logarithmic Bayes factor values.  This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+\code{inspect_bfactor_log} checks if an object is a numeric vector
+of valid logarithmic Bayes factor values.  This can be useful to validate
+inputs, intermediate calculations or outputs in user-defined functions.
 }
 \details{
-\code{inspect_bfactor_log} conducts a series of tests to check if \code{x} is a numeric vector of valid logarithmic Bayes factor values. Namely, \code{inspect_bfactor_log} checks if:
+\code{inspect_bfactor_log} conducts a series of tests to check if \code{x} is
+a numeric vector of valid logarithmic Bayes factor values. Namely,
+\code{inspect_bfactor_log} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector.
@@ -72,9 +87,13 @@ try(inspect_bfactor_log(mylist[[9]]))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric vector of valid Bayes factor values.
-\item \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the logarithms of Bayes factors.
-\item \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a Bayes factor interpretation scale.
-\item \code{\link[inspector]{inspect_log_base}} to check if an object is an eligible logarithmic base.
+\item \code{\link[inspector]{inspect_bfactor}} to check if an object is a numeric
+vector of valid Bayes factor values.
+\item \code{\link[pcal]{bfactor_log_interpret}} for the interpretation of the
+logarithms of Bayes factors.
+\item \code{\link[inspector]{inspect_bfactor_scale}} to check if an object is a
+Bayes factor interpretation scale.
+\item \code{\link[inspector]{inspect_log_base}} to check if an object is an
+eligible logarithmic base.
 }
 }

@@ -10,17 +10,24 @@ inspect_par_dirichlet(x)
 \item{x}{An arbitrary object.}
 }
 \value{
-\code{inspect_par_dirichlet} does not return any output. There are two possible outcomes:
+\code{inspect_par_dirichlet} does not return any output. There are two
+possible outcomes:
 \itemize{
-\item The call is silent if \code{x} is an eligible vector of parameters for the Dirichlet distribution.
+\item The call is silent if \code{x} is an eligible vector of parameters for the
+Dirichlet distribution.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_par_dirichlet} checks if an object is an eligible vector of parameters for the Dirichlet distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+\code{inspect_par_dirichlet} checks if an object is an eligible
+vector of parameters for the Dirichlet distribution. This can be useful to
+validate inputs, intermediate calculations or outputs in user-defined
+functions.
 }
 \details{
-\code{inspect_par_dirichlet} conducts a series of tests to check if \code{x} is an eligible vector of parameters for the Dirichlet distribution. Namely, \code{inspect_par_dirichlet} checks if:
+\code{inspect_par_dirichlet} conducts a series of tests to check if \code{x}
+is an eligible vector of parameters for the Dirichlet distribution. Namely,
+\code{inspect_par_dirichlet} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector
@@ -55,9 +62,13 @@ try(inspect_par_dirichlet(mylist[[10]]))
 }
 \seealso{
 \itemize{
-\item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
-\item \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
-\item \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
-\item \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
+\item \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for
+the Bernoulli/Binomial distribution.
+\item \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for
+the Multinomial distribution.
+\item \code{\link[inspector]{inspect_par_beta}} to validate parameters for the
+Beta distribution.
+\item \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the
+Haldane distribution.
 }
 }

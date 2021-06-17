@@ -10,17 +10,23 @@ inspect_true_or_false(x)
 \item{x}{An arbitrary object.}
 }
 \value{
-\code{inspect_true_or_false} does not return any output. There are two possible scenarios:
+\code{inspect_true_or_false} does not return any output. There are two
+possible scenarios:
 \itemize{
-\item The call is silent if \code{x} is a non-missing logical vector of \code{\link[base]{length}} 1.
+\item The call is silent if \code{x} is a non-missing logical vector of
+\code{\link[base]{length}} 1.
 \item An informative error message is thrown otherwise.
 }
 }
 \description{
-\code{inspect_true_or_false} checks if an object is a non-missing logical vector of \code{\link[base]{length}} 1. This can be useful to validate inputs in user-defined functions.
+\code{inspect_true_or_false} checks if an object is a non-missing
+logical vector of \code{\link[base]{length}} 1. This can be useful to
+validate inputs in user-defined functions.
 }
 \details{
-\code{inspect_true_or_false} conducts a series of tests to check if \code{x} is a non-missing logical vector of \code{\link[base]{length}} 1. Namely, \code{inspect_true_or_false} checks if:
+\code{inspect_true_or_false} conducts a series of tests to check if \code{x}
+is a non-missing logical vector of \code{\link[base]{length}} 1. Namely,
+\code{inspect_true_or_false} checks if:
 \itemize{
 \item \code{x} is \code{NULL} or empty.
 \item \code{x} is an atomic vector of \code{\link[base]{length}} 1.
@@ -47,6 +53,7 @@ try(inspect_true_or_false(mylist[[6]]))
 \seealso{
 \itemize{
 \item \code{\link[inspector]{inspect_character}} to validate character vectors.
-\item \code{\link[inspector]{inspect_character_match}} to validate character vectors with predefined allowed values.
+\item \code{\link[inspector]{inspect_character_match}} to validate character
+vectors with predefined allowed values.
 }
 }
