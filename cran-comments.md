@@ -13,8 +13,8 @@ checking LazyData ... NOTE
 
 | Platform               | R version | R CMD check | R CMD check --as-cran |
 | -----                  | -----     | -----       | -----                 |
-| macOS Catalina 10.15.5 | R 4.0.1   | Ok          | Ok                    |
-| Ubuntu 20.04 LTS       | R 4.0.1   | Ok          | Ok                    |
+| macOS Catalina 11.3.0  | R 4.1.0   | Ok          | Ok                    |
+| Ubuntu 20.04 LTS       | R 4.0.2   | Ok          | Ok                    |
 
 ### Win-builder
 
@@ -30,7 +30,7 @@ checking LazyData ... NOTE
 | -----                                         | -----     | -----  |
 | macOS 10.13.6 High Sierra, CRAN's setup       | R-release | Ok     |
 | Oracle Solaris 10, x86, 32 bit                | R-release | Ok     |
-| Ubuntu Linux 16.04 LTS, GCC                   | R-devel   | Ok     |
+| Ubuntu Linux 20.04 LTS, GCC                   | R-devel   | Ok     |
 | Fedora Linux, GCC                             | R-devel   | Ok     |
 | Fedora Linux, clang, gfortran                 | R-devel   | Ok     |
 | Debian Linux, GCC                             | R-devel   | Ok     |
