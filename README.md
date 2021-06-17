@@ -73,8 +73,8 @@ and less verbose functions.
 
 ## Installation
 
-The development version of `inspector` can be installed from Github
-using the [`devtools`](https://devtools.r-lib.org) package:
+The development version of `inspector` can be installed from Github with
+the [`devtools`](https://devtools.r-lib.org) package:
 
 ``` r
 # install.packages("devtools")

@@ -69,7 +69,7 @@ These functions are particularly useful to validate inputs, intermediate objects
 ## Installation
 
 The development version of `inspector` can be installed from
-Github using the [`devtools`](https://devtools.r-lib.org) package:
+Github with the [`devtools`](https://devtools.r-lib.org) package:
 
 ```{r, eval=FALSE}
 # install.packages("devtools")
