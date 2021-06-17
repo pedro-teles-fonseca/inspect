@@ -28,13 +28,13 @@ checking LazyData ... NOTE
 
 | Platform                                      | R version | Status |
 | -----                                         | -----     | -----  |
+| Windows Server 2008 R2 SP1, 32/64 bit         | R-release | Ok     |
 | macOS 10.13.6 High Sierra, CRAN's setup       | R-release | Ok     |
 | Oracle Solaris 10, x86, 32 bit                | R-release | Ok     |
 | Ubuntu Linux 20.04 LTS, GCC                   | R-devel   | Ok     |
 | Fedora Linux, GCC                             | R-devel   | Ok     |
 | Fedora Linux, clang, gfortran                 | R-devel   | Ok     |
 | Debian Linux, GCC                             | R-devel   | Ok     |
-| Windows Server 2008 R2 SP1, 32/64 bit         | R-devel   | Ok     |
 
 ### GitHub actions
 
