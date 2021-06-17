@@ -467,7 +467,8 @@ test_that("inspect_par_multinomial 12", {
   x <- c(-0.1, 0.9)
   expect_error(
     inspect_par_multinomial(x),
-    "Invalid argument: all elements of x values must be in the \\(0, 1\\) interval."
+    "Invalid argument:
+    all elements of x values must be in the \\(0, 1\\) interval."
   )
 })
 

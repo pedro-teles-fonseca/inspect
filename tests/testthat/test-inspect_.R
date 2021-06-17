@@ -723,7 +723,8 @@ test_that("inspect_categories 10", {
   x <- complex(1)
   expect_error(
     inspect_categories(x),
-    "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'."
+    "Invalid argument:
+    the type of x must be 'logical', 'integer', 'double' or 'character'."
   )
 })
 
