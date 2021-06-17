@@ -2,7 +2,7 @@
 # inspector 1.0.3
 
 This is a small patch release to fix a note from CRANs checks regarding the 
-"LazyData" option of the DESCRIPTION file.
+"LazyData" option of the DESCRIPTION file. Code readability was also improved.
 
 # inspector 1.0.2
 
