@@ -12,7 +12,7 @@ Status](https://travis-ci.com/ptfonseca/inspector.svg?branch=master)](https://tr
 [![R build
 status](https://github.com/ptfonseca/inspector/workflows/R-CMD-check/badge.svg)](https://github.com/ptfonseca/inspector/actions)
 ![pkgdown](https://github.com/ptfonseca/inspector/workflows/pkgdown/badge.svg)
-[![codecov](https://codecov.io/gh/ptfonseca/inspector/branch/master/graph/badge.svg?branch=master&kill_cache=1)](https://codecov.io/gh/ptfonseca/inspector)
+[![codecov](https://codecov.io/gh/ptfonseca/inspector/branch/master/graph/badge.svg?token=08DXY4X1CR)](https://codecov.io/gh/ptfonseca/inspector)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
