@@ -136,7 +136,10 @@ test_that("inspect_data_dichotomous error 12", {
   x <- complex(1)
   expect_error(
     inspect_data_dichotomous(x, 1),
-    "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'."
+    paste(
+      "Invalid argument:",
+      "the type of x must be 'logical', 'integer', 'double' or 'character'."
+    )
   )
 })
 
@@ -144,7 +147,10 @@ test_that("inspect_data_dichotomous error 13", {
   x <- complex(1)
   expect_error(
     inspect_data_dichotomous(c(1, 0), x),
-    "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'."
+    paste(
+      "Invalid argument:",
+      "the type of x must be 'logical', 'integer', 'double' or 'character'."
+    )
   )
 })
 
@@ -359,7 +365,10 @@ test_that("inspect_data_categorical error 6", {
   x <- complex(1)
   expect_error(
     inspect_data_categorical(x),
-    "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'."
+    paste(
+      "Invalid argument:",
+      "the type of x must be 'logical', 'integer', 'double' or 'character'."
+    )
   )
 })
 
@@ -517,7 +526,10 @@ test_that("inspect_data_cat_as_dichotom error 12", {
   x <- complex(1)
   expect_error(
     inspect_data_cat_as_dichotom(x, 1),
-    "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'"
+    paste(
+      "Invalid argument:",
+      "the type of x must be 'logical', 'integer', 'double' or 'character'"
+    )
   )
 })
 
@@ -525,6 +537,9 @@ test_that("inspect_data_cat_as_dichotom error 13", {
   x <- complex(1)
   expect_error(
     inspect_data_cat_as_dichotom(c(1, 0), x),
-    "Invalid argument: the type of x must be 'logical', 'integer', 'double' or 'character'"
+    paste(
+      "Invalid argument:",
+      "the type of x must be 'logical', 'integer', 'double' or 'character'"
+    )
   )
 })
