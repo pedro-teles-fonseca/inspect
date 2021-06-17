@@ -1,5 +1,5 @@
 
-inspect_equality <- function(x, y, tol = .Machine$double.eps^0.5) {
+inspect_equality <- function(x, y, tol = .Machine$double.eps ^ 0.5) {
   abs(x - y) < tol
 }
 
