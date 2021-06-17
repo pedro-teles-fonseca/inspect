@@ -40,7 +40,8 @@
 
 
 <meta property="og:title" content="Validate character vectors — inspect_character" />
-<meta property="og:description" content="inspect_character checks if an object is a character vector. This can be useful to validate inputs in user-defined functions." />
+<meta property="og:description" content="inspect_character checks if an object is a character vector.
+This can be useful to validate inputs in user-defined functions." />
 
 
 
@@ -129,7 +130,8 @@
     </div>
 
     <div class="ref-description">
-    <p><code>inspect_character</code> checks if an object is a character vector. This can be useful to validate inputs in user-defined functions.</p>
+    <p><code>inspect_character</code> checks if an object is a character vector.
+This can be useful to validate inputs in user-defined functions.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_character</span><span class='op'>(</span><span class='va'>x</span>, allow_nas <span class='op'>=</span> <span class='cn'>TRUE</span>, warning_nas <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></code></pre></div>
@@ -143,31 +145,41 @@
     </tr>
     <tr>
       <th>allow_nas</th>
-      <td><p>Logical value. If <code>TRUE</code> then <code>NA</code> and <code>NaN</code> values in <code>x</code> are allowed. If <code>FALSE</code>, execution is stopped and an error message is thrown in case there are <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></td>
+      <td><p>Logical value. If <code>TRUE</code> then <code>NA</code> and <code>NaN</code> values in <code>x</code>
+are allowed. If <code>FALSE</code>, execution is stopped and an error message is thrown
+in case there are <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></td>
     </tr>
     <tr>
       <th>warning_nas</th>
-      <td><p>Logical value. If <code>TRUE</code> then the presence of <code>NA</code> or <code>NaN</code> values in <code>x</code> generates a warning message. <code>NA</code> and <code>NaN</code> values pass silently otherwise (if <code>allow_nas</code> is set to <code>TRUE</code>).</p></td>
+      <td><p>Logical value. If <code>TRUE</code> then the presence of <code>NA</code> or
+<code>NaN</code> values in <code>x</code> generates a warning message. <code>NA</code> and <code>NaN</code> values pass
+silently otherwise (if <code>allow_nas</code> is set to <code>TRUE</code>).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>inspect_character</code> does not return any output. There are three possible outcomes:</p><ul>
+    <p><code>inspect_character</code> does not return any output. There are three
+possible outcomes:</p><ul>
 <li><p>The call is silent if:</p><ul>
 <li><p><code>x</code> is a character vector and there are no <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></li>
-<li><p><code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code>,
+<code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
-<li><p>An informative warning message is thrown if <code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
+<li><p>An informative warning message is thrown if <code>x</code> is a character vector,
+there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and both <code>allow_nas</code> and
+<code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
 <li><p>An informative error message is thrown if:</p><ul>
 <li><p><code>x</code> is not a character vector.</p></li>
-<li><p><code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a character vector, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code>
+and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
 </ul>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>inspect_character</code> conducts a series of tests to check if <code>x</code> is a character vector. Namely, <code>inspect_character</code> checks if:</p><ul>
+    <p><code>inspect_character</code> conducts a series of tests to check if <code>x</code> is a
+character vector. Namely, <code>inspect_character</code> checks if:</p><ul>
 <li><p><code>x</code> is <code>NULL</code> or empty.</p></li>
 <li><p><code>x</code> is an atomic vector.</p></li>
 <li><p>The <code><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></code> <code>x</code> is character.</p></li>
@@ -178,8 +190,10 @@
 
     <div class='dont-index'>
 <ul>
-<li><p><code><a href='inspect_character_match.html'>inspect_character_match</a></code> to validate character vectors with predefined allowed values.</p></li>
-<li><p><code><a href='inspect_true_or_false.html'>inspect_true_or_false</a></code> to check if an object is a non-missing logical value.</p></li>
+<li><p><code><a href='inspect_character_match.html'>inspect_character_match</a></code> to validate character
+vectors with predefined allowed values.</p></li>
+<li><p><code><a href='inspect_true_or_false.html'>inspect_true_or_false</a></code> to check if an object is a
+non-missing logical value.</p></li>
 </ul>
 </div>
 

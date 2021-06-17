@@ -40,7 +40,9 @@
 
 
 <meta property="og:title" content="Validate factor levels — inspect_categories" />
-<meta property="og:description" content="inspect_categories checks if an object is eligible to be used as the levels of a factor. This can be useful to validate inputs in user-defined functions." />
+<meta property="og:description" content="inspect_categories checks if an object is eligible to be used
+as the levels of a factor. This can be useful to validate inputs in
+user-defined functions." />
 
 
 
@@ -129,7 +131,9 @@
     </div>
 
     <div class="ref-description">
-    <p><code>inspect_categories</code> checks if an object is eligible to be used as the levels of a factor. This can be useful to validate inputs in user-defined functions.</p>
+    <p><code>inspect_categories</code> checks if an object is eligible to be used
+as the levels of a factor. This can be useful to validate inputs in
+user-defined functions.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_categories</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></code></pre></div>
@@ -145,14 +149,17 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>inspect_categories</code> does not return any output. There are two possible outcomes:</p><ul>
+    <p><code>inspect_categories</code> does not return any output. There are two
+possible outcomes:</p><ul>
 <li><p>The call is silent if <code>x</code> is eligible to be used as the levels of a factor.</p></li>
 <li><p>An informative error message is thrown otherwise.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>inspect_categories</code> conducts a series of tests to check if <code>x</code> is eligible to be used as the levels of a factor. Namely, <code>inspect_categories</code> checks if:</p><ul>
+    <p><code>inspect_categories</code> conducts a series of tests to check if <code>x</code>
+is eligible to be used as the levels of a factor. Namely,
+<code>inspect_categories</code> checks if:</p><ul>
 <li><p><code>x</code> is <code>NULL</code> or empty.</p></li>
 <li><p><code>x</code> is atomic.</p></li>
 <li><p><code>x</code> has an eligible data type (logical, integer, double, character).</p></li>
@@ -164,12 +171,18 @@
 
     <div class='dont-index'>
 <ul>
-<li><p><code><a href='inspect_data_dichotomous.html'>inspect_data_dichotomous</a></code> to validate dichotomous data.</p></li>
-<li><p><code><a href='inspect_data_categorical.html'>inspect_data_categorical</a></code> and <code><a href='inspect_data_cat_as_dichotom.html'>inspect_data_cat_as_dichotom</a></code> to validate categorical data.</p></li>
-<li><p><code><a href='inspect_par_bernoulli.html'>inspect_par_bernoulli</a></code> to validate Bernoulli/Binomial proportions.</p></li>
-<li><p><code><a href='inspect_par_multinomial.html'>inspect_par_multinomial</a></code> to validate vectors of Multinomial proportions.</p></li>
+<li><p><code><a href='inspect_data_dichotomous.html'>inspect_data_dichotomous</a></code> to validate dichotomous
+data.</p></li>
+<li><p><code><a href='inspect_data_categorical.html'>inspect_data_categorical</a></code> and
+<code><a href='inspect_data_cat_as_dichotom.html'>inspect_data_cat_as_dichotom</a></code> to validate categorical
+data.</p></li>
+<li><p><code><a href='inspect_par_bernoulli.html'>inspect_par_bernoulli</a></code> to validate
+Bernoulli/Binomial proportions.</p></li>
+<li><p><code><a href='inspect_par_multinomial.html'>inspect_par_multinomial</a></code> to validate vectors of
+Multinomial proportions.</p></li>
 <li><p><code><a href='inspect_character.html'>inspect_character</a></code> to validate character vectors.</p></li>
-<li><p><code><a href='inspect_character_match.html'>inspect_character_match</a></code> to validate character vectors with predefined allowed values.</p></li>
+<li><p><code><a href='inspect_character_match.html'>inspect_character_match</a></code> to validate character
+vectors with predefined allowed values.</p></li>
 </ul>
 </div>
 

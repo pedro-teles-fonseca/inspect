@@ -40,7 +40,9 @@
 
 
 <meta property="og:title" content="Validate vectors of  Bayes factors — inspect_bfactor" />
-<meta property="og:description" content="inspect_bfactor checks if an object is a numeric vector of valid Bayes factor values. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions." />
+<meta property="og:description" content="inspect_bfactor checks if an object is a numeric vector of
+valid Bayes factor values. This can be useful to validate inputs,
+intermediate calculations or outputs in user-defined functions." />
 
 
 
@@ -129,7 +131,9 @@
     </div>
 
     <div class="ref-description">
-    <p><code>inspect_bfactor</code> checks if an object is a numeric vector of valid Bayes factor values. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.</p>
+    <p><code>inspect_bfactor</code> checks if an object is a numeric vector of
+valid Bayes factor values. This can be useful to validate inputs,
+intermediate calculations or outputs in user-defined functions.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_bfactor</span><span class='op'>(</span><span class='va'>x</span>, allow_nas <span class='op'>=</span> <span class='cn'>TRUE</span>, warning_nas <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></code></pre></div>
@@ -143,31 +147,44 @@
     </tr>
     <tr>
       <th>allow_nas</th>
-      <td><p>Logical value. If <code>TRUE</code> then <code>NA</code> and <code>NaN</code> values in <code>x</code> are allowed. If <code>FALSE</code>, execution is stopped and an error message is thrown in case there are <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></td>
+      <td><p>Logical value. If <code>TRUE</code> then <code>NA</code> and <code>NaN</code> values in <code>x</code>
+are allowed. If <code>FALSE</code>, execution is stopped and an error message is thrown
+in case there are <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></td>
     </tr>
     <tr>
       <th>warning_nas</th>
-      <td><p>Logical value. If <code>TRUE</code> then the presence of <code>NA</code> or <code>NaN</code> values in <code>x</code> generates a warning message. <code>NA</code> and <code>NaN</code> values pass silently otherwise (if <code>allow_nas</code> is <code>TRUE</code>).</p></td>
+      <td><p>Logical value. If <code>TRUE</code> then the presence of <code>NA</code> or
+<code>NaN</code> values in <code>x</code> generates a warning message. <code>NA</code> and <code>NaN</code> values pass
+silently otherwise (if <code>allow_nas</code> is <code>TRUE</code>).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>inspect_bfactor</code> does not return any output. There are three possible outcomes:</p><ul>
+    <p><code>inspect_bfactor</code> does not return any output. There are three
+possible outcomes:</p><ul>
 <li><p>The call is silent if:</p><ul>
-<li><p><code>x</code> is a numeric vector of valid Bayes factor values and there are no <code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></li>
-<li><p><code>x</code> is a numeric vector of valid Bayes factor values, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a numeric vector of valid Bayes factor values and there are no
+<code>NA</code> or <code>NaN</code> values in <code>x</code>.</p></li>
+<li><p><code>x</code> is a numeric vector of valid Bayes factor values, there are some
+<code>NA</code> or <code>NaN</code> values in <code>x</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code>
+is set to <code>FALSE</code>.</p></li>
 </ul></li>
-<li><p>An informative warning message is given if <code>x</code> is a numeric vector of valid Bayes factor values, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and both  <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
+<li><p>An informative warning message is given if <code>x</code> is a numeric vector of valid
+Bayes factor values, there are some <code>NA</code> or <code>NaN</code> values in <code>x</code> and both
+<code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
 <li><p>An informative error message is thrown and the execution is stopped if:</p><ul>
 <li><p><code>x</code> is not a numeric vector of valid Bayes factor values.</p></li>
-<li><p><code>x</code> is a numeric vector of valid Bayes factor values, there are some in <code>NA</code> or <code>NaN</code> values in <code>x</code> and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>x</code> is a numeric vector of valid Bayes factor values, there are some in
+<code>NA</code> or <code>NaN</code> values in <code>x</code> and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
 </ul>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>inspect_bfactor</code> conducts a series of tests to check if <code>x</code> is a numeric vector of valid Bayes factor values. Namely, <code>inspect_bfactor</code> checks if:</p><ul>
+    <p><code>inspect_bfactor</code> conducts a series of tests to check if <code>x</code> is a
+numeric vector of valid Bayes factor values. Namely, <code>inspect_bfactor</code> checks
+if:</p><ul>
 <li><p><code>x</code> is <code>NULL</code> or empty.</p></li>
 <li><p><code>x</code> is an atomic vector.</p></li>
 <li><p><code>x</code> is numeric.</p></li>
@@ -179,9 +196,12 @@
 
     <div class='dont-index'>
 <ul>
-<li><p><code><a href='inspect_bfactor_log.html'>inspect_bfactor_log</a></code> to check if an object is a numeric vector of valid logarithmic Bayes factor values.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/pcal/man/bfactor_interpret.html'>bfactor_interpret</a></code> for the interpretation of Bayes factors.</p></li>
-<li><p><code><a href='inspect_bfactor_scale.html'>inspect_bfactor_scale</a></code> to check if an object is a valid Bayes factor interpretation scale.</p></li>
+<li><p><code><a href='inspect_bfactor_log.html'>inspect_bfactor_log</a></code> to check if an object is a
+numeric vector of valid logarithmic Bayes factor values.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/pcal/man/bfactor_interpret.html'>bfactor_interpret</a></code> for the interpretation of Bayes
+factors.</p></li>
+<li><p><code><a href='inspect_bfactor_scale.html'>inspect_bfactor_scale</a></code> to check if an object is a
+valid Bayes factor interpretation scale.</p></li>
 </ul>
 </div>
 

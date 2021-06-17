@@ -40,7 +40,9 @@
 
 
 <meta property="og:title" content="Validate character values — inspect_character_match" />
-<meta property="og:description" content="inspect_character_match checks if an object is a character vector of length 1 that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions." />
+<meta property="og:description" content="inspect_character_match checks if an object is a character
+vector of length 1 that belongs to a set of allowed
+values. This can be useful to validate inputs in user-defined functions." />
 
 
 
@@ -129,7 +131,9 @@
     </div>
 
     <div class="ref-description">
-    <p><code>inspect_character_match</code> checks if an object is a character vector of <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1 that belongs to a set of allowed values. This can be useful to validate inputs in user-defined functions.</p>
+    <p><code>inspect_character_match</code> checks if an object is a character
+vector of <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1 that belongs to a set of allowed
+values. This can be useful to validate inputs in user-defined functions.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_character_match</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>allowed</span>, case_sensitive <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></code></pre></div>
@@ -153,14 +157,19 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>inspect_character_match</code> does not return any output. There are two possible outcomes:</p><ul>
-<li><p>The call is silent if <code>x</code> is a character vector of <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1 whose value belongs to the set of allowed values.</p></li>
+    <p><code>inspect_character_match</code> does not return any output. There are two
+possible outcomes:</p><ul>
+<li><p>The call is silent if <code>x</code> is a character vector of
+<code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1 whose value belongs to the set of allowed
+values.</p></li>
 <li><p>An informative error message is thrown otherwise.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>inspect_character_match</code> conducts a series of tests to check if <code>x</code> is a character vector of <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1 whose value belongs to the set of allowed values. Namely, <code>inspect_character_match</code> checks if:</p><ul>
+    <p><code>inspect_character_match</code> conducts a series of tests to check if <code>x</code>
+is a character vector of <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1 whose value belongs to
+the set of allowed values. Namely, <code>inspect_character_match</code> checks if:</p><ul>
 <li><p><code>x</code> is <code>NULL</code> or empty.</p></li>
 <li><p><code>x</code> is an atomic vector of <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1.</p></li>
 <li><p>The <code><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></code> <code>x</code> is character.</p></li>
@@ -168,13 +177,17 @@
 <li><p><code>x</code> is one of the allowed values (as specified in the <code>allowed</code> argument).</p></li>
 </ul>
 
-<p>By default, the comparison of <code>x</code> with <code>allowed</code> is not case sensitive. If you only want case sensitive matches of <code>x</code> to <code>allowed</code> set <code>case_sensitive</code> to <code>TRUE</code>.</p>
+<p>By default, the comparison of <code>x</code> with <code>allowed</code> is not case sensitive. If
+you only want case sensitive matches of <code>x</code> to <code>allowed</code> set <code>case_sensitive</code>
+to <code>TRUE</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'>
 <ul>
-<li><p><code><a href='inspect_character.html'>inspect_character</a></code> to validate character vectors with arbitrary allowed values.</p></li>
-<li><p><code><a href='inspect_true_or_false.html'>inspect_true_or_false</a></code> to check if an object is a non-missing logical value.</p></li>
+<li><p><code><a href='inspect_character.html'>inspect_character</a></code> to validate character vectors
+with arbitrary allowed values.</p></li>
+<li><p><code><a href='inspect_true_or_false.html'>inspect_true_or_false</a></code> to check if an object is a
+non-missing logical value.</p></li>
 </ul>
 </div>
 

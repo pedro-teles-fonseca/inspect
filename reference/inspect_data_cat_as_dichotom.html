@@ -40,7 +40,9 @@
 
 
 <meta property="og:title" content="Validate categorical data as dichotomous — inspect_data_cat_as_dichotom" />
-<meta property="og:description" content="inspect_data_cat_as_dichotom checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions." />
+<meta property="og:description" content="inspect_data_cat_as_dichotom checks if an object contains
+valid categorical data that is eligible to be used as dichotomous data. This
+can be useful to validate inputs in user-defined functions." />
 
 
 
@@ -129,7 +131,9 @@
     </div>
 
     <div class="ref-description">
-    <p><code>inspect_data_cat_as_dichotom</code> checks if an object contains valid categorical data that is eligible to be used as dichotomous data. This can be useful to validate inputs in user-defined functions.</p>
+    <p><code>inspect_data_cat_as_dichotom</code> checks if an object contains
+valid categorical data that is eligible to be used as dichotomous data. This
+can be useful to validate inputs in user-defined functions.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>inspect_data_cat_as_dichotom</span><span class='op'>(</span>
@@ -144,40 +148,58 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data, success</th>
-      <td><p>Arbitrary objects. <code>success</code> is meant to indicate the value of <code>data</code> that corresponds to a success.</p></td>
+      <td><p>Arbitrary objects. <code>success</code> is meant to indicate the
+value of <code>data</code> that corresponds to a success.</p></td>
     </tr>
     <tr>
       <th>allow_nas</th>
-      <td><p>Logical value. If <code>TRUE</code> then <code>NA</code> and <code>NaN</code> values in <code>data</code> are allowed. If <code>FALSE</code>, execution is stopped and an error message is thrown in case there are <code>NA</code> or <code>NaN</code> values in <code>data</code>.</p></td>
+      <td><p>Logical value. If <code>TRUE</code> then <code>NA</code> and <code>NaN</code> values in
+<code>data</code> are allowed. If <code>FALSE</code>, execution is stopped and an error message is
+thrown in case there are <code>NA</code> or <code>NaN</code> values in <code>data</code>.</p></td>
     </tr>
     <tr>
       <th>warning_nas</th>
-      <td><p>Logical value. If <code>TRUE</code> then the presence of <code>NA</code> or <code>NaN</code> values in <code>data</code> generates a warning message. <code>NA</code> and <code>NaN</code> values pass silently otherwise (if <code>allow_nas</code> is set to<code>TRUE</code>).</p></td>
+      <td><p>Logical value. If <code>TRUE</code> then the presence of <code>NA</code> or
+<code>NaN</code> values in <code>data</code> generates a warning message. <code>NA</code> and <code>NaN</code> values
+pass silently otherwise (if <code>allow_nas</code> is set to<code>TRUE</code>).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>inspect_data_cat_as_dichotom</code> does not return any output. There are three possible outcomes:</p><ul>
+    <p><code>inspect_data_cat_as_dichotom</code> does not return any output. There are
+three possible outcomes:</p><ul>
 <li><p>The call is silent if:</p><ul>
-<li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data and there are no <code>NA</code> or <code>NaN</code> values in <code>data</code>.</p></li>
-<li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data, there are some <code>NA</code> or <code>NaN</code> values in <code>data</code>, <code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>data</code> contains valid categorical data that is eligible to be used as
+dichotomous data and there are no <code>NA</code> or <code>NaN</code> values in <code>data</code>.</p></li>
+<li><p><code>data</code> contains valid categorical data that is eligible to be used as
+dichotomous data, there are some <code>NA</code> or <code>NaN</code> values in <code>data</code>,
+<code>allow_nas</code> is set to <code>TRUE</code> and <code>warning_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
 <li><p>An informative warning message is thrown if:</p><ul>
-<li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data and <code>success</code> is not observed in <code>data</code>.</p></li>
-<li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data, there are <code>NA</code> or <code>NaN</code> values in <code>data</code> and both <code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
+<li><p><code>data</code> contains valid categorical data that is eligible to be used as
+dichotomous data and <code>success</code> is not observed in <code>data</code>.</p></li>
+<li><p><code>data</code> contains valid categorical data that is eligible to be used as
+dichotomous data, there are <code>NA</code> or <code>NaN</code> values in <code>data</code> and both
+<code>allow_nas</code> and <code>warning_nas</code> are set to <code>TRUE</code>.</p></li>
 </ul></li>
 <li><p>An informative error message is thrown and the execution is stopped if:</p><ul>
-<li><p><code>data</code> does not contain valid categorical data that is eligible to be used as dichotomous data.</p></li>
-<li><p><code>data</code> contains valid categorical data that is eligible to be used as dichotomous data, there are some <code>NA</code> or <code>NaN</code> values in <code>data</code> and <code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
+<li><p><code>data</code> does not contain valid categorical data that is eligible to be
+used as dichotomous data.</p></li>
+<li><p><code>data</code> contains valid categorical data that is eligible to be used as
+dichotomous data, there are some <code>NA</code> or <code>NaN</code> values in <code>data</code> and
+<code>allow_nas</code> is set to <code>FALSE</code>.</p></li>
 </ul></li>
 </ul>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>inspect_data_cat_as_dichotom</code> conducts a series of tests to check if <code>data</code> contains valid categorical data that is eligible to be used as dichotomous data. Namely, <code>inspect_data_cat_as_dichotom</code> checks if:</p><ul>
+    <p><code>inspect_data_cat_as_dichotom</code> conducts a series of tests to check
+if <code>data</code> contains valid categorical data that is eligible to be used as
+dichotomous data. Namely, <code>inspect_data_cat_as_dichotom</code> checks if:</p><ul>
 <li><p><code>data</code> and <code>success</code> are <code>NULL</code> or empty.</p></li>
-<li><p><code>data</code> and <code>success</code> are atomic and have an eligible data type (logical, integer, double, character).</p></li>
+<li><p><code>data</code> and <code>success</code> are atomic and have an eligible data type (logical,
+integer, double, character).</p></li>
 <li><p><code>data</code> and <code>success</code> have <code>NA</code> or <code>NaN</code> values.</p></li>
 <li><p><code>success</code> has <code><a href='https://rdrr.io/r/base/length.html'>length</a></code> 1.</p></li>
 <li><p><code>success</code> is observed in <code>data</code>.</p></li>
@@ -188,9 +210,12 @@
     <div class='dont-index'>
 <ul>
 <li><p><code><a href='inspect_data_categorical.html'>inspect_data_categorical</a></code> to validate categorical.</p></li>
-<li><p><code><a href='inspect_par_multinomial.html'>inspect_par_multinomial</a></code> to validate vectors of Multinomial proportions.</p></li>
-<li><p><code><a href='inspect_data_dichotomous.html'>inspect_data_dichotomous</a></code> to validate dichotomous data.</p></li>
-<li><p><code><a href='inspect_par_bernoulli.html'>inspect_par_bernoulli</a></code> to validate Bernoulli/Binomial proportions.</p></li>
+<li><p><code><a href='inspect_par_multinomial.html'>inspect_par_multinomial</a></code> to validate vectors of
+Multinomial proportions.</p></li>
+<li><p><code><a href='inspect_data_dichotomous.html'>inspect_data_dichotomous</a></code> to validate dichotomous
+data.</p></li>
+<li><p><code><a href='inspect_par_bernoulli.html'>inspect_par_bernoulli</a></code> to validate
+Bernoulli/Binomial proportions.</p></li>
 </ul>
 </div>
 
