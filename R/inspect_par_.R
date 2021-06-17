@@ -1,11 +1,15 @@
 
 #' @title Validate parameters for the Bernoulli/Binomial distributions
 #'
-#' @description `inspect_par_bernoulli` checks if an object is an eligible Bernoulli/Binomial proportion. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_par_bernoulli` checks if an object is an eligible
+#' Bernoulli/Binomial proportion. This can be useful to validate inputs,
+#' intermediate calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #'
-#' @details `inspect_par_bernoulli` conducts a series of tests to check if `x` is an eligible Bernoulli/Binomial proportion. Namely, `inspect_par_bernoulli` checks if:
+#' @details `inspect_par_bernoulli` conducts a series of tests to check if `x`
+#' is an eligible Bernoulli/Binomial proportion. Namely, `inspect_par_bernoulli`
+#' checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is an atomic vector
 #' * `x` is numeric
@@ -13,17 +17,24 @@
 #' * `x` is `NA` or `NaN`.
 #' * `x` is in the (0, 1) interval.
 #'
-#' @return `inspect_par_bernoulli` does not return any output. There are two possible outcomes:
+#' @return `inspect_par_bernoulli` does not return any output. There are two
+#' possible outcomes:
 #' * The call is silent if `x` is an eligible Bernoulli/Binomial proportion.
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
-#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
-#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
-#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
-#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous data.
-#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for
+#' the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the
+#' Beta distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for
+#' the Dirichlet distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the
+#' Haldane distribution.
+#' * \code{\link[inspector]{inspect_data_dichotomous}} to validate dichotomous
+#' data.
+#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric
+#' vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -69,17 +80,25 @@ inspect_par_bernoulli <- function(x) {
     stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if (any(x >= 1, x <= 0)) {
-    stop(paste("Invalid argument:", output_name, "must be in the (0, 1) interval."))
+    stop(paste(
+      "Invalid argument:",
+      output_name,
+      "must be in the (0, 1) interval."
+    ))
   }
 }
 
 #' @title Validate parameters for the Multinomial distribution
 #'
-#' @description `inspect_par_multinomial` checks if an object is an eligible vector of Multinomial proportions. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_par_multinomial` checks if an object is an eligible
+#' vector of Multinomial proportions. This can be useful to validate inputs,
+#' intermediate calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #'
-#' @details `inspect_par_multinomial` conducts a series of tests to check if `x` is an eligible vector of Multinomial proportions. Namely, `inspect_par_multinomial` checks if:
+#' @details `inspect_par_multinomial` conducts a series of tests to check if
+#' `x` is an eligible vector of Multinomial proportions. Namely,
+#' `inspect_par_multinomial` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is an atomic vector
 #' * `x` is numeric
@@ -87,17 +106,25 @@ inspect_par_bernoulli <- function(x) {
 #' * All elements of `x` are in the (0, 1) interval.
 #' * `x` sums to 1.
 #'
-#' @return `inspect_par_multinomial` does not return any output. There are two possible outcomes:
+#' @return `inspect_par_multinomial` does not return any output.
+#' There are two possible outcomes:
 #' * The call is silent if `x` is an eligible vector of Multinomial proportions.
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
-#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
-#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
-#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
-#' * \code{\link[inspector]{inspect_data_categorical}} and \code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical data.
-#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric vector of valid probability values.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for
+#' the Bernoulli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the
+#' Beta distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for
+#' the Dirichlet distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the
+#' Haldane distribution.
+#' * \code{\link[inspector]{inspect_data_categorical}} and
+#' \code{\link[inspector]{inspect_data_cat_as_dichotom}} to validate categorical
+#' data.
+#' * \code{\link[inspector]{inspect_prob}} to check if an object is a numeric
+#' vector of valid probability values.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -139,13 +166,22 @@ inspect_par_multinomial <- function(x) {
     stop(paste("Invalid argument:", output_name, "is empty."))
   }
   if (any(is.na(x))) {
-    stop(paste("Invalid argument: there are NA or NaN values in", paste0(output_name, ".")))
+    stop(paste(
+      "Invalid argument: there are NA or NaN values in",
+      paste0(output_name, ".")
+    ))
   }
   if (isFALSE(is.numeric(x))) {
     stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if (any(x >= 1, x <= 0)) {
-    stop(paste("Invalid argument: all elements of", output_name, "values must be in the (0, 1) interval."))
+    stop(
+      paste(
+        "Invalid argument: all elements of",
+        output_name,
+        "values must be in the (0, 1) interval."
+      )
+    )
   }
   if (isFALSE(inspect_equality(sum(x), 1))) {
     stop(paste("Invalid argument:", output_name, "must sum to 1."))
@@ -154,11 +190,15 @@ inspect_par_multinomial <- function(x) {
 
 #' @title Validate parameters for the Beta distribution
 #'
-#' @description `inspect_par_beta` checks if an object is an eligible vector of parameters for the Beta distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_par_beta` checks if an object is an eligible vector of
+#' parameters for the Beta distribution. This can be useful to validate inputs,
+#' intermediate calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #'
-#' @details `inspect_par_beta` conducts a series of tests to check if `x` is an eligible vector of parameters for the Beta distribution. Namely, `inspect_par_beta` checks if:
+#' @details `inspect_par_beta` conducts a series of tests to check if `x` is an
+#' eligible vector of parameters for the Beta distribution. Namely,
+#' `inspect_par_beta` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is an atomic vector
 #' * `x` is numeric
@@ -166,15 +206,21 @@ inspect_par_multinomial <- function(x) {
 #' * `x` has `NA` or `NaN` values.
 #' * All elements of `x` are positive.
 #'
-#' @return `inspect_par_beta` does not return any output. There are two possible outcomes:
-#' * The call is silent if `x` is an eligible vector of parameters for the Beta distribution.
+#' @return `inspect_par_beta` does not return any output. There are two possible
+#' outcomes:
+#' * The call is silent if `x` is an eligible vector of parameters for the Beta
+#' distribution.
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
-#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
-#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
-#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for
+#' the Bernoulli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for
+#' the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for
+#' the Dirichlet distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the
+#' Haldane distribution.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -218,35 +264,53 @@ inspect_par_beta <- function(x) {
     stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if (any(is.na(x))) {
-    stop(paste("Invalid argument: there are NA or NaN values in", paste0(output_name, ".")))
+    stop(paste(
+      "Invalid argument: there are NA or NaN values in",
+      paste0(output_name, ".")
+    ))
   }
   if (any(x <= 0)) {
-    stop(paste("Invalid argument: elements of", output_name, "must be greather than 0."))
+    stop(paste(
+      "Invalid argument: elements of",
+      output_name,
+      "must be greather than 0."
+    ))
   }
 }
 
 #' @title Validate parameters for the Dirichlet distribution
 #'
-#' @description `inspect_par_dirichlet` checks if an object is an eligible vector of parameters for the Dirichlet distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_par_dirichlet` checks if an object is an eligible
+#' vector of parameters for the Dirichlet distribution. This can be useful to
+#' validate inputs, intermediate calculations or outputs in user-defined
+#' functions.
 #'
 #' @param x An arbitrary object.
 #'
-#' @details `inspect_par_dirichlet` conducts a series of tests to check if `x` is an eligible vector of parameters for the Dirichlet distribution. Namely, `inspect_par_dirichlet` checks if:
+#' @details `inspect_par_dirichlet` conducts a series of tests to check if `x`
+#' is an eligible vector of parameters for the Dirichlet distribution. Namely,
+#' `inspect_par_dirichlet` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is an atomic vector
 #' * `x` is numeric
 #' * `x` has `NA` or `NaN` values.
 #' * All elements of `x` are positive.
 #'
-#' @return `inspect_par_dirichlet` does not return any output. There are two possible outcomes:
-#' * The call is silent if `x` is an eligible vector of parameters for the Dirichlet distribution.
+#' @return `inspect_par_dirichlet` does not return any output. There are two
+#' possible outcomes:
+#' * The call is silent if `x` is an eligible vector of parameters for the
+#' Dirichlet distribution.
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
-#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
-#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
-#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the Haldane distribution.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for
+#' the Bernoulli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for
+#' the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the
+#' Beta distribution.
+#' * \code{\link[inspector]{inspect_par_haldane}} to validate parameters for the
+#' Haldane distribution.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -289,35 +353,52 @@ inspect_par_dirichlet <- function(x) {
     stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if (any(is.na(x))) {
-    stop(paste("Invalid argument: there are NA or NaN values in", paste0(output_name, ".")))
+    stop(paste(
+      "Invalid argument: there are NA or NaN values in",
+      paste0(output_name, ".")
+    ))
   }
   if (any(x <= 0)) {
-    stop(paste("Invalid argument: elements of", output_name, "must be greather than 0."))
+    stop(paste(
+      "Invalid argument: elements of",
+      output_name,
+      "must be greather than 0."
+    ))
   }
 }
 
 #' @title Validate parameters for the Haldane distribution
 #'
-#' @description `inspect_par_haldane` checks if an object is an eligible vector of parameters for the Haldane distribution. This can be useful to validate inputs, intermediate calculations or outputs in user-defined functions.
+#' @description `inspect_par_haldane` checks if an object is an eligible vector
+#' of parameters for the Haldane distribution. This can be useful to validate
+#' inputs, intermediate calculations or outputs in user-defined functions.
 #'
 #' @param x An arbitrary object.
 #'
-#' @details `inspect_par_haldane` conducts a series of tests to check if `x` is an eligible vector of parameters for the Haldane distribution. Namely, `inspect_par_haldane` checks if:
+#' @details `inspect_par_haldane` conducts a series of tests to check if `x` is
+#' an eligible vector of parameters for the Haldane distribution. Namely,
+#' `inspect_par_haldane` checks if:
 #' * `x` is `NULL` or empty.
 #' * `x` is an atomic vector
 #' * `x` is numeric
 #' * `x` has `NA` or `NaN` values.
 #' * All elements of `x` equal to 0.
 #'
-#' @return `inspect_par_haldane` does not return any output. There are two possible outcomes:
-#' * The call is silent if `x` is an eligible vector of parameters for the Haldane distribution.
+#' @return `inspect_par_haldane` does not return any output. There are two
+#' possible outcomes:
+#' * The call is silent if `x` is an eligible vector of parameters for the
+#' Haldane distribution.
 #' * An informative error message is thrown otherwise.
 #'
 #' @seealso
-#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for the Bernoulli/Binomial distribution.
-#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for the Multinomial distribution.
-#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the Beta distribution.
-#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for the Dirichlet distribution.
+#' * \code{\link[inspector]{inspect_par_bernoulli}} to validate parameters for
+#' the Bernoulli/Binomial distribution.
+#' * \code{\link[inspector]{inspect_par_multinomial}} to validate parameters for
+#' the Multinomial distribution.
+#' * \code{\link[inspector]{inspect_par_beta}} to validate parameters for the
+#' Beta distribution.
+#' * \code{\link[inspector]{inspect_par_dirichlet}} to validate parameters for
+#' the Dirichlet distribution.
 #'
 #' @examples
 #' # Calls that pass silently:
@@ -360,7 +441,10 @@ inspect_par_haldane <- function(x) {
     stop(paste("Invalid argument:", output_name, "must be numeric."))
   }
   if (any(is.na(x))) {
-    stop(paste("Invalid argument: there are NA or NaN values in", paste0(output_name, ".")))
+    stop(paste(
+      "Invalid argument: there are NA or NaN values in",
+      paste0(output_name, ".")
+    ))
   }
   if (any(x != 0)) {
     stop(paste("Invalid argument: all elements of", output_name, "must be 0."))
